@@ -19,9 +19,13 @@ telechargerDonnees <- function(donnees=c("BPE_ENS"), date=NULL) {
     download.file(url = caract$lien, destfile = "donnees.zip")
     unzip("donnees.zip")
     res <- read.csv(caract$fichier_donnees, sep = ";", header = TRUE)
+    file.remove("donnees.zip")
+    file.remove(caract$fichier_donnees)
+    if (!is.na(caract$fichier_meta)) file.remove(caract$fichier_meta)
   } else {
     download.file(url = caract$lien, destfile = paste0("donnees.", caract$type))
     res <- read.csv(paste0("donnees.", caract$type), sep = ";", header = TRUE)
+    file.remove(paste0("donnees.", caract$type))
   }
   return(res)
 }
