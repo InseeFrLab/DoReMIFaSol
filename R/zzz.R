@@ -1,3 +1,3 @@
 .onLoad <- function(libname, pkgname) {
-  data(liste_donnees)
+  #data(liste_donnees)
 }

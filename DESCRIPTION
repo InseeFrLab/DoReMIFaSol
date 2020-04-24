@@ -8,3 +8,5 @@ Depends: R (>= 3.1.0)
 Suggests: tidyverse, data.table
 License: tbd
 LazyData: true
+RoxygenNote: 7.1.0
+Encoding: UTF-8
