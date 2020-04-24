@@ -1,12 +1,13 @@
 #' Téléchargement des données sur le site de l'Insee
 #'
-#' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table `liste_donnees`
+#' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table `liste_donnees``
 #' @param date optionnel : le millésime des données si nécessaire
 #'
-#' @return
+#' @return un objet `data.frame`` contenant les données téléchargées sur le site de l'Insee.
 #' @export
 #'
 #' @examples
+#' bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS", date = as.Date("01/01/2018"))
 telechargerDonnees <- function(donnees=c("BPE_ENS"), date=NULL) {
   caract <- liste_donnees[liste_donnees$nom == donnees, ]
   ## check whether date is needed
