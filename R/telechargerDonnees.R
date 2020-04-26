@@ -2,6 +2,7 @@
 #'
 #' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table `liste_donnees``
 #' @param date optionnel : le millésime des données si nécessaire
+#' @param ... paramètres additionnels relatifs à l'importation des données
 #'
 #' @return un objet `data.frame` contenant les données téléchargées sur le site de l'Insee.
 #' @export
@@ -11,7 +12,7 @@
 #' }
 #' @importFrom utils download.file unzip read.csv
 #' @export
-telechargerDonnees <- function(donnees=c("BPE_ENS"), date=NULL) {
+telechargerDonnees <- function(donnees=c("BPE_ENS"), date=NULL, ...) {
   caract <- liste_donnees[liste_donnees$nom == donnees, ]
   ## check whether date is needed
   if (nrow(caract) > 1) {
@@ -22,13 +23,13 @@ telechargerDonnees <- function(donnees=c("BPE_ENS"), date=NULL) {
   if (caract$zip) {
     download.file(url = caract$lien, destfile = "donnees.zip")
     unzip("donnees.zip")
-    res <- read.csv(caract$fichier_donnees, sep = ";", header = TRUE)
+    res <- read.csv(caract$fichier_donnees, sep = ";", header = TRUE, ...)
     file.remove("donnees.zip")
     file.remove(caract$fichier_donnees)
     if (!is.na(caract$fichier_meta)) file.remove(caract$fichier_meta)
   } else {
     download.file(url = caract$lien, destfile = paste0("donnees.", caract$type))
-    res <- read.csv(paste0("donnees.", caract$type), sep = ";", header = TRUE)
+    res <- read.csv(paste0("donnees.", caract$type), sep = ";", header = TRUE, ...)
     file.remove(paste0("donnees.", caract$type))
   }
   return(res)
