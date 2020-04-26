@@ -4,7 +4,7 @@
 \alias{telechargerDonnees}
 \title{Téléchargement des données sur le site de l'Insee}
 \usage{
-telechargerDonnees(donnees = c("BPE_ENS"), date = NULL, ...)
+telechargerDonnees(donnees = ld$nom, date = NULL, ...)
 }
 \arguments{
 \item{donnees}{le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table `liste_donnees``}
