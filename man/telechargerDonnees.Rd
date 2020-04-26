@@ -18,5 +18,7 @@ un objet `data.frame`` contenant les données téléchargées sur le site de l'I
 Téléchargement des données sur le site de l'Insee
 }
 \examples{
+\dontrun{
 bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS", date = as.Date("01/01/2018"))
+}
 }

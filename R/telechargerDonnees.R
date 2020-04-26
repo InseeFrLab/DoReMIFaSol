@@ -3,16 +3,19 @@
 #' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table `liste_donnees``
 #' @param date optionnel : le millésime des données si nécessaire
 #'
-#' @return un objet `data.frame`` contenant les données téléchargées sur le site de l'Insee.
+#' @return un objet `data.frame` contenant les données téléchargées sur le site de l'Insee.
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{
 #' bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS", date = as.Date("01/01/2018"))
+#' }
+#' @importFrom utils download.file unzip read.csv
+#' @export
 telechargerDonnees <- function(donnees=c("BPE_ENS"), date=NULL) {
   caract <- liste_donnees[liste_donnees$nom == donnees, ]
   ## check whether date is needed
   if (nrow(caract) > 1) {
-    if (is.null(date)) stop("Il faut spécifier une date de référence pour ces données.")
+    if (is.null(date)) stop("Il faut sp\u00e9cifier une date de r\u00e9f\u00e9rence pour ces donn\u00e9es.")
     caract <- caract[caract$date_ref == date]
   }
   
