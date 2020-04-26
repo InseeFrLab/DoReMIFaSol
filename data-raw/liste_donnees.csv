@@ -1,0 +1,3 @@
+nom,libelle,date_ref,lien,type,zip,fichier_donnees,fichier_meta
+BPE_ENS,Base Permanente des Équipements – Ensemble,1-01-18,https://www.insee.fr/fr/statistiques/fichier/3568629/bpe18_ensemble_csv.zip,csv,TRUE,bpe18_ensemble.csv,varmod_bpe18_ensemble.csv
+BPE_ENS_XY,Base Permanente des Équipements – Géolocalisé,1-01-18,https://www.insee.fr/fr/statistiques/fichier/3568638/bpe18_ensemble_xy_csv.zip,csv,TRUE,bpe18_ensemble_xy.csv,varmod_bpe18_ensemble_xy.csv
