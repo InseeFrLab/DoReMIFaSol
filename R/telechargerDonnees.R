@@ -8,6 +8,8 @@
 #'
 #' @examples
 #' bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS", date = as.Date("01/01/2018"))
+#' @importFrom utils download.file unzip read.csv
+#' @export
 telechargerDonnees <- function(donnees=c("BPE_ENS"), date=NULL) {
   caract <- liste_donnees[liste_donnees$nom == donnees, ]
   ## check whether date is needed
