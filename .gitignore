@@ -2,7 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-data/creation_liste_donnees.R
 data/liste_donnees.csv
 *.csv
 data/*.csv
