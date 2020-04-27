@@ -1,4 +1,4 @@
-# carpenteR
+# Récupérer et utiliser les données de l'Insee avec `R`/ Get and use Insee's data with `R`
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/pierre-lamarche/carpenteR.svg?branch=master)](https://travis-ci.com/pierre-lamarche/carpenteR)
