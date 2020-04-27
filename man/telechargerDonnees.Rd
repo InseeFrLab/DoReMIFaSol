@@ -4,19 +4,23 @@
 \alias{telechargerDonnees}
 \title{Téléchargement des données sur le site de l'Insee}
 \usage{
-telechargerDonnees(donnees = c("BPE_ENS"), date = NULL)
+telechargerDonnees(donnees = ld$nom, date = NULL, ...)
 }
 \arguments{
 \item{donnees}{le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table `liste_donnees``}
 
 \item{date}{optionnel : le millésime des données si nécessaire}
+
+\item{...}{paramètres additionnels relatifs à l'importation des données}
 }
 \value{
-un objet `data.frame`` contenant les données téléchargées sur le site de l'Insee.
+un objet `data.frame` contenant les données téléchargées sur le site de l'Insee.
 }
 \description{
 Téléchargement des données sur le site de l'Insee
 }
 \examples{
+\dontrun{
 bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS", date = as.Date("01/01/2018"))
+}
 }
