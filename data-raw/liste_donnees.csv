@@ -1,4 +1,4 @@
 ﻿nom;libelle;date_ref;lien;type;zip;fichier_donnees;fichier_meta
 BPE_ENS;Base Permanente des Equipements, Ensemble;01/01/2018;https://www.insee.fr/fr/statistiques/fichier/3568629/bpe18_ensemble_csv.zip;csv;TRUE;bpe18_ensemble.csv;varmod_bpe18_ensemble.csv
 BPE_ENS_XY;Base Permanente des Equipements Géolocalisée;01/01/2018;https://www.insee.fr/fr/statistiques/fichier/3568638/bpe18_ensemble_xy_csv.zip;csv;TRUE;bpe18_ensemble_xy.csv;varmod_bpe18_ensemble_xy.csv
-COG_communes;Code Officiel Géographique;01/01/2019;https://www.insee.fr/fr/statistiques/fichier/3720946/cog_ensemble_2019_csv.zip;csv;TRUE;communes-01012019.csv;NULL
+COG_communes;Code Officiel Géographique;01/01/2019;https://www.insee.fr/fr/statistiques/fichier/3720946/cog_ensemble_2019_csv.zip;csv;TRUE;communes-01012019.csv;
