@@ -35,32 +35,25 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
     }
   }
   nomFichierTemp <- tail(unlist(strsplit(caract$lien, "/")), n=1L)
-  print(nomFichierTemp)
   nomFichier <- paste0(telDir, "/", nomFichierTemp)
-  print(nomFichier)
   #stringr::str_extract(url, "^*([^/]*)$")
   if (!file.exists(nomFichier))
     download.file(url = caract$lien, destfile = nomFichier) else
       message("utilisation du cache")
   
   if (caract$zip) {
-    print("zip")
     if (substr(nomFichier, nchar(nomFichier) - 3, nchar(nomFichier)) != ".zip") {
       stop("Le fichier t\u00e9l\u00e9charg\u00e9 n'est pas une archive zip.")
     } else {
-      print("rezip0")
-      unzip(nomFichier, files = caract$fichier_donnees, exdir = )
-      fichierAImporter <- paste0(substr(nomFichier, 1, nchar(nomFichier) - 4), "/", caract$fichier_donnees)
-      print(fichierAImporter)
-      print("rezip")    
+      unzip(nomFichier, exdir = telDir)
+      fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees)
     }
   } else {
     if (substr(nomFichier, nchar(nomFichier) - 4, nchar(nomFichier)) != paste0(".", caract$type)) 
       stop("le fichier t\u00e9l\u00e9charg\u00e9 n'est pas du type attendu.")
     fichierAImporter <- nomFichier
   }
-  print(fichierAImporter)
-  
+
   # importation donnees
   if (caract$type == "csv")
     res <- readr::read_delim(fichierAImporter, delim = caract$separateur, col_names = TRUE, ...)
