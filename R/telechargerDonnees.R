@@ -21,11 +21,12 @@ telechargerDonnees <- function(donnees=ld$nom, date=NULL, ...) {
   }
   
   nomFichier <- tail(unlist(strsplit(caract$lien, "/")), n=1L)
+  #stringr::str_extract(url, "^*([^/]*)$")
   if (!file.exists(nomFichier))
     download.file(url = caract$lien, destfile = nomFichier)
   
   if (caract$zip) {
-    if (substr(nomFichier, nchar(nomFichier) - 4, nchar(nomFichier)) != ".zip") 
+    if (substr(nomFichier, nchar(nomFichier) - 3, nchar(nomFichier)) != ".zip") 
       stop("Le fichier t\u00e9l\u00e9charg\u00e9 n'est pas une archive zip.")
     unzip(nomFichier)
     res <- read.csv(caract$fichier_donnees, sep = ";", header = TRUE, ...)
