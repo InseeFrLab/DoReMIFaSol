@@ -34,7 +34,8 @@ telechargerDonnees <- function(donnees=ld$nom, date=NULL, telDir=NULL, ...) {
   nomFichier <- paste0(telDir, "/", tail(unlist(strsplit(caract$lien, "/")), n=1L))
   #stringr::str_extract(url, "^*([^/]*)$")
   if (!file.exists(nomFichier))
-    download.file(url = caract$lien, destfile = nomFichier)
+    download.file(url = caract$lien, destfile = nomFichier) else
+      message("utilisation du cache")
   
   if (caract$zip) {
     if (substr(nomFichier, nchar(nomFichier) - 3, nchar(nomFichier)) != ".zip") 
