@@ -2,6 +2,7 @@
 #'
 #' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table `liste_donnees``
 #' @param date optionnel : le millésime des données si nécessaire
+#' @param telDir optionnel : le dossier dans lequel sont téléchargées les données brutes. Par déaut, un dossier temporaire de cache.
 #' @param ... paramètres additionnels relatifs à l'importation des données
 #'
 #' @return un objet `data.frame` contenant les données téléchargées sur le site de l'Insee.
@@ -12,7 +13,7 @@
 #' }
 #' @importFrom utils download.file unzip read.csv
 #' @export
-telechargerDonnees <- function(donnees=ld$nom, date=NULL, ...) {
+telechargerDonnees <- function(donnees=ld$nom, date=NULL, telDir=NULL, ...) {
   caract <- ld[ld$nom == donnees, ]
   ## check whether date is needed
   if (nrow(caract) > 1) {
@@ -20,7 +21,17 @@ telechargerDonnees <- function(donnees=ld$nom, date=NULL, ...) {
     caract <- caract[caract$date_ref == date]
   }
   
-  nomFichier <- tail(unlist(strsplit(caract$lien, "/")), n=1L)
+  #dossier de téléchargement
+  if (is.null(telDir)) {
+    if (is.null(getOption("insee.cache"))) {
+      telDir <- tempdir()
+      options(insee.cache = telDir)
+    } else {
+      telDir <- getOption("insee.cache")
+    }
+  }
+  
+  nomFichier <- paste0(telDir, "/", tail(unlist(strsplit(caract$lien, "/")), n=1L))
   #stringr::str_extract(url, "^*([^/]*)$")
   if (!file.exists(nomFichier))
     download.file(url = caract$lien, destfile = nomFichier)
