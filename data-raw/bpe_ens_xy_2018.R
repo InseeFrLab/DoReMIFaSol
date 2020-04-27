@@ -18,8 +18,7 @@
 #' @encoding UTF-8
 #' @source \url{https://www.insee.fr/fr/statistiques/3568638?sommaire=3568656#consulter}
 
-bpe_ens_xy_2018 <- telechargerDonnees(donnees = "BPE_ENS_XY", date = as.Date("01/01/2018"), encoding = "CP1252",
-                                      colClasses = c("character", "character", "character", "character", "integer", 
-                                                     "factor", "numeric", "numeric", "factor"))
+bpe_ens_xy_2018 <- telechargerDonnees(donnees = "BPE_ENS_XY", date = as.Date("01/01/2018"),
+                                      col_types = c("ccccifddf"))
 Encoding(levels(bpe_ens_xy_2018$QUALITE_XY)) <- "UTF-8" ## Solves encoding issue
 usethis::use_data(bpe_ens_xy_2018, overwrite = TRUE)
