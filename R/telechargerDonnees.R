@@ -39,14 +39,20 @@ telechargerDonnees <- function(donnees=ld$nom, date=NULL, telDir=NULL, ...) {
   if (caract$zip) {
     if (substr(nomFichier, nchar(nomFichier) - 3, nchar(nomFichier)) != ".zip") 
       stop("Le fichier t\u00e9l\u00e9charg\u00e9 n'est pas une archive zip.")
-    unzip(nomFichier)
-    res <- read.csv(caract$fichier_donnees, sep = ";", header = TRUE, ...)
-    file.remove(caract$fichier_donnees)
-    if (!is.na(caract$fichier_meta)) file.remove(caract$fichier_meta)
+    unzip(nomFichier, exdir = telDir)
+    fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees)
   } else {
     if (substr(nomFichier, nchar(nomFichier) - 4, nchar(nomFichier)) != paste0(".", caract$type))
       stop("le fichier t\u00e9l\u00e9charg\u00e9 n'est pas du type attendu.")
-    res <- read.csv(nomFichier, sep = ";", header = TRUE, ...)
+    fichierAImporter <- nomFichier
   }
+  # importation donnees
+  if (caract$type == "csv")
+    res <- read.csv(fichierAImporter, sep = ";", header = TRUE, ...)
+  if (caract$type == "xls")
+    res <- readxl::read_xls(fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
+    file.remove(fichierAImporter)
+  if (!is.na(caract$fichier_meta))
+    file.remove(paste0(telDir, "/", caract$fichier_meta))
   return(res)
 }
