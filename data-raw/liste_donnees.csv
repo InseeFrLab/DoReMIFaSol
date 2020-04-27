@@ -29,4 +29,3 @@ FILOSOFI_METRO_2017,Données Filosofi niveau France métropolitaine – 2017,1-0
 FILOSOFI_AU2010_2017,Données Filosofi niveau aire urbaine – 2017,1-01-17,,,,,,,
 FILOSOFI_UU2010_2017,Données Filosofi niveau unité urbaine – 2017,1-01-17,,,,,,,
 FILOSOFI_ZE2010_2017,Données Filosofi niveau zone d’emploi – 2017,1-01-17,,,,,,,
-COG_communes,Code Officiel Géographique,1-01-2019,https://www.insee.fr/fr/statistiques/fichier/3720946/cog_ensemble_2019_csv.zip,csv,TRUE,communes-01012019.csv,

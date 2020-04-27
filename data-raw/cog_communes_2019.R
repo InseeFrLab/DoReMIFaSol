@@ -6,5 +6,5 @@
 #'
 #' @source \url{https://www.insee.fr/fr/statistiques/fichier/3720946/cog_ensemble_2019_csv.zip}
 
-COG_communes_2019 <- telechargerDonnees(donnees = "COG_communes", date = as.Date("01/01/2019"))
+COG_communes_2019 <- telechargerDonnees(donnees = "COG_COMMUNE_2019", date = as.Date("01/01/2019"))
 usethis::use_data(cog_communes_2019, overwrite = TRUE)
