@@ -2,6 +2,7 @@
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/pierre-lamarche/carpenteR.svg?branch=master)](https://travis-ci.com/pierre-lamarche/carpenteR)
+[![License:EUPL](https://github.com/eClip-/EUPL-badge/blob/master/eupl_1.2.svg)](https://opensource.org/licenses/EUPL-1.2)
 <!-- badges: end -->
 
 ## Français
