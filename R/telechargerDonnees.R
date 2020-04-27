@@ -31,7 +31,7 @@ telechargerDonnees <- function(donnees=ld$nom, date=NULL, ...) {
     unzip(nomFichier)
     res <- read.csv(caract$fichier_donnees, sep = ";", header = TRUE, ...)
     file.remove(caract$fichier_donnees)
-    if (!is.na(caract$fichier_meta)) file.remove(caract$fichier_meta)
+    if (!is.na(caract$fichier_meta) & caract$fichier_meta != "") file.remove(caract$fichier_meta)
   } else {
     if (substr(nomFichier, nchar(nomFichier) - 4, nchar(nomFichier)) != paste0(".", caract$type))
       stop("le fichier t\u00e9l\u00e9charg\u00e9 n'est pas du type attendu.")
