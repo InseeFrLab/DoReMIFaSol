@@ -18,9 +18,7 @@
 #' }
 #' 
 #' @source \url{https://www.insee.fr/fr/information/3720946}
-cog_com_2019 <- telechargerDonnees(donnees = "COG_COMMUNE", date = as.Date("01/01/2019"), colClasses = c("character", "character", "character", "character",
-                                                                                                         "character", "character", "character", "character",
-                                                                                                         "character", "character", "character"))
+cog_com_2019 <- telechargerDonnees(donnees = "COG_COMMUNE", date = as.Date("01/01/2019"), col_types = "ccccccccccc")
 Encoding(cog_com_2019$ncc) <- "UTF-8"
 Encoding(cog_com_2019$nccenr) <- "UTF-8"
 Encoding(cog_com_2019$libelle) <- "UTF-8"
