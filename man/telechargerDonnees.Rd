@@ -4,12 +4,14 @@
 \alias{telechargerDonnees}
 \title{Téléchargement des données sur le site de l'Insee}
 \usage{
-telechargerDonnees(donnees = ld$nom, date = NULL, ...)
+telechargerDonnees(donnees = ld$nom, date = NULL, telDir = NULL, ...)
 }
 \arguments{
 \item{donnees}{le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table `liste_donnees``}
 
 \item{date}{optionnel : le millésime des données si nécessaire}
+
+\item{telDir}{optionnel : le dossier dans lequel sont téléchargées les données brutes. Par déaut, un dossier temporaire de cache.}
 
 \item{...}{paramètres additionnels relatifs à l'importation des données}
 }
