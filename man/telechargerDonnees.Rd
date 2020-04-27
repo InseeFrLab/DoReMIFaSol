@@ -16,7 +16,7 @@ telechargerDonnees(donnees, date = NULL, telDir = NULL, ...)
 \item{...}{paramètres additionnels relatifs à l'importation des données}
 }
 \value{
-un objet `data.frame` contenant les données téléchargées sur le site de l'Insee.
+un objet `tibble` contenant les données téléchargées sur le site de l'Insee.
 }
 \description{
 Téléchargement des données sur le site de l'Insee

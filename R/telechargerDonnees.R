@@ -5,7 +5,7 @@
 #' @param telDir optionnel : le dossier dans lequel sont téléchargées les données brutes. Par déaut, un dossier temporaire de cache.
 #' @param ... paramètres additionnels relatifs à l'importation des données
 #'
-#' @return un objet `data.frame` contenant les données téléchargées sur le site de l'Insee.
+#' @return un objet `tibble` contenant les données téléchargées sur le site de l'Insee.
 #' @export
 #'
 #' @examples \dontrun{
@@ -21,21 +21,14 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
   ## check whether date is needed
   if (nrow(caract) > 1) {
     if (is.null(date)) stop("Il faut sp\u00e9cifier une date de r\u00e9f\u00e9rence pour ces donn\u00e9es.")
-    caract <- caract[caract$date_ref == date]
+    caract <- caract[caract$date_ref == date, ]
   }
 
-  #dossier de téléchargement
-  if (is.null(telDir)) {
-    if (is.null(getOption("insee.cache"))) {
-      telDir <- gsub("//", "/", tempdir())
-      options(insee.cache = telDir)
-      print(telDir)
-    } else {
-      telDir <- gsub("//", "/", getOption("insee.cache"))
-    }
-  }
-  nomFichierTemp <- tail(unlist(strsplit(caract$lien, "/")), n=1L)
-  nomFichier <- paste0(telDir, "/", nomFichierTemp)
+  #dossier de téléchargement # si NULL aller dans le cache
+  if (is.null(telDir))
+    telDir <- tempdir()
+  
+  nomFichier <- paste0(telDir, "/", tail(unlist(strsplit(caract$lien, "/")), n=1L))
   #stringr::str_extract(url, "^*([^/]*)$")
   if (!file.exists(nomFichier))
     download.file(url = caract$lien, destfile = nomFichier) else
