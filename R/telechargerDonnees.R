@@ -13,7 +13,10 @@
 #' }
 #' @importFrom utils download.file unzip read.csv
 #' @export
-telechargerDonnees <- function(donnees=ld$nom, date=NULL, telDir=NULL, ...) {
+telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
+  ## check the parameter donnees takes a valid value
+  if (!donnees %in% ld$nom)
+    stop("Le param\u00e8tre donnees est mal sp\u00e9cifi\u00e9, la valeur n'est pas r\u00e9f\u00e9renc\u00e9e")
   caract <- ld[ld$nom == donnees, ]
   ## check whether date is needed
   if (nrow(caract) > 1) {
@@ -47,10 +50,10 @@ telechargerDonnees <- function(donnees=ld$nom, date=NULL, telDir=NULL, ...) {
   }
   # importation donnees
   if (caract$type == "csv")
-    res <- read.csv(fichierAImporter, sep = ";", header = TRUE, ...)
+    res <- read.csv(fichierAImporter, sep = caract$separateur, header = TRUE, ...)
   if (caract$type == "xls")
     res <- readxl::read_xls(fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
-    file.remove(fichierAImporter)
+  file.remove(fichierAImporter)
   if (!is.na(caract$fichier_meta))
     file.remove(paste0(telDir, "/", caract$fichier_meta))
   return(res)

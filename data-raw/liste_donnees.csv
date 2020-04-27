@@ -1,31 +1,31 @@
-nom,libelle,date_ref,lien,type,zip,fichier_donnees,fichier_meta,onglet,premiere_ligne
-BPE_ENS,Base Permanente des Équipements – Ensemble,1-01-18,https://www.insee.fr/fr/statistiques/fichier/3568629/bpe18_ensemble_csv.zip,csv,TRUE,bpe18_ensemble.csv,varmod_bpe18_ensemble.csv,,
-BPE_ENS_XY,Base Permanente des Équipements – Géolocalisé,1-01-18,https://www.insee.fr/fr/statistiques/fichier/3568638/bpe18_ensemble_xy_csv.zip,csv,TRUE,bpe18_ensemble_xy.csv,varmod_bpe18_ensemble_xy.csv,,
-COG_COMMUNE_2019,Code Officiel Géographique – 2019,1-01-19,https://www.insee.fr/fr/statistiques/fichier/3720946/cog_ensemble_2019_csv.zip,csv,TRUE,Communes-01012019.csv,,,
-FILOSOFI_COM_2015,Données Filosofi niveau communal – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,COM,6
-FILOSOFI_EPCI_2015,Données Filosofi niveau EPCI – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,EPCI,6
-FILOSOFI_ARR_2015,Données Filosofi niveau arondissement – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,ARR,6
-FILOSOFI_DEP_2015,Données Filosofi niveau départemental – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,DEP,6
-FILOSOFI_REG_2015,Données Filosofi niveau régional – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,REG,6
-FILOSOFI_METRO_2015,Données Filosofi niveau France métropolitaine – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,METRO,6
-FILOSOFI_AU2010_2015,Données Filosofi niveau aire urbaine – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,AU2010,6
-FILOSOFI_UU2010_2015,Données Filosofi niveau unité urbaine – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,UU2010,6
-FILOSOFI_ZE2010_2015,Données Filosofi niveau zone d’emploi – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,ZE2010,6
-FILOSOFI_COM_2016,Données Filosofi niveau communal – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,COM,6
-FILOSOFI_EPCI_2016,Données Filosofi niveau EPCI – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,EPCI,6
-FILOSOFI_ARR_2016,Données Filosofi niveau arondissement – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,ARR,6
-FILOSOFI_DEP_2016,Données Filosofi niveau départemental – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,DEP,6
-FILOSOFI_REG_2016,Données Filosofi niveau régional – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,REG,6
-FILOSOFI_METRO_2016,Données Filosofi niveau France métropolitaine – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,METRO,6
-FILOSOFI_AU2010_2016,Données Filosofi niveau aire urbaine – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,AU2010,6
-FILOSOFI_UU2010_2016,Données Filosofi niveau unité urbaine – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,UU2010,6
-FILOSOFI_ZE2010_2016,Données Filosofi niveau zone d’emploi – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,ZE2010,6
-FILOSOFI_COM_2017,Données Filosofi niveau communal – 2017,1-01-17,https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-COMMUNES.zip,xls,TRUE,FILO2017_DEC_COM.xlsx,,ENSEMBLE,6
-FILOSOFI_EPCI_2017,Données Filosofi niveau EPCI – 2017,1-01-17,,,,,,,
-FILOSOFI_ARR_2017,Données Filosofi niveau arondissement – 2017,1-01-17,,,,,,,
-FILOSOFI_DEP_2017,Données Filosofi niveau départemental – 2017,1-01-17,,,,,,,
-FILOSOFI_REG_2017,Données Filosofi niveau régional – 2017,1-01-17,,,,,,,
-FILOSOFI_METRO_2017,Données Filosofi niveau France métropolitaine – 2017,1-01-17,,,,,,,
-FILOSOFI_AU2010_2017,Données Filosofi niveau aire urbaine – 2017,1-01-17,,,,,,,
-FILOSOFI_UU2010_2017,Données Filosofi niveau unité urbaine – 2017,1-01-17,,,,,,,
-FILOSOFI_ZE2010_2017,Données Filosofi niveau zone d’emploi – 2017,1-01-17,,,,,,,
+nom,libelle,date_ref,lien,type,zip,fichier_donnees,fichier_meta,onglet,premiere_ligne,separateur
+BPE_ENS,Base Permanente des Équipements – Ensemble,1-01-18,https://www.insee.fr/fr/statistiques/fichier/3568629/bpe18_ensemble_csv.zip,csv,TRUE,bpe18_ensemble.csv,varmod_bpe18_ensemble.csv,,,""";"""
+BPE_ENS_XY,Base Permanente des Équipements – Géolocalisé,1-01-18,https://www.insee.fr/fr/statistiques/fichier/3568638/bpe18_ensemble_xy_csv.zip,csv,TRUE,bpe18_ensemble_xy.csv,varmod_bpe18_ensemble_xy.csv,,,""";"""
+COG_COMMUNE,Code Officiel Géographique – 2019,1-01-19,https://www.insee.fr/fr/statistiques/fichier/3720946/cog_ensemble_2019_csv.zip,csv,TRUE,communes-01012019.csv,,,,""","""
+FILOSOFI_COM,Données Filosofi niveau communal – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,COM,6,
+FILOSOFI_EPCI,Données Filosofi niveau EPCI – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,EPCI,6,
+FILOSOFI_ARR,Données Filosofi niveau arondissement – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,ARR,6,
+FILOSOFI_DEP,Données Filosofi niveau départemental – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,DEP,6,
+FILOSOFI_REG,Données Filosofi niveau régional – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,REG,6,
+FILOSOFI_METRO,Données Filosofi niveau France métropolitaine – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,METRO,6,
+FILOSOFI_AU2010,Données Filosofi niveau aire urbaine – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,AU2010,6,
+FILOSOFI_UU2010,Données Filosofi niveau unité urbaine – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,UU2010,6,
+FILOSOFI_ZE2010,Données Filosofi niveau zone d’emploi – 2015,1-01-15,https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip,xls,TRUE,base-cc-filosofi-2015.xls,,ZE2010,6,
+FILOSOFI_COM,Données Filosofi niveau communal – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,COM,6,
+FILOSOFI_EPCI,Données Filosofi niveau EPCI – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,EPCI,6,
+FILOSOFI_ARR,Données Filosofi niveau arondissement – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,ARR,6,
+FILOSOFI_DEP,Données Filosofi niveau départemental – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,DEP,6,
+FILOSOFI_REG,Données Filosofi niveau régional – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,REG,6,
+FILOSOFI_METRO,Données Filosofi niveau France métropolitaine – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,METRO,6,
+FILOSOFI_AU2010,Données Filosofi niveau aire urbaine – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,AU2010,6,
+FILOSOFI_UU2010,Données Filosofi niveau unité urbaine – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,UU2010,6,
+FILOSOFI_ZE2010,Données Filosofi niveau zone d’emploi – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-filosofi-2016.xls,,ZE2010,6,
+FILOSOFI_COM_2017,Données Filosofi niveau communal – 2017,1-01-17,https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-COMMUNES.zip,xls,TRUE,FILO2017_DEC_COM.xlsx,,ENSEMBLE,6,
+FILOSOFI_EPCI_2017,Données Filosofi niveau EPCI – 2017,1-01-17,,,,,,,,
+FILOSOFI_ARR_2017,Données Filosofi niveau arondissement – 2017,1-01-17,,,,,,,,
+FILOSOFI_DEP_2017,Données Filosofi niveau départemental – 2017,1-01-17,,,,,,,,
+FILOSOFI_REG_2017,Données Filosofi niveau régional – 2017,1-01-17,,,,,,,,
+FILOSOFI_METRO_2017,Données Filosofi niveau France métropolitaine – 2017,1-01-17,,,,,,,,
+FILOSOFI_AU2010_2017,Données Filosofi niveau aire urbaine – 2017,1-01-17,,,,,,,,
+FILOSOFI_UU2010_2017,Données Filosofi niveau unité urbaine – 2017,1-01-17,,,,,,,,
+FILOSOFI_ZE2010_2017,Données Filosofi niveau zone d’emploi – 2017,1-01-17,,,,,,,,
