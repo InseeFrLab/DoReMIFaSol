@@ -1,3 +1,4 @@
-nom,libelle,date_ref,lien,type,zip,fichier_donnees,fichier_meta
-BPE_ENS,Base Permanente des Équipements – Ensemble,1-01-18,https://www.insee.fr/fr/statistiques/fichier/3568629/bpe18_ensemble_csv.zip,csv,TRUE,bpe18_ensemble.csv,varmod_bpe18_ensemble.csv
-BPE_ENS_XY,Base Permanente des Équipements – Géolocalisé,1-01-18,https://www.insee.fr/fr/statistiques/fichier/3568638/bpe18_ensemble_xy_csv.zip,csv,TRUE,bpe18_ensemble_xy.csv,varmod_bpe18_ensemble_xy.csv
+nom,libelle,date_ref,lien,type,zip,fichier_donnees,fichier_meta,onglet,premiere_ligne
+BPE_ENS,Base Permanente des Équipements – Ensemble,1-01-18,https://www.insee.fr/fr/statistiques/fichier/3568629/bpe18_ensemble_csv.zip,csv,TRUE,bpe18_ensemble.csv,varmod_bpe18_ensemble.csv,,
+BPE_ENS_XY,Base Permanente des Équipements – Géolocalisé,1-01-18,https://www.insee.fr/fr/statistiques/fichier/3568638/bpe18_ensemble_xy_csv.zip,csv,TRUE,bpe18_ensemble_xy.csv,varmod_bpe18_ensemble_xy.csv,,
+FILOSOFI_COM_2016,Données Filosofi niveau communal – 2016,1-01-16,https://www.insee.fr/fr/statistiques/fichier/4190004/filosofi-revenu-pauvrete-menage-2016.zip,xls,TRUE,base-cc-fisosofi-2016.xls,,COM,6
