@@ -7,22 +7,22 @@
 telechargerDonnees(donnees, date = NULL, telDir = NULL, ...)
 }
 \arguments{
-\item{donnees}{le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table `liste_donnees``}
+\item{donnees}{le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table [liste_donnees]}
 
 \item{date}{optionnel : le millésime des données si nécessaire}
 
-\item{telDir}{optionnel : le dossier dans lequel sont téléchargées les données brutes. Par déaut, un dossier temporaire de cache.}
+\item{telDir}{optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, un dossier temporaire de cache.}
 
 \item{...}{paramètres additionnels relatifs à l'importation des données}
 }
 \value{
-un objet `tibble` contenant les données téléchargées sur le site de l'Insee.
+un objet tibble contenant les données téléchargées sur le site de l'Insee.
 }
 \description{
 Téléchargement des données sur le site de l'Insee
 }
 \examples{
 \dontrun{
-bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS", date = as.Date("01/01/2018"))
+bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS")
 }
 }

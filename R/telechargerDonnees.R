@@ -1,17 +1,17 @@
 #' Téléchargement des données sur le site de l'Insee
 #'
-#' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table `liste_donnees``
+#' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table [liste_donnees]
 #' @param date optionnel : le millésime des données si nécessaire
-#' @param telDir optionnel : le dossier dans lequel sont téléchargées les données brutes. Par déaut, un dossier temporaire de cache.
+#' @param telDir optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, un dossier temporaire de cache.
 #' @param ... paramètres additionnels relatifs à l'importation des données
 #'
-#' @return un objet `tibble` contenant les données téléchargées sur le site de l'Insee.
+#' @return un objet tibble contenant les données téléchargées sur le site de l'Insee.
 #' @export
 #'
 #' @examples \dontrun{
-#' bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS", date = as.Date("01/01/2018"))
+#' bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS")
 #' }
-#' @importFrom utils download.file unzip read.csv
+#' @importFrom utils download.file unzip read.csv tail
 #' @export
 telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
   ## check the parameter donnees takes a valid value
