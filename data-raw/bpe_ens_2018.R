@@ -14,5 +14,5 @@
 #' }
 #'
 #' @source \url{https://www.insee.fr/fr/statistiques/fichier/3568629/bpe18_ensemble_csv.zip}
-bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS", date = as.Date("01/01/2018"))
+bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS", col_types = "ccccncn")
 usethis::use_data(bpe_ens_2018, overwrite = TRUE)
