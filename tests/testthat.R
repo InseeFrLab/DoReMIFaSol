@@ -1,5 +1,5 @@
-library(DoReMIFaSol)
+library(doremifasol)
 library(testthat)
 
 # tests unitaires sur la fonction telechargerDonnees
-test_check("DoReMIFaSol")
+test_check("doremifasol")

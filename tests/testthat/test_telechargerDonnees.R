@@ -1,4 +1,4 @@
-library(DoReMIFaSol)
+library(doremifasol)
 ## téléchargement de la BPE
 test_that("Téléchargement de données sur le site de l'Insee", {
   expect_output(str(telechargerDonnees("BPE_ENS")), "data.frame")
