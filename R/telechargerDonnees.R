@@ -21,6 +21,7 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
   ## check whether date is needed
   if (nrow(caract) > 1) {
     if (is.null(date)) stop("Il faut sp\u00e9cifier une date de r\u00e9f\u00e9rence pour ces donn\u00e9es.")
+    if (!date %in% caract$date_ref) stop("La date sp\u00e9cifi\u00e9e n'est pas disponible.")
     caract <- caract[caract$date_ref == date, ]
   }
 

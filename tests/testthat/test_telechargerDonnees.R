@@ -7,6 +7,10 @@ test_that("Téléchargement de données sur le site de l'Insee", {
 test_that("Téléchargement de données sur le site de l'Insee", {
  expect_error(telechargerDonnees("FILOSOFI_COM"))
 })
+## erreur - date non disponible
+test_that("Téléchargement de données sur le site de l'Insee", {
+  expect_error(telechargerDonnees("FILOSOFI_COM", date = Sys.Date()))
+})
 ## mauvais nom - pas disponible au téléchargement
 test_that("Échec du téléchargement pour nom non existant", {
   expect_error((telechargerDonnees("TEST")))
