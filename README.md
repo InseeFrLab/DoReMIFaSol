@@ -1,7 +1,7 @@
 # Récupérer et utiliser les données de l'Insee avec `R`/ Get and use Insee's data with `R`
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.com/pierre-lamarche/carpenteR.svg?branch=master)](https://travis-ci.com/pierre-lamarche/carpenteR)
+[![Travis build status](https://travis-ci.com/pierre-lamarche/doremifasol.svg?branch=master)](https://travis-ci.com/pierre-lamarche/doremifasol)
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
