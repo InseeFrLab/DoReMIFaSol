@@ -51,8 +51,11 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
   # importation donnees
   if (caract$type == "csv")
     res <- readr::read_delim(fichierAImporter, delim = caract$separateur, col_names = TRUE, ...)
-  if (caract$type == "xls")
+  else if (caract$type == "xls")
     res <- readxl::read_xls(fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
+  else if (caract$type == "xlsx")
+    res <- readxl::read_xlsx(fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
+  else stop("Type de fichier inconnu")
   file.remove(fichierAImporter)
   if (!is.na(caract$fichier_meta))
     file.remove(paste0(telDir, "/", caract$fichier_meta))
