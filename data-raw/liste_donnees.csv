@@ -1,4 +1,6 @@
 nom,libelle,date_ref,lien,type,zip,fichier_donnees,fichier_meta,onglet,premiere_ligne,separateur
+AIRE_URBAINE,Liste des Aires Urbaines 2010,,https://www.insee.fr/fr/statistiques/fichier/2115011/AU2010_au_01-01-2020.zip,xlsx,TRUE,AU2010 au 01-01-2020.xlsx,,AU2010,6,
+AIRE_URBAINE_COM,Composition communale des Aires Urbaines 2010,,https://www.insee.fr/fr/statistiques/fichier/2115011/AU2010_au_01-01-2020.zip,xlsx,TRUE,AU2010 au 01-01-2020.xlsx,,Composition_communale,6,
 BPE_ENS,Base Permanente des Équipements – Ensemble,01/01/2018,https://www.insee.fr/fr/statistiques/fichier/3568629/bpe18_ensemble_csv.zip,csv,TRUE,bpe18_ensemble.csv,varmod_bpe18_ensemble.csv,,,""";"""
 BPE_ENS_XY,Base Permanente des Équipements – Géolocalisé,01/01/2018,https://www.insee.fr/fr/statistiques/fichier/3568638/bpe18_ensemble_xy_csv.zip,csv,TRUE,bpe18_ensemble_xy.csv,varmod_bpe18_ensemble_xy.csv,,,""";"""
 COG_COMMUNE,Code Officiel Géographique – 2019,01/01/2019,https://www.insee.fr/fr/statistiques/fichier/3720946/cog_ensemble_2019_csv.zip,csv,TRUE,communes-01012019.csv,,,,""","""
