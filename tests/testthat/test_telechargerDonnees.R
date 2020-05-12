@@ -28,7 +28,7 @@ test_that("Importation type CSV - output data.frame", {
 })
 ## test import de données XLS
 test_that("Importation type XLS - output data.frame", {
-  expect_true(class(telechargerDonnees("FILOSIFI_COM", date = as.Date("01/01/2014", format = "%d/%m/%Y"))) == "data.frame")
+  expect_true(class(telechargerDonnees("FILOSOFI_COM", date = as.Date("01/01/2014", format = "%d/%m/%Y"))) == "data.frame")
 })
 ## test import de données XLSX
 test_that("Importation type XLSX - output data.frame", {
