@@ -59,5 +59,5 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
   file.remove(fichierAImporter)
   if (!is.na(caract$fichier_meta))
     file.remove(paste0(telDir, "/", caract$fichier_meta))
-  return(res)
+  return(as.data.frame(res))
 }
