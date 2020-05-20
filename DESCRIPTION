@@ -1,8 +1,12 @@
 Package: doremifasol
 Title: Data on Insee Website
 Version: 0.1
-Authors@R: person("Pierre", "Lamarche", email = "pierre.lamarche@insee.fr",
-                  role = c("aut", "cre"))
+Authors@R: c(
+  person("Pierre", "Lamarche", email = "pierre.lamarche@insee.fr", role = c("aut", "cre")),
+  person("Lino", "Galiana", role = "ctb", email = "lino.galiana@insee.fr"),
+  person("Olivier", "Meslin", role = "ctb", email = "olivier.meslin@insee.fr"),
+  person("Fidani", "Gilles", role = "ctb", email = "gilles.fidani@insee.fr"),
+  )
 Description: Internal package for Insee staff members willing to use R in order to exploit and analyse data produced by the institute. This package makes it possible to either download on-the-fly the date from the website, or load pre-processed data. It also provides a (so far non comprehensive) list of datasets available on the website.
 Depends: R (>= 3.5.0)
 Imports: readr, readxl
