@@ -24,7 +24,7 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
     if (!date %in% caract$date_ref) stop("La date sp\u00e9cifi\u00e9e n'est pas disponible.")
     caract <- caract[caract$date_ref == date, ]
   }
-
+  
   #dossier de téléchargement # si NULL aller dans le cache
   if (is.null(telDir))
     telDir <- tempdir()
@@ -47,10 +47,15 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
       stop("le fichier t\u00e9l\u00e9charg\u00e9 n'est pas du type attendu.")
     fichierAImporter <- nomFichier
   }
-
+  
   # importation donnees
-  if (caract$type == "csv")
-    res <- readr::read_delim(fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE, ...)
+  if (caract$type == "csv") {
+    args <- list(file = fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE, ...)
+    if (!is.na(caract$encoding))
+      args[["locale"]] <- readr::locale(encoding = caract$encoding)
+    res <- do.call(readr::read_delim, args)  
+    #res <- readr::read_delim(fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE, ...)
+  }
   else if (caract$type == "xls")
     res <- readxl::read_xls(fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
   else if (caract$type == "xlsx")
