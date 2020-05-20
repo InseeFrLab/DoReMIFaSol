@@ -5,7 +5,8 @@ Authors@R: person("Pierre", "Lamarche", email = "pierre.lamarche@insee.fr",
                   role = c("aut", "cre"))
 Description: Internal package for Insee staff members willing to use R in order to exploit and analyse data produced by the institute. This package makes it possible to either download on-the-fly the date from the website, or load pre-processed data. It also provides a (so far non comprehensive) list of datasets available on the website.
 Depends: R (>= 3.5.0)
-Suggests: tidyverse, readr, readxl, data.table, testthat, RCurl
+Imports: readr, readxl
+Suggests: tidyverse, data.table, testthat, RCurl
 License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 7.1.0
