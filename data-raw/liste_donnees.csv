@@ -4,7 +4,7 @@ AIRE_URBAINE_COM,Composition communale des Aires Urbaines 2010,,https://www.inse
 BPE_ENS,Base Permanente des Équipements – Ensemble,01/01/2018,https://www.insee.fr/fr/statistiques/fichier/3568629/bpe18_ensemble_csv.zip,csv,TRUE,bpe18_ensemble.csv,varmod_bpe18_ensemble.csv,,,""";"""
 BPE_ENS_XY,Base Permanente des Équipements – Géolocalisé,01/01/2018,https://www.insee.fr/fr/statistiques/fichier/3568638/bpe18_ensemble_xy_csv.zip,csv,TRUE,bpe18_ensemble_xy.csv,varmod_bpe18_ensemble_xy.csv,,,""";"""
 COG_COMMUNE,Code Officiel Géographique – 2019,01/01/2019,https://www.insee.fr/fr/statistiques/fichier/3720946/cog_ensemble_2019_csv.zip,csv,TRUE,communes-01012019.csv,,,,""","""
-COG_COMMUNE_2018,Code Officiel Géographique – 2018,01/01/2018,https://www.insee.fr/fr/statistiques/fichier/3363419/comsimp2018-txt.zip,csv,TRUE,comsimp2018.txt,,,,"""\t"""
+COG_COMMUNE,Code Officiel Géographique – 2018,01/01/2018,https://www.insee.fr/fr/statistiques/fichier/3363419/comsimp2018-txt.zip,csv,TRUE,comsimp2018.txt,,,,"""\t"""
 FILOSOFI_COM,Données Filosofi niveau communal – 2014,01/01/2014,https://www.insee.fr/fr/statistiques/fichier/3126432/filo-revenu-pauvrete-menage-2014.zip,xls,TRUE,filo-revenu-pauvrete-menage-2014/base-cc-filosofi-2014.xls,,COM,6,
 FILOSOFI_EPCI,Données Filosofi niveau EPCI – 2014,01/01/2014,https://www.insee.fr/fr/statistiques/fichier/3126432/filo-revenu-pauvrete-menage-2014.zip,xls,TRUE,filo-revenu-pauvrete-menage-2014/base-cc-filosofi-2014.xls,,EPCI,6,
 FILOSOFI_ARR,Données Filosofi niveau arondissement – 2014,01/01/2014,https://www.insee.fr/fr/statistiques/fichier/3126432/filo-revenu-pauvrete-menage-2014.zip,xls,TRUE,filo-revenu-pauvrete-menage-2014/base-cc-filosofi-2014.xls,,ARR,6,
