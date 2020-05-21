@@ -1,7 +1,7 @@
 #' Téléchargement des données sur le site de l'Insee
 #'
 #' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table [liste_donnees]
-#' @param date optionnel : le millésime des données si nécessaire
+#' @param date optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence.
 #' @param telDir optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, un dossier temporaire de cache.
 #' @param ... paramètres additionnels relatifs à l'importation des données
 #'
@@ -21,8 +21,11 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
   ## check whether date is needed
   if (nrow(caract) > 1) {
     if (is.null(date)) stop("Il faut sp\u00e9cifier une date de r\u00e9f\u00e9rence pour ces donn\u00e9es.")
-    if (!date %in% caract$date_ref) stop("La date sp\u00e9cifi\u00e9e n'est pas disponible.")
-    caract <- caract[caract$date_ref == date, ]
+    if (nchar(date) == 4)
+      date <- paste0("01/01/", date)
+    dateRef <- as.Date(date, format = "%d/%m/%Y")
+    if (!dateRef %in% caract$date_ref) stop("La date sp\u00e9cifi\u00e9e n'est pas disponible.")
+    caract <- caract[caract$date_ref == dateRef, ]
   }
   
   #dossier de téléchargement # si NULL aller dans le cache

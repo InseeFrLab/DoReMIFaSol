@@ -9,7 +9,7 @@ test_that("Téléchargement de données sur le site de l'Insee", {
 })
 ## erreur - date non disponible
 test_that("Téléchargement de données sur le site de l'Insee", {
-  expect_error(telechargerDonnees("FILOSOFI_COM", date = Sys.Date()), "La date spécifiée n'est pas disponible.")
+  expect_error(telechargerDonnees("FILOSOFI_COM", date = format(Sys.Date(), format = "%Y")), "La date spécifiée n'est pas disponible.")
 })
 ## mauvais nom - pas disponible au téléchargement
 test_that("Échec du téléchargement pour nom non existant", {
@@ -24,11 +24,11 @@ test_that("Spécification du dossier de stockage", {
 })
 ## test import de données CSV
 test_that("Importation type CSV - output data.frame", {
-  expect_true(class(telechargerDonnees("COG_COMMUNE", date = as.Date("01/01/2019", format = "%d/%m/%Y"))) == "data.frame")
+  expect_true(class(telechargerDonnees("COG_COMMUNE", date = "2019")) == "data.frame")
 })
 ## test import de données XLS
 test_that("Importation type XLS - output data.frame", {
-  expect_true(class(telechargerDonnees("FILOSOFI_COM", date = as.Date("01/01/2014", format = "%d/%m/%Y"))) == "data.frame")
+  expect_true(class(telechargerDonnees("FILOSOFI_COM", date = "2014")) == "data.frame")
 })
 ## test import de données XLSX
 test_that("Importation type XLSX - output data.frame", {
