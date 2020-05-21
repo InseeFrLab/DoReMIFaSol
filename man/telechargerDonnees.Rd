@@ -9,7 +9,7 @@ telechargerDonnees(donnees, date = NULL, telDir = NULL, ...)
 \arguments{
 \item{donnees}{le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table [liste_donnees]}
 
-\item{date}{optionnel : le millésime des données si nécessaire}
+\item{date}{optionnel : le millésime des données si nécessaire, via la fonction as.Date}
 
 \item{telDir}{optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, un dossier temporaire de cache.}
 
@@ -24,5 +24,6 @@ Téléchargement des données sur le site de l'Insee
 \examples{
 \dontrun{
 bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS")
+cog_2018 <- telechargerDonnees(donnees = "COG_COMMUNE", date = as.Date("2018-01-01"))
 }
 }
