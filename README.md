@@ -1,5 +1,7 @@
 # Récupérer et utiliser les données de l'Insee avec `R`/ Get and use Insee's data with `R`
 
+<img src="https://github.com/pierre-lamarche/doremifasol/raw/master/inst/sticker/hex_logo.png" width="150" height="150" align="right"/>
+
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/pierre-lamarche/DoReMIFaSol.svg?branch=master)](https://travis-ci.com/pierre-lamarche/doremifasol)
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
