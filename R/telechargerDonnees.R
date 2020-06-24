@@ -46,7 +46,7 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
       fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees)
     }
   } else {
-    if (substr(nomFichier, nchar(nomFichier) - 4, nchar(nomFichier)) != paste0(".", caract$type)) 
+    if (stringr::str_extract(nomFichier, "^*([^.]*)$") != caract$type) 
       stop("le fichier t\u00e9l\u00e9charg\u00e9 n'est pas du type attendu.")
     fichierAImporter <- nomFichier
   }
