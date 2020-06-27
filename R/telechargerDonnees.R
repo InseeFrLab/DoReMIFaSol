@@ -63,6 +63,8 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
     args <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
     if (!is.na(caract$derniere_ligne))
       args[["n_max"]] <- caract$derniere_ligne - caract$premiere_ligne
+    if (!is.na(caract$valeurs_manquantes))
+      args[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
     res <- do.call(readxl::read_xls, args)
   }
   else if (caract$type == "xlsx")
