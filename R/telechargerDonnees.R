@@ -59,8 +59,12 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
     res <- do.call(readr::read_delim, args)  
     #res <- readr::read_delim(fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE, ...)
   }
-  else if (caract$type == "xls")
-    res <- readxl::read_xls(fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
+  else if (caract$type == "xls") {
+    args <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
+    if (!is.na(caract$derniere_ligne))
+      args[["n_max"]] <- caract$derniere_ligne - caract$premiere_ligne
+    res <- do.call(readxl::read_xls, args)
+  }
   else if (caract$type == "xlsx")
     res <- readxl::read_xlsx(fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
   else stop("Type de fichier inconnu")
