@@ -22,10 +22,11 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
   if (nrow(caract) > 1) {
     if (is.null(date)) stop("Il faut sp\u00e9cifier une date de r\u00e9f\u00e9rence pour ces donn\u00e9es.")
     if (nchar(date) == 4)
-      date <- paste0("01/01/", date)
-    dateRef <- as.Date(date, format = "%d/%m/%Y")
-    if (!dateRef %in% caract$date_ref) stop("La date sp\u00e9cifi\u00e9e n'est pas disponible.")
-    caract <- caract[caract$date_ref == dateRef, ]
+      select <- (format(caract$date_ref, "%Y") == as.character(date)) else
+        select <- (caract$date_ref == as.Date(date, format = "%d/%m/%Y"))
+    if (!any(select)) stop("La date sp\u00e9cifi\u00e9e n'est pas disponible.")
+    if (sum(as.numeric(select), na.rm = TRUE) > 1) stop("Donn\u00e9es infra-annuelles a priori. Mieux sp\u00e9cifier la date de r\u00e9f\u00e9rence.")
+    caract <- caract[which(select), ]
   }
   
   #dossier de téléchargement # si NULL aller dans le cache
