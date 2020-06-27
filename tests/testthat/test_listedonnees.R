@@ -9,8 +9,5 @@ test_that("Teste l'unicité du couple nom - millésime", {
 })
 ## test bonne spécification du fichier Excel
 test_that("Teste l'existence de l'onglet", {
-  expect_true(all(with(ld, type %in% c("xls", "xlsx") & !is.na(onglet) | !type %in% c("xls", "xlsx"))))
-})
-test_that("Teste l'existence de l'onglet", {
   expect_true(all(with(ld, type %in% c("xls", "xlsx") & !is.na(premiere_ligne) | !type %in% c("xls", "xlsx"))))
 })
