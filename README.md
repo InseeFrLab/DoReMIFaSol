@@ -5,6 +5,7 @@
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/pierre-lamarche/DoReMIFaSol.svg?branch=master)](https://travis-ci.com/pierre-lamarche/doremifasol)
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Coverage Status](https://coveralls.io/repos/github/pierre-lamarche/doremifasol/badge.svg?branch=master)](https://coveralls.io/github/pierre-lamarche/doremifasol?branch=master)
 <!-- badges: end -->
 
 ## Français
