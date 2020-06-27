@@ -30,6 +30,9 @@ test_that("Importation type CSV - output data.frame", {
 test_that("Importation type XLS - output data.frame", {
   expect_true(class(telechargerDonnees("FILOSOFI_COM", date = "2014")) == "data.frame")
 })
+test_that("Importation type XLS - import de tous les onglets", {
+  expect_true(class(telechargerDonnees("ESTEL_T201")) == "data.frame")
+})
 ## test import de données XLSX
 test_that("Importation type XLSX - output data.frame", {
   expect_true(class(telechargerDonnees("AIRE_URBAINE")) == "data.frame")
