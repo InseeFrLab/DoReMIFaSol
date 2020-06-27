@@ -60,12 +60,23 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
     #res <- readr::read_delim(fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE, ...)
   }
   else if (caract$type == "xls") {
-    args <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
+    args <- list(path = fichierAImporter, skip = caract$premiere_ligne - 1)
     if (!is.na(caract$derniere_ligne))
       args[["n_max"]] <- caract$derniere_ligne - caract$premiere_ligne
     if (!is.na(caract$valeurs_manquantes))
       args[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
-    res <- do.call(readxl::read_xls, args)
+    if (!is.na(caract$onglet)) {
+      args[["sheet"]] <- caract$onglet
+      res <- do.call(readxl::read_xls, args)
+    } else {
+      res_int <- lapply(readxl::excel_sheets(fichierAImporter), function(x) {
+        args[["sheet"]] <- x
+        table <- do.call(readxl::read_xls, args)
+        table$onglet <- x
+        return(table)
+      })
+      res <- do.call(rbind, res_int)
+    }
   }
   else if (caract$type == "xlsx")
     res <- readxl::read_xlsx(fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
