@@ -3,7 +3,9 @@ AIRE_URBAINE,Liste des Aires Urbaines 2010,,https://www.insee.fr/fr/statistiques
 AIRE_URBAINE_COM,Composition communale des Aires Urbaines 2010,,https://www.insee.fr/fr/statistiques/fichier/2115011/AU2010_au_01-01-2020.zip,xlsx,TRUE,AU2010 au 01-01-2020.xlsx,,Composition_communale,6,,,,
 BPE_ENS,Base Permanente des Équipements – Ensemble,01/01/2018,https://www.insee.fr/fr/statistiques/fichier/3568629/bpe18_ensemble_csv.zip,csv,TRUE,bpe18_ensemble.csv,varmod_bpe18_ensemble.csv,,,,""";""",,
 BPE_ENS_XY,Base Permanente des Équipements – Géolocalisé,01/01/2018,https://www.insee.fr/fr/statistiques/fichier/3568638/bpe18_ensemble_xy_csv.zip,csv,TRUE,bpe18_ensemble_xy.csv,varmod_bpe18_ensemble_xy.csv,,,,""";""",,
-COG_COMMUNE,Code Officiel Géographique – 2019,01/01/2019,https://www.insee.fr/fr/statistiques/fichier/3720946/cog_ensemble_2019_csv.zip,csv,TRUE,communes-01012019.csv,,,,,""",""",,
+COG_COMMUNE,"Code Officiel Géographique, niveau commune – 2019",01/01/2019,https://www.insee.fr/fr/statistiques/fichier/3720946/cog_ensemble_2019_csv.zip,csv,TRUE,communes-01012019.csv,,,,,""",""",,
+COG_DEPARTEMENT,"Code Officiel Géographique, niveau département – 2019",01/01/2019,https://www.insee.fr/fr/statistiques/fichier/3720946/departement2019-csv.zip,csv,TRUE,departement2019.csv,,,,,""",""",,
+COG_REGION,"Code Officiel Géographique, niveau région – 2019",01/01/2019,https://www.insee.fr/fr/statistiques/fichier/3720946/region2019-csv.zip,csv,TRUE,region2019.csv,,,,,""",""",,
 COG_COMMUNE,Code Officiel Géographique – 2018,01/01/2018,https://www.insee.fr/fr/statistiques/fichier/3363419/comsimp2018-txt.zip,csv,TRUE,comsimp2018.txt,,,,,"""\t""",latin1,
 ESTEL_T201,"Estimations d’Emploi Localisées, selon le statut et le secteur d’activité – 2015",31/12/2015,https://www.insee.fr/fr/statistiques/fichier/3202697/irsocee2016_loc_excel.zip,xls,TRUE,T201.xls,,,5,122,,,nd
 ESTEL_T202,"Estimations d’Emploi Localisées, selon le sexe et le secteur d’activité  – 2015",31/12/2015,https://www.insee.fr/fr/statistiques/fichier/3202697/irsocee2016_loc_excel.zip,xls,TRUE,T202.xls,,,5,122,,,nd
