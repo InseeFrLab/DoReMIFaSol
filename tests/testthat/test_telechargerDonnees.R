@@ -22,6 +22,11 @@ test_that("Spécification du dossier de stockage", {
   expect_true(file.exists("test_dl/bpe18_ensemble_csv.zip"))
   unlink("test_dl", recursive = TRUE)
 })
+## test utilisation du cache
+test_that("Utilisation du cache", {
+  temp <- telechargerDonnees("ESTEL_T201", date = "2016")
+  expect_message(telechargerDonnees("ESTEL_T202", date = "2016"), "utilisation du cache")
+})
 ## test import de données CSV
 test_that("Importation type CSV - output data.frame", {
   expect_true(class(telechargerDonnees("COG_COMMUNE", date = "2019")) == "data.frame")
@@ -31,7 +36,7 @@ test_that("Importation type XLS - output data.frame", {
   expect_true(class(telechargerDonnees("FILOSOFI_COM", date = "2014")) == "data.frame")
 })
 test_that("Importation type XLS - import de tous les onglets", {
-  expect_true(class(telechargerDonnees("ESTEL_T201", date = "2016")) == "data.frame")
+  expect_true(class(telechargerDonnees("ESTEL_T201", date = "31/12/2016")) == "data.frame")
 })
 ## test import de données XLSX
 test_that("Importation type XLSX - output data.frame", {
