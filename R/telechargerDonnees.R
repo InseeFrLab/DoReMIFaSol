@@ -57,6 +57,8 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
     args <- list(file = fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE, ...)
     if (!is.na(caract$encoding))
       args[["locale"]] <- readr::locale(encoding = caract$encoding)
+    if (!is.na(caract$valeurs_manquantes))
+      args[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
     res <- do.call(readr::read_delim, args)  
     #res <- readr::read_delim(fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE, ...)
   }
