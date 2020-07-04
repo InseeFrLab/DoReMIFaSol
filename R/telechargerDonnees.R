@@ -52,7 +52,7 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
       fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees)
     }
   } else {
-    if (stringi::stri_match_last_regex(fic, "^*.(\\w*)$")[, 2] != caract$type) 
+    if (stringi::stri_match_last_regex(fichierAImporter, "^*.(\\w*)$")[, 2] != caract$type) 
       stop("le fichier t\u00e9l\u00e9charg\u00e9 n'est pas du type attendu.")
     fichierAImporter <- nomFichier
   }
