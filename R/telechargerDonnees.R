@@ -43,7 +43,12 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, ...) {
     if (substr(nomFichier, nchar(nomFichier) - 3, nchar(nomFichier)) != ".zip") {
       stop("Le fichier t\u00e9l\u00e9charg\u00e9 n'est pas une archive zip.")
     } else {
-      unzip(nomFichier, exdir = telDir)
+      if (!caract$big_zip)
+        unzip(nomFichier, exdir = telDir) else {
+          if (Sys.info()$sysname == "Linux")
+            system(paste0("unzip -d ", telDir, " ", nomFichier)) else 
+              unzip(nomFichier, exdir = telDir)
+        }
       fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees)
     }
   } else {
