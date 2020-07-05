@@ -51,10 +51,10 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, vars=NULL, ...) 
     } else {
       if (!caract$big_zip)
         unzip(nomFichier, exdir = telDir) else {
-          if (Sys.info()['sysname'] == "Linux")
-            system(paste0("unzip -d ", telDir, " ", nomFichier)) else 
-              unzip(nomFichier, exdir = telDir)
-        }
+          unz <- tryCatch(unzip(nomFichier, exdir = telDir, unzip = "unzip"))
+          if (!is.null(unz))
+            stop(unz$message)
+          }
       fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees)
     }
   } else {
