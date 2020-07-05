@@ -1,8 +1,8 @@
 library(doremifasol)
 ## test que toutes les url de la table ld fonctionnent
-test_that("Teste l'ensemble des URL de la liste", {
-  expect_true(all(sapply(unique(ld$lien), url.exists)))
-})
+# test_that("Teste l'ensemble des URL de la liste", {
+#   expect_true(all(sapply(unique(ld$lien), url.exists)))
+# })
 ## test unicité du couple nom - date_ref
 test_that("Teste l'unicité du couple nom - millésime", {
   expect_true(all(!duplicated(ld[, c("nom", "date_ref")])))
