@@ -39,7 +39,7 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, vars=NULL, ...) 
   if (is.null(telDir))
     telDir <- tempdir()
   
-  nomFichier <- paste0(telDir, "/", tail(unlist(strsplit(caract$lien, "/")), n=1L))
+  nomFichier <- file.path(dirname(telDir), basename(telDir), "/", tail(unlist(strsplit(caract$lien, "/")), n=1L))
   #stringr::str_extract(url, "^*([^/]*)$")
   if (!file.exists(nomFichier))
     download.file(url = caract$lien, destfile = nomFichier) else
