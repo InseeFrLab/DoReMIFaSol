@@ -37,7 +37,7 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, vars=NULL, ...) 
   
   #dossier de téléchargement # si NULL aller dans le cache
   if (is.null(telDir))
-    telDir <- tempdir()
+    telDir <- rappdirs::user_cache_dir()
   
   nomFichier <- file.path(dirname(telDir), basename(telDir), tail(unlist(strsplit(caract$lien, "/")), n=1L))
   #stringr::str_extract(url, "^*([^/]*)$")
