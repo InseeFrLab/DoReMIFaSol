@@ -36,14 +36,20 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, vars=NULL, ...) 
   }
   
   #dossier de téléchargement # si NULL aller dans le cache
-  if (is.null(telDir))
+  cache <- FALSE
+  if (is.null(telDir)) {
     telDir <- rappdirs::user_cache_dir()
+    cache <- TRUE
+  }
   
   nomFichier <- file.path(dirname(telDir), basename(telDir), tail(unlist(strsplit(caract$lien, "/")), n=1L))
   #stringr::str_extract(url, "^*([^/]*)$")
-  if (!file.exists(nomFichier))
-    download.file(url = caract$lien, destfile = nomFichier) else
-      message("utilisation du cache")
+  if (!file.exists(nomFichier)) {
+    download.file(url = caract$lien, destfile = nomFichier)
+    if (cache)
+      message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es ont \u00e9t\u00e9 t\u00e9l\u00e9charg\u00e9es par d\u00e9faut dans le dossier: ", telDir)
+  } else
+    message("Utilisation du cache")
   
   if (caract$zip) {
     if (substr(nomFichier, nchar(nomFichier) - 3, nchar(nomFichier)) != ".zip") {
@@ -54,7 +60,7 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, vars=NULL, ...) 
           unz <- tryCatch(unzip(nomFichier, exdir = telDir, unzip = "unzip"))
           if (!is.null(unz))
             stop(unz$message)
-          }
+        }
       fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees)
     }
   } else {
