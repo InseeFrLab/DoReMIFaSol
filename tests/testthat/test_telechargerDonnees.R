@@ -25,7 +25,7 @@ test_that("Spécification du dossier de stockage", {
 ## test utilisation du cache
 test_that("Utilisation du cache", {
   temp <- telechargerDonnees("ESTEL_T201", date = "2016")
-  expect_message(telechargerDonnees("ESTEL_T202", date = "2016"), "utilisation du cache")
+  expect_message(telechargerDonnees("ESTEL_T202", date = "2016"), "Utilisation du cache")
 })
 ## test import de données CSV
 test_that("Importation type CSV - output data.frame", {
