@@ -23,6 +23,8 @@ devtools::install_github('pierre-lamarche/doremifasol')
 
 ### Contribuer
 
+Agent du Service Statistique Public, ou utilisateur des données mises à disposition sur le site de l'Insee, vous constatez qu'il manque dans la [liste des données](https://github.com/pierre-lamarche/DoReMIFaSol/blob/master/data-raw/liste_donnees.csv) référencées dans `doremifasol` une source de données que vous utilisez ? Vous pouvez contribuer à `doremifasol`, sans nécessairement coder en `R`. Pour plus de détais, vous pouvez consulter la [documentation à ce sujet](https://github.com/pierre-lamarche/DoReMIFaSol/blob/master/CONTRIBUTING.md).
+
 
 ## English
 
@@ -37,3 +39,5 @@ devtools::install_github('pierre-lamarche/doremifasol')
 ```
 
 ### Contributing
+
+As non French-speaking user of Insee's website, you are using data that turn out not to be listed [there](https://github.com/pierre-lamarche/DoReMIFaSol/blob/master/data-raw/liste_donnees.csv) in the package `doremifasol`. You may notify the maintainer of this project and even more, could you code in `R` or not. Please report to the [dedicated documentation](https://github.com/pierre-lamarche/DoReMIFaSol/blob/master/CONTRIBUTING.md).
