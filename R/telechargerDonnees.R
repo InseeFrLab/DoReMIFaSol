@@ -38,7 +38,7 @@ telechargerDonnees <- function(donnees, date=NULL, telDir=NULL, vars=NULL, ...) 
   #dossier de téléchargement # si NULL aller dans le cache
   cache <- FALSE
   if (is.null(telDir)) {
-    telDir <- rappdirs::user_cache_dir()
+    telDir <- ifelse(.Platform$OS.type == "windows", tempdir(), rappdirs::user_cache_dir())
     cache <- TRUE
   }
   
