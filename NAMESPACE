@@ -2,6 +2,7 @@
 
 export(millesimesDisponibles)
 export(telechargerDonnees)
+export(telechargerFichier)
 importFrom(utils,download.file)
 importFrom(utils,read.csv)
 importFrom(utils,tail)
