@@ -56,7 +56,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL) {
   
   if (caract$zip)
     fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees) else
-      fichierAImporter <- fichierAImporter <- nomFichier
+      fichierAImporter <- nomFichier
   
   if (caract$type == "csv") {
     argsImport <- list(file = fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE)
@@ -74,5 +74,5 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL) {
   } else if (caract$type == "xlsx") {
     argsImport <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
   }
-  return(list(result = dl, zip = caract$zip, fileArchive = fileArchive, type = caract$type, argsImport = argsImport))
+  return(list(result = dl, zip = caract$zip, big_zip = caract$big_zip, fileArchive = fileArchive, type = caract$type, argsImport = argsImport))
 }
