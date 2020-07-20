@@ -12,5 +12,7 @@ millesimesDisponibles <- function(donnees) {
   if (!donnees %in% ld$nom)
     stop("Le param\u00e8tre donnees est mal sp\u00e9cifi\u00e9, la valeur n'est pas r\u00e9f\u00e9renc\u00e9e")
   liste <- with(ld, date_ref[nom == donnees])
-  return(ifelse(!any(duplicated(format(liste, "%Y"))), format(liste, "%Y"), liste))
+  if (!any(duplicated(format(liste, "%Y"))))
+    return(format(liste, "%Y")) else
+      return(liste)
 }
