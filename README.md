@@ -13,7 +13,7 @@
 
 ### De quoi s'agit-il ?
 
-`doremifasol` (Données en `R` Mise à disposition par l'Insee et Facilement Sollicitables) est un _package_ dont la vocation est d'agréger les données disponibles de l'Insee et d'en promouvoir l'utilité, en plaçant ces données sur le devant de la scène pour l'utilisateur, et de lui permettre d'en extraire facilement de l'information. Analyser, cartographier, dénombrer, sans payer le coût d'entrée pour trouver le bon lien ou importer les données en R. Idéal pour pratiquer son solfège en `R` sur données françaises.
+`doremifasol` (Données en `R` Mises à disposition par l'Insee et Facilement Sollicitables) est un _package_ dont la vocation est d'agréger les données disponibles de l'Insee et d'en promouvoir l'utilité, en plaçant ces données sur le devant de la scène pour l'utilisateur, et de lui permettre d'en extraire facilement de l'information. Analyser, cartographier, dénombrer, sans payer le coût d'entrée pour trouver le bon lien ou importer les données en R. Idéal pour pratiquer son solfège en `R` sur données françaises.
 
 Pour installer le package,
 
