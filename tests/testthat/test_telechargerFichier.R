@@ -48,3 +48,11 @@ test_that("Télécharger type XLS - output correct", {
 test_that("Télécharger type XLSX - output correct", {
   expect_true(telechargerFichier("AIRE_URBAINE")$result == 0)
 })
+## test spécification de l'encodage
+test_that("Télécharger des données avec un encodage spécifique", {
+  expect_true(!is.null(telechargerFichier("COG_COMMUNE", date = "2018")$locale))
+})
+## test spécification des valeurs manquantes
+test_that("Télécharger des données avec des valeurs manquantes spécifiques", {
+  expect_true(!is.null(telechargerFichier("ESTEL_T201", date = "2015")$na))
+})
