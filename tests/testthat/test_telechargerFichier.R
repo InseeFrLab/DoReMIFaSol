@@ -50,9 +50,9 @@ test_that("Télécharger type XLSX - output correct", {
 })
 ## test spécification de l'encodage
 test_that("Télécharger des données avec un encodage spécifique", {
-  expect_true(!is.null(telechargerFichier("COG_COMMUNE", date = "2018")$locale))
+  expect_true(!is.null(telechargerFichier("COG_COMMUNE", date = "2018")$argsImport$locale))
 })
 ## test spécification des valeurs manquantes
 test_that("Télécharger des données avec des valeurs manquantes spécifiques", {
-  expect_true(!is.null(telechargerFichier("ESTEL_T201", date = "2015")$na))
+  expect_true(!is.null(telechargerFichier("ESTEL_T201", date = "2015")$argsImport$na))
 })
