@@ -17,7 +17,6 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
   ## check download has worked
   if (is.null(telechargementFichier$result))
     stop("Le t\u00e9l\u00e9chargement a rencontr\u00e9 un probl\u00e8me.")
-  ## check the dl file exists
   
   ## unzip if necessary
   if (telechargementFichier$zip) {
@@ -32,6 +31,9 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
             stop(unz$message)
         }
     }
+    ## check the dl file exists
+    if (!file.exists(nomFichier))
+      stop("Le fichier t\u00e9l\u00e9charg\u00e9 est introuvable.")
   }
   ## warning on file extension
   fichierAImporter <- ifelse(telechargementFichier$type == "csv", telechargementFichier$argsImport$file, telechargementFichier$argsImport$path)
