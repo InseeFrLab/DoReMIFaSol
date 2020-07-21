@@ -33,6 +33,10 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
         }
     }
   }
+  ## warning on file extension
+  fichierAImporter <- ifelse(telechargementFichier$type == "csv", telechargementFichier$argsImport$file, telechargementFichier$argsImport$path)
+  if (stringi::stri_match_last_regex(fichierAImporter, "^*.(\\w*)$")[, 2] != telechargementFichier$type)
+    warning("L'extension du fichier diff\u00e8re du type de fichier.")
   ## import data
   if (telechargementFichier$type == "csv") {
     if (!is.null(vars)) {
