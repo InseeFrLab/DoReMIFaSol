@@ -15,13 +15,6 @@ test_that("Téléchargement de données sur le site de l'Insee", {
 test_that("Échec du téléchargement pour nom non existant", {
   expect_error(telechargerDonnees("TEST"), "Le paramètre donnees est mal spécifié, la valeur n'est pas référencée")
 })
-## spécification du dossier de stockage
-test_that("Spécification du dossier de stockage", {
-  dir.create("test_dl")
-  telechargerDonnees("BPE_ENS", telDir = "test_dl")
-  expect_true(file.exists("test_dl/bpe18_ensemble_csv.zip"))
-  unlink("test_dl", recursive = TRUE)
-})
 ## test utilisation du cache
 test_that("Utilisation du cache", {
   temp <- telechargerDonnees("ESTEL_T201", date = "2016")
