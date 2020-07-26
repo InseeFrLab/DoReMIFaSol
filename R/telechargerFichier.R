@@ -3,6 +3,7 @@
 #' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table [liste_donnees]
 #' @param date optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence.
 #' @param telDir optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, un dossier temporaire de cache.
+#' @param argsApi optionnel :
 #' 
 #' @details 
 #' La fonction permet de télécharger les données disponibles sur le site de l'Insee sous format csv, xls ou encore xlsx.
@@ -17,7 +18,7 @@
 #' }
 #' @importFrom utils download.file unzip read.csv tail
 #' @export
-telechargerFichier <- function(donnees, date=NULL, telDir=NULL) {
+telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
   ## check the parameter donnees takes a valid value
   if (!donnees %in% ld$nom)
     stop("Le param\u00e8tre donnees est mal sp\u00e9cifi\u00e9, la valeur n'est pas r\u00e9f\u00e9renc\u00e9e")
@@ -40,39 +41,58 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL) {
     cache <- TRUE
   }
   
-  nomFichier <- file.path(dirname(telDir), basename(telDir), tail(unlist(strsplit(caract$lien, "/")), n=1L))
-  if (!file.exists(nomFichier)) {
-    dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
-    if (cache)
-      message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es ont \u00e9t\u00e9 t\u00e9l\u00e9charg\u00e9es par d\u00e9faut dans le dossier: ", telDir)
+  ## télécharge les fichiers csv, xls, xlsx...
+  if (!caract$api_rest) {
+    nomFichier <- file.path(dirname(telDir), basename(telDir), tail(unlist(strsplit(caract$lien, "/")), n=1L))
+    if (!file.exists(nomFichier)) {
+      dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
+      if (cache)
+        message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es ont \u00e9t\u00e9 t\u00e9l\u00e9charg\u00e9es par d\u00e9faut dans le dossier: ", telDir)
+    } else {
+      dl <- 0
+      message("Utilisation du cache")
+    }
+    
+    if (caract$zip)
+      fileArchive <- nomFichier else 
+        fileArchive <- NULL
+      
+      if (caract$zip)
+        fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees) else
+          fichierAImporter <- nomFichier
+        
+        if (caract$type == "csv") {
+          argsImport <- list(file = fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE)
+          if (!is.na(caract$encoding))
+            argsImport[["locale"]] <- readr::locale(encoding = caract$encoding)
+          if (!is.na(caract$valeurs_manquantes))
+            argsImport[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
+        }
+        else if (caract$type == "xls") {
+          argsImport <- list(path = fichierAImporter, skip = caract$premiere_ligne - 1, sheet = caract$onglet)
+          if (!is.na(caract$derniere_ligne))
+            argsImport[["n_max"]] <- caract$derniere_ligne - caract$premiere_ligne
+          if (!is.na(caract$valeurs_manquantes))
+            argsImport[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
+        } else if (caract$type == "xlsx") {
+          argsImport <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
+        }
   } else {
-    dl <- 0
-    message("Utilisation du cache")
-  }
-  
-  if (caract$zip)
-    fileArchive <- nomFichier else 
-      fileArchive <- NULL
-  
-  if (caract$zip)
-    fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees) else
-      fichierAImporter <- nomFichier
-  
-  if (caract$type == "csv") {
-    argsImport <- list(file = fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE)
-    if (!is.na(caract$encoding))
-      argsImport[["locale"]] <- readr::locale(encoding = caract$encoding)
-    if (!is.na(caract$valeurs_manquantes))
-      argsImport[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
-  }
-  else if (caract$type == "xls") {
-    argsImport <- list(path = fichierAImporter, skip = caract$premiere_ligne - 1, sheet = caract$onglet)
-    if (!is.na(caract$derniere_ligne))
-      argsImport[["n_max"]] <- caract$derniere_ligne - caract$premiere_ligne
-    if (!is.na(caract$valeurs_manquantes))
-      argsImport[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
-  } else if (caract$type == "xlsx") {
-    argsImport <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
+  ## télécharge les données sur l'API
+    token <- apinsee::insee_auth()
+    if (!is.null(date))
+      argsApi <- c(date = date, argsApi)
+    if (is.null(argsApi$nombre)) {
+      argsApi[["nombre"]] <- 0
+      url <- httr::modify_url(caract$url, query = argsApi)
+      res <- httr::GET(url, httr::config(token = token), httr::write_memory())
+      argsApi[["nombre"]] <- httr::content(res)[[1]]$total
+    }
+    url <- httr::modify_url(caract$url, query = argsApi)
+    fichierAImporter <- paste0(telDir, "/", "sirene", paste(sample(0:9, 8, replace = TRUE), collapse = ""), ".json")
+    res <- httr::GET(url, httr::config(token = token), httr::write_disk(fichierAImporter), httr::progress())
+    dl <- ifelse(res$status == 200, 0, NULL)
+    argsImport <- list(path = fichierAImporter)
   }
   return(list(result = dl, zip = caract$zip, big_zip = caract$big_zip, fileArchive = fileArchive, type = caract$type, argsImport = argsImport))
 }
