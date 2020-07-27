@@ -89,10 +89,10 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
       argsApi[["nombre"]] <- httr::content(res)[[1]]$total
     }
     url <- httr::modify_url(caract$lien, query = argsApi)
-    fichierAImporter <- paste0(telDir, "/", "sirene", paste(sample(0:9, 8, replace = TRUE), collapse = ""), ".json")
+    fichierAImporter <- paste0(telDir, "/", caract$nom, paste(sample(0:9, 8, replace = TRUE), collapse = ""), ".json")
     res <- httr::GET(url, httr::config(token = token), httr::write_disk(fichierAImporter), httr::progress())
     dl <- ifelse(res$status == 200, 0, NULL)
-    argsImport <- list(path = fichierAImporter)
+    argsImport <- list(fichier = fichierAImporter, nom = caract$nom)
     fileArchive <- NULL
   }
   return(list(result = dl, zip = caract$zip, big_zip = caract$big_zip, fileArchive = fileArchive, type = caract$type, argsImport = argsImport))
