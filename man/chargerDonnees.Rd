@@ -14,7 +14,7 @@ chargerDonnees(telechargementFichier, vars = NULL, ...)
 \item{...}{des paramètres additionnels pour l'importation des données}
 }
 \value{
-un objet data.frame contenant les données téléchargées.
+un objet data.frame contenant les données téléchargées (sauf dans le cas des données téléchargées depuis les API, pour lesquelles ce sont généralement des listes contenant les différents objets data.fame).
 }
 \description{
 Charger les données téléchargées dans R
