@@ -84,7 +84,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
       argsApi <- c(date = date, argsApi)
     if (is.null(argsApi$nombre)) {
       argsApi[["nombre"]] <- 0
-      url <- httr::modify_url(caract$url, query = argsApi)
+      url <- httr::modify_url(caract$lien, query = argsApi)
       res <- httr::GET(url, httr::config(token = token), httr::write_memory())
       argsApi[["nombre"]] <- httr::content(res)[[1]]$total
     }
