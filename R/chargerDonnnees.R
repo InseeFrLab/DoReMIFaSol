@@ -54,8 +54,7 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       telechargementFichier$argsImport[["col_types"]] <- colsOnly
     }
     res <- as.data.frame(do.call(readr::read_delim, c(telechargementFichier$argsImport, ...))) 
-  
-    } else if (telechargementFichier$type == "xls") {
+  } else if (telechargementFichier$type == "xls") {
     if (!is.na(telechargementFichier$argsImport$sheet)) {
       res <- as.data.frame(do.call(readxl::read_xls, c(telechargementFichier$argsImport, ...)))
     } else {
@@ -67,14 +66,13 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       })
       res <- as.data.frame(do.call(rbind, res_int))
     }
-  
-      } else if (telechargementFichier$type == "xlsx") {
+  } else if (telechargementFichier$type == "xlsx") {
     res <- as.data.frame(do.call(readxl::read_xlsx, telechargementFichier$argsImport)) 
-    
-    } else if (telechargementFichier$type == "json") {
+  } else if (telechargementFichier$type == "json") {
+    if (!is.null(vars))
+      warning("Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
     res <- do.call(chargerDonneesJson, telechargementFichier$argsImport)
-    
-    } else stop("Type de fichier inconnu")
+  } else stop("Type de fichier inconnu")
   return(res)
 }
 
