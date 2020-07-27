@@ -1,9 +1,9 @@
 #' Téléchargement des données sur le site de l'Insee
 #'
-#' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table [liste_donnees]
+#' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table ([liste_donnees])
 #' @param date optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence.
 #' @param telDir optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, un dossier temporaire de cache.
-#' @param argsApi optionnel :
+#' @param argsApi optionnel : dans le cas où c'est une API REST qui est utilisée, il est possible de spécifier des paramètres spécifiques à cette API de manière à collecter l'information désirée. Cf. [@details ].
 #' 
 #' @details 
 #' La fonction permet de télécharger les données disponibles sur le site de l'Insee sous format csv, xls ou encore xlsx.
