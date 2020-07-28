@@ -78,7 +78,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
           argsImport <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
         }
   } else {
-  ## télécharge les données sur l'API
+    ## télécharge les données sur l'API
     token <- apinsee::insee_auth()
     if (!is.null(date))
       argsApi <- c(date = date, argsApi)
@@ -86,14 +86,39 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
       argsApi[["nombre"]] <- 0
       url <- httr::modify_url(caract$lien, query = argsApi)
       res <- httr::GET(url, httr::config(token = token), httr::write_memory())
-      argsApi[["nombre"]] <- httr::content(res)[[1]]$total
+      total <- httr::content(res)[[1]]$total
+    } else {
+      total <- argsApi[["nombre"]]
+      argsApi[["nombre"]] <- ifelse(total < 1000, total, 1000)
     }
+    if (is.null(argsApi[["tri"]]))
+      argsApi[["tri"]] <- "siren"
+    if (total > 1000)
+      argsApi[["curseur"]] <- "*"
+    nombrePages <- ceiling(total/1000)
     url <- httr::modify_url(caract$lien, query = argsApi)
-    fichierAImporter <- paste0(telDir, "/", caract$nom, paste(sample(0:9, 8, replace = TRUE), collapse = ""), ".json")
+    fichierAImporter <- paste0(telDir, "/", caract$nom, genererSuffixe(8), ".json")
     res <- httr::GET(url, httr::config(token = token), httr::write_disk(fichierAImporter), httr::progress())
-    dl <- ifelse(res$status == 200, 0, NULL)
+    resultat <- list(httr::content(res)$header)
+    if (nombrePages > 1) {
+      for (k in 2:nombrePages) {
+        argsApi[["curseur"]] <-httr::content(res)$header$curseurSuivant
+        url <- httr::modify_url(caract$lien, query = argsApi)
+        fichierAImporter <- c(fichierAImporter, paste0(telDir, "/", caract$nom, , "_", genererSuffixe(8), ".json"))
+        res <- httr::GET(url, httr::config(token = token), httr::write_disk(tail(fichierAImporter, 1)), httr::progress())
+        resultat <- c(resultat, list(httr::content(res)$header))
+      }
+    }
+    liste_statut <- lapply(resultat, function(x) return(x$statut))
+    dl <- ifelse(all(unlist(liste_statut) == 200), 0, NULL)
     argsImport <- list(fichier = fichierAImporter, nom = caract$nom)
     fileArchive <- NULL
   }
-  return(list(result = dl, zip = caract$zip, big_zip = caract$big_zip, fileArchive = fileArchive, type = caract$type, argsImport = argsImport))
+  return(list(result = resultat, zip = caract$zip, big_zip = caract$big_zip, fileArchive = fileArchive, type = caract$type, argsImport = argsImport))
+}
+
+genererSuffixe <- function(longueur) {
+  liste <- c(0:9, letters, LETTERS)
+  s <- paste(sample(liste, longueur, replace = TRUE), collapse = "")
+  return(s)
 }
