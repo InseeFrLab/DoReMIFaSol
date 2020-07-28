@@ -4,7 +4,14 @@
 \alias{telechargerDonnees}
 \title{Téléchargement des données sur le site de l'Insee}
 \usage{
-telechargerDonnees(donnees, date = NULL, telDir = NULL, vars = NULL, ...)
+telechargerDonnees(
+  donnees,
+  date = NULL,
+  telDir = NULL,
+  argsApi = NULL,
+  vars = NULL,
+  ...
+)
 }
 \arguments{
 \item{donnees}{le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table [liste_donnees]}
@@ -12,6 +19,8 @@ telechargerDonnees(donnees, date = NULL, telDir = NULL, vars = NULL, ...)
 \item{date}{optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence.}
 
 \item{telDir}{optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, un dossier temporaire de cache.}
+
+\item{argsApi}{optionnel : dans le cas où c'est une API REST qui est utilisée, il est possible de spécifier des paramètres spécifiques à cette API de manière à collecter l'information désirée.}
 
 \item{vars}{optionnel : un vecteur pour spécifier les variables à importer. Utile pour les données massives difficiles à charger en mémoire, voir @details .}
 
