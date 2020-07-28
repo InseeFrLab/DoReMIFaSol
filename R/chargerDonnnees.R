@@ -78,7 +78,7 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
 
 chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN")) {
   if (nom == "SIRENE_SIREN") {
-    donnees <- jsonlite::read_json(fichier)[[2]]
+    donnees <- do.call(c, lapply(fichier, function(x) jsonlite::read_json(x)[[2]]))
     unitesLegales <- lapply(donnees, function(x) data.frame(lapply(x[1:18], function(xx) ifelse(is.null(xx), NA, xx))))
     unitesLegales <- list(
       unitesExistantes = lapply(unitesLegales, function(x) if (is.null(x$unitePurgeeUniteLegale))
