@@ -81,7 +81,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
     ## télécharge les données sur l'API
     token <- apinsee::insee_auth()
     if (!is.null(date))
-      argsApi <- c(date = date, argsApi)
+      argsApi <- c(date = as.character(date), argsApi)
     if (is.null(argsApi$nombre)) {
       argsApi[["nombre"]] <- 0
       url <- httr::modify_url(caract$lien, query = argsApi)
@@ -104,7 +104,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
       for (k in 2:nombrePages) {
         argsApi[["curseur"]] <-httr::content(res)$header$curseurSuivant
         url <- httr::modify_url(caract$lien, query = argsApi)
-        fichierAImporter <- c(fichierAImporter, paste0(telDir, "/", caract$nom, , "_", genererSuffixe(8), ".json"))
+        fichierAImporter <- c(fichierAImporter, paste0(telDir, "/", caract$nom, "_", genererSuffixe(8), ".json"))
         res <- httr::GET(url, httr::config(token = token), httr::write_disk(tail(fichierAImporter, 1)), httr::progress())
         resultat <- c(resultat, list(httr::content(res)$header))
       }
@@ -114,7 +114,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
     argsImport <- list(fichier = fichierAImporter, nom = caract$nom)
     fileArchive <- NULL
   }
-  return(list(result = resultat, zip = caract$zip, big_zip = caract$big_zip, fileArchive = fileArchive, type = caract$type, argsImport = argsImport))
+  return(list(result = dl, zip = caract$zip, big_zip = caract$big_zip, fileArchive = fileArchive, type = caract$type, argsImport = argsImport))
 }
 
 genererSuffixe <- function(longueur) {
