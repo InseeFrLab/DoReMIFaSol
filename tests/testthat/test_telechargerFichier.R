@@ -56,3 +56,11 @@ test_that("Télécharger des données avec un encodage spécifique", {
 test_that("Télécharger des données avec des valeurs manquantes spécifiques", {
   expect_true(!is.null(telechargerFichier("ESTEL_T201", date = "2015")$argsImport$na))
 })
+## test dl sur l'API Sirene avec une date spécifiée
+test_that("Télécharger des données sur l'API à la date du jour", {
+  expect_true(telechargerFichier("SIRENE_SIRET", date = Sys.Date(), argsApi = list(nombre = 3000))$result == 0)
+})
+## test dl sur l'API Sirene avec une condition
+test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
+  expect_true(telechargerFichier("SIRENE_SIRET", argsApi = list(q = "dateCreationUniteLegale:1983-03-04"))$result == 0)
+})

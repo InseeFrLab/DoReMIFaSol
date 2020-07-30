@@ -15,3 +15,12 @@ test_that("Avertissement sur l'extension du fichier à importer", {
 test_that("Erreur non-existence du fichier de données", {
   expect_error(chargerDonnees(list(result = 0, zip = FALSE, type = "csv", argsImport = list(file = "test.csv"))), "Le fichier de données est introuvable.")
 })
+## test chargement données JSON issues de l'API Sirene
+test_that("Chargement des données JSON de l'API Sirene", {
+  options(httr_oob_default=TRUE)
+  dl <- telechargerFichier("SIRENE_SIREN", argsApi = list(nombre = 50))
+  donnees <- chargerDonnees(dl)
+  expect_true(length(donnees) == 3)
+  expect_true(all(unlist(lapply(donnees, is.data.frame))))
+  expect_warning(chargerDonnees(dl, vars = c("siren")), "Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
+})
