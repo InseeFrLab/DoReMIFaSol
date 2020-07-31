@@ -3,12 +3,6 @@
 language: R
 cache: packages
 
-steps:
-  - shell: bash
-    env:
-      INSEE_APP_KEY: ${{ secrets.INSEE_APP_KEY }}
-      INSEE_APP_SECRET: $${{ secrets.INSEE_APP_SECRET }}
-
 r_packages:
   - covr
 
