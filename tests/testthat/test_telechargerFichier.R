@@ -58,9 +58,13 @@ test_that("Télécharger des données avec des valeurs manquantes spécifiques",
 })
 ## test dl sur l'API Sirene avec une date spécifiée
 test_that("Télécharger des données sur l'API à la date du jour", {
+  skip_if_no_app()
+  check_configuration()
   expect_true(telechargerFichier("SIRENE_SIRET", date = Sys.Date(), argsApi = list(nombre = 3000))$result == 0)
 })
 ## test dl sur l'API Sirene avec une condition
 test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
+  skip_if_no_app()
+  check_configuration()
   expect_true(telechargerFichier("SIRENE_SIRET", argsApi = list(q = "dateCreationUniteLegale:1983-03-04"))$result == 0)
 })

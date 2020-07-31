@@ -17,6 +17,8 @@ test_that("Erreur non-existence du fichier de données", {
 })
 ## test chargement données JSON issues de l'API Sirene
 test_that("Chargement des données JSON de l'API Sirene", {
+  skip_if_no_app()
+  check_configuration()
   dl <- telechargerFichier("SIRENE_SIREN", argsApi = list(nombre = 50))
   donnees <- chargerDonnees(dl)
   expect_true(length(donnees) == 3)
