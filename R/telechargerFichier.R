@@ -6,7 +6,7 @@
 #' @param argsApi optionnel : dans le cas où c'est une API REST qui est utilisée, il est possible de spécifier des paramètres spécifiques à cette API de manière à collecter l'information désirée. Cf. [@details ].
 #' 
 #' @details 
-#' La fonction permet de télécharger les données disponibles sur le site de l'Insee sous format csv, xls ou encore xlsx.
+#' La fonction permet de télécharger les données disponibles sur le site de l'Insee sous format csv, xls ou encore xlsx. Elle permet également, de manière expérimentale, de requêter certaines API REST de l'Insee ; ces services peuvent être repérés dans la table ([liste_donnees]) grâce à la variable `api_rest`.
 #'
 #' @return une liste contenant le résultat du téléchargement et les informations pour l'importation des données en R.
 #' @export
