@@ -39,6 +39,9 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
   if (is.null(telDir)) {
     telDir <- ifelse(.Platform$OS.type == "windows", tempdir(), rappdirs::user_cache_dir())
     cache <- TRUE
+  } else {
+    if (!dir.exists(telDir))
+      dir.create(telDir)
   }
   
   ## télécharge les fichiers csv, xls, xlsx...
@@ -89,8 +92,8 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
       total <- httr::content(res)[[1]]$total
     } else {
       total <- argsApi[["nombre"]]
-      argsApi[["nombre"]] <- ifelse(total < 1000, total, 1000)
     }
+    argsApi[["nombre"]] <- ifelse(total < 1000, total, 1000)
     if (is.null(argsApi[["tri"]]))
       argsApi[["tri"]] <- "siren"
     if (total > 1000)
