@@ -119,7 +119,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
     }
     dl <- NULL
     if (all(resultat == 200))
-      dl <- 1
+      dl <- 0
     argsImport <- list(fichier = fichierAImporter, nom = caract$nom)
     fileArchive <- NULL
   }
