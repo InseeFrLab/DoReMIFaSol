@@ -102,18 +102,19 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
     url <- httr::modify_url(caract$lien, query = argsApi)
     fichierAImporter <- paste0(telDir, "/", caract$nom, genererSuffixe(8), ".json")
     res <- httr::GET(url, httr::config(token = token), httr::write_disk(fichierAImporter), httr::progress())
-    resultat <- list(httr::content(res)$header)
+    resultat <- res$status_code
     if (nombrePages > 1) {
       for (k in 2:nombrePages) {
         argsApi[["curseur"]] <-httr::content(res)$header$curseurSuivant
         url <- httr::modify_url(caract$lien, query = argsApi)
         fichierAImporter <- c(fichierAImporter, paste0(telDir, "/", caract$nom, "_", genererSuffixe(8), ".json"))
         res <- httr::GET(url, httr::config(token = token), httr::write_disk(tail(fichierAImporter, 1)), httr::progress())
-        resultat <- c(resultat, list(httr::content(res)$header))
+        resultat <- c(resultat, res$status_code)
       }
     }
-    liste_statut <- lapply(resultat, function(x) return(x$statut))
-    dl <- ifelse(all(unlist(liste_statut) == 200), 0, NULL)
+    dl <- NULL
+    if (all(resultat == 200))
+      dl <- 1
     argsImport <- list(fichier = fichierAImporter, nom = caract$nom)
     fileArchive <- NULL
   }
