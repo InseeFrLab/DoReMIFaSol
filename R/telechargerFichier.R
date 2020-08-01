@@ -109,6 +109,11 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
         url <- httr::modify_url(caract$lien, query = argsApi)
         fichierAImporter <- c(fichierAImporter, paste0(telDir, "/", caract$nom, "_", genererSuffixe(8), ".json"))
         res <- httr::GET(url, httr::config(token = token), httr::write_disk(tail(fichierAImporter, 1)), httr::progress())
+        while (res$status_code == 429) {
+          Sys.sleep(10)
+          message("Nouvelle tentative...")
+          res <- httr::GET(url, httr::config(token = token), httr::write_disk(tail(fichierAImporter, 1), overwrite = TRUE), httr::progress())
+        }
         resultat <- c(resultat, res$status_code)
       }
     }
