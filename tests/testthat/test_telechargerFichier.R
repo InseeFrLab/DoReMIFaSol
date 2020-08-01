@@ -67,3 +67,9 @@ test_that("Télécharger des données sur l'API pour les entreprises créées un
   check_configuration()
   expect_true(telechargerFichier("SIRENE_SIRET", argsApi = list(q = "dateCreationUniteLegale:1983-03-04"))$result == 0)
 })
+## test dl sur l'API Sirene d'un gros volume respectant la contrainte du nombre de requêtes par minute
+test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
+  skip_if_no_app()
+  check_configuration()
+  expect_true(telechargerFichier("SIRENE_SIREN", argsApi = list(nombre = 60000))$result == 0)
+})
