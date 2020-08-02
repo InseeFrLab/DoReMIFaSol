@@ -76,9 +76,9 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
   return(res)
 }
 
-chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN")) {
+chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET")) {
+  donnees <- do.call(c, lapply(fichier, function(x) jsonlite::read_json(x)[[2]]))
   if (nom == "SIRENE_SIREN") {
-    donnees <- do.call(c, lapply(fichier, function(x) jsonlite::read_json(x)[[2]]))
     unitesLegales <- lapply(donnees, function(x) data.frame(lapply(x[1:18], function(xx) ifelse(is.null(xx), NA, xx))))
     unitesLegales <- list(
       unitesExistantes = lapply(unitesLegales, function(x) if (is.null(x$unitePurgeeUniteLegale))
@@ -91,5 +91,40 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN")) {
     periodesUnitesLegales <- lapply(periodesUnitesLegales, function(x) list(siren = x$siren, donnees = lapply(x$donnees, function(xx) lapply(xx, function(xxx) ifelse(is.null(xxx), NA, xxx)))))
     periodesUnitesLegales <- lapply(periodesUnitesLegales, function(x) do.call(rbind, lapply(x$donnees, function(xx) data.frame(siren = x$siren, xx))))
     return(c(unitesLegales, list(periodesUnitesLegales = do.call(rbind, periodesUnitesLegales))))
+  } else if (nom == "SIRENE_SIRET") {
+    ## table etablissements
+    etablissements <- lapply(donnees, function(x) data.frame(lapply(x[1:11], function(xx) ifelse(is.null(xx), NA, xx))))
+    etablissements <- do.call(rbind, etablissements)
+    ## table unitesLegales
+    unitesLegales <- transformeListe(donnees, c("siret", "siren"), "uniteLegale", 2)
+    unitesLegales <- list(
+      unitesExistantes = lapply(unitesLegales, function(x) if (is.null(x$unitePurgeeUniteLegale))
+        return(x)),
+      unitesPurgees = lapply(unitesLegales, function(x) if (!is.null(x$unitePurgeeUniteLegale))
+        return(x))
+    )
+    unitesLegales <- lapply(unitesLegales, function(x) do.call(rbind, x))
+    ## table adresseEtablissement
+    adresseEtablissement <- transformeListe(donnees, c("siret", "siren"), "adresseEtablissement", 2)
+    ## table adresse2Etablissement
+    adresse2Etablissement <- transformeListe(donnees, c("siret", "siren"), "adresse2Etablissement", 2)
+    ## table periodesEtablissement
+    periodesEtablissement <- transformeListe(donnees, c("siret", "siren"), "periodesEtablissement", 3)
+    return(list(etablissement = etablissements, unitesExistantes = unitesLegales$unitesExistantes, unitesPurgees = unitesLegales$unitesPurgees,
+                adresseEtablissement = adresseEtablissement, adresse2Etablissement = adresse2Etablissement, 
+                periodesEtablissement = periodesEtablissement))
   }
 }
+
+## liste de liste en data.frame
+transformeListe <- function(liste, identifiant, nomTable, niveau = 2:3) {
+  if (niveau == 2) {
+  don <- lapply(liste, function(x) return(list(id = x[identifiant], table = lapply(x[[nomTable]], function(xx) ifelse(is.null(xx), NA, xx)))))
+  don <- lapply(don, function(x) data.frame(x$id, x$table))
+  } else {
+    don <- lapply(liste, function(x) return(list(id = x[identifiant], table = lapply(x[[nomTable]], function(x) lapply(x, function(xx) ifelse(is.null(xx), NA, xx))))))
+    don <- lapply(don, function(x) do.call(rbind, lapply(x$table, function(xx) data.frame(x$id, xx))))
+  }
+  return(don)
+}
+
