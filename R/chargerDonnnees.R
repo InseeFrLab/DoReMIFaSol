@@ -106,10 +106,13 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET"))
     unitesLegales <- lapply(unitesLegales, function(x) do.call(rbind, x))
     ## table adresseEtablissement
     adresseEtablissement <- transformeListe(donnees, c("siret", "siren"), "adresseEtablissement", 2)
+    adresseEtablissement <- do.call(rbind, adresseEtablissement)
     ## table adresse2Etablissement
     adresse2Etablissement <- transformeListe(donnees, c("siret", "siren"), "adresse2Etablissement", 2)
+    adresse2Etablissement <- do.call(rbind, adresse2Etablissement)
     ## table periodesEtablissement
     periodesEtablissement <- transformeListe(donnees, c("siret", "siren"), "periodesEtablissement", 3)
+    periodesEtablissement <- do.call(rbind, periodesEtablissement)
     return(list(etablissement = etablissements, unitesExistantes = unitesLegales$unitesExistantes, unitesPurgees = unitesLegales$unitesPurgees,
                 adresseEtablissement = adresseEtablissement, adresse2Etablissement = adresse2Etablissement, 
                 periodesEtablissement = periodesEtablissement))
