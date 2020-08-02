@@ -87,10 +87,9 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET"))
         return(x))
     )
     unitesLegales <- lapply(unitesLegales, function(x) do.call(rbind, x))
-    periodesUnitesLegales <- lapply(donnees, function(x) return(list(siren = x$siren, donnees = x$periodesUniteLegale)))
-    periodesUnitesLegales <- lapply(periodesUnitesLegales, function(x) list(siren = x$siren, donnees = lapply(x$donnees, function(xx) lapply(xx, function(xxx) ifelse(is.null(xxx), NA, xxx)))))
-    periodesUnitesLegales <- lapply(periodesUnitesLegales, function(x) do.call(rbind, lapply(x$donnees, function(xx) data.frame(siren = x$siren, xx))))
-    return(c(unitesLegales, list(periodesUnitesLegales = do.call(rbind, periodesUnitesLegales))))
+    periodesUnitesLegales <- transformeListe(donnees, "siren", "periodesUniteLegale", 3)
+    periodesUnitesLegales <- do.call(rbind, periodesUnitesLegales)
+    return(c(unitesLegales, list(periodesUnitesLegales = periodesUnitesLegales)))
   } else if (nom == "SIRENE_SIRET") {
     ## table etablissements
     etablissements <- lapply(donnees, function(x) data.frame(lapply(x[1:11], function(xx) ifelse(is.null(xx), NA, xx))))
