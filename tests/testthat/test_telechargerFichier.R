@@ -26,7 +26,6 @@ test_that("Échec du téléchargement pour nom non existant", {
 })
 ## spécification du dossier de stockage
 test_that("Spécification du dossier de stockage", {
-  dir.create("test_dl")
   dl <- telechargerFichier("BPE_ENS", telDir = "test_dl")
   expect_true(file.exists("test_dl/bpe18_ensemble_csv.zip"))
   unlink("test_dl", recursive = TRUE)
@@ -55,4 +54,22 @@ test_that("Télécharger des données avec un encodage spécifique", {
 ## test spécification des valeurs manquantes
 test_that("Télécharger des données avec des valeurs manquantes spécifiques", {
   expect_true(!is.null(telechargerFichier("ESTEL_T201", date = "2015")$argsImport$na))
+})
+## test dl sur l'API Sirene avec une date spécifiée
+test_that("Télécharger des données sur l'API à la date du jour", {
+  skip_if_no_app()
+  check_configuration()
+  expect_true(telechargerFichier("SIRENE_SIRET", date = Sys.Date(), argsApi = list(nombre = 3000))$result == 0)
+})
+## test dl sur l'API Sirene avec une condition
+test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
+  skip_if_no_app()
+  check_configuration()
+  expect_true(telechargerFichier("SIRENE_SIRET", argsApi = list(q = "dateCreationUniteLegale:1983-03-04"))$result == 0)
+})
+## test dl sur l'API Sirene d'un gros volume respectant la contrainte du nombre de requêtes par minute
+test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
+  skip_if_no_app()
+  check_configuration()
+  expect_true(telechargerFichier("SIRENE_SIREN", argsApi = list(nombre = 60000))$result == 0)
 })

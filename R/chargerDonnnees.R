@@ -7,7 +7,7 @@
 #' @details 
 #' Les données mises à disposition sont en général des tables de taille raisonnable, qui peuvent être chargées sans problème en mémoire sur un large spectre de machines. Néanmoins, pour certaines données (telles celles du Recensement de Population ou encore SIRENE), les données sont très volumineuses et exigent donc des machines très performantes. L'utilisateur a donc la possibilité de choisir les variables qui l'intéressent et de ne charger que ces dernières en mémoire, de manière à être parcimonieux.
 #'
-#' @return un objet data.frame contenant les données téléchargées.
+#' @return un objet data.frame contenant les données téléchargées (sauf dans le cas des données téléchargées depuis les API, pour lesquelles ce sont généralement des listes contenant les différents objets data.fame).
 #' @export
 #'
 #' @examples \dontrun{
@@ -36,7 +36,9 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       stop("Le fichier t\u00e9l\u00e9charg\u00e9 est introuvable.")
   }
   ## warning on file extension
-  fichierAImporter <- ifelse(telechargementFichier$type == "csv", telechargementFichier$argsImport$file, telechargementFichier$argsImport$path)
+  fichierAImporter <- ifelse(telechargementFichier$type == "csv", telechargementFichier$argsImport$file, 
+                             ifelse(telechargementFichier$type == "json", telechargementFichier$argsImport$fichier, 
+                                    telechargementFichier$argsImport$path))
   if (stringi::stri_match_last_regex(fichierAImporter, "^*.(\\w*)$")[, 2] != telechargementFichier$type)
     warning("L'extension du fichier diff\u00e8re du type de fichier.")
   ## check the file to import exists
@@ -51,10 +53,10 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       colsOnly$cols <- listvar
       telechargementFichier$argsImport[["col_types"]] <- colsOnly
     }
-    res <- do.call(readr::read_delim, c(telechargementFichier$argsImport, ...)) 
+    res <- as.data.frame(do.call(readr::read_delim, c(telechargementFichier$argsImport, ...))) 
   } else if (telechargementFichier$type == "xls") {
     if (!is.na(telechargementFichier$argsImport$sheet)) {
-      res <- do.call(readxl::read_xls, c(telechargementFichier$argsImport, ...))
+      res <- as.data.frame(do.call(readxl::read_xls, c(telechargementFichier$argsImport, ...)))
     } else {
       res_int <- lapply(readxl::excel_sheets(telechargementFichier$argsImport$path), function(x) {
         telechargementFichier$argsImport[["sheet"]] <- x
@@ -62,10 +64,69 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
         table$onglet <- x
         return(table)
       })
-      res <- do.call(rbind, res_int)
+      res <- as.data.frame(do.call(rbind, res_int))
     }
-  } else if (telechargementFichier$type == "xlsx")
-    res <- do.call(readxl::read_xlsx, telechargementFichier$argsImport)
-  else stop("Type de fichier inconnu")
-  return(as.data.frame(res))
+  } else if (telechargementFichier$type == "xlsx") {
+    res <- as.data.frame(do.call(readxl::read_xlsx, telechargementFichier$argsImport)) 
+  } else if (telechargementFichier$type == "json") {
+    if (!is.null(vars))
+      warning("Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
+    res <- do.call(chargerDonneesJson, telechargementFichier$argsImport)
+  } else stop("Type de fichier inconnu")
+  return(res)
 }
+
+chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET")) {
+  donnees <- do.call(c, lapply(fichier, function(x) jsonlite::read_json(x)[[2]]))
+  if (nom == "SIRENE_SIREN") {
+    unitesLegales <- lapply(donnees, function(x) data.frame(lapply(x[1:18], function(xx) ifelse(is.null(xx), NA, xx))))
+    unitesLegales <- list(
+      unitesExistantes = lapply(unitesLegales, function(x) if (is.null(x$unitePurgeeUniteLegale))
+        return(x)),
+      unitesPurgees = lapply(unitesLegales, function(x) if (!is.null(x$unitePurgeeUniteLegale))
+        return(x))
+    )
+    unitesLegales <- lapply(unitesLegales, function(x) do.call(rbind, x))
+    periodesUnitesLegales <- transformeListe(donnees, "siren", "periodesUniteLegale", 3)
+    periodesUnitesLegales <- do.call(rbind, periodesUnitesLegales)
+    return(c(unitesLegales, list(periodesUnitesLegales = periodesUnitesLegales)))
+  } else if (nom == "SIRENE_SIRET") {
+    ## table etablissements
+    etablissements <- lapply(donnees, function(x) data.frame(lapply(x[1:11], function(xx) ifelse(is.null(xx), NA, xx))))
+    etablissements <- do.call(rbind, etablissements)
+    ## table unitesLegales
+    unitesLegales <- transformeListe(donnees, c("siret", "siren"), "uniteLegale", 2)
+    unitesLegales <- list(
+      unitesExistantes = lapply(unitesLegales, function(x) if (is.null(x$unitePurgeeUniteLegale))
+        return(x)),
+      unitesPurgees = lapply(unitesLegales, function(x) if (!is.null(x$unitePurgeeUniteLegale))
+        return(x))
+    )
+    unitesLegales <- lapply(unitesLegales, function(x) do.call(rbind, x))
+    ## table adresseEtablissement
+    adresseEtablissement <- transformeListe(donnees, c("siret", "siren"), "adresseEtablissement", 2)
+    adresseEtablissement <- do.call(rbind, adresseEtablissement)
+    ## table adresse2Etablissement
+    adresse2Etablissement <- transformeListe(donnees, c("siret", "siren"), "adresse2Etablissement", 2)
+    adresse2Etablissement <- do.call(rbind, adresse2Etablissement)
+    ## table periodesEtablissement
+    periodesEtablissement <- transformeListe(donnees, c("siret", "siren"), "periodesEtablissement", 3)
+    periodesEtablissement <- do.call(rbind, periodesEtablissement)
+    return(list(etablissement = etablissements, unitesExistantes = unitesLegales$unitesExistantes, unitesPurgees = unitesLegales$unitesPurgees,
+                adresseEtablissement = adresseEtablissement, adresse2Etablissement = adresse2Etablissement, 
+                periodesEtablissement = periodesEtablissement))
+  }
+}
+
+## liste de liste en data.frame
+transformeListe <- function(liste, identifiant, nomTable, niveau = 2:3) {
+  if (niveau == 2) {
+  don <- lapply(liste, function(x) return(list(id = x[identifiant], table = lapply(x[[nomTable]], function(xx) ifelse(is.null(xx), NA, xx)))))
+  don <- lapply(don, function(x) data.frame(x$id, x$table))
+  } else {
+    don <- lapply(liste, function(x) return(list(id = x[identifiant], table = lapply(x[[nomTable]], function(x) lapply(x, function(xx) ifelse(is.null(xx), NA, xx))))))
+    don <- lapply(don, function(x) do.call(rbind, lapply(x$table, function(xx) data.frame(x$id, xx))))
+  }
+  return(don)
+}
+
