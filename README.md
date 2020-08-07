@@ -64,6 +64,18 @@ devtools::install_github('pierre-lamarche/doremifasol')
 
 #### Census data
 
+A first example of use of the package is related to the rolling Census implemented in France on a yearly basis. It concerns voluminous data that prove to be hard to load into R's memory on most of the machines. To adress the data size issue, the package `doremifasol` makes it possible to resize the data and only imports columns that are of interest for the user. Assume that one is interested in knowing the number of main residences for each municipality on the French territory, that one will only need three variables from the table `logement` (dwelling in French), `COMMUNE` the zip code, `IPONDL` the weight of the dwelling and `CATL` indicating the status of occupation:
+
+```r
+donnees_rp <- telechargerDonnees("RP_LOGEMENT", date = 2016, vars = c("COMMUNE", "IPONDL", "CATL"))
+```
+
+Once the data have been retrieved, it is possible to count the main residences for each municipality:
+
+```r
+count_hmr <- with(donnees_rp, aggregate(as.numeric(CATL == '1')*IPONDL, list(COMMUNE), sum))
+```
+
 #### Data on income distribution and poverty
 
 #### Data on employment
