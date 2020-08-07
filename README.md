@@ -25,7 +25,7 @@ devtools::install_github('pierre-lamarche/doremifasol')
 
 #### Les données du recensement de population
 
-Le premier exemple concerne les données du recensement librement accessibles sur le site de l'Insee. Ce sont des données très volumineuses, et sauf à disposer de capacités de calcul conséquentes, il n'est en général pas possible de charger l'ensemble des données en mémoire. Pour cela, le _package_ `doremifasol` permet de sélectionner les colonnes que l'on souhaite charger en mémoire, une fois le fichier téléchargé. Ainsi, un utilisateur qui voudrait connaître par commune le nombre de résidences principales aura besoin des variables `COMMUNE` - le code commune - et `CATL` - la catégorie d'occupation du logement - de la table `logement` :
+Le premier exemple concerne les données du recensement librement accessibles sur le site de l'Insee. Ce sont des données très volumineuses, et sauf à disposer de capacités de calcul conséquentes, il n'est en général pas possible de charger l'ensemble des données en mémoire. Pour cela, le _package_ `doremifasol` permet de sélectionner les colonnes que l'on souhaite charger en mémoire, une fois le fichier téléchargé. Ainsi, un utilisateur qui voudrait connaître par commune le nombre de résidences principales en 2016 aura besoin des variables `COMMUNE` - le code commune - et `CATL` - la catégorie d'occupation du logement - de la table `logement` :
 
 ```r
 donnees_rp <- telechargerDonnees("RP_LOGEMENT", date = 2016, vars = c("COMMUNE", "IPONDL", "CATL"))
@@ -39,9 +39,35 @@ comptage_rp <- with(donnees_rp, aggregate(as.numeric(CATL == '1')*IPONDL, list(C
 
 #### Filosofi
 
+L'Insee met également à disposition un certain nombre d'indicateurs relatifs à la distribution des revenus et à la pauvreté au niveau communal, voire infra-communal. Ces données sont mises à jour chaque année à partir des sources fiscales ; il s'agit de la source "Filosofi". Ainsi, il est possible de télécharger ces indicateurs au niveau de la commune, pour l'ensemble des ménages par exemple, grâce à la syntaxe suivante :
+
+```r
+donnees_filosofi <- telechargerDonnees("FILOSOFI_DISP_COM_ENS", date = 2017)
+```
+
+Ces données sont déclinées pour différentes catégories de ménages, et de la même manière peuvent être téléchargées grâce au _package_ `doremifasol`.
+
 #### Estimations localisées d'emploi en France
 
+De la même manière que les données fiscales permettent de fournir des statistiques à un niveau géographique fin, d'autres sources administratives permettent de construire des estimations du nombre d'emplois présents dans les différentes communes du territoire français. Il s'agit des Estimations d'Emploi Localisées, qu'il est possible de récupérer en `R` grâce à la syntaxe suivante :
+
+```r
+
+```
+
 #### Requêter une API REST : le répertoire d'entreprises Sirene
+
+Supposons que l'on cherche maintenant à récupérer l'ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l'API REST Sirene de l'Insee. Cette requête peut se faire facilement au travers de `doremifasol` de la manière suivante :
+
+```r
+etablissements <- telechargerDonnees("SIRENE_SIRET", argsApi = list(q = "dateCreationUniteLegale:2020-01-01"))
+```
+
+On fait alors face à une liste contenant plusieurs `data.frame` (6 au total) :
+* une table contenant l'ensemble des informations sur les établissements en question ;
+* deux tables contenant l'ensemble des informations sur les unités légales de ces établissements, en distinguant les unités dites purgées des autres ;
+* deux tables contenant les informations sur l'adresse de ces établissements ;
+* une table détaillant les informations historicisées de ces établissements - c'est-à-dire les différentes modifications qu'ont connues les établissements entre leur création et la date de référence - ici par défaut la date de téléchargement.
 
 ### Contribuer
 
@@ -64,7 +90,7 @@ devtools::install_github('pierre-lamarche/doremifasol')
 
 #### Census data
 
-A first example of use of the package is related to the rolling Census implemented in France on a yearly basis. It concerns voluminous data that prove to be hard to load into R's memory on most of the machines. To adress the data size issue, the package `doremifasol` makes it possible to resize the data and only imports columns that are of interest for the user. Assume that one is interested in knowing the number of main residences for each municipality on the French territory, that one will only need three variables from the table `logement` (dwelling in French), `COMMUNE` the zip code, `IPONDL` the weight of the dwelling and `CATL` indicating the status of occupation:
+A first example of use of the package is related to the rolling Census implemented in France on a yearly basis. It concerns voluminous data that prove to be hard to load into R's memory on most of the machines. To adress the data size issue, the package `doremifasol` makes it possible to resize the data and only imports columns that are of interest for the user. Assume that one is interested in knowing the number of main residences for each municipality on the French territory in 2016, that one will only need three variables from the table `logement` (dwelling in French), `COMMUNE` the zip code, `IPONDL` the weight of the dwelling and `CATL` indicating the status of occupation:
 
 ```r
 donnees_rp <- telechargerDonnees("RP_LOGEMENT", date = 2016, vars = c("COMMUNE", "IPONDL", "CATL"))
