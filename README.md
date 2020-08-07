@@ -52,7 +52,7 @@ Ces données sont déclinées pour différentes catégories de ménages, et de l
 De la même manière que les données fiscales permettent de fournir des statistiques à un niveau géographique fin, d'autres sources administratives permettent de construire des estimations du nombre d'emplois présents dans les différentes communes du territoire français. Il s'agit des Estimations d'Emploi Localisées, qu'il est possible de récupérer en `R` grâce à la syntaxe suivante :
 
 ```r
-
+donnees_estel <- telechargerDonnees("ESTEL_T201", date = 2018)
 ```
 
 #### Requêter une API REST : le répertoire d'entreprises Sirene
@@ -60,7 +60,8 @@ De la même manière que les données fiscales permettent de fournir des statist
 Supposons que l'on cherche maintenant à récupérer l'ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l'API REST Sirene de l'Insee. Cette requête peut se faire facilement au travers de `doremifasol` de la manière suivante :
 
 ```r
-etablissements <- telechargerDonnees("SIRENE_SIRET", argsApi = list(q = "dateCreationUniteLegale:2020-01-01"))
+etablissements <- telechargerDonnees("SIRENE_SIRET", 
+                                     argsApi = list(q = "dateCreationUniteLegale:2020-01-01"))
 ```
 
 On fait alors face à une liste contenant plusieurs `data.frame` (6 au total) :
