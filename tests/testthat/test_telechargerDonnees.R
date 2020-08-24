@@ -35,6 +35,9 @@ test_that("Importation type XLS - import de tous les onglets", {
 test_that("Importation type XLSX - output data.frame", {
   expect_true(class(telechargerDonnees("AIRE_URBAINE")) == "data.frame")
 })
+test_that("Importation type XLSX - output data.frame", {
+  expect_true(class(telechargerDonnees("FILOSOFI_DISP_COM", date = 2017)) == "list")
+})
 ## test sélection des variables
 test_that("Sélection de variables dans la BPE", {
   expect_true(length(names(telechargerDonnees(donnees = "BPE_ENS", vars = c("REG", "DEP", "DEPCOM", "NB_EQUIP")))) == 4)
