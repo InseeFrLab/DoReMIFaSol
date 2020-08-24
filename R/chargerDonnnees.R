@@ -58,7 +58,8 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
     if (!is.na(telechargementFichier$argsImport$sheet)) {
       res <- as.data.frame(do.call(readxl::read_xls, c(telechargementFichier$argsImport, ...)))
     } else {
-      res_int <- lapply(readxl::excel_sheets(telechargementFichier$argsImport$path), function(x) {
+      onglets <- readxl::excel_sheets(telechargementFichier$argsImport$path)
+      res_int <- lapply(intersect(onglets, toupper(onglets)), function(x) {
         telechargementFichier$argsImport[["sheet"]] <- x
         table <- do.call(readxl::read_xls, c(telechargementFichier$argsImport, ...))
         table$onglet <- x
@@ -67,7 +68,20 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       res <- as.data.frame(do.call(rbind, res_int))
     }
   } else if (telechargementFichier$type == "xlsx") {
-    res <- as.data.frame(do.call(readxl::read_xlsx, telechargementFichier$argsImport)) 
+    if (!is.na(telechargementFichier$argsImport$sheet)) {
+      res <- as.data.frame(do.call(readxl::read_xlsx, telechargementFichier$argsImport)) 
+    } else {
+      onglets <- readxl::excel_sheets(telechargementFichier$argsImport$path)
+      res_int <- lapply(intersect(onglets, toupper(onglets)), function(x) {
+        telechargementFichier$argsImport[["sheet"]] <- x
+        table <- do.call(readxl::read_xlsx, c(telechargementFichier$argsImport, ...))
+        table$onglet <- x
+        return(as.data.frame(table))
+      })
+      #res <- as.data.frame(do.call(rbind, res_int))
+      res <- res_int
+      names(res) <- intersect(onglets, toupper(onglets))
+    }
   } else if (telechargementFichier$type == "json") {
     if (!is.null(vars))
       warning("Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
@@ -121,8 +135,8 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET"))
 ## liste de liste en data.frame
 transformeListe <- function(liste, identifiant, nomTable, niveau = 2:3) {
   if (niveau == 2) {
-  don <- lapply(liste, function(x) return(list(id = x[identifiant], table = lapply(x[[nomTable]], function(xx) ifelse(is.null(xx), NA, xx)))))
-  don <- lapply(don, function(x) data.frame(x$id, x$table))
+    don <- lapply(liste, function(x) return(list(id = x[identifiant], table = lapply(x[[nomTable]], function(xx) ifelse(is.null(xx), NA, xx)))))
+    don <- lapply(don, function(x) data.frame(x$id, x$table))
   } else {
     don <- lapply(liste, function(x) return(list(id = x[identifiant], table = lapply(x[[nomTable]], function(x) lapply(x, function(xx) ifelse(is.null(xx), NA, xx))))))
     don <- lapply(don, function(x) do.call(rbind, lapply(x$table, function(xx) data.frame(x$id, xx))))
