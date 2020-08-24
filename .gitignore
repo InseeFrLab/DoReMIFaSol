@@ -2,5 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
+.idea/
 data/*.csv
 *.zip
