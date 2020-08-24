@@ -57,7 +57,7 @@ donnees_estel <- telechargerDonnees("ESTEL_T201", date = 2018)
 
 #### Requêter une API REST : le répertoire d'entreprises Sirene
 
-Supposons que l'on cherche maintenant à récupérer l'ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l'API REST Sirene de l'Insee. Cette requête peut se faire facilement au travers de `doremifasol` de la manière suivante :
+Supposons que l'on cherche maintenant à récupérer l'ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l'API REST Sirene de l'Insee. Pour cela, il faut au préalable avoir configuré un accès à l'API REST de l'Insee et passer en variables d'environnement les données d'identification. La procédure est expliquée par exemple [ici](https://github.com/RLesur/apinsee#exemple). Une fois cela réalisé, la requête peut se faire facilement au travers de `doremifasol` de la manière suivante :
 
 ```r
 etablissements <- telechargerDonnees("SIRENE_SIRET", 
