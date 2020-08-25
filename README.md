@@ -105,7 +105,15 @@ count_hmr <- with(donnees_rp, aggregate(as.numeric(CATL == '1')*IPONDL, list(COM
 
 #### Data on income distribution and poverty
 
+Should you now be interested in data on income distribution, you may download information on income percentiles and poverty rate at the municipality level based on tax data, also knwow as 'Filosofi'. Those data are update every year. You may fetch these data for year 2017 for instance thanks to the following command:
+
+```r
+donnees_filosofi <- telechargerDonnees("FILOSOFI_DISP_COM_ENS", date = 2017)
+```
+
 #### Data on employment
+
+Tax data are very convenient to carry out information on income distribution at municipality level, so are data coming from registers on employment.
 
 #### Requesting an API REST on the firms' register _Sirene_
 
