@@ -1,7 +1,7 @@
 nom,libelle,date_ref,lien,type,zip,big_zip,fichier_donnees,fichier_meta,onglet,premiere_ligne,derniere_ligne,separateur,encoding,valeurs_manquantes,api_rest
 AIRE_URBAINE,Liste des Aires Urbaines 2010,,https://www.insee.fr/fr/statistiques/fichier/2115011/AU2010_au_01-01-2020.zip,xlsx,TRUE,FALSE,AU2010 au 01-01-2020.xlsx,,AU2010,6,,,,,FALSE
 AIRE_URBAINE_COM,Composition communale des Aires Urbaines 2010,,https://www.insee.fr/fr/statistiques/fichier/2115011/AU2010_au_01-01-2020.zip,xlsx,TRUE,FALSE,AU2010 au 01-01-2020.xlsx,,Composition_communale,6,,,,,FALSE
-BPE_ENS,Base Permanente des Équipements – Ensemble,01/01/2018,https://www.insee.fr/fr/statistiques/fichier/3568629/bpe18_ensemble_csv.zip,csv,TRUE,FALSE,bpe18_ensemble.csv,varmod_bpe18_ensemble.csv,,,,""";""",,,FALSE
+BPE_ENS,Base Permanente des Équipements – Ensemble,01/01/2019,https://www.insee.fr/fr/statistiques/fichier/3568629/bpe19_ensemble_csv.zip,csv,TRUE,FALSE,bpe19_ensemble.csv,varmod_bpe19_ensemble.csv,,,,""";""",,,FALSE
 BPE_ENS_XY,Base Permanente des Équipements – Géolocalisé,01/01/2018,https://www.insee.fr/fr/statistiques/fichier/3568638/bpe18_ensemble_xy_csv.zip,csv,TRUE,FALSE,bpe18_ensemble_xy.csv,varmod_bpe18_ensemble_xy.csv,,,,""";""",,,FALSE
 COG_COMMUNE,"Code Officiel Géographique, niveau commune – 2019",01/01/2019,https://www.insee.fr/fr/statistiques/fichier/3720946/cog_ensemble_2019_csv.zip,csv,TRUE,FALSE,communes-01012019.csv,,,,,""",""",,,FALSE
 COG_DEPARTEMENT,"Code Officiel Géographique, niveau département – 2019",01/01/2019,https://www.insee.fr/fr/statistiques/fichier/3720946/departement2019-csv.zip,csv,TRUE,FALSE,departement2019.csv,,,,,""",""",,,FALSE
