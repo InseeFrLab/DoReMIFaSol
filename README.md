@@ -1,12 +1,12 @@
 # Récupérer et utiliser les données de l'Insee avec `R`/ Get and use Insee's data with `R`
 
-<img src="https://github.com/pierre-lamarche/doremifasol/raw/master/inst/sticker/hex_logo_v2.png" width="150" height="150" align="right"/>
+<img src="https://github.com/inseeFrLab/doremifasol/raw/master/inst/sticker/hex_logo_v2.png" width="150" height="150" align="right"/>
 
 <!-- badges: start -->
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
-[![Travis build status](https://travis-ci.com/pierre-lamarche/DoReMIFaSol.svg?branch=master)](https://travis-ci.com/pierre-lamarche/doremifasol)
+[![Travis build status](https://travis-ci.com/inseeFrLab/DoReMIFaSol.svg?branch=master)](https://travis-ci.com/inseeFrLab/doremifasol)
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Coverage Status](https://img.shields.io/codecov/c/github/pierre-lamarche/doremifasol/master)](https://codecov.io/gh/pierre-lamarche/DoReMIFaSol)
+[![Coverage Status](https://img.shields.io/codecov/c/github/inseeFrLab/doremifasol/master)](https://codecov.io/gh/inseeFrLab/DoReMIFaSol)
 <!-- badges: end -->
 
 ## Français
@@ -18,7 +18,7 @@
 Pour installer le package,
 
 ```r
-devtools::install_github('pierre-lamarche/doremifasol')
+devtools::install_github('inseeFrLab/doremifasol')
 ```
 
 ### Exemples d'usages
@@ -84,7 +84,7 @@ Agent du Service Statistique Public, ou utilisateur des données mises à dispos
 To install the package:
 
 ```r
-devtools::install_github('pierre-lamarche/doremifasol')
+devtools::install_github('inseeFrLab/doremifasol')
 ```
 
 ### A few examples
