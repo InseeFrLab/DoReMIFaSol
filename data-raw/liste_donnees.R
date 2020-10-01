@@ -1,4 +1,4 @@
-liste_donnees <- read.csv("data-raw/liste_donnees.csv", header = TRUE, sep = ",", colClasses = c("character", "character", "character", "character",
+liste_donnees <- read.csv("data-raw/liste_donnees.csv", header = TRUE, sep = ",", colClasses = c("character", "character", "character", "character", "character",
                                                                                                  "character", "logical", "logical", "character", "character",
                                                                                                  "character", "integer", "integer", "character", 
                                                                                                  "character", "character", "logical"),
