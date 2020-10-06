@@ -2,7 +2,7 @@
 #'
 #' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table ([liste_donnees])
 #' @param date optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence.
-#' @param telDir optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, un dossier temporaire de cache.
+#' @param telDir optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, la valeur définie par `options(doremifasol.telDir = ...)`. Si l'utilisateur n'a pas défini cette valeur au préalable, un dossier temporaire de cache.
 #' @param argsApi optionnel : dans le cas où c'est une API REST qui est utilisée, il est possible de spécifier des paramètres spécifiques à cette API de manière à collecter l'information désirée. Cf. [@details ].
 #' 
 #' @details 
@@ -18,7 +18,7 @@
 #' }
 #' @importFrom utils download.file unzip read.csv tail
 #' @export
-telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
+telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol.telDir"), argsApi=NULL) {
   ## check the parameter donnees takes a valid value
   if (!donnees %in% ld$nom)
     stop("Le param\u00e8tre donnees est mal sp\u00e9cifi\u00e9, la valeur n'est pas r\u00e9f\u00e9renc\u00e9e")
@@ -37,7 +37,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=NULL, argsApi=NULL) {
   #dossier de téléchargement # si NULL aller dans le cache
   cache <- FALSE
   if (is.null(telDir)) {
-    telDir <- ifelse(.Platform$OS.type == "windows", tempdir(), rappdirs::user_cache_dir())
+    telDir <- tempdir()
     cache <- TRUE
   } else {
     if (!dir.exists(telDir))
