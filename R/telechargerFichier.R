@@ -19,20 +19,9 @@
 #' @importFrom utils download.file unzip read.csv tail
 #' @export
 telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol.telDir"), argsApi=NULL) {
-  ## check the parameter donnees takes a valid value
-  if (!donnees %in% ld$nom)
-    stop("Le param\u00e8tre donnees est mal sp\u00e9cifi\u00e9, la valeur n'est pas r\u00e9f\u00e9renc\u00e9e")
-  caract <- ld[ld$nom == donnees, ]
-  ## check whether date is needed
-  if (length(millesimesDisponibles(donnees)) > 1) {
-    if (is.null(date)) stop("Il faut sp\u00e9cifier une date de r\u00e9f\u00e9rence pour ces donn\u00e9es.")
-    if (nchar(date) == 4)
-      select <- (format(caract$date_ref, "%Y") == as.character(date)) else
-        select <- (caract$date_ref == as.Date(date, format = "%d/%m/%Y"))
-      if (!any(select)) stop("La date sp\u00e9cifi\u00e9e n'est pas disponible.")
-      if (sum(as.numeric(select), na.rm = TRUE) > 1) stop("Donn\u00e9es infra-annuelles a priori. Mieux sp\u00e9cifier la date de r\u00e9f\u00e9rence.")
-      caract <- caract[which(select), ]
-  }
+  
+  ## vérifie donnees et date. si ok les infos nécessaires sont extraites dans caract
+  caract <- infosDonnees(donnees, date)
   
   #dossier de téléchargement # si NULL aller dans le cache
   cache <- FALSE
