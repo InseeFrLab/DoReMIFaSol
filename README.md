@@ -7,6 +7,7 @@
 [![Travis build status](https://travis-ci.com/inseeFrLab/DoReMIFaSol.svg?branch=master)](https://travis-ci.com/inseeFrLab/doremifasol)
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Coverage Status](https://img.shields.io/codecov/c/github/inseeFrLab/doremifasol/master)](https://codecov.io/gh/inseeFrLab/DoReMIFaSol)
+[![CRAN status](https://www.r-pkg.org/badges/version/doremifasol)](https://cran.r-project.org/package=doremifasol)
 <!-- badges: end -->
 
 ## Français
