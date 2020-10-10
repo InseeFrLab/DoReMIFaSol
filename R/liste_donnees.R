@@ -10,8 +10,8 @@
 #' \item{collection}{la thématique ou la source}
 #' \item{lien}{l'URL pour le téléchargement des données}
 #' \item{type}{le format des données}
-#' \item{zip}{les données sont-elles zippées ou non ?}
-#' \item{big_zip}{?? (booléen)}
+#' \item{zip}{les données sont-elles zippées ou non ? (booléen)}
+#' \item{big_zip}{pour repérer les fichiers zippés dont la taille dépasse 4 Go et qui doivent alors faire l'objet d'une procédure particulière au moment de la décompression (booléen)}
 #' \item{fichier_donnees}{le nom du fichier de données, dans le zip éventuel}
 #' \item{fichier_meta}{le nom du fichier descriptif des données, dans le zip éventuel}
 #' \item{onglet}{nom de l'onglet, si fichier tableur}
