@@ -35,7 +35,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   
   ## télécharge les fichiers csv, xls, xlsx...
   if (!caract$api_rest) {
-    nomFichier <- file.path(dirname(telDir), basename(telDir), tail(unlist(strsplit(caract$lien, "/")), n=1L))
+    nomFichier <- file.path(telDir, basename(caract$lien))
     if (!file.exists(nomFichier)) {
       dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
       if (cache)
