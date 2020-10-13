@@ -8,13 +8,13 @@
 #' @details 
 #' La fonction permet de télécharger les données disponibles sur le site de l'Insee sous format csv, xls ou encore xlsx. Elle permet également, de manière expérimentale, de requêter certaines API REST de l'Insee ; ces services peuvent être repérés dans la table ([liste_donnees]) grâce à la variable `api_rest`.
 #'
-#' @return une liste contenant le résultat du téléchargement et les informations pour l'importation des données en R.
+#' @return Une liste contenant le résultat du téléchargement et les informations pour l'importation des données en R (de manière invisible).
 #' @export
 #'
 #' @examples \dontrun{
-#' dl_bpe <- telechargerFichier(donnees = "BPE_ENS")
+#' telechargerFichier(donnees = "BPE_ENS")
 #' 
-#' dl_rplog <- telechargerFichier("RP_LOGEMENT", date = "2016")
+#' telechargerFichier("RP_LOGEMENT", date = "2016")
 #' }
 #' @importFrom utils download.file unzip read.csv tail
 #' @export
@@ -112,7 +112,18 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     argsImport <- list(fichier = fichierAImporter, nom = caract$nom)
     fileArchive <- NULL
   }
-  return(list(result = dl, zip = caract$zip, big_zip = caract$big_zip, fileArchive = fileArchive, type = caract$type, argsImport = argsImport))
+  
+  invisible(
+    list(
+      result      = dl,
+      zip         = caract$zip,
+      big_zip     = caract$big_zip,
+      fileArchive = fileArchive,
+      type        = caract$type,
+      argsImport  = argsImport
+    )
+  )
+
 }
 
 genererSuffixe <- function(longueur) {
