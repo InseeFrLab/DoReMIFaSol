@@ -2,6 +2,7 @@
 
 export(chargerDonnees)
 export(consulter)
+export(donnees_dispo)
 export(millesimesDisponibles)
 export(telechargerDonnees)
 export(telechargerFichier)
