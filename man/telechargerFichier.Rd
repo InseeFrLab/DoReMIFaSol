@@ -21,7 +21,7 @@ telechargerFichier(
 \item{argsApi}{optionnel : dans le cas où c'est une API REST qui est utilisée, il est possible de spécifier des paramètres spécifiques à cette API de manière à collecter l'information désirée. Cf. [@details ].}
 }
 \value{
-une liste contenant le résultat du téléchargement et les informations pour l'importation des données en R.
+Une liste contenant le résultat du téléchargement et les informations pour l'importation des données en R (de manière invisible).
 }
 \description{
 Téléchargement des fichiers sur le site de l'Insee
@@ -31,8 +31,8 @@ La fonction permet de télécharger les données disponibles sur le site de l'In
 }
 \examples{
 \dontrun{
-dl_bpe <- telechargerFichier(donnees = "BPE_ENS")
+telechargerFichier(donnees = "BPE_ENS")
 
-dl_rplog <- telechargerFichier("RP_LOGEMENT", date = "2016")
+telechargerFichier("RP_LOGEMENT", date = "2016")
 }
 }

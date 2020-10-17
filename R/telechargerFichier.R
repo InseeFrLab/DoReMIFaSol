@@ -8,13 +8,13 @@
 #' @details 
 #' La fonction permet de télécharger les données disponibles sur le site de l'Insee sous format csv, xls ou encore xlsx. Elle permet également, de manière expérimentale, de requêter certaines API REST de l'Insee ; ces services peuvent être repérés dans la table ([liste_donnees]) grâce à la variable `api_rest`.
 #'
-#' @return une liste contenant le résultat du téléchargement et les informations pour l'importation des données en R.
+#' @return Une liste contenant le résultat du téléchargement et les informations pour l'importation des données en R (de manière invisible).
 #' @export
 #'
 #' @examples \dontrun{
-#' dl_bpe <- telechargerFichier(donnees = "BPE_ENS")
+#' telechargerFichier(donnees = "BPE_ENS")
 #' 
-#' dl_rplog <- telechargerFichier("RP_LOGEMENT", date = "2016")
+#' telechargerFichier("RP_LOGEMENT", date = "2016")
 #' }
 #' @importFrom utils download.file unzip read.csv tail
 #' @export
@@ -35,14 +35,14 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   
   ## télécharge les fichiers csv, xls, xlsx...
   if (!caract$api_rest) {
-    nomFichier <- file.path(dirname(telDir), basename(telDir), tail(unlist(strsplit(caract$lien, "/")), n=1L))
+    nomFichier <- file.path(telDir, basename(caract$lien))
     if (!file.exists(nomFichier)) {
       dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
       if (cache)
         message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es ont \u00e9t\u00e9 t\u00e9l\u00e9charg\u00e9es par d\u00e9faut dans le dossier: ", telDir)
     } else {
       dl <- 0
-      message("Utilisation du cache")
+      message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans ", telDir, ", pas de nouveau t\u00e9l\u00e9chargement.")
     }
     
     if (caract$zip)
@@ -112,7 +112,18 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     argsImport <- list(fichier = fichierAImporter, nom = caract$nom)
     fileArchive <- NULL
   }
-  return(list(result = dl, zip = caract$zip, big_zip = caract$big_zip, fileArchive = fileArchive, type = caract$type, argsImport = argsImport))
+  
+  invisible(
+    list(
+      result      = dl,
+      zip         = caract$zip,
+      big_zip     = caract$big_zip,
+      fileArchive = fileArchive,
+      type        = caract$type,
+      argsImport  = argsImport
+    )
+  )
+
 }
 
 genererSuffixe <- function(longueur) {
