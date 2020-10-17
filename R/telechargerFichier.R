@@ -42,7 +42,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
         message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es ont \u00e9t\u00e9 t\u00e9l\u00e9charg\u00e9es par d\u00e9faut dans le dossier: ", telDir)
     } else {
       dl <- 0
-      message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans `telDir`, pas de nouveau t\u00e9l\u00e9chargement.")
+      message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans ", telDir, ", pas de nouveau t\u00e9l\u00e9chargement.")
     }
     
     if (caract$zip)

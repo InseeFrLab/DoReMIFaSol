@@ -33,7 +33,7 @@ test_that("Spécification du dossier de stockage", {
 ## test utilisation du cache
 test_that("Données déjà téléchargées", {
   temp <- telechargerFichier("ESTEL_T201", date = "2016")
-  expect_message(telechargerFichier("ESTEL_T202", date = "2016"), "Données déjà présentes dans `telDir`, pas de nouveau téléchargement.")
+  expect_message(telechargerFichier("ESTEL_T202", date = "2016"), "Données déjà présentes dans ", tempdir(), ", pas de nouveau téléchargement.")
 })
 ## test dl de données CSV
 test_that("Télécharger type CSV - output correct", {

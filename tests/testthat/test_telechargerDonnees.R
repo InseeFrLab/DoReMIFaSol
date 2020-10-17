@@ -19,7 +19,7 @@ test_that("Échec du téléchargement pour nom non existant", {
 test_that("Utilisation du cache", {
   # note : ESTEL_T201 et ESTEL_T202 sont dans le même fichier
   temp <- telechargerDonnees("ESTEL_T201", date = "2016")
-  expect_message(telechargerDonnees("ESTEL_T202", date = "2016"), "Données déjà présentes dans `telDir`, pas de nouveau téléchargement.")
+  expect_message(telechargerDonnees("ESTEL_T202", date = "2016"), "Données déjà présentes dans ", tempdir(), ", pas de nouveau téléchargement.")
 })
 ## test import de données CSV
 test_that("Importation type CSV - output data.frame", {
