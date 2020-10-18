@@ -7,7 +7,7 @@
 consulter(donnees, date = NULL)
 }
 \arguments{
-\item{donnees}{le nom des données dont on veut consulter la page sur le site de l'Insee. La description complète des données associées à ce nom figure dans la table ([liste_donnees]).}
+\item{donnees}{le nom des données dont on veut consulter la page sur le site de l'Insee. La description complète des données associées à ce nom figure dans la table (\link{liste_donnees}).}
 
 \item{date}{optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence.}
 }

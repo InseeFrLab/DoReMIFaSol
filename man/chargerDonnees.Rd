@@ -7,7 +7,7 @@
 chargerDonnees(telechargementFichier, vars = NULL, ...)
 }
 \arguments{
-\item{telechargementFichier}{une liste contenant l'ensemble des informations nécessaires au chargement des données, créée en sortie de la fonction `telechargerFichier`}
+\item{telechargementFichier}{une liste contenant l'ensemble des informations nécessaires au chargement des données, créée en sortie de la fonction \code{\link{telechargerFichier}}.}
 
 \item{vars}{un vecteur de variables à importer, afin d'utiliser les ressources computationnelles avec parcimonie. Par défaut NULL, ce qui signifie que l'ensemble des variables disponibles sont chargées.}
 

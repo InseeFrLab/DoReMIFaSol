@@ -1,9 +1,9 @@
 #' Téléchargement des données sur le site de l'Insee
 #'
 #' @inheritParams telechargerFichier
-#' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table [liste_donnees]
+#' @param donnees le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table [`liste_donnees`].
 #' @param argsApi optionnel : dans le cas où c'est une API REST qui est utilisée, il est possible de spécifier des paramètres spécifiques à cette API de manière à collecter l'information désirée.
-#' @param vars optionnel : un vecteur pour spécifier les variables à importer. Utile pour les données massives difficiles à charger en mémoire, voir @details .
+#' @param vars optionnel : un vecteur pour spécifier les variables à importer. Utile pour les données massives difficiles à charger en mémoire, voir section _Details_.
 #' @param ... paramètres additionnels relatifs à l'importation des données
 #' 
 #' @details 
