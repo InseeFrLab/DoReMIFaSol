@@ -32,8 +32,17 @@ test_that("Spécification du dossier de stockage", {
 })
 ## test utilisation du cache
 test_that("Données déjà téléchargées", {
-  temp <- telechargerFichier("ESTEL_T201", date = "2016")
-  expect_message(telechargerFichier("ESTEL_T202", date = "2016"), "Données déjà présentes dans ", tempdir(), ", pas de nouveau téléchargement.")
+  telechargerFichier("ESTEL_T201", date = "2016")
+  storeDir <- ifelse(is.null(getOption("doremifasol.telDir")), tempdir(), getOption("doremifasol.telDir"))
+  expect_message(telechargerFichier("ESTEL_T202", date = "2016"), paste0("Données déjà présentes dans ", storeDir, ", pas de nouveau téléchargement."))
+})
+## test hash non cohérent
+test_that("Hash non cohérent", {
+  telechargerFichier("ESTEL_T201", date = "2016", telDir = "test_dl")
+  unzip("test_dl/irsocee2016_loc_excel.zip")
+  file.remove("test_dl/irsocee2016_loc_excel.zip")
+  zip("test_dl/irsocee2016_loc_excel.zip", files = "T201.xls")
+  expect_message(telechargerFichier("ESTEL_T201", date = "2016", telDir = "test_dl"), "Les donn\u00e9es doivent \u00eatre mises \u00e0 jour.")
 })
 ## test dl de données CSV
 test_that("Télécharger type CSV - output correct", {
