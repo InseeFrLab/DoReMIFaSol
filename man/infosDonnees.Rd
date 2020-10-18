@@ -7,16 +7,16 @@
 infosDonnees(donnees, date = NULL)
 }
 \arguments{
-\item{donnees}{le nom court des données que l'on souhaite télécharger sur le site de l'Insee. La description complète des données associés à ce nom figure dans la table ([liste_donnees]).}
+\item{donnees}{le nom court des données que l'on souhaite télécharger sur le site de l'Insee. La description complète des données associés à ce nom figure dans la table \code{\link{liste_donnees}}.}
 
 \item{date}{optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence.}
 }
 \value{
-Une unique ligne de `liste_donnees` (sous forme de data.frame).
+Une unique ligne de \code{liste_donnees} (sous forme de data.frame).
 }
 \description{
 À partir de l'identifiant et d'une éventuelle date, isole la ligne de
-`liste_donnees` correspondante.
+\code{\link{liste_donnees}} correspondante.
 }
 \details{
 La fonction retourne une erreur si aucune ligne ne correspond. Elle suggère

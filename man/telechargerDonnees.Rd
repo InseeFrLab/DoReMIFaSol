@@ -14,15 +14,15 @@ telechargerDonnees(
 )
 }
 \arguments{
-\item{donnees}{le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table [liste_donnees]}
+\item{donnees}{le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table \code{\link{liste_donnees}}.}
 
 \item{date}{optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence.}
 
-\item{telDir}{optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, la valeur définie par `options(doremifasol.telDir = ...)`. Si l'utilisateur n'a pas défini cette valeur au préalable, un dossier temporaire de cache.}
+\item{telDir}{optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, la valeur définie par \code{options(doremifasol.telDir = ...)}. Si l'utilisateur n'a pas défini cette valeur au préalable, un dossier temporaire de cache.}
 
 \item{argsApi}{optionnel : dans le cas où c'est une API REST qui est utilisée, il est possible de spécifier des paramètres spécifiques à cette API de manière à collecter l'information désirée.}
 
-\item{vars}{optionnel : un vecteur pour spécifier les variables à importer. Utile pour les données massives difficiles à charger en mémoire, voir @details .}
+\item{vars}{optionnel : un vecteur pour spécifier les variables à importer. Utile pour les données massives difficiles à charger en mémoire, voir section \emph{Details}.}
 
 \item{...}{paramètres additionnels relatifs à l'importation des données}
 }

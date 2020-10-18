@@ -1,6 +1,6 @@
 #' Charger les données téléchargées dans R
 #'
-#' @param telechargementFichier une liste contenant l'ensemble des informations nécessaires au chargement des données, créée en sortie de la fonction `telechargerFichier`
+#' @param telechargementFichier une liste contenant l'ensemble des informations nécessaires au chargement des données, créée en sortie de la fonction [`telechargerFichier`].
 #' @param vars un vecteur de variables à importer, afin d'utiliser les ressources computationnelles avec parcimonie. Par défaut NULL, ce qui signifie que l'ensemble des variables disponibles sont chargées.
 #' @param ... des paramètres additionnels pour l'importation des données
 #' 

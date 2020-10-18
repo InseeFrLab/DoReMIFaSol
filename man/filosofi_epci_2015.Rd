@@ -15,7 +15,7 @@ Une table de 34 932 observations et 29 variables
 \item{PIMP15}{Part des ménages fiscaux imposés (\%)}
 \item{TP6015}{Taux de pauvreté-Ensemble (\%)}
 \item{TP60AGE115}{Taux de pauvreté-moins de 30 ans (\%)}
-\item{TP60AGE215}{Taux de pauvreté-30 à 39 ans  (\%)}
+\item{TP60AGE215}{Taux de pauvreté-30 à 39 ans (\%)}
 \item{TP60AGE315}{Taux de pauvreté-40 à 49 ans (\%)}
 \item{TP60AGE415}{Taux de pauvreté-50 à 59 ans (\%)}
 \item{TP60AGE515}{Taux de pauvreté-60 à 74 ans (\%)}

@@ -5,7 +5,7 @@
 #' Recherche ligne d'informations dans liste_donnees
 #'
 #' À partir de l'identifiant et d'une éventuelle date, isole la ligne de
-#' `liste_donnees` correspondante.
+#' [`liste_donnees`] correspondante.
 #' 
 #' La fonction retourne une erreur si aucune ligne ne correspond. Elle suggère
 #' dans ce cas des noms d'identifiants proches et les millésimes disponibles si

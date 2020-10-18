@@ -22,7 +22,7 @@ Une table de 1315 lignes et 17 variables
 \item{dernire_ligne}{dernière ligne à lire pour charger dans R, si fichier tableur}
 \item{separateur}{séparateur de colonnes, si fichier texte}
 \item{encoding}{encodage du fichier}
-\item{valeurs_manquantes}{valeurs à remplacer par `NA` lors de l'import dans R}
+\item{valeurs_manquantes}{valeurs à remplacer par \code{NA} lors de l'import dans R}
 \item{api_rest}{nécessité de passer par une API REST (booléen)}
 }
 }
