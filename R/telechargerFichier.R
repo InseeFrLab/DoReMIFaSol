@@ -4,6 +4,7 @@
 #' @param date optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence.
 #' @param telDir optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, la valeur définie par `options(doremifasol.telDir = ...)`. Si l'utilisateur n'a pas défini cette valeur au préalable, un dossier temporaire de cache.
 #' @param argsApi optionnel : dans le cas où c'est une API REST qui est utilisée, il est possible de spécifier des paramètres spécifiques à cette API de manière à collecter l'information désirée. Cf. section _Details_.
+#' @param force forcer le téléchargement, même si le fichier a déjà été téléchargé (et est identique). 
 #' 
 #' @details 
 #' La fonction permet de télécharger les données disponibles sur le site de l'Insee sous format csv, xls ou encore xlsx. Elle permet également, de manière expérimentale, de requêter certaines API REST de l'Insee ; ces services peuvent être repérés dans la table [`liste_donnees`] grâce à la variable `api_rest`.
@@ -18,7 +19,7 @@
 #' }
 #' @importFrom utils download.file unzip read.csv tail
 #' @export
-telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol.telDir"), argsApi=NULL) {
+telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol.telDir"), argsApi=NULL, force=FALSE) {
   
   ## vérifie donnees et date. si ok les infos nécessaires sont extraites dans caract
   caract <- infosDonnees(donnees, date)
@@ -46,8 +47,12 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       message("Les donn\u00e9es doivent \u00eatre mises \u00e0 jour.")
       dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
     } else {
-      dl <- 0
-      message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans ", telDir, ", pas de nouveau t\u00e9l\u00e9chargement.")
+      if (force) {
+        dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
+      } else {
+        dl <- 0
+        message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans ", telDir, ", pas de nouveau t\u00e9l\u00e9chargement.")
+      }
     }
     
     if (caract$zip)

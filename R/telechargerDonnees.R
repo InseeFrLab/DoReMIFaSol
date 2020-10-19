@@ -19,6 +19,10 @@
 #' }
 #' @importFrom utils download.file unzip read.csv tail
 #' @export
-telechargerDonnees <- function(donnees, date=NULL, telDir=getOption("doremifasol.telDir"), argsApi=NULL, vars=NULL, ...) {
-  return(chargerDonnees(telechargerFichier(donnees, date, telDir, argsApi), vars, ...))
+telechargerDonnees <- function(donnees, date=NULL, telDir=getOption("doremifasol.telDir"), argsApi=NULL, vars=NULL, force=FALSE, ...) {
+  chargerDonnees(
+    telechargerFichier(donnees, date, telDir, argsApi, force),
+    vars,
+    ...
+  )
 }
