@@ -8,7 +8,8 @@ telechargerFichier(
   donnees,
   date = NULL,
   telDir = getOption("doremifasol.telDir"),
-  argsApi = NULL
+  argsApi = NULL,
+  force = FALSE
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ telechargerFichier(
 \item{telDir}{optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, la valeur définie par \code{options(doremifasol.telDir = ...)}. Si l'utilisateur n'a pas défini cette valeur au préalable, un dossier temporaire de cache.}
 
 \item{argsApi}{optionnel : dans le cas où c'est une API REST qui est utilisée, il est possible de spécifier des paramètres spécifiques à cette API de manière à collecter l'information désirée. Cf. section \emph{Details}.}
+
+\item{force}{forcer le téléchargement, même si le fichier a déjà été téléchargé (et est identique).}
 }
 \value{
 Une liste contenant le résultat du téléchargement et les informations pour l'importation des données en R (de manière invisible).

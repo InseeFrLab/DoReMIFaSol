@@ -10,6 +10,7 @@ telechargerDonnees(
   telDir = getOption("doremifasol.telDir"),
   argsApi = NULL,
   vars = NULL,
+  force = FALSE,
   ...
 )
 }
@@ -23,6 +24,8 @@ telechargerDonnees(
 \item{argsApi}{optionnel : dans le cas où c'est une API REST qui est utilisée, il est possible de spécifier des paramètres spécifiques à cette API de manière à collecter l'information désirée.}
 
 \item{vars}{optionnel : un vecteur pour spécifier les variables à importer. Utile pour les données massives difficiles à charger en mémoire, voir section \emph{Details}.}
+
+\item{force}{forcer le téléchargement, même si le fichier a déjà été téléchargé (et est identique).}
 
 \item{...}{paramètres additionnels relatifs à l'importation des données}
 }
