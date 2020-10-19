@@ -2,7 +2,7 @@
 #' 
 #' Cette table est centrale au package ; elle recense l'ensemble des données disponibles et les liens associés permettant le téléchargement, ainsi que des éléments descriptifs de celles-ci.
 #' 
-#' @format Une table de 1315 lignes et 17 variables
+#' @format Une table de 1322 lignes et 19 variables
 #' \describe{
 #' \item{nom}{l'identifiant des données}
 #' \item{libelle}{le descriptif des données}
@@ -21,6 +21,8 @@
 #' \item{encoding}{encodage du fichier}
 #' \item{valeurs_manquantes}{valeurs à remplacer par `NA` lors de l'import dans R}
 #' \item{api_rest}{nécessité de passer par une API REST (booléen)}
+#' \item{md5}{somme de contrôle du fichier à télécharger (32 caractères hexadécimaux). Sert à vérifier si un téléchargement doit être effectué dans le cas où un fichier au nom identique est présent dans le dossier.}
+#' \item{size}{taille du fichier à télécharger (en octets)}
 #' }
 #' 
 "liste_donnees"
