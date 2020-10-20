@@ -17,6 +17,7 @@
 
 infosDonnees <- function(donnees, date = NULL) {
   
+  donnees <- toupper(donnees) # pour rendre insensible à la casse
   res <- ld[ld$nom == donnees, ]
 
   # 1 - identifiant introuvable
