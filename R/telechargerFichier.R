@@ -46,13 +46,14 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
         message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es utilis\u00e9es sont stock\u00e9es dans le dossier: ", telDir)}
       message("Les donn\u00e9es doivent \u00eatre mises \u00e0 jour.")
       dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
-    } else {
-      if (force) {
-        dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
-      } else {
-        dl <- 0
-        message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans ", telDir, ", pas de nouveau t\u00e9l\u00e9chargement.")
+    } else if (force) {
+      if (cache) {
+        message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es ont \u00e9t\u00e9 t\u00e9l\u00e9charg\u00e9es par d\u00e9faut dans le dossier: ", telDir)
       }
+      dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
+    } else {
+      dl <- 0
+      message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans ", telDir, ", pas de nouveau t\u00e9l\u00e9chargement.")
     }
     
     if (caract$zip)
