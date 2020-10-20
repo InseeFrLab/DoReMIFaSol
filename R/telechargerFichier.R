@@ -37,7 +37,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   ## télécharge les fichiers csv, xls, xlsx...
   if (!caract$api_rest) {
     nomFichier <- file.path(telDir, basename(caract$lien))
-    if (!file.exists(nomFichier)) {
+    if (!file.exists(nomFichier) || force) {
       dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
       if (cache)
         message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es ont \u00e9t\u00e9 t\u00e9l\u00e9charg\u00e9es par d\u00e9faut dans le dossier: ", telDir)
@@ -45,11 +45,6 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       if (cache) {
         message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es utilis\u00e9es sont stock\u00e9es dans le dossier: ", telDir)}
       message("Les donn\u00e9es doivent \u00eatre mises \u00e0 jour.")
-      dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
-    } else if (force) {
-      if (cache) {
-        message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es ont \u00e9t\u00e9 t\u00e9l\u00e9charg\u00e9es par d\u00e9faut dans le dossier: ", telDir)
-      }
       dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
     } else {
       dl <- 0
