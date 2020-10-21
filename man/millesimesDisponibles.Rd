@@ -7,7 +7,7 @@
 millesimesDisponibles(donnees)
 }
 \arguments{
-\item{donnees}{une chaîne de caractères qui identifie la source de données}
+\item{donnees}{le nom court des données que l'on souhaite télécharger sur le site de l'Insee. La description complète des données associés à ce nom figure dans la table \code{\link{liste_donnees}}. Insensible à la casse.}
 }
 \value{
 un vecteur contenant l'ensemble des millésimes disponibles pour une source de données.
