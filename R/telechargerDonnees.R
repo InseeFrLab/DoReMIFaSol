@@ -17,8 +17,8 @@
 #' 
 #' rp_log <- telechargerDonnees("RP_LOGEMENT", date = "2016", vars = c("COMMUNE", "IPONDL", "CATL"))
 #' }
-#' @importFrom utils download.file unzip read.csv tail
 #' @export
+
 telechargerDonnees <- function(donnees, date=NULL, telDir=getOption("doremifasol.telDir"), argsApi=NULL, vars=NULL, force=FALSE, ...) {
   chargerDonnees(
     telechargerFichier(donnees, date, telDir, argsApi, force),
