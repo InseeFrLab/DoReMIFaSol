@@ -60,6 +60,6 @@ donnees_dispo <- function(entrees = 10,
   }
 
   # 3 - génération table
-  if (interactive()) do.call(DT::datatable, params)
+  do.call(DT::datatable, params)
 
 }
