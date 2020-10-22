@@ -88,7 +88,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     } else {
       total <- argsApi[["nombre"]]
     }
-    argsApi[["nombre"]] <- ifelse(total < 1000, total, 1000)
+    argsApi[["nombre"]] <- min(total, 1000)
     if (is.null(argsApi[["tri"]]))
       argsApi[["tri"]] <- "siren"
     if (total > 1000)
