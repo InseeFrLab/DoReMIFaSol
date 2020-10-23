@@ -1,11 +1,11 @@
 #' Visualiser les données disponibles
-#' 
+#'
 #' Ouvre une page web permettant de consulter de manière interactive les données
 #' disponibles (recherche, filtres, tri...), en particulier pour trouver les
 #' noms courts à passer en paramètre de [telechargerDonnees].
-#' 
+#'
 #' **Cette fonction nécessite d'installer le package `DT`.**
-#' 
+#'
 #' @param entrees nombre de lignes affichées à l'écran au lancement de la page
 #'   (modifiable interactivement par la suite).
 #' @param pos_filtre emplacement des filtres spécifiques à chaque colonne
@@ -26,7 +26,7 @@ donnees_dispo <- function(entrees = 10,
     stop("cette fonction n\u00e9cessite d'installer le package `DT`")
   }
   stopifnot(is.numeric(entrees))
-  pos_filtre <- 
+  pos_filtre <-
     switch(
       match.arg(pos_filtre),
       "haut"  = "top",
