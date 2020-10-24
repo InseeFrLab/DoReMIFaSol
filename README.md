@@ -6,7 +6,7 @@
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Travis build status](https://travis-ci.org/InseeFrLab/DoReMIFaSol.svg?branch=master)](https://travis-ci.org/inseeFrLab/doremifasol)
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Coverage Status](https://img.shields.io/codecov/c/github/inseeFrLab/doremifasol/master)](https://codecov.io/gh/inseeFrLab/DoReMIFaSol)
+[![Coverage status](https://codecov.io/gh/InseeFrLab/DoReMIFaSol/branch/master/graph/badge.svg?token=FM7HW4DSW5)](https://codecov.io/gh/InseeFrLab/DoReMIFaSol)
 [![CRAN status](https://www.r-pkg.org/badges/version/doremifasol)](https://cran.r-project.org/package=doremifasol)
 <!-- badges: end -->
 
