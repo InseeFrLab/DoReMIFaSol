@@ -12,3 +12,6 @@ usethis::use_data(liste_donnees, overwrite = TRUE)
 ## internal
 ld <- liste_donnees
 usethis::use_data(ld, internal = TRUE, overwrite = TRUE)
+
+## json
+write(jsonlite::toJSON(liste_donnees, pretty = TRUE), file = "data-raw/liste_donnees.json")
