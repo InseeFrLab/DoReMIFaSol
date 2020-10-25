@@ -41,6 +41,14 @@ infosDonnees <- function(donnees, date = NULL) {
 
   possible <- millesimesDisponibles(donnees)
 
+  if (!is.null(date) && tolower(date) == "dernier") {
+    date <- sort(possible, decreasing = TRUE)[1]
+    message(
+      "S\u00e9lection automatique des donn\u00e9es les plus r\u00e9centes ",
+      "(date = ", date, ")."
+    )
+  }
+
   if (length(possible) > 1) {
 
     if (is.null(date)) {

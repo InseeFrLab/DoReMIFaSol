@@ -17,7 +17,7 @@ telechargerDonnees(
 \arguments{
 \item{donnees}{le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table \code{\link{liste_donnees}}.}
 
-\item{date}{optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence.}
+\item{date}{optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence. Spécifier \code{"dernier"} sélectionne automatiquement le millésime le plus récent.}
 
 \item{telDir}{optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, la valeur définie par \code{options(doremifasol.telDir = ...)}. Si l'utilisateur n'a pas défini cette valeur au préalable, un dossier temporaire de cache.}
 
