@@ -39,9 +39,6 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
   fichierAImporter <- ifelse(telechargementFichier$type == "csv", telechargementFichier$argsImport$file, 
                              ifelse(telechargementFichier$type == "json", telechargementFichier$argsImport$fichier, 
                                     telechargementFichier$argsImport$path))
-  fileext <- sub(".+\\.(\\w+)$", "\\1", fichierAImporter)
-  if (fileext != telechargementFichier$type)
-    warning("L'extension du fichier diff\u00e8re du type de fichier.")
   ## check the file to import exists
   if (!file.exists(fichierAImporter))
     stop("Le fichier de donn\u00e9es est introuvable.")
