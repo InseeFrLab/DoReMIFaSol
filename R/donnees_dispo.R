@@ -35,7 +35,7 @@ donnees_dispo <- function(entrees = 10,
     )
 
   # 1 - construit table à afficher
-  affich <- ld[c("collection", "libelle", "nom", "date_ref", "size")]
+  affich <- listToDf(liste = ld, vars = c("collection", "libelle", "nom", "date_ref", "size"))
   affich$size <- round(as.numeric(affich$size) / 1048576, 1) # conversion Mo
   affich <- affich[order(affich$collection, -rank(affich$date_ref), affich$nom), ]
 

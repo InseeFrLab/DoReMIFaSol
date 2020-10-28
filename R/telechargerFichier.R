@@ -61,16 +61,16 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
         
         if (caract$type == "csv") {
           argsImport <- list(file = fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE)
-          if (!is.na(caract$encoding))
+          if (!is.null(caract$encoding))
             argsImport[["locale"]] <- readr::locale(encoding = caract$encoding)
-          if (!is.na(caract$valeurs_manquantes))
+          if (!is.null(caract$valeurs_manquantes))
             argsImport[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
         }
         else if (caract$type == "xls") {
           argsImport <- list(path = fichierAImporter, skip = caract$premiere_ligne - 1, sheet = caract$onglet)
-          if (!is.na(caract$derniere_ligne))
+          if (!is.null(caract$derniere_ligne))
             argsImport[["n_max"]] <- caract$derniere_ligne - caract$premiere_ligne
-          if (!is.na(caract$valeurs_manquantes))
+          if (!is.null(caract$valeurs_manquantes))
             argsImport[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
         } else if (caract$type == "xlsx") {
           argsImport <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)

@@ -13,20 +13,21 @@
 #'
 #' @inheritParams telechargerFichier
 #'
-#' @return Une unique ligne de `liste_donnees` (sous forme de data.frame).
+#' @return Une unique ligne de `liste_donnees` (sous forme de list).
 
 infosDonnees <- function(donnees, date = NULL) {
   
   donnees <- toupper(donnees) # pour rendre insensible à la casse
-  res <- ld[ld$nom == donnees, ]
+  liste_nom <- unlist(lapply(ld, function(x) return(x$nom)))
+  res <- ld[which(liste_nom == donnees)]
 
   # 1 - identifiant introuvable
 
-  if (!nrow(res)) {
+  if (!length(res)) {
 
     # cherche des identifiants proches (distance de Levenshtein)
-    dist <- utils::adist(ld$nom, donnees)[ , 1]
-    suggestions <- ld$nom[dist < 4] # 3 fautes de frappe max
+    dist <- utils::adist(liste_nom, donnees)[ , 1]
+    suggestions <- liste_nom[dist < 4] # 3 fautes de frappe max
     suggestions_quote <- paste0('"', unique(suggestions), '"')
 
     stop(
@@ -48,20 +49,42 @@ infosDonnees <- function(donnees, date = NULL) {
         "  Valeurs possibles : ", toString(sort(possible))
       )
     }
-
+    
+    dates_possibles <- as.Date(unlist(lapply(res, function(x) return(x$date_ref))), origin = "1970-01-01")
     if (nchar(date) == 4) {
-      select <- format(res$date_ref, "%Y") == as.character(date)
+      select <- which(format(dates_possibles, "%Y") == as.character(date))
     } else {
-      select <- res$date_ref == as.Date(date, format = "%d/%m/%Y")
+      select <- which(dates_possibles == as.Date(date, format = "%d/%m/%Y"))
     }
   
-    if (!any(select)) stop("La date sp\u00e9cifi\u00e9e n'est pas disponible.")
-    if (sum(select, na.rm = TRUE) > 1) stop("Donn\u00e9es infra-annuelles a priori. Mieux sp\u00e9cifier la date de r\u00e9f\u00e9rence.")
+    if (!length(select)) stop("La date sp\u00e9cifi\u00e9e n'est pas disponible.")
+    if (length(select) > 1) stop("Donn\u00e9es infra-annuelles a priori. Mieux sp\u00e9cifier la date de r\u00e9f\u00e9rence.")
     
-    res <- res[select, ]
+    res <- res[select]
 
   }
 
-  res
+  res[[1]]
 
+}
+
+# listToDf -------------------------------------------------------------
+#' 
+#' Transforme une liste (typiquement `ld`) en data.frame
+#' 
+#' Objectif : ne pas créer une dépendance à `dplyr` et la fonction `bind_rows`, bien que du point de vue computationel, la fonction créée ici soit bien moins performante.
+#'
+#' @param liste un objet list à convertir en data.frame
+#' @param vars optionnel, un vecteur de variables à récupérer
+#'
+#' @return Une data.frame
+
+listToDf <- function(liste, vars = NULL) {
+  if (is.null(vars))
+    vars <- Reduce(union, lapply(liste, names))
+  do.call(rbind, lapply(liste, function(x) {
+    var_manquante <- setdiff(vars, names(x))
+    x[var_manquante] <- NA
+    return(data.frame(x[vars]))
+  }))
 }

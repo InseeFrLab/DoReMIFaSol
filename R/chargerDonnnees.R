@@ -53,7 +53,7 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
     }
     res <- as.data.frame(do.call(readr::read_delim, c(telechargementFichier$argsImport, ...))) 
   } else if (telechargementFichier$type == "xls") {
-    if (!is.na(telechargementFichier$argsImport$sheet)) {
+    if (!is.null(telechargementFichier$argsImport$sheet)) {
       res <- as.data.frame(do.call(readxl::read_xls, c(telechargementFichier$argsImport, ...)))
     } else {
       onglets <- readxl::excel_sheets(telechargementFichier$argsImport$path)
@@ -66,7 +66,7 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       res <- as.data.frame(do.call(rbind, res_int))
     }
   } else if (telechargementFichier$type == "xlsx") {
-    if (!is.na(telechargementFichier$argsImport$sheet)) {
+    if (!is.null(telechargementFichier$argsImport$sheet)) {
       res <- as.data.frame(do.call(readxl::read_xlsx, telechargementFichier$argsImport)) 
     } else {
       onglets <- readxl::excel_sheets(telechargementFichier$argsImport$path)
