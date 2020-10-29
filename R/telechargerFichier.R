@@ -75,6 +75,15 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
         } else if (caract$type == "xlsx") {
           argsImport <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
         }
+        
+        if (!is.null(caract$type_col)) {
+          listvar <- lapply(caract$type_col, function(x) {
+            eval(parse(text = paste0("readr::col_", x, "()")))
+          })
+          cols <- readr::cols()
+          cols$cols <- listvar
+          argsImport[["col_types"]] <- cols
+        }
   } else {
     ## télécharge les données sur l'API
     token <- apinsee::insee_auth()
