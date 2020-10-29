@@ -10,10 +10,12 @@
 millesimesDisponibles <- function(donnees) {
   ## check the parameter donnees takes a valid value
   donnees <- toupper(donnees)
-  if (!donnees %in% ld$nom)
+  liste_nom <- unlist(lapply(ld, function(x) return(x$nom)))
+  if (!donnees %in% liste_nom)
     stop("Le param\u00e8tre donnees est mal sp\u00e9cifi\u00e9, la valeur n'est pas r\u00e9f\u00e9renc\u00e9e")
-  liste <- with(ld, date_ref[nom == donnees])
-  if (!any(duplicated(format(liste, "%Y"))))
-    return(format(liste, "%Y")) else
-      return(liste)
+  liste_possible <- ld[which(liste_nom == donnees)]
+  liste <- lapply(liste_possible, function(x) return(x$date_ref))
+  if (!any(duplicated(unlist(lapply(liste, function(x) format(x, "%Y"))))))
+    return(unlist(lapply(liste, function(x) format(x, "%Y")))) else
+      return(unlist(lapply(liste, function(x) format(x, "%Y-%m-%d"))))
 }

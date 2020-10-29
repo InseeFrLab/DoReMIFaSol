@@ -12,7 +12,7 @@ infosDonnees(donnees, date = NULL)
 \item{date}{optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence.}
 }
 \value{
-Une unique ligne de \code{liste_donnees} (sous forme de data.frame).
+Une unique ligne de \code{liste_donnees} (sous forme de list).
 }
 \description{
 À partir de l'identifiant et d'une éventuelle date, isole la ligne de
