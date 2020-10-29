@@ -26,4 +26,34 @@ ld <- lapply(ld, function(x) {
       date_ref <- as.Date(date_ref, format = "%Y-%m-%d")
   })
 })
+## enrichissement du json
+## typage des variables dans le COG
+ld[[which(with(liste_donnees, nom == "COG_COMMUNE" & date_ref == as.Date("2018-01-01")))]]$type_col <- list(CDC = "integer",
+                                                                                                            CHEFLIEU = "integer",
+                                                                                                            REG = "character",
+                                                                                                            DEP = "character",
+                                                                                                            COM = "character",
+                                                                                                            AR = "integer",
+                                                                                                            CT = "character",
+                                                                                                            TNCC = "integer",
+                                                                                                            ARTMAJ = "character",
+                                                                                                            NCC = "character",
+                                                                                                            ARTMIN = "character",
+                                                                                                            NCCENR = "character")
+ld[[which(with(liste_donnees, nom == "COG_COMMUNE" & date_ref == as.Date("2019-01-01")))]]$type_col <- list(typecom = "character",
+                                                                                                            com = "character",
+                                                                                                            reg = "character",
+                                                                                                            dep = "character",
+                                                                                                            arr = "character",
+                                                                                                            tncc = "integer",
+                                                                                                            ncc = "character",
+                                                                                                            nccenr = "character",
+                                                                                                            libelle = "character",
+                                                                                                            can = "character",
+                                                                                                            comparent = "character")
+## ajout labels des variables de Filosofi
+
+## ajout du type de variables dans le RP
+
+write(jsonify::pretty_json(jsonify::to_json(ld, unbox = TRUE, numeric_dates = FALSE)), file = "data-raw/liste_donnees.json")
 usethis::use_data(ld, liste_var_ld, internal = TRUE, overwrite = TRUE)
