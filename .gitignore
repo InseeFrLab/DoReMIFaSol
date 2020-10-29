@@ -1,7 +1,9 @@
 .Rproj.user
 .Rhistory
 .RData
+.Rprofile
 .Ruserdata
 .idea/
 data/*.csv
+data/meta
 *.zip
