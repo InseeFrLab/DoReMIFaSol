@@ -9,7 +9,7 @@ infosDonnees(donnees, date = NULL)
 \arguments{
 \item{donnees}{le nom court des données que l'on souhaite télécharger sur le site de l'Insee. La description complète des données associés à ce nom figure dans la table \code{\link{liste_donnees}}. Insensible à la casse.}
 
-\item{date}{optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence.}
+\item{date}{optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence. Spécifier \code{"dernier"} sélectionne automatiquement le millésime le plus récent.}
 }
 \value{
 Une unique ligne de \code{liste_donnees} (sous forme de list).
