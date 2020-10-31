@@ -5,5 +5,5 @@
 .Ruserdata
 .idea/
 data/*.csv
-data/meta
+data-raw/meta/*
 *.zip

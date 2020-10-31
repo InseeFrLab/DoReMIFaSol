@@ -27,6 +27,25 @@ ld <- lapply(ld, function(x) {
   })
 })
 ## enrichissement du json
+## au 2010
+meta <- readxl::read_excel("data-raw/meta/AU2010 au 01-01-2020.xlsx", sheet = "Variables", skip = 5)
+labels <- as.list(meta$VAR_LIB_LONG)
+names(labels) <- meta$VAR_ID
+ld[[which(with(liste_donnees, nom == "AIRE_URBAINE"))]]$label_col <- labels
+ld[[which(with(liste_donnees, nom == "AIRE_URBAINE_COM"))]]$label_col <- labels
+## bpe ensemble
+meta <- readr::read_delim("data-raw/meta/varmod_bpe19_ensemble.csv", delim = ";")
+var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
+labels <- as.list(var$LIB_VAR)
+names(labels) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "BPE_ENS"))]]$label_col <- labels
+types <- as.list(ifelse(var$TYPE_VAR == "CHAR", "character",
+                        ifelse(var$TYPE_VAR == "NUM", "number", "guess")))
+names(types) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "BPE_ENS"))]]$type_col <- types
+long <- as.list(var$LONG_VAR)
+names(long) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "BPE_ENS"))]]$long_col <- long
 ## typage des variables dans le COG
 ld[[which(with(liste_donnees, nom == "COG_COMMUNE" & date_ref == as.Date("2018-01-01")))]]$type_col <- list(CDC = "integer",
                                                                                                             CHEFLIEU = "integer",
@@ -54,6 +73,47 @@ ld[[which(with(liste_donnees, nom == "COG_COMMUNE" & date_ref == as.Date("2019-0
 ## ajout labels des variables de Filosofi
 
 ## ajout du type de variables dans le RP
+## 2016
+## logement
+meta <- readr::read_delim("data-raw/meta/varmod_LOGEMT_2016.csv", delim = ";")
+var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
+labels <- as.list(var$LIB_VAR)
+names(labels) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_LOGEMENT" & date_ref == as.Date("2016-01-01")))]]$label_col <- labels
+types <- as.list(ifelse(var$TYPE_VAR == "CHAR", "character",
+                        ifelse(var$TYPE_VAR == "NUM", "number", "guess")))
+names(types) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_LOGEMENT" & date_ref == as.Date("2016-01-01")))]]$type_col <- types
+long <- as.list(var$LONG_VAR)
+names(long) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_LOGEMENT" & date_ref == as.Date("2016-01-01")))]]$long_col <- long
+## mobsco
+meta <- readr::read_delim("data-raw/meta/Varmod_MOBSCO_2016.csv", delim = ";")
+var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
+labels <- as.list(var$LIB_VAR)
+names(labels) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MOBSCO" & date_ref == as.Date("2016-01-01")))]]$label_col <- labels
+types <- as.list(ifelse(var$TYPE_VAR == "CHAR", "character",
+                        ifelse(var$TYPE_VAR == "NUM", "number", "guess")))
+names(types) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MOBSCO" & date_ref == as.Date("2016-01-01")))]]$type_col <- types
+long <- as.list(var$LONG_VAR)
+names(long) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MOBSCO" & date_ref == as.Date("2016-01-01")))]]$long_col <- long
+## indreg
+meta <- readr::read_delim("data-raw/meta/Varmod_INDREG_2016.csv", delim = ";")
+var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
+labels <- as.list(var$LIB_VAR)
+names(labels) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_INDREG" & date_ref == as.Date("2016-01-01")))]]$label_col <- labels
+types <- as.list(ifelse(var$TYPE_VAR == "CHAR", "character",
+                        ifelse(var$TYPE_VAR == "NUM", "number", "guess")))
+names(types) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_INDREG" & date_ref == as.Date("2016-01-01")))]]$type_col <- types
+long <- as.list(var$LONG_VAR)
+names(long) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_INDREG" & date_ref == as.Date("2016-01-01")))]]$long_col <- long
+
 
 write(jsonify::pretty_json(jsonify::to_json(ld, unbox = TRUE, numeric_dates = FALSE)), file = "data-raw/liste_donnees.json")
 usethis::use_data(ld, liste_var_ld, internal = TRUE, overwrite = TRUE)
