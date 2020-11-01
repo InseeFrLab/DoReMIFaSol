@@ -89,7 +89,7 @@ infosDonnees <- function(donnees, date = NULL) {
 
 listToDf <- function(liste, vars = NULL) {
   if (is.null(vars))
-    vars <- Reduce(union, lapply(liste, names))
+    vars <- Reduce(union, lapply(liste, function(x) names(x[sapply(x, length) == 1])))
   do.call(rbind, lapply(liste, function(x) {
     var_manquante <- setdiff(vars, names(x))
     x[var_manquante] <- NA

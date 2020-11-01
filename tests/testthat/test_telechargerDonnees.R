@@ -48,3 +48,7 @@ test_that("Sélection de variables dans la BPE", {
 test_that("Utilisation de unzip système", {
   expect_true(class(telechargerDonnees("RP_MOBSCO", date = "2016", vars = c("COMMUNE", "ARM", "CSM"))) == "data.frame")
 })
+## test import du dernier millésime
+test_that("Importation dernier millésime - output data.frame", {
+  expect_true(class(telechargerDonnees("COG_COMMUNE", date = "dernier")) == "data.frame")
+})
