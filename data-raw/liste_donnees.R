@@ -87,6 +87,14 @@ ld[[which(with(liste_donnees, nom == "RP_LOGEMENT" & date_ref == as.Date("2016-0
 long <- as.list(var$LONG_VAR)
 names(long) <- var$COD_VAR
 ld[[which(with(liste_donnees, nom == "RP_LOGEMENT" & date_ref == as.Date("2016-01-01")))]]$long_col <- long
+values <- dplyr::filter(meta, !COD_VAR %in% c("COMMUNE", "ARM", "TRIRIS", "IRIS") & TYPE_VAR == "CHAR")
+val <- with(values, lapply(unique(COD_VAR), function(x) {
+  res <- as.list(LIB_MOD[COD_VAR == x])
+  names(res) <- COD_MOD[COD_VAR == x]
+  return(res)
+}))
+names(val) <- unique(values$COD_VAR)
+ld[[which(with(liste_donnees, nom == "RP_LOGEMENT" & date_ref == as.Date("2016-01-01")))]]$val_col <- val
 ## mobsco
 meta <- readr::read_delim("data-raw/meta/Varmod_MOBSCO_2016.csv", delim = ";")
 var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
