@@ -46,6 +46,40 @@ ld[[which(with(liste_donnees, nom == "BPE_ENS"))]]$type_col <- types
 long <- as.list(var$LONG_VAR)
 names(long) <- var$COD_VAR
 ld[[which(with(liste_donnees, nom == "BPE_ENS"))]]$long_col <- long
+values <- dplyr::filter(meta, !COD_VAR %in% c("DEPCOM", "DCIRIS", "REG", "DEP") & TYPE_VAR == "CHAR")
+val <- with(values, lapply(unique(COD_VAR), function(x) {
+  res <- as.list(LIB_MOD[COD_VAR == x])
+  names(res) <- COD_MOD[COD_VAR == x]
+  return(res)
+}))
+names(val) <- unique(values$COD_VAR)
+ld[[which(with(liste_donnees, nom == "BPE_ENS"))]]$val_col <- val
+## bpe xy
+meta <- readr::read_delim("data-raw/meta/varmod_bpe19_ensemble_xy.csv", delim = ";")
+var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
+labels <- as.list(var$LIB_VAR)
+names(labels) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "BPE_ENS_XY"))]]$label_col <- labels
+ld[[which(with(liste_donnees, nom == "BPE_ENS_XY"))]]$type_col <- list(REG = "character",
+                                                                       DEP = "character",
+                                                                       DEPCOM = "character",
+                                                                       DCIRIS = "character",
+                                                                       AN = "integer",
+                                                                       TYPEQU = "character",
+                                                                       LAMBERT_X = "double",
+                                                                       LAMBERT_Y = "double",
+                                                                       QUALITE_XY = "character")
+long <- as.list(var$LONG_VAR)
+names(long) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "BPE_ENS_XY"))]]$long_col <- long
+values <- dplyr::filter(meta, COD_VAR == "TYPEQU")
+val <- with(values, lapply(unique(COD_VAR), function(x) {
+  res <- as.list(LIB_MOD[COD_VAR == x])
+  names(res) <- COD_MOD[COD_VAR == x]
+  return(res)
+}))
+names(val) <- unique(values$COD_VAR)
+ld[[which(with(liste_donnees, nom == "BPE_ENS_XY"))]]$val_col <- val
 ## typage des variables dans le COG
 ld[[which(with(liste_donnees, nom == "COG_COMMUNE" & date_ref == as.Date("2018-01-01")))]]$type_col <- list(CDC = "integer",
                                                                                                             CHEFLIEU = "integer",
