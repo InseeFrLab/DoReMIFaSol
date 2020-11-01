@@ -21,24 +21,29 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
   ## unzip if necessary
   if (telechargementFichier$zip) {
     nomFichier <- telechargementFichier$fileArchive
-    if (substr(nomFichier, nchar(nomFichier) - 2, nchar(nomFichier)) != "zip") {
+    if (!endsWith(nomFichier, ".zip")) {
       stop("Le fichier t\u00e9l\u00e9charg\u00e9 n'est pas une archive zip.")
     } else {
-      if (!telechargementFichier$big_zip)
-        unzip(nomFichier, exdir = dirname(nomFichier)) else {
-          unz <- tryCatch(unzip(nomFichier, exdir = dirname(nomFichier), unzip = "unzip"))
-          if (!is.null(unz))
-            stop(unz$message)
-        }
+      if (!telechargementFichier$big_zip) {
+        unzip(nomFichier, exdir = dirname(nomFichier))
+      } else {
+        unz <- tryCatch(unzip(nomFichier, exdir = dirname(nomFichier), unzip = "unzip"))
+        if (!is.null(unz)) stop(unz$message)
+      }
     }
     ## check the dl file exists
     if (!file.exists(nomFichier))
       stop("Le fichier t\u00e9l\u00e9charg\u00e9 est introuvable.")
   }
-  ## warning on file extension
-  fichierAImporter <- ifelse(telechargementFichier$type == "csv", telechargementFichier$argsImport$file, 
-                             ifelse(telechargementFichier$type == "json", telechargementFichier$argsImport$fichier, 
-                                    telechargementFichier$argsImport$path))
+
+  fichierAImporter <-
+    switch(
+      telechargementFichier$type,
+      "csv"  = telechargementFichier$argsImport$file,
+      "json" = telechargementFichier$argsImport$fichier,
+      telechargementFichier$argsImport$path # (autres extensions)
+    )
+
   ## check the file to import exists
   if (!file.exists(fichierAImporter))
     stop("Le fichier de donn\u00e9es est introuvable.")
