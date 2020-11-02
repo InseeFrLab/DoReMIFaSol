@@ -129,6 +129,27 @@ val <- with(values, lapply(unique(COD_VAR), function(x) {
 }))
 names(val) <- unique(values$COD_VAR)
 ld[[which(with(liste_donnees, nom == "RP_LOGEMENT" & date_ref == as.Date("2016-01-01")))]]$val_col <- val
+## indcvi
+meta <- readr::read_delim("data-raw/meta/varmod_INDCVI_2016.csv", delim = ";")
+var <- meta[!duplicated(meta$COD_VAR), c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")]
+labels <- as.list(var$LIB_VAR)
+names(labels) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_INDCVI" & date_ref == as.Date("2016-01-01")))]]$label_col <- labels
+types <- as.list(ifelse(var$TYPE_VAR == "CHAR", "character",
+                        ifelse(var$TYPE_VAR == "NUM", "number", "guess")))
+names(types) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_INDCVI" & date_ref == as.Date("2016-01-01")))]]$type_col <- types
+long <- as.list(var$LONG_VAR)
+names(long) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_INDCVI" & date_ref == as.Date("2016-01-01")))]]$long_col <- long
+values <- dplyr::filter(meta, !COD_VAR %in% c("CANTVILLE", "ARM", "DEPT", "DNAI", "IRIS", "TRIRIS") & TYPE_VAR == "CHAR")
+val <- with(values, lapply(unique(COD_VAR), function(x) {
+  res <- as.list(LIB_MOD[COD_VAR == x])
+  names(res) <- COD_MOD[COD_VAR == x]
+  return(res)
+}))
+names(val) <- unique(values$COD_VAR)
+ld[[which(with(liste_donnees, nom == "RP_INDCVI" & date_ref == as.Date("2016-01-01")))]]$val_col <- val
 ## mobsco
 meta <- readr::read_delim("data-raw/meta/Varmod_MOBSCO_2016.csv", delim = ";")
 var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
