@@ -3,7 +3,7 @@ Title: Data on Insee Website
 Version: 0.4.1
 Authors@R: c(
   person("Pierre", "Lamarche", email = "pierre.lamarche@insee.fr", role = c("aut", "cre")),
-  person("Pierre-Yves", "Berrard", role = "ctb", email = "pierre-yves.berrard@insee.fr"),
+  person("Pierre-Yves", "Berrard", role = "aut", email = "pierre-yves.berrard@insee.fr"),
   person("Lino", "Galiana", role = "ctb", email = "lino.galiana@insee.fr"),
   person("Olivier", "Meslin", role = "ctb", email = "olivier.meslin@insee.fr"),
   person("Gilles", "Fidani", role = "ctb", email = "gilles.fidani@insee.fr"),
