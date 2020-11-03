@@ -163,6 +163,14 @@ ld[[which(with(liste_donnees, nom == "RP_MOBSCO" & date_ref == as.Date("2016-01-
 long <- as.list(var$LONG_VAR)
 names(long) <- var$COD_VAR
 ld[[which(with(liste_donnees, nom == "RP_MOBSCO" & date_ref == as.Date("2016-01-01")))]]$long_col <- long
+values <- dplyr::filter(meta, !COD_VAR %in% c("COMMUNE", "ARM", "DCETUE", "DCETUF", "REGION", "REGETUD") & TYPE_VAR == "CHAR")
+val <- with(values, lapply(unique(COD_VAR), function(x) {
+  res <- as.list(LIB_MOD[COD_VAR == x])
+  names(res) <- COD_MOD[COD_VAR == x]
+  return(res)
+}))
+names(val) <- unique(values$COD_VAR)
+ld[[which(with(liste_donnees, nom == "RP_MOBSCO" & date_ref == as.Date("2016-01-01")))]]$val_col <- val
 ## indreg
 meta <- readr::read_delim("data-raw/meta/Varmod_INDREG_2016.csv", delim = ";")
 var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
@@ -176,7 +184,125 @@ ld[[which(with(liste_donnees, nom == "RP_INDREG" & date_ref == as.Date("2016-01-
 long <- as.list(var$LONG_VAR)
 names(long) <- var$COD_VAR
 ld[[which(with(liste_donnees, nom == "RP_INDREG" & date_ref == as.Date("2016-01-01")))]]$long_col <- long
+values <- dplyr::filter(meta, !COD_VAR %in% c("DEPT", "REGION") & TYPE_VAR == "CHAR")
+val <- with(values, lapply(unique(COD_VAR), function(x) {
+  res <- as.list(LIB_MOD[COD_VAR == x])
+  names(res) <- COD_MOD[COD_VAR == x]
+  return(res)
+}))
+names(val) <- unique(values$COD_VAR)
+ld[[which(with(liste_donnees, nom == "RP_INDREG" & date_ref == as.Date("2016-01-01")))]]$val_col <- val
+## mobpro
+meta <- readr::read_delim("data-raw/meta/Varmod_MOBPRO_2016.csv", delim = ";")
+var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
+labels <- as.list(var$LIB_VAR)
+names(labels) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MOBPRO" & date_ref == as.Date("2016-01-01")))]]$label_col <- labels
+types <- as.list(ifelse(var$TYPE_VAR == "CHAR", "character",
+                        ifelse(var$TYPE_VAR == "NUM", "number", "guess")))
+names(types) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MOBPRO" & date_ref == as.Date("2016-01-01")))]]$type_col <- types
+long <- as.list(var$LONG_VAR)
+names(long) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MOBPRO" & date_ref == as.Date("2016-01-01")))]]$long_col <- long
+values <- dplyr::filter(meta, !COD_VAR %in% c("COMMUNE", "ARM", "REGION", "DCFLT", "DCLT", "REGLT") & TYPE_VAR == "CHAR")
+val <- with(values, lapply(unique(COD_VAR), function(x) {
+  res <- as.list(LIB_MOD[COD_VAR == x])
+  names(res) <- COD_MOD[COD_VAR == x]
+  return(res)
+}))
+names(val) <- unique(values$COD_VAR)
+ld[[which(with(liste_donnees, nom == "RP_MOBPRO" & date_ref == as.Date("2016-01-01")))]]$val_col <- val
+## mobzelt
+meta <- readr::read_delim("data-raw/meta/Varmod_MOBZELT_2016.csv", delim = ";")
+var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
+labels <- as.list(var$LIB_VAR)
+names(labels) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MOBZELT" & date_ref == as.Date("2016-01-01")))]]$label_col <- labels
+types <- as.list(ifelse(var$TYPE_VAR == "CHAR", "character",
+                        ifelse(var$TYPE_VAR == "NUM", "number", "guess")))
+names(types) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MOBZELT" & date_ref == as.Date("2016-01-01")))]]$type_col <- types
+long <- as.list(var$LONG_VAR)
+names(long) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MOBZELT" & date_ref == as.Date("2016-01-01")))]]$long_col <- long
+values <- dplyr::filter(meta, !COD_VAR %in% c("COMMUNE", "ARM", "REGION", "DCFLT", "DCLT", "REGLT") & TYPE_VAR == "CHAR")
+val <- with(values, lapply(unique(COD_VAR), function(x) {
+  res <- as.list(LIB_MOD[COD_VAR == x])
+  names(res) <- COD_MOD[COD_VAR == x]
+  return(res)
+}))
+names(val) <- unique(values$COD_VAR)
+ld[[which(with(liste_donnees, nom == "RP_MOBZELT" & date_ref == as.Date("2016-01-01")))]]$val_col <- val
+## migcom
+meta <- readr::read_delim("data-raw/meta/Varmod_MIGCOM_2016.csv", delim = ";")
+var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
+labels <- as.list(var$LIB_VAR)
+names(labels) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MIGCOM" & date_ref == as.Date("2016-01-01")))]]$label_col <- labels
+types <- as.list(ifelse(var$TYPE_VAR == "CHAR", "character",
+                        ifelse(var$TYPE_VAR == "NUM", "number", "guess")))
+names(types) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MIGCOM" & date_ref == as.Date("2016-01-01")))]]$type_col <- types
+long <- as.list(var$LONG_VAR)
+names(long) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MIGCOM" & date_ref == as.Date("2016-01-01")))]]$long_col <- long
+values <- dplyr::filter(meta, !COD_VAR %in% c("COMMUNE", "ARM", "REGION", "DCRAN", "DNAI", "REGLT") & TYPE_VAR == "CHAR")
+val <- with(values, lapply(unique(COD_VAR), function(x) {
+  res <- as.list(LIB_MOD[COD_VAR == x])
+  names(res) <- COD_MOD[COD_VAR == x]
+  return(res)
+}))
+names(val) <- unique(values$COD_VAR)
+ld[[which(with(liste_donnees, nom == "RP_MIGCOM" & date_ref == as.Date("2016-01-01")))]]$val_col <- val
+## migdep
+meta <- readr::read_delim("data-raw/meta/Varmod_MIGDEP_2016.csv", delim = ";")
+var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
+labels <- as.list(var$LIB_VAR)
+names(labels) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MIGDEP" & date_ref == as.Date("2016-01-01")))]]$label_col <- labels
+types <- as.list(ifelse(var$TYPE_VAR == "CHAR", "character",
+                        ifelse(var$TYPE_VAR == "NUM", "number", "guess")))
+names(types) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MIGDEP" & date_ref == as.Date("2016-01-01")))]]$type_col <- types
+long <- as.list(var$LONG_VAR)
+names(long) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MIGDEP" & date_ref == as.Date("2016-01-01")))]]$long_col <- long
+values <- dplyr::filter(meta, !COD_VAR %in% c("DEPT", "DNAI") & TYPE_VAR == "CHAR")
+val <- with(values, lapply(unique(COD_VAR), function(x) {
+  res <- as.list(LIB_MOD[COD_VAR == x])
+  names(res) <- COD_MOD[COD_VAR == x]
+  return(res)
+}))
+names(val) <- unique(values$COD_VAR)
+ld[[which(with(liste_donnees, nom == "RP_MIGDEP" & date_ref == as.Date("2016-01-01")))]]$val_col <- val
+## miggco
+meta <- readr::read_delim("data-raw/meta/Varmod_MIGGCO_2016.csv", delim = ";")
+var <- unique(meta[, c("COD_VAR", "LIB_VAR", "TYPE_VAR", "LONG_VAR")])
+labels <- as.list(var$LIB_VAR)
+names(labels) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MIGGCO" & date_ref == as.Date("2016-01-01")))]]$label_col <- labels
+types <- as.list(ifelse(var$TYPE_VAR == "CHAR", "character",
+                        ifelse(var$TYPE_VAR == "NUM", "number", "guess")))
+names(types) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MIGGCO" & date_ref == as.Date("2016-01-01")))]]$type_col <- types
+long <- as.list(var$LONG_VAR)
+names(long) <- var$COD_VAR
+ld[[which(with(liste_donnees, nom == "RP_MIGGCO" & date_ref == as.Date("2016-01-01")))]]$long_col <- long
+values <- dplyr::filter(meta, !COD_VAR %in% c("COMMUNE", "ARM", "DNAI", "DRAN") & TYPE_VAR == "CHAR")
+val <- with(values, lapply(unique(COD_VAR), function(x) {
+  res <- as.list(LIB_MOD[COD_VAR == x])
+  names(res) <- COD_MOD[COD_VAR == x]
+  return(res)
+}))
+names(val) <- unique(values$COD_VAR)
+ld[[which(with(liste_donnees, nom == "RP_MIGGCO" & date_ref == as.Date("2016-01-01")))]]$val_col <- val
 
 
-write(jsonify::pretty_json(jsonify::to_json(ld, unbox = TRUE, numeric_dates = FALSE)), file = "data-raw/liste_donnees.json")
 usethis::use_data(ld, liste_var_ld, internal = TRUE, overwrite = TRUE)
+ld <- lapply(ld, function(x) {
+  if (!is.null(x$separateur))
+      x$separateur <- sub("quote\\(\"(.*)\"\\)", "\\1", x$separateur)
+  return(x)
+})
+write(jsonify::pretty_json(jsonify::to_json(ld, unbox = TRUE, numeric_dates = FALSE)), file = "data-raw/liste_donnees.json")
