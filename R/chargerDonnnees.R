@@ -21,14 +21,16 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
   ## unzip if necessary
   if (telechargementFichier$zip) {
     nomFichier <- telechargementFichier$fileArchive
+    dossier_unz <- dirname(nomFichier)
     if (!endsWith(nomFichier, ".zip")) {
       stop("Le fichier t\u00e9l\u00e9charg\u00e9 n'est pas une archive zip.")
     } else {
       if (!telechargementFichier$big_zip) {
-        unzip(nomFichier, exdir = dirname(nomFichier))
+        unzipped <- unzip(nomFichier, exdir = dossier_unz)
       } else {
-        unz <- tryCatch(unzip(nomFichier, exdir = dirname(nomFichier), unzip = "unzip"))
-        if (!is.null(unz)) stop(unz$message)
+        unzipped <- file.path(dossier_unz, unzip(nomFichier, list = TRUE)$Name)
+        err_unz <- tryCatch(unzip(nomFichier, exdir = dossier_unz, unzip = "unzip"))
+        if (!is.null(err_unz)) stop(err_unz$message)
       }
     }
     ## check the dl file exists
@@ -57,6 +59,8 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       telechargementFichier$argsImport[["col_types"]] <- colsOnly
     }
     res <- as.data.frame(do.call(readr::read_delim, c(telechargementFichier$argsImport, ...))) 
+    # supprime fichiers décompressés
+    if (telechargementFichier$zip) unlink(unzipped)
   } else if (telechargementFichier$type == "xls") {
     if (!is.null(telechargementFichier$argsImport$sheet)) {
       res <- as.data.frame(do.call(readxl::read_xls, c(telechargementFichier$argsImport, ...)))
