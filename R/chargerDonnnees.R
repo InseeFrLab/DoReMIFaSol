@@ -14,6 +14,7 @@
 #' dl_bpe <- telechargerFichier(donnees = "BPE_ENS")
 #' bpe <- chargerDonnees(dl_bpe)}
 chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
+
   ## check download has worked
   if (is.null(telechargementFichier$result))
     stop("Le t\u00e9l\u00e9chargement a rencontr\u00e9 un probl\u00e8me.")
@@ -59,8 +60,6 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       telechargementFichier$argsImport[["col_types"]] <- colsOnly
     }
     res <- as.data.frame(do.call(readr::read_delim, c(telechargementFichier$argsImport, ...))) 
-    # supprime fichiers décompressés
-    if (telechargementFichier$zip) unlink(unzipped)
   } else if (telechargementFichier$type == "xls") {
     if (!is.null(telechargementFichier$argsImport$sheet)) {
       res <- as.data.frame(do.call(readxl::read_xls, c(telechargementFichier$argsImport, ...)))
@@ -94,7 +93,12 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       warning("Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
     res <- do.call(chargerDonneesJson, telechargementFichier$argsImport)
   } else stop("Type de fichier inconnu")
+  
+  # supprime fichiers décompressés
+  if (telechargementFichier$zip) unlink(unzipped)
+
   return(res)
+
 }
 
 chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET")) {
