@@ -34,6 +34,8 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
         if (!is.null(err_unz)) stop(err_unz$message)
       }
     }
+    # supprime fichiers décompressés (même en cas de plantage)
+    on.exit(unlink(unzipped))
     ## check the dl file exists
     if (!file.exists(nomFichier))
       stop("Le fichier t\u00e9l\u00e9charg\u00e9 est introuvable.")
@@ -94,9 +96,6 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
     res <- do.call(chargerDonneesJson, telechargementFichier$argsImport)
   } else stop("Type de fichier inconnu")
   
-  # supprime fichiers décompressés
-  if (telechargementFichier$zip) unlink(unzipped)
-
   return(res)
 
 }
