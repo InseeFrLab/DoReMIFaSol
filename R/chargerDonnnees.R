@@ -14,6 +14,7 @@
 #' dl_bpe <- telechargerFichier(donnees = "BPE_ENS")
 #' bpe <- chargerDonnees(dl_bpe)}
 chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
+
   ## check download has worked
   if (is.null(telechargementFichier$result))
     stop("Le t\u00e9l\u00e9chargement a rencontr\u00e9 un probl\u00e8me.")
@@ -21,14 +22,16 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
   ## unzip if necessary
   if (telechargementFichier$zip) {
     nomFichier <- telechargementFichier$fileArchive
+    dossier_unz <- dirname(nomFichier)
     if (!endsWith(nomFichier, ".zip")) {
       stop("Le fichier t\u00e9l\u00e9charg\u00e9 n'est pas une archive zip.")
     } else {
       if (!telechargementFichier$big_zip) {
-        unzip(nomFichier, exdir = dirname(nomFichier))
+        unzipped <- unzip(nomFichier, exdir = dossier_unz)
       } else {
-        unz <- tryCatch(unzip(nomFichier, exdir = dirname(nomFichier), unzip = "unzip"))
-        if (!is.null(unz)) stop(unz$message)
+        unzipped <- file.path(dossier_unz, unzip(nomFichier, list = TRUE)$Name)
+        err_unz <- tryCatch(unzip(nomFichier, exdir = dossier_unz, unzip = "unzip"))
+        if (!is.null(err_unz)) stop(err_unz$message)
       }
     }
     ## check the dl file exists
@@ -90,7 +93,12 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       warning("Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
     res <- do.call(chargerDonneesJson, telechargementFichier$argsImport)
   } else stop("Type de fichier inconnu")
+  
+  # supprime fichiers décompressés
+  if (telechargementFichier$zip) unlink(unzipped)
+
   return(res)
+
 }
 
 chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET")) {
