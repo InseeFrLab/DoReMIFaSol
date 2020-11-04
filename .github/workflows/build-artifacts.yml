@@ -21,9 +21,20 @@ jobs:
         uses: r-lib/actions/setup-r@v1
         with:
           r-version: ${{ matrix.r-version }}
+      - name: Query dependencies
+        run: |
+          install.packages('remotes')
+        shell: Rscript {0}
+      - name: Install system dependencies
+        if: runner.os == 'Linux'
+        run: |
+          while read -r cmd
+          do
+            eval sudo $cmd
+          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "16.04"))')
       - name: Install dependencies
         run: |
-          install.packages(c("remotes", "rcmdcheck"))
+          install.packages("rcmdcheck")
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Check
