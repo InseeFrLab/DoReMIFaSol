@@ -1,0 +1,31 @@
+name: build-artifacts
+
+on: push
+
+jobs:
+  build-artifacts:
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: windows-latest, r-version: [3.5, 4.0]}
+          - {os: ubuntu-20.04, r-version: 'release'}
+    runs-on:  ${{ matrix.config.os }}
+    env:
+      INSEE_APP_KEY: ${{ secrets.INSEE_APP_KEY }}
+      INSEE_APP_SECRET: ${{ secrets.INSEE_APP_SECRET }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up R ${{ matrix.config.r-version }}
+      - uses: r-lib/actions/setup-r@v1
+        with:
+          r-version: ${{ matrix.r-version }}
+      - name: Install dependencies
+        run: |
+          install.packages(c("remotes", "rcmdcheck"))
+          remotes::install_deps(dependencies = TRUE)
+        shell: Rscript {0}
+      - name: Check
+        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
+        shell: Rscript {0}
