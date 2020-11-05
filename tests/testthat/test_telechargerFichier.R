@@ -33,7 +33,7 @@ test_that("Spécification du dossier de stockage", {
 ## test utilisation du cache
 test_that("Données déjà téléchargées", {
   telechargerFichier("ESTEL_T201", date = "2016")
-  storeDir <- ifelse(is.null(getOption("doremifasol.telDir")), tempdir(), getOption("doremifasol.telDir"))
+  storeDir <- gsub("\\", "/", ifelse(is.null(getOption("doremifasol.telDir")), tempdir(), getOption("doremifasol.telDir")), fixed = TRUE)
   expect_message(telechargerFichier("ESTEL_T202", date = "2016"), paste0("Données déjà présentes dans ", storeDir, ", pas de nouveau téléchargement."))
 })
 ## test hash non cohérent
