@@ -35,7 +35,7 @@ test_that("Données déjà téléchargées", {
   telechargerFichier("ESTEL_T201", date = "2016")
   expect_message(
     telechargerFichier("ESTEL_T202", date = "2016"),
-    "Données déjà présentes dans \".+\", pas de nouveau téléchargement."
+    "Données déjà présentes dans .+, pas de nouveau téléchargement."
   )
 })
 ## test hash non cohérent

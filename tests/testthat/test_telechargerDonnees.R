@@ -21,7 +21,7 @@ test_that("Utilisation du cache", {
   temp <- telechargerDonnees("ESTEL_T201", date = "2016")
   expect_message(
     telechargerDonnees("ESTEL_T202", date = "2016"),
-    "Données déjà présentes dans \".+\", pas de nouveau téléchargement."
+    "Données déjà présentes dans .+, pas de nouveau téléchargement."
   )
 })
 ## test import de données CSV
