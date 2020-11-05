@@ -48,7 +48,8 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
     } else {
       dl <- 0
-      message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans ", telDir, ", pas de nouveau t\u00e9l\u00e9chargement.")
+      .telDir <- gsub("\\", "/", telDir, fixed = TRUE) # normalise pour message
+      message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans ", .telDir, ", pas de nouveau t\u00e9l\u00e9chargement.")
     }
     
     if (caract$zip)
