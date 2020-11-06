@@ -32,13 +32,20 @@ jobs:
           while read -r cmd
           do
             eval sudo $cmd
-          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')
-          sudo apt-get install -y unzip
+          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')l
       - name: Install dependencies
         run: |
-          install.packages(c("rcmdcheck", "httpuv"))
+          install.packages(c("rcmdcheck", "httpuv", "devtools"))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
+      - name: Build source (Linux)
+        if: runner.os == 'Linux'
+        run: devtools::build(binary = FALSE)
+        shell: Rscript {0}
+      - name: Build windows binaries
+        if: runner.os == 'Windows'
+        run: devtools::build(binary == TRUE)
+        
