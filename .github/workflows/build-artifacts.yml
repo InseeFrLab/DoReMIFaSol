@@ -32,7 +32,7 @@ jobs:
           while read -r cmd
           do
             eval sudo $cmd
-          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')l
+          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')
       - name: Install dependencies
         run: |
           install.packages(c("rcmdcheck", "httpuv", "devtools"))
@@ -48,4 +48,4 @@ jobs:
       - name: Build windows binaries
         if: runner.os == 'Windows'
         run: devtools::build(binary == TRUE)
-        
+        shell: Rscript {0}
