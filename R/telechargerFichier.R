@@ -30,8 +30,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     telDir <- tempdir()
     cache <- TRUE
   } else {
-    if (!dir.exists(telDir))
-      dir.create(telDir)
+    dir.exists(telDir) || dir.create(telDir)
   }
   
   ## télécharge les fichiers csv, xls, xlsx...
