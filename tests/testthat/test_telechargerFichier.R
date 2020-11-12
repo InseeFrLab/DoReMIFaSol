@@ -40,11 +40,9 @@ test_that("Données déjà téléchargées", {
 })
 ## test hash non cohérent
 test_that("Hash non cohérent", {
-  telechargerFichier("ESTEL_T201", date = "2016", telDir = "test_dl")
-  unzip("test_dl/irsocee2016_loc_excel.zip")
-  file.remove("test_dl/irsocee2016_loc_excel.zip")
-  zip("test_dl/irsocee2016_loc_excel.zip", files = "T201.xls")
-  expect_message(telechargerFichier("ESTEL_T201", date = "2016", telDir = "test_dl"), "Les donn\u00e9es doivent \u00eatre mises \u00e0 jour.")
+  file.create(z <- file.path(tempdir(), "comsimp2018-txt.zip"))
+  expect_message(telechargerFichier("COG_COMMUNE", date = "2018"), "Les données doivent être mises à jour.")
+  file.remove(z)
 })
 ## test dl de données CSV
 test_that("Télécharger type CSV - output correct", {
