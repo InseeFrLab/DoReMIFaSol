@@ -1920,7 +1920,9 @@
         "fichier_donnees": "BASE_TD_FILO_DISP_IRIS_2017.xlsx",
         "onglet": "IRIS_DISP",
         "premiere_ligne": 6,
-        "api_rest": false
+        "api_rest": false,
+        "md5": "6a1e1e68028ce458ff8c08163589ede0",
+        "size": 2756721
     },
     {
         "nom": "FILOSOFI_DEC_COM",
@@ -30743,8 +30745,8 @@
         "size": 304722738
     },
     {
-        "nom": "RP_ACTRES",
-        "libelle": "Données du Recensement de Population, données sur les activités des résidents",
+        "nom": "RP_ACTRES_IRIS",
+        "libelle": "Données du Recensement de Population, données sur les activités des résidents au niveau IRIS",
         "date_ref": "2017-01-01",
         "collection": "RP",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4799323/base-ic-activite-residents-2017.zip",
@@ -30753,7 +30755,10 @@
         "big_zip": false,
         "fichier_donnees": "base-ic-activite-residents-2017.xlsx",
         "onglet": "IRIS",
-        "api_rest": false
+        "premiere_ligne": 6,
+        "api_rest": false,
+        "md5": "2df77900dcd6544a454d39abee9070a9",
+        "size": 60768390
     },
     {
         "nom": "SIRENE_SIREN",
