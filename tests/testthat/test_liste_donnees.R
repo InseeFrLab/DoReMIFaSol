@@ -22,7 +22,7 @@ test_that("pas de valeurs incongrues", {
   )
 
   # lien (motif, pas existence)
-  url_pattern <- "^https://www.insee.fr/fr/statistiques/fichier/\\d{5,}/.+\\.(zip|xls)$"
+  url_pattern <- "^https://www.insee.fr/fr/statistiques/fichier/\\d{5,}/.+\\.(zip|xls|xlsx)$"
   api_url_pattern <- "^https://api.insee.fr/entreprises/sirene/sire[nt]$"
   expect_true(
     all(grepl(paste0(url_pattern, "|", api_url_pattern), df_ld$lien))
