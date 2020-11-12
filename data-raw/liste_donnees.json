@@ -1909,6 +1909,20 @@
         "size": 2794694
     },
     {
+        "nom": "FILOSOFI_DISP_IRIS",
+        "libelle": "Données Filosofi revenu déclaré, niveau IRIS, revenu disponible – 2017",
+        "date_ref": "2017-01-01",
+        "collection": "FILOSOFI",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/4479212/BASE_TD_FILO_DISP_IRIS_2017.xlsx",
+        "type": "xlsx",
+        "zip": false,
+        "big_zip": false,
+        "fichier_donnees": "BASE_TD_FILO_DISP_IRIS_2017.xlsx",
+        "onglet": "IRIS_DISP",
+        "premiere_ligne": 6,
+        "api_rest": false
+    },
+    {
         "nom": "FILOSOFI_DEC_COM",
         "libelle": "Données Filosofi revenu déclaré, au niveau communal – 2017",
         "date_ref": "2017-01-01",
@@ -30727,6 +30741,19 @@
         "api_rest": false,
         "md5": "423875d9dfba00c9986435012733c6f2",
         "size": 304722738
+    },
+    {
+        "nom": "RP_ACTRES",
+        "libelle": "Données du Recensement de Population, données sur les activités des résidents",
+        "date_ref": "2017-01-01",
+        "collection": "RP",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/4799323/base-ic-activite-residents-2017.zip",
+        "type": "xlsx",
+        "zip": true,
+        "big_zip": false,
+        "fichier_donnees": "base-ic-activite-residents-2017.xlsx",
+        "onglet": "IRIS",
+        "api_rest": false
     },
     {
         "nom": "SIRENE_SIREN",
