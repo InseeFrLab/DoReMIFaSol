@@ -8,8 +8,8 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: windows-latest, r-version: '3.6.3'}
-          - {os: windows-latest, r-version: '4.0.0'}
+          - {os: windows-latest, r-version: '3.6'}
+          - {os: windows-latest, r-version: '4.0'}
           - {os: ubuntu-20.04, r-version: 'release'}
     runs-on:  ${{ matrix.config.os }}
     env:
@@ -49,3 +49,9 @@ jobs:
         if: runner.os == 'Windows'
         run: devtools::build(binary = TRUE, path = "dist")
         shell: Rscript {0}
+      - name: Upload artifacts
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@master
+        with:
+          name: doremifasol_0.4.1_r${{ matrix.config.r-version }}.zip
+          path: dist/doremifasol_0.4.1.zip
