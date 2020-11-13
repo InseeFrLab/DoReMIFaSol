@@ -43,9 +43,9 @@ jobs:
         shell: Rscript {0}
       - name: Build source (Linux)
         if: runner.os == 'Linux'
-        run: devtools::build(binary = FALSE, path = "dist/")
+        run: devtools::build(binary = FALSE, path = "dist")
         shell: Rscript {0}
       - name: Build windows binaries
         if: runner.os == 'Windows'
-        run: devtools::build(binary = TRUE, path = "dist/")
+        run: devtools::build(binary = TRUE, path = "dist")
         shell: Rscript {0}
