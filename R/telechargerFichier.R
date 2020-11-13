@@ -26,7 +26,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   
   #dossier de téléchargement # si NULL aller dans le cache
   cache <- FALSE
-  if (is.null(telDir) | identical(telDir, getOption("doremifasol.telDir"))) {
+  if (is.null(telDir)) {
     telDir <- tempdir()
     cache <- TRUE
   } else {
