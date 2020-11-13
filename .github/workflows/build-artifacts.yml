@@ -47,5 +47,5 @@ jobs:
         shell: Rscript {0}
       - name: Build windows binaries
         if: runner.os == 'Windows'
-        run: devtools::build(binary == TRUE)
+        run: devtools::build(binary = TRUE)
         shell: Rscript {0}
