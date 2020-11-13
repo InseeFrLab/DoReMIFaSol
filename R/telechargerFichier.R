@@ -33,6 +33,8 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     dir.exists(telDir) || dir.create(telDir)
   }
   
+  if (!curl::has_internet()) stop("aucune connexion Internet")
+  
   ## télécharge les fichiers csv, xls, xlsx...
   if (!caract$api_rest) {
     nomFichier <- file.path(telDir, basename(caract$lien))
