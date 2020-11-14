@@ -49,9 +49,15 @@ jobs:
         if: runner.os == 'Windows'
         run: devtools::build(binary = TRUE, path = "dist")
         shell: Rscript {0}
-      - name: Upload artifacts
+      - name: Upload artifacts - Binaire Windows
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@master
         with:
           name: doremifasol_0.4.1_r${{ matrix.config.r-version }}.zip
+          path: dist/
+      - name: Upload artifacts - source
+        if: runner.os == 'Linux'
+        uses: actions/upload-artifact@master
+        with:
+          name: doremifasol_0.4.1_r${{ matrix.config.r-version }}.tar.gz
           path: dist/
