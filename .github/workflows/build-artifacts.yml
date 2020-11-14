@@ -52,7 +52,7 @@ jobs:
         shell: Rscript {0}
       - name: Get package version
         run: |
-          PKGVERSION=$(Rscript -e 'packageVersion("doremifasol")')
+          PKGVERSION=$(Rscript -e 'as.character(packageVersion("doremifasol"))')
           regex='\"(.*)\"'
           [[ $PKGVERSION =~ $regex ]]
           export PKGVERSION=${BASH_REMATCH[1]}
