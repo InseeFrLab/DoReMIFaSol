@@ -50,15 +50,21 @@ jobs:
         if: runner.os == 'Windows'
         run: devtools::build(binary = TRUE, path = "dist")
         shell: Rscript {0}
+      - name: Get package version
+        run: |
+          PKGVERSION=$(Rscript -e 'packageVersion("doremifasol")')
+          regex='\"(.*)\"'
+          [[ $PKGVERSION =~ $regex ]]
+          export PKGVERSION=${BASH_REMATCH[1]}
       - name: Upload artifacts - Binaire Windows
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v2
         with:
-          name: doremifasol_0.4.1_r${{ matrix.config.r-version }}.zip
+          name: doremifasol_${PKGVERSION}_r${{ matrix.config.r-version }}.zip
           path: dist/
       - name: Upload artifacts - source
         if: runner.os == 'Linux'
         uses: actions/upload-artifact@v2
         with:
-          name: doremifasol_0.4.1_r${{ matrix.config.r-version }}.tar.gz
+          name: doremifasol_${PKGVERSION}_r${{ matrix.config.r-version }}.tar.gz
           path: dist/
