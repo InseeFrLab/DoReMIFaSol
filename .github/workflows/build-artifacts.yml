@@ -10,7 +10,7 @@ jobs:
         config:
           - {os: windows-latest, r-version: '3.6'}
           - {os: windows-latest, r-version: '4.0'}
-          - {os: ubuntu-20.04, r-version: 'release'}
+          - {os: ubuntu-20.04, r-version: '4.0'}
     runs-on:  ${{ matrix.config.os }}
     env:
       INSEE_APP_KEY: ${{ secrets.INSEE_APP_KEY }}
@@ -54,4 +54,4 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: doremifasol_0.4.1_r${{ matrix.config.r-version }}.zip
-          path: dist/doremifasol_0.4.1.zip
+          path: dist/
