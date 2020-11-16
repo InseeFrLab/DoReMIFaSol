@@ -23,3 +23,4 @@ La fonction retourne une erreur si aucune ligne ne correspond. Elle suggère
 dans ce cas des noms d'identifiants proches et les millésimes disponibles si
 l'année doit être spécifiée.
 }
+\keyword{internal}

@@ -14,6 +14,8 @@
 #' @inheritParams telechargerFichier
 #'
 #' @return Une unique ligne de `liste_donnees` (sous forme de list).
+#' 
+#' @keywords internal
 
 infosDonnees <- function(donnees, date = NULL) {
   
@@ -86,6 +88,8 @@ infosDonnees <- function(donnees, date = NULL) {
 #' @param vars optionnel, un vecteur de variables à récupérer
 #'
 #' @return Une data.frame
+#' 
+#' @keywords internal
 
 listToDf <- function(liste, vars = NULL) {
   if (is.null(vars))

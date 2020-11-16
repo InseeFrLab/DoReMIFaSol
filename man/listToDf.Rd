@@ -17,3 +17,4 @@ Une data.frame
 \description{
 Objectif : ne pas créer une dépendance à \code{dplyr} et la fonction \code{bind_rows}, bien que du point de vue computationel, la fonction créée ici soit bien moins performante.
 }
+\keyword{internal}
