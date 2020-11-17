@@ -1,0 +1,18 @@
+navbar:
+  right:
+   - text: Contribuer
+     href: https://github.com/InseeFrLab/DoReMIFaSol
+     icon: fa-github
+
+reference:
+  - title: Récupérer des données
+    contents:
+      - telechargerDonnees
+      - telechargerFichier
+      - chargerDonnees
+  - title: Informations sur les données
+    contents:
+      - liste_donnees
+      - donnees_dispo
+      - millesimesDisponibles
+      - consulter
