@@ -5,3 +5,6 @@
 ^CONTRIBUTING.md$
 ^.idea$
 ^.github
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
