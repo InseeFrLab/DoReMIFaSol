@@ -1,5 +1,5 @@
 library(doremifasol)
-require(RCurl)
+#require(RCurl)
 library(testthat)
 
 # tests unitaires sur la fonction telechargerDonnees

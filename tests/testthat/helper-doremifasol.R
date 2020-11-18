@@ -1,3 +1,12 @@
+library("vcr")
+invisible(vcr::vcr_configure(
+  filter_sensitive_data = list("<<<INSEE_APP_KEY>>>" = Sys.getenv('INSEE_APP_KEY'),
+                               "<<<INSEE_APP_SECRET>>>" = Sys.getenv('INSEE_APP_SECRET')),
+  dir = "../fixtures",
+  write_disk_path = "../fixtures/data"
+))
+vcr::check_cassette_names()
+
 skip_if_no_app <- function() {
   if (nzchar(Sys.getenv("INSEE_APP_KEY")) && nzchar(Sys.getenv("INSEE_APP_SECRET"))) {
     return(invisible(TRUE))
