@@ -6,4 +6,3 @@
 .idea/
 data/*.csv
 data-raw/meta/*
-*.zip
