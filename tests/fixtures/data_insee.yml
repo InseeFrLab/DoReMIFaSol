@@ -1,0 +1,3411 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/3568629/bpe19_ensemble_csv.zip
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 13:54:20 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="bpe19_ensemble_csv.zip"
+      transfer-encoding: chunked
+      content-type: application/zip
+      set-cookie: web4g=!fwR2063dqAYD7GcgGF2t8PpmuLoYSda0VUwpOFYsqFrtKtTVFBVfHCXqIMcwhLU+B8mw0P/rnbLHFRJ7VWo1hJxeffIpBJ19Qc++Qu8=;
+        expires=Tue, 17-Nov-2020 14:14:20 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/bpe19_ensemble_csv.zip
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 20:46:31 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="filo-revenu-pauvrete-menage-2015.zip"
+      transfer-encoding: chunked
+      content-type: application/zip
+      set-cookie: web4g=!0FhBPAhaVDQr45UgGF2t8PpmuLoYSd200G85HIJ52pGUtWFHuWyUewm+VGukjKUikMlLKUq/lryadzdr7vaHFqO+1T1ELClF9wJVfxw=;
+        expires=Tue, 17-Nov-2020 21:06:31 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/filo-revenu-pauvrete-menage-2015.zip
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/3288151/BASE_TD_FILO_DEC_IRIS_2014.xls
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 20:46:33 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="BASE_TD_FILO_DEC_IRIS_2014.xls"
+      transfer-encoding: chunked
+      content-type: application/vnd.ms-excel
+      set-cookie: web4g=!3wdqvSi7y6REb6EgGF2t8PpmuLoYSTEdrwSVws31hW7yZHFrjSUSMohTBiLACB77zjII95isjqSvL4vkaF92lyT3D65PdWe+/KLJ7Hk=;
+        expires=Tue, 17-Nov-2020 21:06:34 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/BASE_TD_FILO_DEC_IRIS_2014.xls
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/3202697/irsocee2016_loc_excel.zip
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 20:46:38 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="irsocee2016_loc_excel.zip"
+      transfer-encoding: chunked
+      content-type: application/zip
+      set-cookie: web4g=!cjoMm3tgUjYQl30gGF2t8PpmuLoYSZBNwsP/nJKh2qiVosCjnd3eLtkfoPQtX9x6CIesmV4dEBX3Ct05O5KrR1i9L/U7xDOL/6Vd3p4=;
+        expires=Tue, 17-Nov-2020 21:06:39 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/irsocee2016_loc_excel.zip
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/3363419/comsimp2018-txt.zip
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 20:46:41 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="comsimp2018-txt.zip"
+      transfer-encoding: chunked
+      content-type: application/zip
+      set-cookie: web4g=!EwXGA5/HuNXPhKAgGF2t8PpmuLoYSfBUHnPgmNFqJ3uNeTvIzDkhEq0uACEvLzkoqLVBj4YaJeT5g5o0uokWvpfy1siOnRBPaT22R88=;
+        expires=Tue, 17-Nov-2020 21:06:42 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/comsimp2018-txt.zip
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/3560121/filo-revenu-pauvrete-menage-2015.zip
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 21:26:14 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="filo-revenu-pauvrete-menage-2015.zip"
+      transfer-encoding: chunked
+      content-type: application/zip
+      set-cookie: web4g=!E6/JqfFSzXF3EBUgGF2t8PpmuLoYSQv4QPheMqeyjjSSFccGk+HVKkZ8hmMzgQbveiGh2MhAgUJ7SAc2ka7Wdb2oc3sT3wN3DsreEVg=;
+        expires=Tue, 17-Nov-2020 21:46:15 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/filo-revenu-pauvrete-menage-2015.zip
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/3202697/irsocee2016_loc_excel.zip
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 21:26:19 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="irsocee2016_loc_excel.zip"
+      transfer-encoding: chunked
+      content-type: application/zip
+      set-cookie: web4g=!5BQd9+9950QYiScgGF2t8PpmuLoYScypDB2MFuZgFJY1qeSh+pMg3j92DxjQ5dYwCyw8iAGRtbVpio1LwIDe2cpVAPZWCmQr0BvUXZQ=;
+        expires=Tue, 17-Nov-2020 21:46:20 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/irsocee2016_loc_excel.zip
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/3720946/cog_ensemble_2019_csv.zip
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 21:26:23 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="cog_ensemble_2019_csv.zip"
+      transfer-encoding: chunked
+      content-type: application/zip
+      set-cookie: web4g=!zBtWzodWTUfo3d8gGF2t8PpmuLoYSehx93aceY46B0SkDbR9E68rBbs/LT6bvcXtmbyDs82/4WDWkauMSkIlaPcMZXtPdndGT3bv/hA=;
+        expires=Tue, 17-Nov-2020 21:46:24 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/cog_ensemble_2019_csv.zip
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/3126432/filo-revenu-pauvrete-menage-2014.zip
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 21:26:26 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="filo-revenu-pauvrete-menage-2014.zip"
+      transfer-encoding: chunked
+      content-type: application/zip
+      set-cookie: web4g=!RAEhK26iHLDw2VQgGF2t8PpmuLoYSRYPYOngoyOb/3Nw45w9RwXsEzR4V2CEvucdlzITxK+8a/wMkOX6TwtpQ9nTvneK7rs5QGu2WZ4=;
+        expires=Tue, 17-Nov-2020 21:46:27 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/filo-revenu-pauvrete-menage-2014.zip
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/2115011/AU2010_au_01-01-2020.zip
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 21:26:30 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="AU2010_au_01-01-2020.zip"
+      transfer-encoding: chunked
+      content-type: application/zip
+      set-cookie: web4g=!FmQzkAAn5XEalO0gGF2t8PpmuLoYSXKQl3ox32KfIwgCmkSZhDR27f2jIMjLTxRaWbIyohLsYmz3+eTXcYdEiYD3QNft06T5uuEx/L4=;
+        expires=Tue, 17-Nov-2020 21:46:31 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/AU2010_au_01-01-2020.zip
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/2491855/irsocee2015_loc_excel.zip
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 21:26:32 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="irsocee2015_loc_excel.zip"
+      transfer-encoding: chunked
+      content-type: application/zip
+      set-cookie: web4g=!BWwrRQebPz5LuIAgGF2t8PpmuLoYSfo/I3PTs3fWAeThUjgRC76Q2AyTr7e0uclQC4WyedKLybF83WioRznap29TQ8PAo7oWgHvZyuk=;
+        expires=Tue, 17-Nov-2020 21:46:33 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/irsocee2015_loc_excel.zip
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siret?date=2020-11-17&nombre=1000&tri=siren&curseur=%2A
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:38 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siret?date=2020-11-17&nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siret?date=2020-11-17&nombre=1000&tri=siren&curseur=AoIpMDA1NzczNTQ0LjAwNTc3MzU0NDAwMDM1>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:38 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:38
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '29905326'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIRETQYqoXDjW.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siret?date=2020-11-17&nombre=1000&tri=siren&curseur=AoIpMDA1NzczNTQ0LjAwNTc3MzU0NDAwMDM1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:41 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siret?date=2020-11-17&nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siret?date=2020-11-17&nombre=1000&tri=siren&curseur=AoIpMDA2MDA0NjQyLjAwNjAwNDY0MjAwMDEw>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:41 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:41
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '29905326'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIRET_WEjUZ4xi.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siret?date=2020-11-17&nombre=1000&tri=siren&curseur=AoIpMDA2MDA0NjQyLjAwNjAwNDY0MjAwMDEw
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:43 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siret?date=2020-11-17&nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siret?date=2020-11-17&nombre=1000&tri=siren&curseur=AoIpMDA2MjcyNDYyLjAwNjI3MjQ2MjAwMDE4>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:43 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:43
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '29905326'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIRET_vpn9DaMt.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siret?q=dateCreationUniteLegale%3A1983-03-04&nombre=0
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:44 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link: <https://api.insee.fr/entreprises/sirene/siret?q=dateCreationUniteLegale%3A1983-03-04&nombre=0&debut=0>;
+        rel="first"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:45 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:45
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '351'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"header":{"statut":200,"message":"OK","total":351,"debut":0,"nombre":0},"etablissements":[]}'
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siret?q=dateCreationUniteLegale%3A1983-03-04&nombre=351&tri=siren
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:45 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siret?q=dateCreationUniteLegale%3A1983-03-04&nombre=351&tri=siren&debut=0>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siret?q=dateCreationUniteLegale%3A1983-03-04&nombre=351&tri=siren&debut=0>;
+        rel="last"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:45 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:45
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '351'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIRET2U5X2VSo.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=%2A
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:46 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA1NzcyMDgyKTAwNTc3MjA4Mg==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:46 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:46
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIRENQ6zuWdiw.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA1NzcyMDgyKTAwNTc3MjA4Mg%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:47 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA2MDAxMTM1KTAwNjAwMTEzNQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:47 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:47
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_KtPvxVXI.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA2MDAxMTM1KTAwNjAwMTEzNQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:48 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA2MjEwMzE0KTAwNjIxMDMxNA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:48 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:48
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_JUzSynTr.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA2MjEwMzE0KTAwNjIxMDMxNA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:49 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA2NTEwOTI5KTAwNjUxMDkyOQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:49 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:49
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_9SxryOby.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA2NTEwOTI5KTAwNjUxMDkyOQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:50 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA2Nzc0MDYxKTAwNjc3NDA2MQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:51 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:51
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_ALEtGco5.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA2Nzc0MDYxKTAwNjc3NDA2MQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:52 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA3MDcxOTIxKTAwNzA3MTkyMQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:52 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:52
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_nsaCRGHh.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA3MDcxOTIxKTAwNzA3MTkyMQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:53 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA3MjgwMDY4KTAwNzI4MDA2OA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:53 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:53
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_5nvu2Zbb.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA3MjgwMDY4KTAwNzI4MDA2OA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:54 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA5NzE4ODI2KTAwOTcxODgyNg==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:54 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:54
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_HuHxWiJn.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDA5NzE4ODI2KTAwOTcxODgyNg%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:55 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDEyODYzMzA0KTAxMjg2MzMwNA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:56 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:56
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_ZMUmJ2co.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDEyODYzMzA0KTAxMjg2MzMwNA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:57 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDEzNzUyNDk4KTAxMzc1MjQ5OA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:57 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:57
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_n7Epde0I.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDEzNzUyNDk4KTAxMzc1MjQ5OA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:26:59 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE0NzMwODczKTAxNDczMDg3Mw==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:46:59 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:46:59
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_YkCQpWhk.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE0NzMwODczKTAxNDczMDg3Mw%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:00 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE1NzUwNTgxKTAxNTc1MDU4MQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:01 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:01
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_d2lP3WnU.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE1NzUwNTgxKTAxNTc1MDU4MQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:01 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE2MTQzNTQ3KTAxNjE0MzU0Nw==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:02 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:02
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_3mS8yqIX.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE2MTQzNTQ3KTAxNjE0MzU0Nw%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:03 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE2NjQzNDg4KTAxNjY0MzQ4OA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:03 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:03
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_QGgeFPij.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE2NjQzNDg4KTAxNjY0MzQ4OA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:04 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE3MDcwNDQyKTAxNzA3MDQ0Mg==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:05 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:05
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_5hVO18rd.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE3MDcwNDQyKTAxNzA3MDQ0Mg%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:06 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE5NTYyNzg0KTAxOTU2Mjc4NA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:06 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:06
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_L0dzXXIM.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE5NTYyNzg0KTAxOTU2Mjc4NA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:07 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE5Nzg0NDA0KTAxOTc4NDQwNA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:08 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:08
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_lvEA5XUc.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE5Nzg0NDA0KTAxOTc4NDQwNA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:09 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE5ODI3Mjc4KTAxOTgyNzI3OA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:09 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:09
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_z7kpQ2z2.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE5ODI3Mjc4KTAxOTgyNzI3OA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:10 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE5OTA0MjAwKTAxOTkwNDIwMA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:11 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:11
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_QpJZ0ikv.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDE5OTA0MjAwKTAxOTkwNDIwMA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:12 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDIxMDI1NTQ5KTAyMTAyNTU0OQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:12 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:12
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_wHLYGgZc.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDIxMDI1NTQ5KTAyMTAyNTU0OQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:14 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDIxNTIzNTc2KTAyMTUyMzU3Ng==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:14 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:14
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_lJFIobFr.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDIxNTIzNTc2KTAyMTUyMzU3Ng%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:15 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI0MDUyMTg1KTAyNDA1MjE4NQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:15 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:15
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_xhQUXP6K.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI0MDUyMTg1KTAyNDA1MjE4NQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:16 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI0MDc4NDEyKTAyNDA3ODQxMg==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:17 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:17
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_ZNSa2CHV.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI0MDc4NDEyKTAyNDA3ODQxMg%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:18 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI1NzQyNDA0KTAyNTc0MjQwNA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:18 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:18
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_UVQ3BZkV.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI1NzQyNDA0KTAyNTc0MjQwNA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:19 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI2MDQxMjg1KTAyNjA0MTI4NQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:20 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:20
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_lBmemwCm.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI2MDQxMjg1KTAyNjA0MTI4NQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:21 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI2MzQwNjUzKTAyNjM0MDY1Mw==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:21 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:21
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_l9fhYewe.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI2MzQwNjUzKTAyNjM0MDY1Mw%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:22 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI2NzEwMTAzKTAyNjcxMDEwMw==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:22 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:22
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_0fJofK2h.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI2NzEwMTAzKTAyNjcxMDEwMw%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:23 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI3MDExNzY2KTAyNzAxMTc2Ng==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:24 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:24
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_U3AUYidY.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI3MDExNzY2KTAyNzAxMTc2Ng%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:25 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI3MzEwNzM5KTAyNzMxMDczOQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:25 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:25
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_uWxd0zzh.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDI3MzEwNzM5KTAyNzMxMDczOQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:26 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDMzNTgyMjg5KTAzMzU4MjI4OQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:26 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:26
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_umAO8ZBo.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDMzNTgyMjg5KTAzMzU4MjI4OQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:27 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM1MjM3OTI0KTAzNTIzNzkyNA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:28 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:28
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_Mkigs4PF.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM1MjM3OTI0KTAzNTIzNzkyNA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:28 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM1ODE2MjMwKTAzNTgxNjIzMA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:29 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:29
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_d8HJOhf4.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM1ODE2MjMwKTAzNTgxNjIzMA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:31 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM2MjEwODIxKTAzNjIxMDgyMQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:31 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:31
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_tHP9vdsU.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM2MjEwODIxKTAzNjIxMDgyMQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:32 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM2NTEzNDk3KTAzNjUxMzQ5Nw==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:32 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:32
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_qLi6Mw5Q.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM2NTEzNDk3KTAzNjUxMzQ5Nw%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:33 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM2ODEyNDc3KTAzNjgxMjQ3Nw==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:33 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:33
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_YJ1ii9cG.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM2ODEyNDc3KTAzNjgxMjQ3Nw%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:34 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM3MTExNjMwKTAzNzExMTYzMA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:34 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:34
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_XyKTHUWX.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM3MTExNjMwKTAzNzExMTYzMA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:35 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM3ODY3ODI3KTAzNzg2NzgyNw==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:36 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:36
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_qUQ69Y1C.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM3ODY3ODI3KTAzNzg2NzgyNw%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:37 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NTgxNjE3KTAzODU4MTYxNw==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:37 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:37
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_SLJbwurN.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NTgxNjE3KTAzODU4MTYxNw%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:39 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NjkwMDEyKTAzODY5MDAxMg==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:39 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:39
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_k8I5M4XA.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NjkwMDEyKTAzODY5MDAxMg%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:40 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzA0Nzg5KTAzODcwNDc4OQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:41 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:41
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_e1EbZE61.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzA0Nzg5KTAzODcwNDc4OQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:27:41 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzIwNjYwKTAzODcyMDY2MA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:47:42 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:47:42
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_cxq8b72T.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzIwNjYwKTAzODcyMDY2MA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 429
+      category: Client error
+      reason: Too Many Requests (RFC 6585)
+      message: 'Client error: (429) Too Many Requests (RFC 6585)'
+    headers:
+      cookie: pdapimgateway=1846946570.22560.0000; INSEE=1627925258.20480.0000
+      activityid: 734054be-9a2c-433d-ac17-d6a80f843889
+      accept: application/json, text/xml, application/xml, */*
+      access-control-allow-origin: '*'
+      access-control-allow-methods: POST,GET
+      x-forwarded-proto: https
+      x-forwarded-for: 86.247.161.42
+      accept-encoding: deflate, gzip, br
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      content-type: application/xml; charset=UTF-8
+      date: Tue, 17 Nov 2020 21:27:43 GMT
+      transfer-encoding: chunked
+      set-cookie: pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020
+        21:47:43 GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_wP90woSc.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzIwNjYwKTAzODcyMDY2MA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 429
+      category: Client error
+      reason: Too Many Requests (RFC 6585)
+      message: 'Client error: (429) Too Many Requests (RFC 6585)'
+    headers:
+      cookie: pdapimgateway=1846946570.22560.0000; INSEE=1627925258.20480.0000
+      activityid: eb67f58c-fd6d-4ec9-83ce-201a46368063
+      accept: application/json, text/xml, application/xml, */*
+      access-control-allow-origin: '*'
+      access-control-allow-methods: POST,GET
+      x-forwarded-proto: https
+      x-forwarded-for: 86.247.161.42
+      accept-encoding: deflate, gzip, br
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      content-type: application/xml; charset=UTF-8
+      date: Tue, 17 Nov 2020 21:27:54 GMT
+      transfer-encoding: chunked
+      set-cookie: pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020
+        21:47:54 GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_wP90woSc.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzIwNjYwKTAzODcyMDY2MA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:04 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzM2MTYxKTAzODczNjE2MQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:05 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:05
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_wP90woSc.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzM2MTYxKTAzODczNjE2MQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:06 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzUwNDc3KTAzODc1MDQ3Nw==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:06 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:06
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_GlXhCQ6a.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzUwNDc3KTAzODc1MDQ3Nw%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:07 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzY2NDU3KTAzODc2NjQ1Nw==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:08 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:08
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_RgSH5Hzh.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzY2NDU3KTAzODc2NjQ1Nw%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:09 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzgzMzk1KTAzODc4MzM5NQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:09 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:09
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_S8tdFvgc.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4NzgzMzk1KTAzODc4MzM5NQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:10 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODAwNjQ1KTAzODgwMDY0NQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:11 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:11
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_XdSfuDPX.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODAwNjQ1KTAzODgwMDY0NQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:12 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODE4MTM0KTAzODgxODEzNA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:13 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:13
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_Zd2yh0XM.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODE4MTM0KTAzODgxODEzNA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:14 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODM0MjIyKTAzODgzNDIyMg==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:14 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:14
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_Zw2lmxGF.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODM0MjIyKTAzODgzNDIyMg%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:16 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODU2MjY2KTAzODg1NjI2Ng==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:16 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:16
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_hoHCzcKt.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODU2MjY2KTAzODg1NjI2Ng%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:17 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODcwMjc1KTAzODg3MDI3NQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:18 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:18
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_TwcsNRML.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODcwMjc1KTAzODg3MDI3NQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:19 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODg0MjI3KTAzODg4NDIyNw==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:19 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:19
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_mWsFIn39.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODg0MjI3KTAzODg4NDIyNw%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:20 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODk4NDU4KTAzODg5ODQ1OA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:21 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:21
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_BhHq0ZK2.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4ODk4NDU4KTAzODg5ODQ1OA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:21 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTE0MTMxKTAzODkxNDEzMQ==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:22 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:22
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_0Oq57wqR.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTE0MTMxKTAzODkxNDEzMQ%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:23 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTI4MDA4KTAzODkyODAwOA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:24 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:24
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_lVJCTQHo.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTI4MDA4KTAzODkyODAwOA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:25 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTQyNjk0KTAzODk0MjY5NA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:25 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:25
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_qNFWA0rF.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTQyNjk0KTAzODk0MjY5NA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:27 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTU2OTI2KTAzODk1NjkyNg==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:27 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:27
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_gj4QOCOl.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTU2OTI2KTAzODk1NjkyNg%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:28 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTcwNTYyKTAzODk3MDU2Mg==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:29 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:29
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_YUy1KWpG.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTcwNTYyKTAzODk3MDU2Mg%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:30 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTgzNzQ4KTAzODk4Mzc0OA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:30 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:30
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_yxcFEVzq.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTgzNzQ4KTAzODk4Mzc0OA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:31 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTk2ODY0KTAzODk5Njg2NA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:32 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:32
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_JUZOOYwp.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM4OTk2ODY0KTAzODk5Njg2NA%3D%3D
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer 349f8101-a1dc-3860-9fda-9fde861d7e27
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      access-control-allow-headers: authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction
+      access-control-allow-methods: POST,GET
+      access-control-allow-origin: '*'
+      cache-control: no-cache
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      date: Tue, 17 Nov 2020 21:28:33 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=*>;
+        rel="first"
+      - <https://api.insee.fr/entreprises/sirene/siren?nombre=1000&tri=siren&curseur=AoIpMDM5MDA5NzU4KTAzOTAwOTc1OA==>;
+        rel="next"
+      set-cookie:
+      - INSEE=1627925258.20480.0000;secure; expires=Tue, 17-Nov-2020 21:48:33 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 21:48:33
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      vary: Accept-Encoding
+      x-frame-options: SAMEORIGIN
+      x-total-count: '21594740'
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/SIRENE_SIREN_xnosZ7GJ.json
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-COMMUNES.zip
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 21:35:39 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="indic-struct-distrib-revenu-2017-COMMUNES.zip"
+      transfer-encoding: chunked
+      content-type: application/zip
+      set-cookie: web4g=!JazdIu3Nm2++ytwgGF2t8PpmuLoYSf/sE0cWlZiMcQ83wMk8Fbzg03+xWfy2axvyad8jznck1LJjehr3tOTCncDiov0XQCkPr5tza3s=;
+        expires=Tue, 17-Nov-2020 21:55:39 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/indic-struct-distrib-revenu-2017-COMMUNES.zip
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: get
+    uri: https://www.insee.fr/fr/statistiques/fichier/4171517/RP2016_mobsco_csv.zip
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 17 Nov 2020 21:36:56 GMT
+      server: unknown
+      x-frame-options: SAMEORIGIN
+      content-disposition: attachment; filename="RP2016_MOBSCO_csv.zip"
+      transfer-encoding: chunked
+      content-type: application/zip
+      set-cookie: web4g=!ZcRKqo2seF4vxy4gGF2t8PpmuLoYSYJQaqAzCBVFu7Wd0a/hfOJgxC2t1syvrYnouUlw6N6bJ1WPgZHyADr4/gIaRT1/VAMLAx1+REg=;
+        expires=Tue, 17-Nov-2020 21:56:57 GMT; path=/; Httponly; Secure
+    body:
+      encoding: UTF-8
+      file: yes
+      string: ../fixtures/data/RP2016_mobsco_csv.zip
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
+- request:
+    method: post
+    uri: https://api.insee.fr/token
+    body:
+      encoding: ''
+      string: grant_type=client_credentials&validity_period=604800&client_id=<<<INSEE_APP_KEY>>>
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Content-Type: application/x-www-form-urlencoded
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      cache-control: no-store
+      content-type: application/json
+      date: Tue, 17 Nov 2020 21:56:47 GMT
+      pragma: no-cache
+      set-cookie:
+      - INSEE=1880501002.58148.0000;secure; expires=Tue, 17-Nov-2020 22:16:47 GMT;
+        path=/
+      - pdapimgateway=1846946570.22560.0000;secure; expires=Tue, 17-Nov-2020 22:16:47
+        GMT; path=/
+      strict-transport-security: max-age=100000; includeSubDomains
+      transfer-encoding: chunked
+      x-content-type-options: nosniff
+      x-frame-options: DENY
+      x-xss-protection: 1; mode=block
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"access_token":"349f8101-a1dc-3860-9fda-9fde861d7e27","scope":"am_application_scope
+        default","token_type":"Bearer","expires_in":169949}'
+  recorded_at: 2020-11-17 21:56:48 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
