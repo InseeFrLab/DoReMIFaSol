@@ -92,11 +92,29 @@ infosDonnees <- function(donnees, date = NULL) {
 #' @keywords internal
 
 listToDf <- function(liste, vars = NULL) {
-  if (is.null(vars))
-    vars <- Reduce(union, lapply(liste, function(x) names(x[sapply(x, function(x) class(x) != "list") ])))
-  do.call(rbind, lapply(liste, function(x) {
-    var_manquante <- setdiff(vars, names(x))
-    x[var_manquante] <- NA
-    return(data.frame(x[vars]))
-  }))
+
+  if (is.null(vars)) {
+    vars_atom <- lapply(liste, function(x) names(x)[sapply(x, is.atomic)])
+    vars <- unique(unlist(vars_atom))
+  }
+  
+  vars_date <- lapply(liste, function(x) names(x)[sapply(x, inherits, "Date")])
+  vars_date <- unique(unlist(vars_date))
+
+  do.call(
+    rbind,
+    lapply(
+      liste,
+      function(x) {
+        vars_manquantes <- setdiff(vars, names(x))
+        x[vars_manquantes] <- NA
+        x[vars_date] <- lapply(x[vars_date], as.Date)
+        data.frame(
+          x[vars],
+          stringsAsFactors = FALSE
+        )
+      }
+    )
+  )
+
 }
