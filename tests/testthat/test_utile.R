@@ -43,5 +43,25 @@ test_that("listToDf sur un exemple réduit", {
       stringsAsFactors = FALSE
     )
   )
+  
+  # + vars
+  expect_identical(
+    listToDf(mini_ld, vars = c("zip", "nom")),
+    data.frame(
+      zip = c(FALSE, NA),
+      nom = c("A", "B"),
+      stringsAsFactors = FALSE
+    )
+  )
+  
+  expect_identical(
+    listToDf(mini_ld, vars = c("nom", "date_ref", "md5")),
+    data.frame(
+      nom = c("A", "B"),
+      date_ref = structure(c(NA, 17897), class = "Date"),
+      md5 = c("xxxxx", "yyyyy"),
+      stringsAsFactors = FALSE
+    )
+  )
 
 })

@@ -99,7 +99,11 @@ listToDf <- function(liste, vars = NULL) {
   }
   
   vars_date <- lapply(liste, function(x) names(x)[sapply(x, inherits, "Date")])
-  vars_date <- unique(unlist(vars_date))
+  vars_date <-
+    intersect(
+      vars,
+      unique(unlist(vars_date))
+    )
 
   do.call(
     rbind,
