@@ -51,6 +51,7 @@ jobs:
         run: devtools::build(binary = TRUE, path = "dist")
         shell: Rscript {0}
       - name: Get package version
+        if: runner.os == 'Linux'
         run: |
           PKGVERSION=$(Rscript -e 'as.character(packageVersion("doremifasol"))')
           regex='\"(.*)\"'
