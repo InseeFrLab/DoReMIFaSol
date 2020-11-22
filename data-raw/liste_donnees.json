@@ -21247,6 +21247,76 @@
     {
         "nom": "RP_LOGEMENT",
         "libelle": "Données du Recensement de Population, table logements ordinaires",
+        "date_ref": "2010-01-01",
+        "collection": "RP",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/2411417/rp2010_LOGEMT_txt.zip",
+        "type": "csv",
+        "zip": true,
+        "big_zip": true,
+        "fichier_donnees": "FD_LOGEMT_2010.txt",
+        "fichier_meta": "MOD_LOGEMT_2010.txt",
+        "separateur": ";",
+        "api_rest": false
+    },
+    {
+        "nom": "RP_LOGEMENT",
+        "libelle": "Données du Recensement de Population, table logements ordinaires",
+        "date_ref": "2011-01-01",
+        "collection": "RP",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/2011267/rp2011_logemt_txt.zip",
+        "type": "csv",
+        "zip": true,
+        "big_zip": true,
+        "fichier_donnees": "FD_LOGEMT_2011.txt",
+        "fichier_meta": "MOD_LOGEMT_2011.txt",
+        "separateur": ";",
+        "api_rest": false
+    },
+    {
+        "nom": "RP_LOGEMENT",
+        "libelle": "Données du Recensement de Population, table logements ordinaires",
+        "date_ref": "2012-01-01",
+        "collection": "RP",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/1913207/rp2012_logemt_txt.zip",
+        "type": "csv",
+        "zip": true,
+        "big_zip": true,
+        "fichier_donnees": "FD_LOGEMT_2012.txt",
+        "fichier_meta": "MOD_LOGEMT_2012.txt",
+        "separateur": ";",
+        "api_rest": false
+    },
+    {
+        "nom": "RP_LOGEMENT",
+        "libelle": "Données du Recensement de Population, table logements ordinaires",
+        "date_ref": "2013-01-01",
+        "collection": "RP",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/2409491/rp2013_logemt_txt.zip",
+        "type": "csv",
+        "zip": true,
+        "big_zip": true,
+        "fichier_donnees": "FD_LOGEMT_2013.txt",
+        "fichier_meta": "MOD_LOGEMT_2013.txt",
+        "separateur": ";",
+        "api_rest": false
+    },
+    {
+        "nom": "RP_LOGEMENT",
+        "libelle": "Données du Recensement de Population, table logements ordinaires",
+        "date_ref": "2014-01-01",
+        "collection": "RP",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/3141877/RP2014_logemt_txt.zip",
+        "type": "csv",
+        "zip": true,
+        "big_zip": true,
+        "fichier_donnees": "FD_LOGEMT_2014.txt",
+        "fichier_meta": "MOD_LOGEMT_2014.txt",
+        "separateur": ";",
+        "api_rest": false
+    },
+    {
+        "nom": "RP_LOGEMENT",
+        "libelle": "Données du Recensement de Population, table logements ordinaires",
         "date_ref": "2015-01-01",
         "collection": "RP",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/3625116/RP2015_LOGEMT_txt.zip",
@@ -30631,6 +30701,20 @@
                 "ZZ": "Hors logement ordinaire"
             }
         }
+    },
+    {
+        "nom": "RP_LOGEMENT",
+        "libelle": "Données du Recensement de Population, table logements ordinaires",
+        "date_ref": "2017-01-01",
+        "collection": "RP",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/4802056/RP2017_LOGEMT_csv.zip",
+        "type": "csv",
+        "zip": true,
+        "big_zip": true,
+        "fichier_donnees": "FD_LOGEMT_2017.csv",
+        "fichier_meta": "varmod_LOGEMT_2017.csv",
+        "separateur": ";",
+        "api_rest": false
     },
     {
         "nom": "RP_INDREG",
