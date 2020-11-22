@@ -24,8 +24,8 @@ test_that("listToDf sur un exemple réduit", {
       ),
       list(
         nom = "B",
-        date_ref = structure(17897, class = "Date"), # pas présent dans [[1]]
-        api_rest = FALSE,                            # pas présent dans [[1]]
+        date_ref = as.Date("2019-01-01"), # pas présent dans [[1]]
+        api_rest = FALSE,                 # pas présent dans [[1]]
         md5 = "yyyyy", 
         size = 5L
       )
@@ -38,7 +38,7 @@ test_that("listToDf sur un exemple réduit", {
       md5 = c("xxxxx", "yyyyy"),
       size = c(10L, 5L),
       zip = c(FALSE, NA),
-      date_ref = structure(c(NA, 17897), class = "Date"),
+      date_ref = as.Date(c(NA, "2019-01-01")),
       api_rest = c(NA, FALSE), 
       stringsAsFactors = FALSE
     )
@@ -58,7 +58,7 @@ test_that("listToDf sur un exemple réduit", {
     listToDf(mini_ld, vars = c("nom", "date_ref", "md5")),
     data.frame(
       nom = c("A", "B"),
-      date_ref = structure(c(NA, 17897), class = "Date"),
+      date_ref = as.Date(c(NA, "2019-01-01")),
       md5 = c("xxxxx", "yyyyy"),
       stringsAsFactors = FALSE
     )
