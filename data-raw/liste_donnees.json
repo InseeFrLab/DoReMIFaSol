@@ -21254,9 +21254,11 @@
         "zip": true,
         "big_zip": true,
         "fichier_donnees": "FD_LOGEMT_2010.txt",
-        "fichier_meta": "MOD_LOGEMT_2010.txt",
+        "fichier_meta": "MOD_FD_LOGEMT_2010.txt",
         "separateur": ";",
-        "api_rest": false
+        "api_rest": false,
+        "md5": "d18c9353693226a9b8ce3a9d2deb2a64",
+        "size": 423577561
     },
     {
         "nom": "RP_LOGEMENT",
@@ -21268,9 +21270,11 @@
         "zip": true,
         "big_zip": true,
         "fichier_donnees": "FD_LOGEMT_2011.txt",
-        "fichier_meta": "MOD_LOGEMT_2011.txt",
+        "fichier_meta": "MOD_FD_LOGEMT_2011.txt",
         "separateur": ";",
-        "api_rest": false
+        "api_rest": false,
+        "md5": "2e1a835ca6779d139039cdfd9ed05ce3",
+        "size": 348979606
     },
     {
         "nom": "RP_LOGEMENT",
@@ -21284,7 +21288,9 @@
         "fichier_donnees": "FD_LOGEMT_2012.txt",
         "fichier_meta": "MOD_LOGEMT_2012.txt",
         "separateur": ";",
-        "api_rest": false
+        "api_rest": false,
+        "md5": "3af5722228764d577202a2bcbdec17d1",
+        "size": 351221394
     },
     {
         "nom": "RP_LOGEMENT",
@@ -21298,7 +21304,9 @@
         "fichier_donnees": "FD_LOGEMT_2013.txt",
         "fichier_meta": "MOD_LOGEMT_2013.txt",
         "separateur": ";",
-        "api_rest": false
+        "api_rest": false,
+        "md5": "67bedef4331c7cabff7e1f993179a864",
+        "size": 369149255
     },
     {
         "nom": "RP_LOGEMENT",
@@ -21312,7 +21320,9 @@
         "fichier_donnees": "FD_LOGEMT_2014.txt",
         "fichier_meta": "MOD_LOGEMT_2014.txt",
         "separateur": ";",
-        "api_rest": false
+        "api_rest": false,
+        "md5": "cc898ab41ff118d248c07f5846d0a705",
+        "size": 378712365
     },
     {
         "nom": "RP_LOGEMENT",
@@ -30714,7 +30724,9 @@
         "fichier_donnees": "FD_LOGEMT_2017.csv",
         "fichier_meta": "varmod_LOGEMT_2017.csv",
         "separateur": ";",
-        "api_rest": false
+        "api_rest": false,
+        "md5": "a5dfdb7063c0ea60b250de7a573bb370",
+        "size": 390897768
     },
     {
         "nom": "RP_INDREG",
