@@ -4,9 +4,17 @@
 \alias{donnees_dispo}
 \title{Visualiser les données disponibles}
 \usage{
-donnees_dispo(entrees = 10, pos_filtre = c("haut", "bas", "aucun"), ...)
+donnees_dispo(
+  recherche_init = NULL,
+  entrees = 10,
+  pos_filtre = c("haut", "bas", "aucun"),
+  ...
+)
 }
 \arguments{
+\item{recherche_init}{recherche initiale d'un terme dans les colonnes de la
+table (modifiable interactivement par la suite). Insensible à la casse.}
+
 \item{entrees}{nombre de lignes affichées à l'écran au lancement de la page
 (modifiable interactivement par la suite).}
 
@@ -25,4 +33,5 @@ noms courts à passer en paramètre de \link{telechargerDonnees}.
 }
 \examples{
 donnees_dispo()
+donnees_dispo("commune")
 }

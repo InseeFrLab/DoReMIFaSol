@@ -6,6 +6,8 @@
 #'
 #' **Cette fonction nécessite d'installer le package `DT`.**
 #'
+#' @param recherche_init recherche initiale d'un terme dans les colonnes de la
+#'   table (modifiable interactivement par la suite). Insensible à la casse.
 #' @param entrees nombre de lignes affichées à l'écran au lancement de la page
 #'   (modifiable interactivement par la suite).
 #' @param pos_filtre emplacement des filtres spécifiques à chaque colonne
@@ -16,8 +18,10 @@
 #'
 #' @examples
 #' donnees_dispo()
+#' donnees_dispo("commune")
 
-donnees_dispo <- function(entrees = 10,
+donnees_dispo <- function(recherche_init = NULL,
+                          entrees = 10,
                           pos_filtre = c("haut", "bas", "aucun"),
                           ...) {
 
@@ -33,6 +37,7 @@ donnees_dispo <- function(entrees = 10,
       "bas"   = "bottom",
       "aucun" = "none"
     )
+  if (is.null(recherche_init)) recherche_init <- ""
 
   # 1 - construit table à afficher
   affich <- listToDf(liste = ld, vars = c("collection", "libelle", "nom", "date_ref", "size"))
@@ -55,9 +60,32 @@ donnees_dispo <- function(entrees = 10,
   #       mais avec valeurs défaut différentes de celles de DT::data.table
   if (!any(names(params) == "class"))   params$class  <- "cell-border stripe"
   if (!any(names(params) == "filter"))  params$filter <- pos_filtre
+  
   if (!any(names(params) == "options")) {
-    params$options <- list(pageLength = entrees, searching = TRUE)
+    params$options <- list(pageLength = entrees)
   }
+  
+  params$options <- c(
+    params$options,
+    list(
+      searching  = TRUE,
+      search     = list(search = recherche_init),
+      language   = list(
+        search       = "Recherche :",
+        zeroRecords  = "Aucun r\u00e9esultat.",
+        lengthMenu   = "Afficher _MENU_ lignes",
+        info         = "Lignes _START_-_END_ sur _TOTAL_",
+        infoEmpty    = "Aucun r\u00e9esultat",
+        infoFiltered = "(filtre actif)",
+        thousands    = "",
+        paginate =
+          list(
+            previous = "Pr\u00e9c\u00e9dent",
+            `next`   = "Suivant"
+          )
+      )
+    )
+  )
 
   # 3 - génération table
   do.call(DT::datatable, params)
