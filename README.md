@@ -46,12 +46,6 @@ Le premier exemple concerne les données du recensement librement accessibles su
 donnees_rp <- telechargerDonnees("RP_LOGEMENT", date = 2016, vars = c("COMMUNE", "IPONDL", "CATL"))
 ```
 
-Il est alors possible de compter le nombre de résidences principales à partir de la table `donnees_rp` :
-
-```r
-comptage_rp <- with(donnees_rp, aggregate(as.numeric(CATL == '1')*IPONDL, list(COMMUNE), sum))
-```
-
 #### Filosofi
 
 L'Insee met également à disposition un certain nombre d'indicateurs relatifs à la distribution des revenus et à la pauvreté au niveau communal, voire infra-communal. Ces données sont mises à jour chaque année à partir des sources fiscales ; il s'agit de la source "Filosofi". Ainsi, il est possible de télécharger ces indicateurs au niveau de la commune, pour l'ensemble des ménages par exemple, grâce à la syntaxe suivante :
