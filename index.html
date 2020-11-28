@@ -153,6 +153,15 @@
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'inseeFrLab/doremifasol'</span><span class="op">)</span></code></pre></div>
 </div>
+<div id="which-data-is-available" class="section level3">
+<h3 class="hasAnchor">
+<a href="#which-data-is-available" class="anchor"></a>Which data is available?</h3>
+<p>You may begin by exploring interactively which data the package can fetch on Insee website with :</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/donnees_dispo.html">donnees_dispo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>This is also a way to find out the identifiers (short names) and years to be passed as parameters to the downloading functions.</p>
+<p><em>New data sources can be added to the package as soon as they are available online. However, this process is not automated. See the <strong><a href="#contributing">Contributing</a></strong> section for suggesting package administrators to add new sources.</em></p>
+</div>
 <div id="a-few-examples" class="section level3">
 <h3 class="hasAnchor">
 <a href="#a-few-examples" class="anchor"></a>A few examples</h3>
@@ -160,11 +169,8 @@
 <h4 class="hasAnchor">
 <a href="#census-data" class="anchor"></a>Census data</h4>
 <p>A first example of use of the package is related to the rolling Census implemented in France on a yearly basis. It concerns voluminous data that prove to be hard to load into R’s memory on most of the machines. To adress the data size issue, the package <code>doremifasol</code> makes it possible to resize the data and only imports columns that are of interest for the user. Assume that one is interested in knowing the number of main residences for each municipality on the French territory in 2016, that one will only need three variables from the table <code>logement</code> (dwelling in French), <code>COMMUNE</code> the zip code, <code>IPONDL</code> the weight of the dwelling and <code>CATL</code> indicating the status of occupation:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">donnees_rp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"RP_LOGEMENT"</span>, date <span class="op">=</span> <span class="fl">2016</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"COMMUNE"</span>, <span class="st">"IPONDL"</span>, <span class="st">"CATL"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p>Once the data have been retrieved, it is possible to count the main residences for each municipality:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">count_hmr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">donnees_rp</span>, <span class="fu"><a href="https://rdrr.io/r/stats/aggregate.html">aggregate</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">CATL</span> <span class="op">==</span> <span class="st">'1'</span><span class="op">)</span><span class="op">*</span><span class="va">IPONDL</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">COMMUNE</span><span class="op">)</span>, <span class="va">sum</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">donnees_rp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"RP_LOGEMENT"</span>, date <span class="op">=</span> <span class="fl">2016</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"COMMUNE"</span>, <span class="st">"IPONDL"</span>, <span class="st">"CATL"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="data-on-income-distribution-and-poverty" class="section level4">
 <h4 class="hasAnchor">
