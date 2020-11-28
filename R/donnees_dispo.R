@@ -4,8 +4,6 @@
 #' disponibles (recherche, filtres, tri...), en particulier pour trouver les
 #' noms courts à passer en paramètre de [telechargerDonnees].
 #'
-#' **Cette fonction nécessite d'installer le package `DT`.**
-#'
 #' @param recherche_init recherche initiale d'un terme dans les colonnes de la
 #'   table (modifiable interactivement par la suite). Insensible à la casse.
 #' @param entrees nombre de lignes affichées à l'écran au lancement de la page
@@ -26,9 +24,6 @@ donnees_dispo <- function(recherche_init = NULL,
                           ...) {
 
   # 0 - vérifications
-  if (!requireNamespace("DT", quietly = TRUE)) {
-    stop("cette fonction n\u00e9cessite d'installer le package `DT`")
-  }
   stopifnot(is.numeric(entrees))
   pos_filtre <-
     switch(

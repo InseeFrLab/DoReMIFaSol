@@ -28,9 +28,6 @@ Ouvre une page web permettant de consulter de manière interactive les données
 disponibles (recherche, filtres, tri...), en particulier pour trouver les
 noms courts à passer en paramètre de \link{telechargerDonnees}.
 }
-\details{
-\strong{Cette fonction nécessite d'installer le package \code{DT}.}
-}
 \examples{
 donnees_dispo()
 donnees_dispo("commune")
