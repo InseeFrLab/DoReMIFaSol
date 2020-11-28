@@ -22,6 +22,20 @@ Pour installer le package,
 devtools::install_github('inseeFrLab/doremifasol')
 ```
 
+### Quelles données sont disponibles ?
+
+Pour trouver quelles données le package peut aller récupérer sur le site de l'Insee, on peut commencer par explorer interactivement les données disponibles à l'aide de l'instruction :
+```r
+donnees_dispo()
+```
+
+Cela permet notamment de connaître les identifiants (noms courts) et millésimes qui seront à spécifier aux fonctions de téléchargement.
+
+Il est possible de pré-remplir le champ de recherche global. Par exemple, si on recherche uniquement des données au niveau communal : `donnees_dispo("commune")
+`
+
+_Le package a vocation à intégrer de nouveaux jeux de données dès qu'ils sont mis en ligne. Ce processus n'est toutefois pas automatisé. Voir la section **<a href=#contribuer>Contribuer</a>** pour suggérer l'ajout de nouvelles données._
+
 ### Exemples d'usages
 
 #### Les données du recensement de population
