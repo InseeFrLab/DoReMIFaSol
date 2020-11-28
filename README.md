@@ -31,8 +31,7 @@ donnees_dispo()
 
 Cela permet notamment de connaître les identifiants (noms courts) et millésimes qui seront à spécifier aux fonctions de téléchargement.
 
-Il est possible de pré-remplir le champ de recherche global. Par exemple, si on recherche uniquement des données au niveau communal : `donnees_dispo("commune")
-`
+Il est possible de pré-remplir le champ de recherche global. Par exemple, si on recherche uniquement des données au niveau communal : `donnees_dispo("commune")`
 
 _Le package a vocation à intégrer de nouveaux jeux de données dès qu'ils sont mis en ligne. Ce processus n'est toutefois pas automatisé. Voir la section **<a href=#contribuer>Contribuer</a>** pour suggérer l'ajout de nouvelles données._
 
@@ -96,6 +95,17 @@ To install the package:
 devtools::install_github('inseeFrLab/doremifasol')
 ```
 
+### Which data is available?
+
+You may begin by exploring interactively which data the package can fetch on Insee website with :
+```r
+donnees_dispo()
+```
+
+This is also a way to find out the identifiers (short names) and years to be passed as parameters to the downloading functions.
+
+_New data sources can be added to the package as soon as they are available online. However, this process is not automated. See the **<a href=#contributing>Contributing</a>** section for suggesting package administrators to add new sources._
+
 ### A few examples
 
 #### Census data
@@ -104,12 +114,6 @@ A first example of use of the package is related to the rolling Census implement
 
 ```r
 donnees_rp <- telechargerDonnees("RP_LOGEMENT", date = 2016, vars = c("COMMUNE", "IPONDL", "CATL"))
-```
-
-Once the data have been retrieved, it is possible to count the main residences for each municipality:
-
-```r
-count_hmr <- with(donnees_rp, aggregate(as.numeric(CATL == '1')*IPONDL, list(COMMUNE), sum))
 ```
 
 #### Data on income distribution and poverty
