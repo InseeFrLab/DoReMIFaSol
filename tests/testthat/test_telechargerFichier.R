@@ -41,7 +41,7 @@ test_that("Données déjà téléchargées", {
 ## test hash non cohérent
 test_that("Hash non cohérent", {
   file.create(z <- file.path(tempdir(), "comsimp2018-txt.zip"))
-  expect_message(telechargerFichier("COG_COMMUNE", date = "2018"), "Les données doivent être mises à jour.")
+  expect_message(telechargerFichier("COG_COMMUNE", date = "2018", telDir = tempdir()), "Les données doivent être mises à jour.")
   file.remove(z)
 })
 ## test dl de données CSV
