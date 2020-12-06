@@ -20,8 +20,8 @@
 infosDonnees <- function(donnees, date = NULL) {
   
   donnees <- toupper(donnees) # pour rendre insensible à la casse
-  liste_nom <- unlist(lapply(ld, function(x) return(x$nom)))
-  res <- ld[which(liste_nom == donnees)]
+  liste_nom <- vapply(ld, `[[`, "nom", FUN.VALUE = character(1))
+  res <- ld[liste_nom == donnees]
 
   # 1 - identifiant introuvable
 
@@ -51,6 +51,8 @@ infosDonnees <- function(donnees, date = NULL) {
     )
   }
 
+  select <- 1
+  
   if (length(possible) > 1) {
 
     if (is.null(date)) {
@@ -60,7 +62,7 @@ infosDonnees <- function(donnees, date = NULL) {
       )
     }
     
-    dates_possibles <- as.Date(unlist(lapply(res, function(x) return(x$date_ref))), origin = "1970-01-01")
+    dates_possibles <- as.Date(sapply(res, `[[`, "date_ref"), origin = "1970-01-01")
     if (nchar(date) == 4) {
       select <- which(format(dates_possibles, "%Y") == as.character(date))
     } else {
@@ -70,11 +72,9 @@ infosDonnees <- function(donnees, date = NULL) {
     if (!length(select)) stop("La date sp\u00e9cifi\u00e9e n'est pas disponible.")
     if (length(select) > 1) stop("Donn\u00e9es infra-annuelles a priori. Mieux sp\u00e9cifier la date de r\u00e9f\u00e9rence.")
     
-    res <- res[select]
-
   }
 
-  res[[1]]
+  res[[select]]
 
 }
 
