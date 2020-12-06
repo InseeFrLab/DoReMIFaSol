@@ -35,7 +35,9 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   
   ## télécharge les fichiers csv, xls, xlsx...
   if (!caract$api_rest) {
+
     nomFichier <- file.path(telDir, basename(caract$lien))
+
     if (!file.exists(nomFichier) || force) {
       if (!curl::has_internet()) stop("aucune connexion Internet")
       dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
@@ -51,41 +53,43 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       dl <- 0
       message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans ", shQuote(telDir), ", pas de nouveau t\u00e9l\u00e9chargement.")
     }
-    
-    if (caract$zip)
-      fileArchive <- nomFichier else 
-        fileArchive <- NULL
-      
-      if (caract$zip)
-        fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees) else
-          fichierAImporter <- nomFichier
-        
-        if (caract$type == "csv") {
-          argsImport <- list(file = fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE)
-          if (!is.null(caract$encoding))
-            argsImport[["locale"]] <- readr::locale(encoding = caract$encoding)
-          if (!is.null(caract$valeurs_manquantes))
-            argsImport[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
-        }
-        else if (caract$type == "xls") {
-          argsImport <- list(path = fichierAImporter, skip = caract$premiere_ligne - 1, sheet = caract$onglet)
-          if (!is.null(caract$derniere_ligne))
-            argsImport[["n_max"]] <- caract$derniere_ligne - caract$premiere_ligne
-          if (!is.null(caract$valeurs_manquantes))
-            argsImport[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
-        } else if (caract$type == "xlsx") {
-          argsImport <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
-        }
-        
-        if (!is.null(caract$type_col)) {
-          listvar <- lapply(caract$type_col, function(x) {
-            eval(parse(text = paste0("readr::col_", x, "()")))
-          })
-          cols <- readr::cols()
-          cols$cols <- listvar
-          argsImport[["col_types"]] <- cols
-        }
+
+    if (caract$zip) {
+      fileArchive <- nomFichier
+      fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees)
+    } else {
+      fileArchive <- NULL
+      fichierAImporter <- nomFichier
+    }
+
+    if (caract$type == "csv") {
+      argsImport <- list(file = fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE)
+      if (!is.null(caract$encoding))
+        argsImport[["locale"]] <- readr::locale(encoding = caract$encoding)
+      if (!is.null(caract$valeurs_manquantes))
+        argsImport[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
+    } else if (caract$type == "xls") {
+      argsImport <- list(path = fichierAImporter, skip = caract$premiere_ligne - 1, sheet = caract$onglet)
+      if (!is.null(caract$derniere_ligne))
+        argsImport[["n_max"]] <- caract$derniere_ligne - caract$premiere_ligne
+      if (!is.null(caract$valeurs_manquantes))
+        argsImport[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
+    } else if (caract$type == "xlsx") {
+      argsImport <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
+    }
+
+    if (!is.null(caract$type_col)) {
+      listvar <- lapply(
+        caract$type_col,
+        function(x) eval(parse(text = paste0("readr::col_", x, "()")))
+      )
+      cols <- readr::cols()
+      cols$cols <- listvar
+      argsImport[["col_types"]] <- cols
+    }
+
   } else {
+
     ## télécharge les données sur l'API
     if (!curl::has_internet()) stop("aucune connexion Internet")
     token <- apinsee::insee_auth()
@@ -128,6 +132,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       dl <- 0
     argsImport <- list(fichier = fichierAImporter, nom = caract$nom)
     fileArchive <- NULL
+
   }
   
   invisible(
@@ -145,6 +150,5 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
 
 genererSuffixe <- function(longueur) {
   liste <- c(0:9, letters, LETTERS)
-  s <- paste(sample(liste, longueur, replace = TRUE), collapse = "")
-  return(s)
+  paste(sample(liste, longueur, replace = TRUE), collapse = "")
 }
