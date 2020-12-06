@@ -41,6 +41,9 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     if (!file.exists(nomFichier) || force) {
       if (!curl::has_internet()) stop("aucune connexion Internet")
       dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
+      if (tools::md5sum(nomFichier) != caract$md5) {
+        warning("Fichier sur insee.fr modifi\u00e9 ou corruption lors du t\u00e9l\u00e9chargement.")
+      }
       if (cache)
         message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es ont \u00e9t\u00e9 t\u00e9l\u00e9charg\u00e9es par d\u00e9faut dans le dossier: ", telDir)
     } else if (tools::md5sum(nomFichier) != caract$md5){
