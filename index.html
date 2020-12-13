@@ -46,6 +46,18 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/donnees_dispo.html">Données disponibles</a>
+    </li>
+  </ul>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
@@ -88,11 +100,8 @@
 <div id="quelles-données-sont-disponibles-" class="section level3">
 <h3 class="hasAnchor">
 <a href="#quelles-donn%C3%A9es-sont-disponibles-" class="anchor"></a>Quelles données sont disponibles ?</h3>
-<p>Pour trouver quelles données le package peut aller récupérer sur le site de l’Insee, on peut commencer par explorer interactivement les données disponibles à l’aide de l’instruction :</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/donnees_dispo.html">donnees_dispo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>Pour trouver quelles données le package peut aller récupérer sur le site de l’Insee, on peut commencer par explorer interactivement les <a href="https://inseefrlab.github.io/DoReMIFaSol/articles/donnees_dispo.html">données disponibles</a>.</p>
 <p>Cela permet notamment de connaître les identifiants (noms courts) et millésimes qui seront à spécifier aux fonctions de téléchargement.</p>
-<p>Il est possible de pré-remplir le champ de recherche global. Par exemple, si on recherche uniquement des données au niveau communal : <code><a href="reference/donnees_dispo.html">donnees_dispo("commune")</a></code></p>
 <p><em>Le package a vocation à intégrer de nouveaux jeux de données dès qu’ils sont mis en ligne. Ce processus n’est toutefois pas automatisé. Voir la section <strong><a href="#contribuer">Contribuer</a></strong> pour suggérer l’ajout de nouvelles données.</em></p>
 </div>
 <div id="exemples-dusages" class="section level3">
@@ -102,14 +111,14 @@
 <h4 class="hasAnchor">
 <a href="#les-donn%C3%A9es-du-recensement-de-population" class="anchor"></a>Les données du recensement de population</h4>
 <p>Le premier exemple concerne les données du recensement librement accessibles sur le site de l’Insee. Ce sont des données très volumineuses, et sauf à disposer de capacités de calcul conséquentes, il n’est en général pas possible de charger l’ensemble des données en mémoire. Pour cela, le <em>package</em> <code>doremifasol</code> permet de sélectionner les colonnes que l’on souhaite charger en mémoire, une fois le fichier téléchargé. Ainsi, un utilisateur qui voudrait connaître par commune le nombre de résidences principales en 2016 aura besoin des variables <code>COMMUNE</code> - le code commune - et <code>CATL</code> - la catégorie d’occupation du logement - de la table <code>logement</code> :</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">donnees_rp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"RP_LOGEMENT"</span>, date <span class="op">=</span> <span class="fl">2016</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"COMMUNE"</span>, <span class="st">"IPONDL"</span>, <span class="st">"CATL"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="filosofi" class="section level4">
 <h4 class="hasAnchor">
 <a href="#filosofi" class="anchor"></a>Filosofi</h4>
 <p>L’Insee met également à disposition un certain nombre d’indicateurs relatifs à la distribution des revenus et à la pauvreté au niveau communal, voire infra-communal. Ces données sont mises à jour chaque année à partir des sources fiscales ; il s’agit de la source “Filosofi”. Ainsi, il est possible de télécharger ces indicateurs au niveau de la commune, pour l’ensemble des ménages par exemple, grâce à la syntaxe suivante :</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">donnees_filosofi</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"FILOSOFI_DISP_COM_ENS"</span>, date <span class="op">=</span> <span class="fl">2017</span><span class="op">)</span></code></pre></div>
 <p>Ces données sont déclinées pour différentes catégories de ménages, et de la même manière peuvent être téléchargées grâce au <em>package</em> <code>doremifasol</code>.</p>
 </div>
@@ -117,14 +126,14 @@
 <h4 class="hasAnchor">
 <a href="#estimations-localis%C3%A9es-demploi-en-france" class="anchor"></a>Estimations localisées d’emploi en France</h4>
 <p>De la même manière que les données fiscales permettent de fournir des statistiques à un niveau géographique fin, d’autres sources administratives permettent de construire des estimations du nombre d’emplois présents dans les différentes communes du territoire français. Il s’agit des Estimations d’Emploi Localisées, qu’il est possible de récupérer en <code>R</code> grâce à la syntaxe suivante :</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">donnees_estel</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"ESTEL_T201"</span>, date <span class="op">=</span> <span class="fl">2018</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="requêter-une-api-rest--le-répertoire-dentreprises-sirene" class="section level4">
 <h4 class="hasAnchor">
 <a href="#requ%C3%AAter-une-api-rest--le-r%C3%A9pertoire-dentreprises-sirene" class="anchor"></a>Requêter une API REST : le répertoire d’entreprises Sirene</h4>
 <p>Supposons que l’on cherche maintenant à récupérer l’ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l’API REST Sirene de l’Insee. Pour cela, il faut au préalable avoir configuré un accès à l’API REST de l’Insee et passer en variables d’environnement les données d’identification. La procédure est expliquée par exemple <a href="https://github.com/InseeFrLab/apinsee#exemple">ici</a>. Une fois cela réalisé, la requête peut se faire facilement au travers de <code>doremifasol</code> de la manière suivante :</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">etablissements</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"SIRENE_SIRET"</span>, 
                                      argsApi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>q <span class="op">=</span> <span class="st">"dateCreationUniteLegale:2020-01-01"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>On fait alors face à une liste contenant plusieurs <code>data.frame</code> (6 au total) :</p>
@@ -150,15 +159,13 @@
 <a href="#what-is-it-about" class="anchor"></a>What is it about?</h3>
 <p><code>doremifasol</code> (data with <code>R</code> made available by Insee and easily retrievable in French) is a R package mainly aiming at showing off data available on Insee’s website (Insee, for the French Institute for Statistics and Economic Studies), helping the user to put them on stage and extract the information they carry. So it is about analysing data, creating maps, quantifying phenomenons and in general using the data without the painful effort to retrieve them on the website, as well as import them into R’s memory. The name of the <em>package</em> stands for the five first notes of music, and pushing the metaphore, underlines its aim at helping the users to easily pratice their <em>solfège</em> in <code>R</code>.</p>
 <p>To install the package:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'inseeFrLab/doremifasol'</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="which-data-is-available" class="section level3">
 <h3 class="hasAnchor">
 <a href="#which-data-is-available" class="anchor"></a>Which data is available?</h3>
-<p>You may begin by exploring interactively which data the package can fetch on Insee website with :</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/donnees_dispo.html">donnees_dispo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>You may begin by exploring interactively <a href="https://inseefrlab.github.io/DoReMIFaSol/articles/donnees_dispo.html">which data</a> the package can fetch on Insee website with.</p>
 <p>This is also a way to find out the identifiers (short names) and years to be passed as parameters to the downloading functions.</p>
 <p><em>New data sources can be added to the package as soon as they are available online. However, this process is not automated. See the <strong><a href="#contributing">Contributing</a></strong> section for suggesting package administrators to add new sources.</em></p>
 </div>
@@ -169,14 +176,14 @@
 <h4 class="hasAnchor">
 <a href="#census-data" class="anchor"></a>Census data</h4>
 <p>A first example of use of the package is related to the rolling Census implemented in France on a yearly basis. It concerns voluminous data that prove to be hard to load into R’s memory on most of the machines. To adress the data size issue, the package <code>doremifasol</code> makes it possible to resize the data and only imports columns that are of interest for the user. Assume that one is interested in knowing the number of main residences for each municipality on the French territory in 2016, that one will only need three variables from the table <code>logement</code> (dwelling in French), <code>COMMUNE</code> the zip code, <code>IPONDL</code> the weight of the dwelling and <code>CATL</code> indicating the status of occupation:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">donnees_rp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"RP_LOGEMENT"</span>, date <span class="op">=</span> <span class="fl">2016</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"COMMUNE"</span>, <span class="st">"IPONDL"</span>, <span class="st">"CATL"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="data-on-income-distribution-and-poverty" class="section level4">
 <h4 class="hasAnchor">
 <a href="#data-on-income-distribution-and-poverty" class="anchor"></a>Data on income distribution and poverty</h4>
 <p>Should you now be interested in data on income distribution, you may download information on income percentiles and poverty rate at the municipality level based on tax data, also knwow as ‘Filosofi’. Those data are update every year. You may fetch these data for year 2017 for instance thanks to the following command:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">donnees_filosofi</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"FILOSOFI_DISP_COM_ENS"</span>, date <span class="op">=</span> <span class="fl">2017</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="data-on-employment" class="section level4">
