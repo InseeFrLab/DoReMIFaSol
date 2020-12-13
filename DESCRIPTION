@@ -13,7 +13,15 @@ Description: A package primarily intended for Insee staff members willing to use
 Language: fr
 Depends: R (>= 3.5.0)
 Imports: readr, readxl, httr, apinsee, jsonlite, curl, DT
-Suggests: tidyverse, data.table, testthat, RCurl, httpuv, jsonify
+Suggests: 
+    tidyverse,
+    data.table,
+    testthat,
+    RCurl,
+    httpuv,
+    jsonify,
+    knitr,
+    rmarkdown
 Remotes: inseeFrLab/apinsee
 License: MIT + file LICENSE
 LazyData: true
@@ -22,3 +30,4 @@ Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
 URL: https://InseeFrLab.github.io/DoReMIFaSol, https://github.com/InseeFrLab/DoReMIFaSol
 BugReports: https://github.com/InseeFrLab/DoReMIFaSol/issues
+VignetteBuilder: knitr

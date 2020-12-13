@@ -24,14 +24,9 @@ devtools::install_github('inseeFrLab/doremifasol')
 
 ### Quelles données sont disponibles ?
 
-Pour trouver quelles données le package peut aller récupérer sur le site de l'Insee, on peut commencer par explorer interactivement les données disponibles à l'aide de l'instruction :
-```r
-donnees_dispo()
-```
+Pour trouver quelles données le package peut aller récupérer sur le site de l'Insee, on peut commencer par explorer interactivement les [données disponibles](https://inseefrlab.github.io/DoReMIFaSol/articles/donnees_dispo.html).
 
 Cela permet notamment de connaître les identifiants (noms courts) et millésimes qui seront à spécifier aux fonctions de téléchargement.
-
-Il est possible de pré-remplir le champ de recherche global. Par exemple, si on recherche uniquement des données au niveau communal : `donnees_dispo("commune")`
 
 _Le package a vocation à intégrer de nouveaux jeux de données dès qu'ils sont mis en ligne. Ce processus n'est toutefois pas automatisé. Voir la section **<a href=#contribuer>Contribuer</a>** pour suggérer l'ajout de nouvelles données._
 
@@ -97,10 +92,7 @@ devtools::install_github('inseeFrLab/doremifasol')
 
 ### Which data is available?
 
-You may begin by exploring interactively which data the package can fetch on Insee website with :
-```r
-donnees_dispo()
-```
+You may begin by exploring interactively [which data](https://inseefrlab.github.io/DoReMIFaSol/articles/donnees_dispo.html) the package can fetch on Insee website with.
 
 This is also a way to find out the identifiers (short names) and years to be passed as parameters to the downloading functions.
 

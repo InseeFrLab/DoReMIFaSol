@@ -8,3 +8,4 @@ data/*.csv
 data-raw/meta/*
 *.zip
 docs
+inst/doc
