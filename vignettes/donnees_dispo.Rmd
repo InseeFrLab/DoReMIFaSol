@@ -7,12 +7,6 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r "setup", include = FALSE}
-options(
-  rmarkdown.html_vignette.check_title = FALSE
-)
-```
-
 ```{r "tableau", echo = FALSE}
 doremifasol::donnees_dispo(entrees = 20)
 ```
