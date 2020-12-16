@@ -2,7 +2,7 @@
 % Please edit documentation in R/telechargerFichier.R
 \name{telechargerFichier}
 \alias{telechargerFichier}
-\title{Téléchargement des fichiers sur le site de l'Insee}
+\title{Télécharger un fichier sur le site de l'Insee}
 \usage{
 telechargerFichier(
   donnees,
@@ -27,7 +27,7 @@ telechargerFichier(
 Une liste contenant le résultat du téléchargement et les informations pour l'importation des données en R (de manière invisible).
 }
 \description{
-Téléchargement des fichiers sur le site de l'Insee
+Télécharger un fichier sur le site de l'Insee
 }
 \details{
 La fonction permet de télécharger les données disponibles sur le site de l'Insee sous format csv, xls ou encore xlsx. Elle permet également, de manière expérimentale, de requêter certaines API REST de l'Insee ; ces services peuvent être repérés dans la table \code{\link{liste_donnees}} grâce à la variable \code{api_rest}.

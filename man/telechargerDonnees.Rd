@@ -2,7 +2,7 @@
 % Please edit documentation in R/telechargerDonnees.R
 \name{telechargerDonnees}
 \alias{telechargerDonnees}
-\title{Téléchargement des données sur le site de l'Insee}
+\title{Télécharger des données sur le site de l'Insee}
 \usage{
 telechargerDonnees(
   donnees,
@@ -33,7 +33,7 @@ telechargerDonnees(
 un objet tibble contenant les données téléchargées sur le site de l'Insee.
 }
 \description{
-Téléchargement des données sur le site de l'Insee
+Télécharger des données sur le site de l'Insee
 }
 \details{
 La fonction permet de télécharger les données disponibles sur le site de l'Insee sous format csv, xls ou encore xlsx. Les données mises à disposition sont en général des tables de taille raisonnable, qui peuvent être chargées sans problème en mémoire sur un large spectre de machines. Néanmoins, pour certaines données (telles celles du Recensement de Population ou encore SIRENE), les données sont très volumineuses et exigent donc des machines très performantes. L'utilisateur a donc la possibilité de choisir les variables qui l'intéressent et de ne charger que ces dernières en mémoire, de manière à être parcimonieux.

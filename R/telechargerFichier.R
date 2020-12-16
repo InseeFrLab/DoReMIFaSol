@@ -1,4 +1,4 @@
-#' Téléchargement des fichiers sur le site de l'Insee
+#' Télécharger un fichier sur le site de l'Insee
 #'
 #' @param donnees le nom court des données que l'on souhaite télécharger sur le site de l'Insee. La description complète des données associés à ce nom figure dans la table [`liste_donnees`]. Insensible à la casse.
 #' @param date optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence. Spécifier `"dernier"` sélectionne automatiquement le millésime le plus récent.
