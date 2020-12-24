@@ -2,7 +2,7 @@ liste_donnees <- jsonlite::read_json("data-raw/liste_donnees.json")
 ## mise en forme des données
 liste_donnees <- lapply(liste_donnees, function(x) {
   if (!is.null(x$separateur))
-    x$separateur <- paste0("quote(", x$separateur, ")")
+    x$separateur <- paste0("quote(\"", x$separateur, "\")")
   if (!is.null(x$date_ref))
     x$date_ref <- as.Date(x$date_ref, format = "%Y-%m-%d")
   return(x)
