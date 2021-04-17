@@ -53,6 +53,7 @@ jobs:
       - name: Get package version
         if: runner.os == 'Linux'
         run: |
+          Rscript -e 'devtools::install()'
           PKGVERSION=$(Rscript -e 'as.character(packageVersion("doremifasol"))')
           regex='\"(.*)\"'
           [[ $PKGVERSION =~ $regex ]]
