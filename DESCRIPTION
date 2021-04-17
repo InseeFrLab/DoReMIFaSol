@@ -21,7 +21,8 @@ Suggests:
     httpuv,
     jsonify,
     knitr,
-    rmarkdown
+    rmarkdown,
+    markdown
 Remotes: inseeFrLab/apinsee
 License: MIT + file LICENSE
 LazyData: true
