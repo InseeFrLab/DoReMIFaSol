@@ -26,18 +26,18 @@ test_that("Utilisation du cache", {
 })
 ## test import de données CSV
 test_that("Importation type CSV - output data.frame", {
-  expect_true(class(telechargerDonnees("COG_COMMUNE", date = "2019")) == "data.frame")
+  expect_true(is.data.frame(telechargerDonnees("COG_COMMUNE", date = "2019")))
 })
 ## test import de données XLS
 test_that("Importation type XLS - output data.frame", {
-  expect_true(class(telechargerDonnees("FILOSOFI_COM", date = "2014")) == "data.frame")
+  expect_true(is.data.frame(telechargerDonnees("FILOSOFI_COM", date = "2014")))
 })
 test_that("Importation type XLS - import de tous les onglets", {
-  expect_true(class(telechargerDonnees("ESTEL_T201", date = "31/12/2016")) == "data.frame")
+  expect_true(is.data.frame(telechargerDonnees("ESTEL_T201", date = "31/12/2016")))
 })
 ## test import de données XLSX
 test_that("Importation type XLSX - output data.frame", {
-  expect_true(class(telechargerDonnees("AIRE_URBAINE")) == "data.frame")
+  expect_true(is.data.frame(telechargerDonnees("AIRE_URBAINE")))
 })
 test_that("Importation type XLSX - output data.frame", {
   expect_true(class(telechargerDonnees("FILOSOFI_DISP_COM", date = 2017)) == "list")
@@ -48,9 +48,9 @@ test_that("Sélection de variables dans la BPE", {
 })
 ## test dézip gros fichiers
 test_that("Utilisation de unzip système", {
-  expect_true(class(telechargerDonnees("RP_MOBSCO", date = "2016", vars = c("COMMUNE", "ARM", "CSM"))) == "data.frame")
+  expect_true(is.data.frame(telechargerDonnees("RP_MOBSCO", date = "2016", vars = c("COMMUNE", "ARM", "CSM"))))
 })
 ## test import du dernier millésime
 test_that("Importation dernier millésime - output data.frame", {
-  expect_true(class(telechargerDonnees("COG_COMMUNE", date = "dernier")) == "data.frame")
+  expect_true(is.data.frame(telechargerDonnees("COG_COMMUNE", date = "dernier")))
 })
