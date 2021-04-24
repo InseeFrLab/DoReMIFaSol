@@ -27,13 +27,14 @@ jobs:
         run: |
           install.packages('remotes')
         shell: Rscript {0}
-      - name: Install system dependencies
+      - name: Install system dependencies - Linux
         if: runner.os == 'Linux'
         run: |
           while read -r cmd
           do
             eval sudo $cmd
           done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')
+      - name: Install system dependencies - Windows
         if: runner.os == 'Windows'
         run: |
           choco install pandoc
