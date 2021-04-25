@@ -95,6 +95,17 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       warning("Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
     res <- do.call(chargerDonneesJson, telechargementFichier$argsImport)
   } else stop("Type de fichier inconnu")
+
+  # ajout attribut source (pour data.frames hors API)
+  if (is.data.frame(res)) {
+    class(res) <- c("insee_data_frame", class(res))
+    attr(res, "source") <-
+      list(
+        producteur = "Institut National de la Statistique et des \u00c9tudes \u00c9conomiques (Insee)",
+        url = sub("fichier/([0-9]+)/.+$", "\\1", telechargementFichier$lien),
+        infos_diffusion = "https://www.insee.fr/fr/information/1300614"
+      )
+  }
   
   return(res)
 

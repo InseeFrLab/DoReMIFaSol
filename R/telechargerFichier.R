@@ -141,6 +141,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   invisible(
     list(
       result      = dl,
+      lien        = caract$lien,
       zip         = caract$zip,
       big_zip     = caract$big_zip,
       fileArchive = fileArchive,
