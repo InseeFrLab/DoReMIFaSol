@@ -71,7 +71,7 @@ On fait alors face à une liste contenant plusieurs `data.frame` (6 au total) :
 * une table contenant l'ensemble des informations sur les établissements en question ;
 * deux tables contenant l'ensemble des informations sur les unités légales de ces établissements, en distinguant les unités dites purgées des autres ;
 * deux tables contenant les informations sur l'adresse de ces établissements ;
-* une table détaillant les informations historicisées de ces établissements - c'est-à-dire les différentes modifications qu'ont connues les établissements entre leur création et la date de référence - ici par défaut la date de téléchargement.
+* une table détaillant les informations historisées de ces établissements - c'est-à-dire les différentes modifications qu'ont connues les établissements entre leur création et la date de référence - ici par défaut la date de téléchargement.
 
 ### Contribuer
 
