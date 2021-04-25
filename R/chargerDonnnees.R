@@ -112,8 +112,11 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
 }
 
 chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET")) {
+  
   donnees <- do.call(c, lapply(fichier, function(x) jsonlite::read_json(x)[[2]]))
+  
   if (nom == "SIRENE_SIREN") {
+    
     unitesLegales <- lapply(donnees, function(x) data.frame(lapply(x[1:18], function(xx) ifelse(is.null(xx), NA, xx))))
     unitesLegales <- list(
       unitesExistantes = lapply(unitesLegales, function(x) if (is.null(x$unitePurgeeUniteLegale))
@@ -124,8 +127,11 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET"))
     unitesLegales <- lapply(unitesLegales, function(x) do.call(rbind, x))
     periodesUnitesLegales <- transformeListe(donnees, "siren", "periodesUniteLegale", 3)
     periodesUnitesLegales <- do.call(rbind, periodesUnitesLegales)
-    return(c(unitesLegales, list(periodesUnitesLegales = periodesUnitesLegales)))
+    
+    c(unitesLegales, list(periodesUnitesLegales = periodesUnitesLegales))
+    
   } else if (nom == "SIRENE_SIRET") {
+    
     ## table etablissements
     etablissements <- lapply(donnees, function(x) data.frame(lapply(x[1:11], function(xx) ifelse(is.null(xx), NA, xx))))
     etablissements <- do.call(rbind, etablissements)
@@ -147,10 +153,18 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET"))
     ## table periodesEtablissement
     periodesEtablissement <- transformeListe(donnees, c("siret", "siren"), "periodesEtablissement", 3)
     periodesEtablissement <- do.call(rbind, periodesEtablissement)
-    return(list(etablissement = etablissements, unitesExistantes = unitesLegales$unitesExistantes, unitesPurgees = unitesLegales$unitesPurgees,
-                adresseEtablissement = adresseEtablissement, adresse2Etablissement = adresse2Etablissement, 
-                periodesEtablissement = periodesEtablissement))
+
+    list(
+      etablissement         = etablissements,
+      unitesExistantes      = unitesLegales$unitesExistantes,
+      unitesPurgees         = unitesLegales$unitesPurgees,
+      adresseEtablissement  = adresseEtablissement,
+      adresse2Etablissement = adresse2Etablissement, 
+      periodesEtablissement = periodesEtablissement
+    )
+
   }
+
 }
 
 ## liste de liste en data.frame
