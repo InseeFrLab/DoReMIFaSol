@@ -5,15 +5,24 @@ test_that("Téléchargement de données sur le site de l'Insee", {
 })
 ## erreur - oubli de la date
 test_that("Téléchargement de données sur le site de l'Insee", {
- expect_error(telechargerDonnees("FILOSOFI_COM"))
+  expect_error(
+    telechargerDonnees("FILOSOFI_COM"),
+    "spécifier une date"
+  )
 })
 ## erreur - date non disponible
 test_that("Téléchargement de données sur le site de l'Insee", {
-  expect_error(telechargerDonnees("FILOSOFI_COM", date = format(Sys.Date(), format = "%Y")), "La date spécifiée n'est pas disponible.")
+  expect_error(
+    telechargerDonnees("FILOSOFI_COM", date = format(Sys.Date(), format = "%Y")),
+    "La date spécifiée n'est pas disponible."
+  )
 })
 ## mauvais nom - pas disponible au téléchargement
 test_that("Échec du téléchargement pour nom non existant", {
-  expect_error(telechargerDonnees("TEST"), "Le paramètre donnees est mal spécifié, la valeur n'est pas référencée")
+  expect_error(
+    telechargerDonnees("TEST"),
+    "Le paramètre donnees est mal spécifié, la valeur n'est pas référencée"
+  )
 })
 ## test utilisation du cache
 test_that("Utilisation du cache", {
@@ -26,21 +35,40 @@ test_that("Utilisation du cache", {
 })
 ## test import de données CSV
 test_that("Importation type CSV - output data.frame", {
-  expect_true(is.data.frame(telechargerDonnees("COG_COMMUNE", date = "2019")))
+  expect_s3_class(
+    telechargerDonnees("COG_COMMUNE", date = "2019"),
+    c("insee_data_frame", "data.frame"),
+    exact = TRUE
+  )
 })
 ## test import de données XLS
 test_that("Importation type XLS - output data.frame", {
-  expect_true(is.data.frame(telechargerDonnees("FILOSOFI_COM", date = "2014")))
+  expect_s3_class(     
+    telechargerDonnees("FILOSOFI_COM", date = "2014"),
+    c("insee_data_frame", "data.frame"),
+    exact = TRUE
+  )
 })
 test_that("Importation type XLS - import de tous les onglets", {
-  expect_true(is.data.frame(telechargerDonnees("ESTEL_T201", date = "31/12/2016")))
+  expect_s3_class(     
+    telechargerDonnees("ESTEL_T201", date = "31/12/2016"),
+    c("insee_data_frame", "data.frame"),
+    exact = TRUE
+  )
 })
 ## test import de données XLSX
 test_that("Importation type XLSX - output data.frame", {
-  expect_true(is.data.frame(telechargerDonnees("AIRE_URBAINE")))
+  expect_s3_class(
+    telechargerDonnees("AIRE_URBAINE"),
+    c("insee_data_frame", "data.frame"),
+    exact = TRUE
+  )
 })
 test_that("Importation type XLSX - output data.frame", {
-  expect_true(class(telechargerDonnees("FILOSOFI_DISP_COM", date = 2017)) == "list")
+  expect_type(
+    telechargerDonnees("FILOSOFI_DISP_COM", date = 2017),
+    "list"
+  )
 })
 ## test sélection des variables
 test_that("Sélection de variables dans la BPE", {
@@ -48,9 +76,17 @@ test_that("Sélection de variables dans la BPE", {
 })
 ## test dézip gros fichiers
 test_that("Utilisation de unzip système", {
-  expect_true(is.data.frame(telechargerDonnees("RP_MOBSCO", date = "2016", vars = c("COMMUNE", "ARM", "CSM"))))
+  expect_s3_class(
+    telechargerDonnees("RP_MOBSCO", date = "2016", vars = c("COMMUNE", "ARM", "CSM")),
+    c("insee_data_frame", "data.frame"),
+    exact = TRUE
+  )
 })
 ## test import du dernier millésime
 test_that("Importation dernier millésime - output data.frame", {
-  expect_true(is.data.frame(telechargerDonnees("COG_COMMUNE", date = "dernier")))
+  expect_s3_class(
+    telechargerDonnees("COG_COMMUNE", date = "dernier"),
+    c("insee_data_frame", "data.frame"),
+    exact = TRUE
+  )
 })
