@@ -94,7 +94,17 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   } else {
 
     ## télécharge les données sur l'API
+    
     if (!curl::has_internet()) stop("aucune connexion Internet")
+    
+    timestamp <- gsub("[^0-9]", "", as.character(Sys.time()))
+    dossier_json <- paste0(telDir, "/json_API_", caract$nom, "_", timestamp)
+    dir.create(dossier_json)
+    writeLines(
+      utils::URLdecode(httr::modify_url(caract$lien, query = argsApi)),
+      file.path(dossier_json, "requete.txt")
+    )
+    
     token <- apinsee::insee_auth()
     if (!is.null(date))
       argsApi <- c(date = as.character(date), argsApi)
@@ -113,14 +123,14 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       argsApi[["curseur"]] <- "*"
     nombrePages <- ceiling(total/1000)
     url <- httr::modify_url(caract$lien, query = argsApi)
-    fichierAImporter <- paste0(telDir, "/", caract$nom, genererSuffixe(8), ".json")
+    fichierAImporter <- sprintf("%s/results_%06i.json", dossier_json, 1)
     res <- httr::GET(url, httr::config(token = token), httr::write_disk(fichierAImporter), httr::progress())
     resultat <- res$status_code
     if (nombrePages > 1) {
       for (k in 2:nombrePages) {
         argsApi[["curseur"]] <-httr::content(res)$header$curseurSuivant
         url <- httr::modify_url(caract$lien, query = argsApi)
-        fichierAImporter <- c(fichierAImporter, paste0(telDir, "/", caract$nom, "_", genererSuffixe(8), ".json"))
+        fichierAImporter <- c(fichierAImporter, sprintf("%s/results_%06i.json", dossier_json, k))
         res <- httr::GET(url, httr::config(token = token), httr::write_disk(tail(fichierAImporter, 1)), httr::progress())
         while (res$status_code == 429) {
           Sys.sleep(10)
@@ -150,9 +160,4 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     )
   )
   
-}
-
-genererSuffixe <- function(longueur) {
-  liste <- c(0:9, letters, LETTERS)
-  paste(sample(liste, longueur, replace = TRUE), collapse = "")
 }
