@@ -50,7 +50,7 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
     )
 
   ## check the file to import exists
-  if (!file.exists(fichierAImporter))
+  if (!all(file.exists(fichierAImporter)))
     stop("Le fichier de donn\u00e9es est introuvable.")
   ## import data
   if (telechargementFichier$type == "csv") {
