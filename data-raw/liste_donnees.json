@@ -30875,5 +30875,15 @@
         "zip": false,
         "big_zip": false,
         "api_rest": true
+    },
+    {
+        "nom": "SIRENE_SIRET_LIENS",
+        "libelle": "Données du répertoire Sirène depuis 1973, liens de succession entre établissements",
+        "collection": "SIRENE",
+        "lien": "https://api.insee.fr/entreprises/sirene/siret/liensSuccession",
+        "type": "json",
+        "zip": false,
+        "big_zip": false,
+        "api_rest": true
     }
 ]

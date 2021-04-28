@@ -163,6 +163,13 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET"))
       periodesEtablissement = periodesEtablissement
     )
 
+  } else if (nom == "SIRENE_SIRET_LIENS") {
+    
+    do.call(
+      rbind,
+      lapply(donnees, as.data.frame, stringsAsFactors = FALSE)
+    )
+    
   }
 
 }
