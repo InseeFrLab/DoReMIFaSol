@@ -165,10 +165,21 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET"))
 
   } else if (nom == "SIRENE_SIRET_LIENS") {
     
-    do.call(
+    # agrege sirets
+    res <- do.call(
       rbind,
       lapply(donnees, as.data.frame, stringsAsFactors = FALSE)
     )
+    
+    # convertit date-time
+    res$dateLienSuccession <- as.Date(res$dateLienSuccession)
+    res$dateDernierTraitementLienSuccession <-
+      as.POSIXct(
+        r$dateDernierTraitementLienSuccession,
+        format = "%Y-%m-%dT%H:%M:%S"
+      )
+    
+    res
     
   }
 
