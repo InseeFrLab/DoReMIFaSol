@@ -16,8 +16,14 @@
 chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
 
   ## check download has worked
-  if (is.null(telechargementFichier$result))
-    stop("Le t\u00e9l\u00e9chargement a rencontr\u00e9 un probl\u00e8me.")
+  if (is.null(telechargementFichier$result)) {
+    if (telechargementFichier$type == "json" & file.exists(telechargementFichier$argsImport$fichier)) {
+      message <- jsonlite::read_json(telechargementFichier$argsImport$fichier)
+      stop("Erreur ", message$header$statut, " : ", message$header$message)
+    } else {
+      warning("Le t\u00e9l\u00e9chargement a rencontr\u00e9 un probl\u00e8me.")
+    }
+  }
   
   ## unzip if necessary
   if (telechargementFichier$zip) {
@@ -175,7 +181,7 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET"))
     res$dateLienSuccession <- as.Date(res$dateLienSuccession)
     res$dateDernierTraitementLienSuccession <-
       as.POSIXct(
-        r$dateDernierTraitementLienSuccession,
+        res$dateDernierTraitementLienSuccession,
         format = "%Y-%m-%dT%H:%M:%S"
       )
     
