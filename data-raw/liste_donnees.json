@@ -30885,5 +30885,25 @@
         "zip": false,
         "big_zip": false,
         "api_rest": true
+    },
+    {
+        "nom": "SIRENE_SIREN_NONDIFF",
+        "libelle": "Données du répertoire Sirène depuis 1973, unités légales non diffusibles",
+        "collection": "SIRENE",
+        "lien": "https://api.insee.fr/entreprises/sirene/siren/nonDiffusibles",
+        "type": "json",
+        "zip": false,
+        "big_zip": false,
+        "api_rest": true
+    },
+    {
+        "nom": "SIRENE_SIRET_NONDIFF",
+        "libelle": "Données du répertoire Sirène depuis 1973, établissements non diffusibles",
+        "collection": "SIRENE",
+        "lien": "https://api.insee.fr/entreprises/sirene/siret/nonDiffusibles",
+        "type": "json",
+        "zip": false,
+        "big_zip": false,
+        "api_rest": true
     }
 ]
