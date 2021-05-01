@@ -175,7 +175,7 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET"))
     res$dateLienSuccession <- as.Date(res$dateLienSuccession)
     res$dateDernierTraitementLienSuccession <-
       as.POSIXct(
-        r$dateDernierTraitementLienSuccession,
+        res$dateDernierTraitementLienSuccession,
         format = "%Y-%m-%dT%H:%M:%S"
       )
     
