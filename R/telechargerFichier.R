@@ -112,8 +112,8 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       argsApi[["nombre"]] <- 0
       url <- httr::modify_url(caract$lien, query = argsApi)
       res <- httr::GET(url, httr::config(token = token), httr::write_memory())
-      if (res$status_code == 404) stop("La requ\u00eate renvoie un code 404, indiquant son invalidit\u00e9.")
-      total <- httr::content(res)[[1]]$total
+      if (res$status_code == 404)
+        total <- 0 else total <- httr::content(res)[[1]]$total
     } else {
       total <- argsApi[["nombre"]]
     }
