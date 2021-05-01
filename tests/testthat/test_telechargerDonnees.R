@@ -6,9 +6,7 @@ test_that("Téléchargement de données sur le site de l'Insee", {
 ## erreur - oubli de la date
 test_that("Téléchargement de données sur le site de l'Insee", {
   expect_error(
-    telechargerDonnees("FILOSOFI_COM"),
-    "spécifier une date"
-  )
+    telechargerDonnees("FILOSOFI_COM"), "Il faut spécifier une date de référence pour ces données")
 })
 ## erreur - date non disponible
 test_that("Téléchargement de données sur le site de l'Insee", {
@@ -89,4 +87,11 @@ test_that("Importation dernier millésime - output data.frame", {
     c("insee_data_frame", "data.frame"),
     exact = TRUE
   )
+})
+## test dl sur l'API Sirene avec une requête invalide
+test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
+  skip_if_no_app()
+  check_configuration()
+  expect_error(telechargerDonnees("SIRENE_SIRET_LIENS", argsApi = list(q = "siretEtablissementPredecesseur:32957439600019")), 
+                 "Erreur 404")
 })

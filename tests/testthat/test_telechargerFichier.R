@@ -82,10 +82,3 @@ test_that("Télécharger des données sur l'API pour les entreprises créées un
   check_configuration()
   expect_true(telechargerFichier("SIRENE_SIREN", argsApi = list(nombre = 60000))$result == 0)
 })
-## test dl sur l'API Sirene avec une requête invalide
-test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
-  skip_if_no_app()
-  check_configuration()
-  expect_error(telechargerFichier("SIRENE_SIRET_LIENS", argsApi = list(q = "siretEtablissementPredecesseur:32957439600019")),
-               "La requête renvoie un code 404, indiquant son invalidité.")
-})

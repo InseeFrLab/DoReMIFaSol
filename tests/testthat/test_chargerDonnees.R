@@ -1,7 +1,7 @@
 library(doremifasol)
 ## téléchargement échoué
 test_that("Simulation d'un échec de téléchargement", {
-  expect_error(chargerDonnees(list(result = NULL)), "Le téléchargement a rencontré un problème.")
+  expect_error(chargerDonnees(list(result = NULL)))
 })
 ## test erreur sur le fichier qui n'est pas une archive
 test_that("Simulation erreur de spécification de l'archive", {
