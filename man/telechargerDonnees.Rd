@@ -30,7 +30,10 @@ telechargerDonnees(
 \item{...}{paramètres additionnels relatifs à l'importation des données}
 }
 \value{
-un objet tibble contenant les données téléchargées sur le site de l'Insee.
+\itemize{
+\item un data.frame contenant les données téléchargées sur le site de l'Insee
+\item une liste de data.frames si recherche de Siren ou Siret via l'API
+}
 }
 \description{
 Télécharger des données sur le site de l'Insee
@@ -40,8 +43,16 @@ La fonction permet de télécharger les données disponibles sur le site de l'In
 }
 \examples{
 \dontrun{
-bpe_ens_2018 <- telechargerDonnees(donnees = "BPE_ENS")
 
+# fichiers sur insee.fr
+bpe_ens_2019 <- telechargerDonnees(donnees = "BPE_ENS")
 rp_log <- telechargerDonnees("RP_LOGEMENT", date = "2016", vars = c("COMMUNE", "IPONDL", "CATL"))
+
+# utilisation de l'API Sirene
+telechargerDonnees("SIRENE_SIREN",         argsApi = list(q = "dateCreationUniteLegale:2021-03-01", nombre = 100))
+telechargerDonnees("SIRENE_SIRET",         argsApi = list(q = "codeCommuneEtablissement:92046 AND categorieJuridiqueUniteLegale:9220"))
+telechargerDonnees("SIRENE_SIRET_LIENS",   argsApi = list(q = "siretEtablissementPredecesseur:31300257800042"))
+telechargerDonnees("SIRENE_SIREN_NONDIFF", argsApi = list(q = "dateDernierTraitementUniteLegale:2019-04-15"))
+telechargerDonnees("SIRENE_SIRET_NONDIFF", argsApi = list(q = "siren:480419449"))
 }
 }
