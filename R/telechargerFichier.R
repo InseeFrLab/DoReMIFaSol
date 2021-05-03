@@ -98,7 +98,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     if (!curl::has_internet()) stop("aucune connexion Internet")
     
     timestamp <- gsub("[^0-9]", "", as.character(Sys.time()))
-    dossier_json <- paste0(telDir, "/json_API_", caract$nom, "_", timestamp)
+    dossier_json <- paste0(telDir, "/json_API_", caract$nom, "_", timestamp, "_", genererSuffixe(4))
     dir.create(dossier_json)
     writeLines(
       utils::URLdecode(httr::modify_url(caract$lien, query = argsApi)),
@@ -161,4 +161,9 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     )
   )
   
+}
+
+genererSuffixe <- function(longueur) {
+  liste <- c(0:9, letters, LETTERS)
+  paste(sample(liste, longueur, replace = TRUE), collapse = "")
 }
