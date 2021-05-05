@@ -1,17 +1,26 @@
 #' Liens de succession d'une liste d'établissements
 #' 
-#' Télécharge les successeurs d'une liste d'établissements sur l'API Sirene.
+#' Télécharge sur l'API Sirene l'ensemble des successeurs d'une liste
+#' d'établissements.
 #' 
-#' Nécessite :
-#' - les informations de connexion à l'api Sirene sous la forme de variables
-#'   d'environnement (INSEE_APP_KEY = ... et INSEE_APP_SECRET = ... dans un
-#'   fichier .Renviron)
-#'   
-#' Géré automatiquement par doremifasol :
-#' - création du jeton (via le package apinsee)
-#' - requêtes max par minute
+#' Cette fonction appelle [`telechargerDonnees`] pour chacun des établissements
+#' passés en paramètre (de manière optimisée).
+#' 
+#' Les données téléchargées au format "json" sont enregistrées dans un dossier
+#' temporaire.
+#' 
+#' @section Authentification API Sirene:
+#' Comme toutes les fonctions reposant sur l'[API](https://api.insee.fr) Sirene,
+#' cette fonction nécessite une clé d'application et un secret associé pour 
+#' pouvoir générer un jeton d'accès. Ces informations sont à passer sous forme
+#' de variables d'envionnement.
+#' 
+#' Renseigner pour cela `INSEE_APP_KEY` et `INSEE_APP_SECRET` dans un fichier
+#' de configuration `.Renviron`.
+#' Consulter [cette page](https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/help.jag)
+#' pour de l'aide sur comment obtenir de tels identifiants.
 #'
-#' @param sirets sirets à rechercher (un vecteur caractère)
+#' @param sirets sirets pour lesquel rechercher les successeurs (un vecteur caractère)
 #'
 #' @return Un data.frame agrégeant les résultats pour chaque siret (vide si
 #'   aucun des établissements n'a de successeur).

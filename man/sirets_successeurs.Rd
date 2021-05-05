@@ -7,29 +7,36 @@
 sirets_successeurs(sirets)
 }
 \arguments{
-\item{sirets}{sirets à rechercher (un vecteur caractère)}
+\item{sirets}{sirets pour lesquel rechercher les successeurs (un vecteur caractère)}
 }
 \value{
 Un data.frame agrégeant les résultats pour chaque siret (vide si
 aucun des établissements n'a de successeur).
 }
 \description{
-Télécharge les successeurs d'une liste d'établissements sur l'API Sirene.
+Télécharge sur l'API Sirene l'ensemble des successeurs d'une liste
+d'établissements.
 }
 \details{
-Nécessite :
-\itemize{
-\item les informations de connexion à l'api Sirene sous la forme de variables
-d'environnement (INSEE_APP_KEY = ... et INSEE_APP_SECRET = ... dans un
-fichier .Renviron)
+Cette fonction appelle \code{\link{telechargerDonnees}} pour chacun des établissements
+passés en paramètre (de manière optimisée).
+
+Les données téléchargées au format "json" sont enregistrées dans un dossier
+temporaire.
+}
+\section{Authentification API Sirene}{
+
+Comme toutes les fonctions reposant sur l'\href{https://api.insee.fr}{API} Sirene,
+cette fonction nécessite une clé d'application et un secret associé pour
+pouvoir générer un jeton d'accès. Ces informations sont à passer sous forme
+de variables d'envionnement.
+
+Renseigner pour cela \code{INSEE_APP_KEY} et \code{INSEE_APP_SECRET} dans un fichier
+de configuration \code{.Renviron}.
+Consulter \href{https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/help.jag}{cette page}
+pour de l'aide sur comment obtenir de tels identifiants.
 }
 
-Géré automatiquement par doremifasol :
-\itemize{
-\item création du jeton (via le package apinsee)
-\item requêtes max par minute
-}
-}
 \examples{
 \dontrun{
 
