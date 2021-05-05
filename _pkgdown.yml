@@ -30,7 +30,7 @@ reference:
       - telechargerDonnees
       - telechargerFichier
       - chargerDonnees
-      - successeurs_etab
+      - sirets_successeurs
   - title: Informations sur les données
     contents:
       - liste_donnees
