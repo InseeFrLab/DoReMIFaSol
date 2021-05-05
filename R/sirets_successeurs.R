@@ -37,11 +37,10 @@ sirets_successeurs <- function(sirets) {
   # -> on fait des groupes de 68 sirets
   grp_sirets <- split(sirets, (seq_along(sirets) - 1) %/% 68)
 
-  sortie_tot <- lapply(grp_sirets, sucesseurs_no_404)
+  sortie_tot <- lapply(unname(grp_sirets), sucesseurs_no_404)
 
   # agrege
   sortie_tot <- do.call(rbind, sortie_tot)
-  row.names(sortie_tot) <- NULL
 
   unique(sortie_tot)
 
