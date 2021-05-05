@@ -20,10 +20,10 @@
 #' 
 #' @examples \dontrun{
 #' 
-#' successeurs_etab(c("30070230500040", "30137492200120", "30082187300019"))
+#' sirets_successeurs(c("30070230500040", "30137492200120", "30082187300019"))
 #' }
 
-successeurs_etab <- function(sirets) {
+sirets_successeurs <- function(sirets) {
   
   stopifnot(
     is.character(sirets),
