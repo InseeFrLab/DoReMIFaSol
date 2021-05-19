@@ -13,7 +13,7 @@
 #' Comme toutes les fonctions reposant sur l'[API](https://api.insee.fr) Sirene,
 #' cette fonction nécessite une clé d'application et un secret associé pour 
 #' pouvoir générer un jeton d'accès. Ces informations sont à passer sous forme
-#' de variables d'envionnement.
+#' de variables d'environnement.
 #' 
 #' Renseigner pour cela `INSEE_APP_KEY` et `INSEE_APP_SECRET` dans un fichier
 #' de configuration `.Renviron`.
