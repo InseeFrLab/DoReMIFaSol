@@ -30,6 +30,7 @@ reference:
       - telechargerDonnees
       - telechargerFichier
       - chargerDonnees
+      - sirets_successeurs
   - title: Informations sur les données
     contents:
       - liste_donnees
