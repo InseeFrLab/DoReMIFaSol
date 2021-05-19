@@ -7,7 +7,8 @@
 sirets_successeurs(sirets)
 }
 \arguments{
-\item{sirets}{sirets pour lesquel rechercher les successeurs (un vecteur caractère)}
+\item{sirets}{établissements pour lesquels rechercher les successeurs (un
+vecteur caractère de numéros SIRET).}
 }
 \value{
 Un data.frame agrégeant les résultats pour chaque siret (vide si

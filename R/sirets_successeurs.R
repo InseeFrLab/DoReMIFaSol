@@ -20,7 +20,8 @@
 #' Consulter [cette page](https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/help.jag)
 #' pour de l'aide sur comment obtenir de tels identifiants.
 #'
-#' @param sirets sirets pour lesquel rechercher les successeurs (un vecteur caractère)
+#' @param sirets établissements pour lesquels rechercher les successeurs (un
+#'   vecteur caractère de numéros SIRET).
 #'
 #' @return Un data.frame agrégeant les résultats pour chaque siret (vide si
 #'   aucun des établissements n'a de successeur).
