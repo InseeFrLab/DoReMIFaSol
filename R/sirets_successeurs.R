@@ -57,7 +57,7 @@ sirets_successeurs <- function(sirets) {
 
 # Fonction auxiliaire
 
-sucesseurs_no_404 <- function(sirets) {
+sucesseurs_quiet <- function(sirets) {
   # telecharge successeurs avec gestion des requêtes sans résultat
 
   # construit requete
