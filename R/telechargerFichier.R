@@ -37,10 +37,12 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   if (!caract$api_rest) {
 
     nomFichier <- file.path(telDir, basename(caract$lien))
+    dl <- NULL
 
     if (!file.exists(nomFichier) || force) {
       if (!curl::has_internet()) stop("aucune connexion Internet")
-      dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
+      res <- tryCatch(httr::GET(caract$lien, httr::write_disk(nomFichier), httr::progress()))
+      if (res$status_code == 200) dl <- 0
       if (tools::md5sum(nomFichier) != caract$md5) {
         warning("Fichier sur insee.fr modifi\u00e9 ou corruption lors du t\u00e9l\u00e9chargement.")
       }
@@ -51,7 +53,8 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       if (cache) {
         message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es utilis\u00e9es sont stock\u00e9es dans le dossier: ", telDir)}
       message("Les donn\u00e9es doivent \u00eatre mises \u00e0 jour.")
-      dl <- tryCatch(download.file(url = caract$lien, destfile = nomFichier))
+      res <- tryCatch(httr::GET(caract$lien, httr::write_disk(nomFichier, overwrite = TRUE), httr::progress()))
+      if (res$status_code == 200) dl <- 0
     } else {
       dl <- 0
       message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans ", shQuote(telDir), ", pas de nouveau t\u00e9l\u00e9chargement.")
