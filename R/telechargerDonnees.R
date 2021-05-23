@@ -21,10 +21,15 @@
 #' rp_log <- telechargerDonnees("RP_LOGEMENT", date = "2016", vars = c("COMMUNE", "IPONDL", "CATL"))
 #' 
 #' # utilisation de l'API Sirene
-#' telechargerDonnees("SIRENE_SIREN",         argsApi = list(q = "dateCreationUniteLegale:2021-03-01", nombre = 100))
-#' telechargerDonnees("SIRENE_SIRET",         argsApi = list(q = "codeCommuneEtablissement:92046 AND categorieJuridiqueUniteLegale:9220"))
-#' telechargerDonnees("SIRENE_SIRET_LIENS",   argsApi = list(q = "siretEtablissementPredecesseur:31300257800042"))
-#' telechargerDonnees("SIRENE_SIREN_NONDIFF", argsApi = list(q = "dateDernierTraitementUniteLegale:2019-04-15"))
+#' telechargerDonnees("SIRENE_SIREN",         
+#'                    argsApi = list(q = "dateCreationUniteLegale:2021-03-01", nombre = 100))
+#' telechargerDonnees("SIRENE_SIRET",         
+#'                    argsApi = list(q = "codeCommuneEtablissement:92046 
+#'                                        AND categorieJuridiqueUniteLegale:9220"))
+#' telechargerDonnees("SIRENE_SIRET_LIENS",   
+#'                    argsApi = list(q = "siretEtablissementPredecesseur:31300257800042"))
+#' telechargerDonnees("SIRENE_SIREN_NONDIFF", 
+#'                    argsApi = list(q = "dateDernierTraitementUniteLegale:2019-04-15"))
 #' telechargerDonnees("SIRENE_SIRET_NONDIFF", argsApi = list(q = "siren:480419449"))
 #' }
 #' @export
