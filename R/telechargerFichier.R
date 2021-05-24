@@ -17,7 +17,7 @@
 #' 
 #' telechargerFichier("RP_LOGEMENT", date = "2016")
 #' }
-#' @importFrom utils download.file unzip read.csv tail
+#' @importFrom utils unzip read.csv tail
 #' @export
 telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol.telDir"), argsApi=NULL, force=FALSE) {
   
