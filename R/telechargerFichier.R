@@ -98,6 +98,10 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
 
     ## télécharge les données sur l'API
     
+    if (!nzchar(Sys.getenv("INSEE_APP_KEY")) || !nzchar(Sys.getenv("INSEE_APP_SECRET"))) {
+      stop("d\u00e9finir les variables d'environnement INSEE_APP_KEY et INSEE_APP_SECRET")
+    }
+    
     if (!curl::has_internet()) stop("aucune connexion Internet")
     
     timestamp <- gsub("[^0-9]", "", as.character(Sys.time()))
