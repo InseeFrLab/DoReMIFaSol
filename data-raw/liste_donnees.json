@@ -30745,6 +30745,22 @@
         "size": 703402069
     },
     {
+        "nom": "RP_INDCVI",
+        "libelle": "Données du Recensement de Population, table individus au canton-ou-à-la-ville",
+        "date_ref": "2017-01-01",
+        "collection": "RP",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/4802064/RP2017_INDCVI_csv.zip",
+        "type": "csv",
+        "zip": true,
+        "big_zip": true,
+        "fichier_donnees": "FD_INDCVI_2017.csv",
+        "fichier_meta": "varmod_INDCVI_2017.csv",
+        "separateur": ";",
+        "api_rest": false,
+        "md5": "57a56965c680b4d73cca7bc38c3fa0d9",
+        "size": 542348116
+    },
+    {
         "nom": "RP_MOBSCO",
         "libelle": "Données du Recensement de Population, table des mobilités scolaires",
         "date_ref": "2017-01-01",
