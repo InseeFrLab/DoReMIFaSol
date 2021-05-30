@@ -81,7 +81,7 @@ sucesseurs_quiet <- function(sirets) {
       if (grepl("^Erreur 404 : Aucun lien", cnd$message)) {
         data.frame()
       } else {
-        stop("Erreur :", cnd$message)
+        stop("Erreur (sirets_successeurs) : ", cnd$message)
       }
     }
 
