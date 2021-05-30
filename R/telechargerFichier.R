@@ -132,19 +132,37 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     nombrePages <- ceiling(total/1000)
     url <- httr::modify_url(caract$lien, query = argsApi)
     fichierAImporter <- sprintf("%s/results_%06i.json", dossier_json, 1)
-    res <- httr::GET(url, httr::config(token = token), httr::write_disk(fichierAImporter), httr::progress())
+    res <-
+      httr::GET(
+        url,
+        httr::config(token = token),
+        httr::write_disk(fichierAImporter),
+        httr::progress()
+      )
     resultat <- res$status_code
     if (nombrePages > 1) {
       for (k in 2:nombrePages) {
         argsApi[["curseur"]] <-httr::content(res)$header$curseurSuivant
         url <- httr::modify_url(caract$lien, query = argsApi)
         fichierAImporter <- c(fichierAImporter, sprintf("%s/results_%06i.json", dossier_json, k))
-        res <- httr::GET(url, httr::config(token = token), httr::write_disk(tail(fichierAImporter, 1)), httr::progress())
+        res <-
+          httr::GET(
+            url,
+            httr::config(token = token),
+            httr::write_disk(tail(fichierAImporter, 1)),
+            httr::progress()
+          )
         while (res$status_code == 429) {
           message("Trop de requ\u00eates, patienter 10 secondes...")
           Sys.sleep(10)
           message("Nouvelle tentative...")
-          res <- httr::GET(url, httr::config(token = token), httr::write_disk(tail(fichierAImporter, 1), overwrite = TRUE), httr::progress())
+          res <-
+            httr::GET(
+              url,
+              httr::config(token = token),
+              httr::write_disk(tail(fichierAImporter, 1), overwrite = TRUE),
+              httr::progress()
+            )
         }
         resultat <- c(resultat, res$status_code)
       }
