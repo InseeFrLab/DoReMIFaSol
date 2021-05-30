@@ -140,6 +140,17 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
         httr::progress()
       )
     resultat <- res$status_code
+    while (res$status_code == 429) {
+      message("Trop de requ\u00eates, patienter 10 secondes...")
+      Sys.sleep(10)
+      message("Nouvelle tentative...")
+      res <- httr::GET(
+        url,
+        httr::config(token = token),
+        httr::write_disk(fichierAImporter, overwrite = TRUE),
+        httr::progress()
+      )
+    }
     if (nombrePages > 1) {
       for (k in 2:nombrePages) {
         argsApi[["curseur"]] <-httr::content(res)$header$curseurSuivant
