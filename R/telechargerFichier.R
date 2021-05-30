@@ -141,6 +141,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
         fichierAImporter <- c(fichierAImporter, sprintf("%s/results_%06i.json", dossier_json, k))
         res <- httr::GET(url, httr::config(token = token), httr::write_disk(tail(fichierAImporter, 1)), httr::progress())
         while (res$status_code == 429) {
+          message("Trop de requ\u00eates, patienter 10 secondes...")
           Sys.sleep(10)
           message("Nouvelle tentative...")
           res <- httr::GET(url, httr::config(token = token), httr::write_disk(tail(fichierAImporter, 1), overwrite = TRUE), httr::progress())
