@@ -132,49 +132,14 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     nombrePages <- ceiling(total/1000)
     url <- httr::modify_url(caract$lien, query = argsApi)
     fichierAImporter <- sprintf("%s/results_%06i.json", dossier_json, 1)
-    res <-
-      httr::GET(
-        url,
-        httr::config(token = token),
-        httr::write_disk(fichierAImporter),
-        httr::progress()
-      )
+    res <- tryCatch(requeteApiSirene(url, fichierAImporter, token, 400))
     resultat <- res$status_code
-    while (res$status_code == 429) {
-      message("Trop de requ\u00eates, patienter 10 secondes...")
-      Sys.sleep(10)
-      message("Nouvelle tentative...")
-      res <- httr::GET(
-        url,
-        httr::config(token = token),
-        httr::write_disk(fichierAImporter, overwrite = TRUE),
-        httr::progress()
-      )
-    }
     if (nombrePages > 1) {
       for (k in 2:nombrePages) {
         argsApi[["curseur"]] <-httr::content(res)$header$curseurSuivant
         url <- httr::modify_url(caract$lien, query = argsApi)
         fichierAImporter <- c(fichierAImporter, sprintf("%s/results_%06i.json", dossier_json, k))
-        res <-
-          httr::GET(
-            url,
-            httr::config(token = token),
-            httr::write_disk(tail(fichierAImporter, 1)),
-            httr::progress()
-          )
-        while (res$status_code == 429) {
-          message("Trop de requ\u00eates, patienter 10 secondes...")
-          Sys.sleep(10)
-          message("Nouvelle tentative...")
-          res <-
-            httr::GET(
-              url,
-              httr::config(token = token),
-              httr::write_disk(tail(fichierAImporter, 1), overwrite = TRUE),
-              httr::progress()
-            )
-        }
+        res <- tryCatch(requeteApiSirene(url, fichierAImporter, token, 400))
         resultat <- c(resultat, res$status_code)
       }
     }
@@ -203,4 +168,23 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
 genererSuffixe <- function(longueur) {
   liste <- c(0:9, letters, LETTERS)
   paste(sample(liste, longueur, replace = TRUE), collapse = "")
+}
+
+requeteApiSirene <- function(url, fichier, token, nbTentatives) {
+  count <- 1
+  res <- httr::GET(url, 
+                   httr::config(token = token), 
+                   httr::write_disk(tail(fichier, 1)), 
+                   httr::progress())
+  while(res$status_code == 429 & count <= nbTentatives) {
+    message("Trop de requ\u00eates, patienter 10 secondes...")
+    Sys.sleep(10)
+    message("Nouvelle tentative...")
+    res <- httr::GET(url, 
+                     httr::config(token = token), 
+                     httr::write_disk(tail(fichier, 1), overwrite = TRUE), 
+                     httr::progress())
+    count <- count + 1
+  }
+  return(res)
 }
