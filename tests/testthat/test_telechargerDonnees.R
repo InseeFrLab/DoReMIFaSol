@@ -102,3 +102,11 @@ test_that("Télécharger des données sur l'API pour les unités non diffusibles
   expect_s3_class(telechargerDonnees("SIRENE_SIREN_NONDIFF", argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01"')),
                   c("insee_data_frame", "data.frame"))
 })
+## test erreur de syntaxe dans la requête de l'API
+test_that("Télécharger des données sur l'API pour les unités non diffusibles", {
+  skip_if_no_app()
+  check_configuration()
+  expect_error(telechargerDonnees("SIRENE_SIREN_NONDIFF", 
+                                  argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01" TO "2018-11-15"')),
+               "Erreur de syntaxe dans le param\u00e8tre q=dateDernierTraitementUniteLegale:\"2018-11-01\" TO \"2018-11-15\"")
+})
