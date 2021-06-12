@@ -119,11 +119,10 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       argsApi[["nombre"]] <- 0
       url <- httr::modify_url(caract$lien, query = argsApi)
       res <- httr::GET(url, httr::config(token = token), httr::write_memory())
-      if (res$status_code == 404)
-        total <- 0 
-      else if (is.null(httr::content(res)[[1]]$total))
-        stop(httr::content(res)[[1]]$message) 
-      else total <- httr::content(res)[[1]]$total
+      total <- tryCatch(httr::content(res)[[1]]$total,
+                        error = function() stop(httr::content(res)[[1]]$message))
+      if (is.null(total))
+        stop(httr::content(res)[[1]]$message)
     } else {
       total <- argsApi[["nombre"]]
     }

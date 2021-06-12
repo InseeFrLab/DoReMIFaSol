@@ -93,7 +93,7 @@ test_that("Télécharger des données sur l'API pour les entreprises créées un
   skip_if_no_app()
   check_configuration()
   expect_error(telechargerDonnees("SIRENE_SIRET_LIENS", argsApi = list(q = "siretEtablissementPredecesseur:32957439600019")), 
-                 "Erreur 404")
+                 "Aucun lien de succession n'a été trouvé pour le paramètre q=siretEtablissementPredecesseur:32957439600019")
 })
 ## test dl sur l'API Sirene avec une requête sur les unités non diffusibles
 test_that("Télécharger des données sur l'API pour les unités non diffusibles", {

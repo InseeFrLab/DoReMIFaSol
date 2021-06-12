@@ -35,8 +35,11 @@
 #' @export
 
 telechargerDonnees <- function(donnees, date=NULL, telDir=getOption("doremifasol.telDir"), argsApi=NULL, vars=NULL, force=FALSE, ...) {
-  chargerDonnees(
-    telechargerFichier(donnees, date, telDir, argsApi, force),
+  dl <- tryCatch(telechargerFichier(donnees, date, telDir, argsApi, force),
+                 error = function(e) return(list(result = NULL, message = e$message)))
+  if (is.null(dl$result))
+    stop(dl$message)
+  chargerDonnees(dl,
     vars,
     ...
   )
