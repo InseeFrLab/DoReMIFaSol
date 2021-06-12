@@ -95,3 +95,10 @@ test_that("Télécharger des données sur l'API pour les entreprises créées un
   expect_error(telechargerDonnees("SIRENE_SIRET_LIENS", argsApi = list(q = "siretEtablissementPredecesseur:32957439600019")), 
                  "Erreur 404")
 })
+## test dl sur l'API Sirene avec une requête sur les unités non diffusibles
+test_that("Télécharger des données sur l'API pour les unités non diffusibles", {
+  skip_if_no_app()
+  check_configuration()
+  expect_s3_class(telechargerDonnees("SIRENE_SIREN_NONDIFF", argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01"')),
+                  c("insee_data_frame", "data.frame"))
+})
