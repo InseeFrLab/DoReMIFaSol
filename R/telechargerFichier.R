@@ -133,7 +133,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     nombrePages <- ceiling(total/1000)
     url <- httr::modify_url(caract$lien, query = argsApi)
     fichierAImporter <- sprintf("%s/results_%06i.json", dossier_json, 1)
-    res <- tryCatch(requeteApiSirene(url, fichierAImporter, token, 400))
+    res <- try(requeteApiSirene(url, fichierAImporter, token, 400))
     resultat <- res$status_code
     if (nombrePages > 1) {
       for (k in 2:nombrePages) {

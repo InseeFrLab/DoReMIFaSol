@@ -5,21 +5,22 @@ test_that("Téléchargement de données sur le site de l'Insee", {
 })
 ## erreur - oubli de la date
 test_that("Téléchargement de données sur le site de l'Insee", {
-  expect_error(
-    telechargerDonnees("FILOSOFI_COM"), "Il faut spécifier une date de référence pour ces données")
+  expect_s3_class(
+    telechargerDonnees("FILOSOFI_COM"), 
+    "try-error")
 })
 ## erreur - date non disponible
 test_that("Téléchargement de données sur le site de l'Insee", {
-  expect_error(
+  expect_s3_class(
     telechargerDonnees("FILOSOFI_COM", date = format(Sys.Date(), format = "%Y")),
-    "La date spécifiée n'est pas disponible."
+    "try-error"
   )
 })
 ## mauvais nom - pas disponible au téléchargement
 test_that("Échec du téléchargement pour nom non existant", {
-  expect_error(
+  expect_s3_class(
     telechargerDonnees("TEST"),
-    "Le paramètre donnees est mal spécifié, la valeur n'est pas référencée"
+    "try-error"
   )
 })
 ## test utilisation du cache

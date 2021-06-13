@@ -39,52 +39,47 @@ sirets_successeurs <- function(sirets) {
     is.character(sirets),
     length(sirets) > 0
   )
-
+  
   sirets <- unique(sirets)
-
+  
   # si l'url de la requete est trop longue (plus de 3400 caracteres, limite
   # max estimee empiriquement), une erreur survient
   # -> on fait des groupes de 68 sirets
   grp_sirets <- split(sirets, (seq_along(sirets) - 1) %/% 68)
-
+  
   sortie_tot <- lapply(unname(grp_sirets), sucesseurs_quiet)
-
+  
   # agrege
   sortie_tot <- do.call(rbind, sortie_tot)
-
+  
   unique(sortie_tot)
-
+  
 }
 
 # Fonction auxiliaire
 
 sucesseurs_quiet <- function(sirets) {
   # telecharge successeurs avec gestion des requêtes sans résultat
-
+  
   # construit requete
   query <-
     paste(
       paste("siretEtablissementPredecesseur", sirets, sep = ":"),
       collapse = " OR "
     )
-
+  
   # appel API via doremifasol (si 404 -> data.frame vide)
-  tryCatch(
-
-    telechargerDonnees(
-      "SIRENE_SIRET_LIENS",
-      argsApi = list(q = query),
-      telDir = tempdir()
-    ),
-
-    error = function(cnd) {
-      if (grepl("^Erreur 404 : Aucun lien", cnd$message)) {
-        data.frame()
-      } else {
-        stop("Erreur (sirets_successeurs) : ", cnd$message)
-      }
-    }
-
+  tab <- telechargerDonnees(
+    "SIRENE_SIRET_LIENS",
+    argsApi = list(q = query),
+    telDir = tempdir()
   )
-
+  
+  if (tail(class(tab), 1) == "try-error"){
+    if (grepl("Erreur 404", as.character(tab))) return(data.frame())
+    else return(tab)
+  } else {
+    return(tab)
+  }
+  
 }
