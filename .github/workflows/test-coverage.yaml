@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      INSEE_APP_KEY: ${{ secrets.INSEE_APP_KEY }}
+      INSEE_APP_SECRET: ${{ secrets.INSEE_APP_SECRET }}
+      CURLOPT_TIMEOUT: 0
     steps:
       - uses: actions/checkout@v2
 
