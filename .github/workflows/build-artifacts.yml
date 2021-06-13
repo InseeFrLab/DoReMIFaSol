@@ -25,7 +25,7 @@ jobs:
           r-version: ${{ matrix.config.r-version }}
       - name: Query dependencies
         run: |
-          install.packages('remotes')
+          install.packages('remotes', 'covr')
         shell: Rscript {0}
       - name: Install system dependencies - Linux
         if: runner.os == 'Linux'
@@ -74,3 +74,7 @@ jobs:
         with:
           name: doremifasol_${PKGVERSION}_r${{ matrix.config.r-version }}.tar.gz
           path: dist/
+      - name: Code coverage
+        if: runner.os == 'Linux'
+        run: |
+          Rscript -e 'library(covr); codecov()'
