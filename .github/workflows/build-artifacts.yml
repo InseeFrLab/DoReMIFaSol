@@ -25,7 +25,7 @@ jobs:
           r-version: ${{ matrix.config.r-version }}
       - name: Query dependencies
         run: |
-          install.packages('remotes', 'covr')
+          install.packages('remotes')
         shell: Rscript {0}
       - name: Install system dependencies - Linux
         if: runner.os == 'Linux'
