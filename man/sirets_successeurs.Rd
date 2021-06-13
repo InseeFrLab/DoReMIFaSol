@@ -4,11 +4,13 @@
 \alias{sirets_successeurs}
 \title{Liens de succession d'une liste d'établissements}
 \usage{
-sirets_successeurs(sirets)
+sirets_successeurs(sirets, ...)
 }
 \arguments{
 \item{sirets}{établissements pour lesquels rechercher les successeurs (un
 vecteur caractère de numéros SIRET).}
+
+\item{...}{paramètres additionnels de la fonction \code{telechargerDonnees}}
 }
 \value{
 Un data.frame agrégeant les résultats pour chaque siret (vide si

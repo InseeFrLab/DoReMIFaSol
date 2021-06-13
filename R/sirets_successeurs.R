@@ -22,6 +22,7 @@
 #'
 #' @param sirets établissements pour lesquels rechercher les successeurs (un
 #'   vecteur caractère de numéros SIRET).
+#' @param ... paramètres additionnels de la fonction `telechargerDonnees`
 #'
 #' @return Un data.frame agrégeant les résultats pour chaque siret (vide si
 #'   aucun des établissements n'a de successeur).
@@ -33,7 +34,7 @@
 #' sirets_successeurs(c("30070230500040", "30137492200120", "30082187300019"))
 #' }
 
-sirets_successeurs <- function(sirets) {
+sirets_successeurs <- function(sirets, ...) {
   
   stopifnot(
     is.character(sirets),
@@ -47,7 +48,7 @@ sirets_successeurs <- function(sirets) {
   # -> on fait des groupes de 68 sirets
   grp_sirets <- split(sirets, (seq_along(sirets) - 1) %/% 68)
   
-  sortie_tot <- lapply(unname(grp_sirets), sucesseurs_quiet)
+  sortie_tot <- lapply(unname(grp_sirets), sucesseurs_quiet, ...)
   
   # agrege
   sortie_tot <- do.call(rbind, sortie_tot)
@@ -58,7 +59,7 @@ sirets_successeurs <- function(sirets) {
 
 # Fonction auxiliaire
 
-sucesseurs_quiet <- function(sirets) {
+sucesseurs_quiet <- function(sirets, ...) {
   # telecharge successeurs avec gestion des requêtes sans résultat
   
   # construit requete
@@ -72,7 +73,7 @@ sucesseurs_quiet <- function(sirets) {
   tab <- telechargerDonnees(
     "SIRENE_SIRET_LIENS",
     argsApi = list(q = query),
-    telDir = tempdir()
+    ...
   )
   
   if (tail(class(tab), 1) == "try-error"){
