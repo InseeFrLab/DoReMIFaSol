@@ -35,13 +35,13 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   
   ## télécharge les fichiers csv, xls, xlsx...
   if (!caract$api_rest) {
-
+    
     nomFichier <- file.path(telDir, basename(caract$lien))
     dl <- NULL
-
+    
     if (!file.exists(nomFichier) || force) {
       if (!curl::has_internet()) stop("aucune connexion Internet")
-      res <- tryCatch(httr::GET(caract$lien, httr::write_disk(nomFichier), httr::progress()))
+      res <- try(httr::GET(caract$lien, httr::write_disk(nomFichier), httr::progress()))
       if (res$status_code == 200) dl <- 0
       if (tools::md5sum(nomFichier) != caract$md5) {
         warning("Fichier sur insee.fr modifi\u00e9 ou corruption lors du t\u00e9l\u00e9chargement.")
@@ -59,7 +59,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       dl <- 0
       message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans ", shQuote(telDir), ", pas de nouveau t\u00e9l\u00e9chargement.")
     }
-
+    
     if (caract$zip) {
       fileArchive <- nomFichier
       fichierAImporter <- paste0(telDir, "/", caract$fichier_donnees)
@@ -67,7 +67,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       fileArchive <- NULL
       fichierAImporter <- nomFichier
     }
-
+    
     if (caract$type == "csv") {
       argsImport <- list(file = fichierAImporter, delim = eval(parse(text = caract$separateur)), col_names = TRUE)
       if (!is.null(caract$encoding))
@@ -83,7 +83,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     } else if (caract$type == "xlsx") {
       argsImport <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
     }
-
+    
     if (!is.null(caract$type_col)) {
       listvar <- lapply(
         caract$type_col,
@@ -93,9 +93,9 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       cols$cols <- listvar
       argsImport[["col_types"]] <- cols
     }
-
+    
   } else {
-
+    
     ## télécharge les données sur l'API
     
     if (!nzchar(Sys.getenv("INSEE_APP_KEY")) || !nzchar(Sys.getenv("INSEE_APP_SECRET"))) {
@@ -118,8 +118,11 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     if (is.null(argsApi$nombre)) {
       argsApi[["nombre"]] <- 0
       url <- httr::modify_url(caract$lien, query = argsApi)
-      res <- httr::GET(url, httr::config(token = token), httr::write_memory())
-      total <- httr::content(res)[[1]]$total
+      res <- tryCatch(httr::GET(url, httr::config(token = token), 
+                                httr::write_memory()),
+                      error = function(e) message(e$message))
+      total <- tryCatch(httr::content(res)[[1]]$total,
+                        error = function(e) return(NULL))
       if (is.null(total))
         total <- 0
     } else {
@@ -133,14 +136,15 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     nombrePages <- ceiling(total/1000)
     url <- httr::modify_url(caract$lien, query = argsApi)
     fichierAImporter <- sprintf("%s/results_%06i.json", dossier_json, 1)
-    res <- try(requeteApiSirene(url, fichierAImporter, token, 400))
+    res <- requeteApiSirene(url = url, fichier = fichierAImporter, token = token, 
+                            nbTentatives = 400)
     resultat <- res$status_code
     if (nombrePages > 1) {
       for (k in 2:nombrePages) {
         argsApi[["curseur"]] <-httr::content(res)$header$curseurSuivant
         url <- httr::modify_url(caract$lien, query = argsApi)
         fichierAImporter <- c(fichierAImporter, sprintf("%s/results_%06i.json", dossier_json, k))
-        res <- tryCatch(requeteApiSirene(url, fichierAImporter, token, 400))
+        res <- requeteApiSirene(url, fichierAImporter, token, 400)
         resultat <- c(resultat, res$status_code)
       }
     }
@@ -149,7 +153,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       dl <- 0
     argsImport <- list(fichier = fichierAImporter, nom = caract$nom)
     fileArchive <- NULL
-
+    
   }
   
   invisible(
@@ -173,18 +177,24 @@ genererSuffixe <- function(longueur) {
 
 requeteApiSirene <- function(url, fichier, token, nbTentatives) {
   count <- 1
-  res <- httr::GET(url, 
-                   httr::config(token = token), 
-                   httr::write_disk(tail(fichier, 1)), 
-                   httr::progress())
+  res <- tryCatch(httr::GET(url, 
+                            httr::config(token = token), 
+                            httr::write_disk(tail(fichier, 1)), 
+                            httr::progress()),
+                  error = function(e) {
+                    message(e$message)
+                    return(list(status_code = 429))})
   while(res$status_code == 429 & count <= nbTentatives) {
     message("Trop de requ\u00eates, patienter 10 secondes...")
     Sys.sleep(10)
     message("Nouvelle tentative...")
-    res <- httr::GET(url, 
-                     httr::config(token = token), 
-                     httr::write_disk(tail(fichier, 1), overwrite = TRUE), 
-                     httr::progress())
+    res <- tryCatch(httr::GET(url, 
+                              httr::config(token = token), 
+                              httr::write_disk(tail(fichier, 1), overwrite = TRUE), 
+                              httr::progress()),
+                    error = function(e) {
+                      message(e$message)
+                      return(list(status_code = 429))})
     count <- count + 1
   }
   return(res)
