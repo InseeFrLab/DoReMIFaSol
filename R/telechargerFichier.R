@@ -119,10 +119,9 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       argsApi[["nombre"]] <- 0
       url <- httr::modify_url(caract$lien, query = argsApi)
       res <- httr::GET(url, httr::config(token = token), httr::write_memory())
-      total <- tryCatch(httr::content(res)[[1]]$total,
-                        error = function() stop(httr::content(res)[[1]]$message))
+      total <- httr::content(res)[[1]]$total
       if (is.null(total))
-        stop(httr::content(res)[[1]]$message)
+        total <- 0
     } else {
       total <- argsApi[["nombre"]]
     }
@@ -146,7 +145,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       }
     }
     dl <- NULL
-    if (all(resultat == 200))
+    if (all(resultat == 200) & total > 0)
       dl <- 0
     argsImport <- list(fichier = fichierAImporter, nom = caract$nom)
     fileArchive <- NULL

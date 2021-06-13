@@ -92,8 +92,8 @@ test_that("Importation dernier millésime - output data.frame", {
 test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
   skip_if_no_app()
   check_configuration()
-  expect_error(telechargerDonnees("SIRENE_SIRET_LIENS", argsApi = list(q = "siretEtablissementPredecesseur:32957439600019")), 
-                 "Aucun lien de succession n'a été trouvé pour le paramètre q=siretEtablissementPredecesseur:32957439600019")
+  expect_s3_class(telechargerDonnees("SIRENE_SIRET_LIENS", argsApi = list(q = "siretEtablissementPredecesseur:32957439600019")), 
+                 "try-error")
 })
 ## test dl sur l'API Sirene avec une requête sur les unités non diffusibles
 test_that("Télécharger des données sur l'API pour les unités non diffusibles", {
@@ -106,7 +106,7 @@ test_that("Télécharger des données sur l'API pour les unités non diffusibles
 test_that("Télécharger des données sur l'API pour les unités non diffusibles", {
   skip_if_no_app()
   check_configuration()
-  expect_error(telechargerDonnees("SIRENE_SIREN_NONDIFF", 
+  expect_s3_class(telechargerDonnees("SIRENE_SIREN_NONDIFF", 
                                   argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01" TO "2018-11-15"')),
-               "Erreur de syntaxe dans le param\u00e8tre q=dateDernierTraitementUniteLegale:\"2018-11-01\" TO \"2018-11-15\"")
+               "try-error")
 })
