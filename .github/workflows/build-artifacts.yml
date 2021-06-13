@@ -43,9 +43,6 @@ jobs:
           install.packages(c("rcmdcheck", "httpuv", "devtools"))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
-      - name: Check
-        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
-        shell: Rscript {0}
       - name: Build source (Linux)
         if: runner.os == 'Linux'
         run: devtools::build(binary = FALSE, path = "dist")
@@ -74,7 +71,3 @@ jobs:
         with:
           name: doremifasol_${PKGVERSION}_r${{ matrix.config.r-version }}.tar.gz
           path: dist/
-      - name: Code coverage
-        if: runner.os == 'Linux'
-        run: |
-          Rscript -e 'library(covr); codecov()'
