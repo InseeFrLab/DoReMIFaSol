@@ -70,17 +70,19 @@ sucesseurs_quiet <- function(sirets, ...) {
     )
   
   # appel API via doremifasol (si 404 -> data.frame vide)
-  tab <- telechargerDonnees(
+  dl <- telechargerFichier(
     "SIRENE_SIRET_LIENS",
     argsApi = list(q = query),
     ...
   )
-  
-  if (tail(class(tab), 1) == "try-error"){
-    if (grepl("Erreur 404", as.character(tab))) return(data.frame())
-    else return(tab)
-  } else {
-    return(tab)
-  }
-  
+  tab <- tryCatch(
+    chargerDonnees(dl),
+    error = function(e) {
+      if (grepl("Erreur 404", e$message))
+        return(data.frame())
+      else {
+        return(NULL)
+      }
+    }
+  )
 }
