@@ -619,6 +619,32 @@
         }
     },
     {
+        "nom": "DECES_2020",
+        "libelle": "Fichier des personnes décédées",
+        "date_ref": "2020-12-31",
+        "collection": "ETAT_CIVIL",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/4190491/Deces_2020.zip",
+        "type": "csv",
+        "zip": true,
+        "big_zip": false,
+        "fichier_donnees": "deces_2020.csv",
+        "separateur": ";",
+        "api_rest": false,
+        "md5": "73ef602ebc531dc1f44673f5c8cd3f58",
+        "size": 18928198,
+        "type_col": {
+            "nomprenom": "character",
+            "sexe": "character",
+            "datenaiss": "character",
+            "lieunaiss": "character",
+            "commnaiss": "character",
+            "paysnaiss": "character",
+            "datedeces": "character",
+            "lieudeces": "character",
+            "actedeces": "character"
+        }
+    },
+    {
         "nom": "DECES_COM_0817",
         "libelle": "Base des décès par commune, 2008-2017",
         "date_ref": "2018-01-01",
