@@ -17,7 +17,6 @@ Suggests:
     tidyverse,
     data.table,
     testthat,
-    RCurl,
     httpuv,
     jsonify,
     knitr,
