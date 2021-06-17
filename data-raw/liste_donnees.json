@@ -2159,7 +2159,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_COM_OCCTYPR1",
-        "libelle": "Données Filosofi revenu déclaré, ménage propriétairee, au niveau communal – 201",
+        "libelle": "Données Filosofi revenu déclaré, ménage propriétaire, au niveau communal – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-COMMUNES.zip",
@@ -2606,7 +2606,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_COM_OCCTYPR1",
-        "libelle": "Données Filosofi revenu disponible, ménage propriétairee, au niveau communal – 201",
+        "libelle": "Données Filosofi revenu disponible, ménage propriétaire, au niveau communal – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-COMMUNES.zip",
@@ -4297,7 +4297,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_EPCI_OCCTYPR1",
-        "libelle": "Données Filosofi revenu déclaré, ménage propriétairee, au niveau de l'EPCI – 201",
+        "libelle": "Données Filosofi revenu déclaré, ménage propriétaire, au niveau de l'EPCI – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -4744,7 +4744,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_EPCI_OCCTYPR1",
-        "libelle": "Données Filosofi revenu disponible, ménage propriétairee, au niveau de l'EPCI – 201",
+        "libelle": "Données Filosofi revenu disponible, ménage propriétaire, au niveau de l'EPCI – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -6435,7 +6435,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_ARR_OCCTYPR1",
-        "libelle": "Données Filosofi revenu déclaré, ménage propriétairee, au niveau de l'arrondissement – 201",
+        "libelle": "Données Filosofi revenu déclaré, ménage propriétaire, au niveau de l'arrondissement – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -6882,7 +6882,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_ARR_OCCTYPR1",
-        "libelle": "Données Filosofi revenu disponible, ménage propriétairee, au niveau de l'arrondissement – 201",
+        "libelle": "Données Filosofi revenu disponible, ménage propriétaire, au niveau de l'arrondissement – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -8573,7 +8573,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_DEP_OCCTYPR1",
-        "libelle": "Données Filosofi revenu déclaré, ménage propriétairee, au niveau du département – 201",
+        "libelle": "Données Filosofi revenu déclaré, ménage propriétaire, au niveau du département – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -9020,7 +9020,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_DEP_OCCTYPR1",
-        "libelle": "Données Filosofi revenu disponible, ménage propriétairee, au niveau du département – 201",
+        "libelle": "Données Filosofi revenu disponible, ménage propriétaire, au niveau du département – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -10711,7 +10711,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_REG_OCCTYPR1",
-        "libelle": "Données Filosofi revenu déclaré, ménage propriétairee, au niveau de la région – 201",
+        "libelle": "Données Filosofi revenu déclaré, ménage propriétaire, au niveau de la région – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -11158,7 +11158,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_REG_OCCTYPR1",
-        "libelle": "Données Filosofi revenu disponible, ménage propriétairee, au niveau de la région – 201",
+        "libelle": "Données Filosofi revenu disponible, ménage propriétaire, au niveau de la région – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -12849,7 +12849,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_METRO_OCCTYPR1",
-        "libelle": "Données Filosofi revenu déclaré, ménage propriétairee, France métropolitaine – 201",
+        "libelle": "Données Filosofi revenu déclaré, ménage propriétaire, France métropolitaine – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -13296,7 +13296,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_METRO_OCCTYPR1",
-        "libelle": "Données Filosofi revenu disponible, ménage propriétairee, France métropolitaine – 201",
+        "libelle": "Données Filosofi revenu disponible, ménage propriétaire, France métropolitaine – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -14987,7 +14987,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_AU2010_OCCTYPR1",
-        "libelle": "Données Filosofi revenu déclaré, ménage propriétairee, au niveau des aires urbaines – 201",
+        "libelle": "Données Filosofi revenu déclaré, ménage propriétaire, au niveau des aires urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -15434,7 +15434,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_AU2010_OCCTYPR1",
-        "libelle": "Données Filosofi revenu disponible, ménage propriétairee, au niveau des aires urbaines – 201",
+        "libelle": "Données Filosofi revenu disponible, ménage propriétaire, au niveau des aires urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -17125,7 +17125,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_UU2010_OCCTYPR1",
-        "libelle": "Données Filosofi revenu déclaré, ménage propriétairee, au niveau des unités urbaines – 201",
+        "libelle": "Données Filosofi revenu déclaré, ménage propriétaire, au niveau des unités urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -17572,7 +17572,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_UU2010_OCCTYPR1",
-        "libelle": "Données Filosofi revenu disponible, ménage propriétairee, au niveau des unités urbaines – 201",
+        "libelle": "Données Filosofi revenu disponible, ménage propriétaire, au niveau des unités urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -19263,7 +19263,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_ZE2010_OCCTYPR1",
-        "libelle": "Données Filosofi revenu déclaré, ménage propriétairee, au niveau des zones d'emploi – 201",
+        "libelle": "Données Filosofi revenu déclaré, ménage propriétaire, au niveau des zones d'emploi – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -19710,7 +19710,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_ZE2010_OCCTYPR1",
-        "libelle": "Données Filosofi revenu disponible, ménage propriétairee, au niveau des zones d'emploi – 201",
+        "libelle": "Données Filosofi revenu disponible, ménage propriétaire, au niveau des zones d'emploi – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
