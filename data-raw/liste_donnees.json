@@ -2095,7 +2095,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_COM_TAILLEM2",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personne, au niveau communal – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personnes, au niveau communal – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-COMMUNES.zip",
@@ -2111,7 +2111,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_COM_TAILLEM3",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personne, au niveau communal – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personnes, au niveau communal – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-COMMUNES.zip",
@@ -2127,7 +2127,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_COM_TAILLEM4",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personne, au niveau communal – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personnes, au niveau communal – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-COMMUNES.zip",
@@ -2542,7 +2542,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_COM_TAILLEM2",
-        "libelle": "Données Filosofi revenu disponible, ménage de 2 personne, au niveau communal – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 2 personnes, au niveau communal – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-COMMUNES.zip",
@@ -2558,7 +2558,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_COM_TAILLEM3",
-        "libelle": "Données Filosofi revenu disponible, ménage de 3 personne, au niveau communal – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 3 personnes, au niveau communal – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-COMMUNES.zip",
@@ -2574,7 +2574,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_COM_TAILLEM4",
-        "libelle": "Données Filosofi revenu disponible, ménage de 4 personne, au niveau communal – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 4 personnes, au niveau communal – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-COMMUNES.zip",
@@ -4233,7 +4233,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_EPCI_TAILLEM2",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personne, au niveau de l'EPCI – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personnes, au niveau de l'EPCI – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -4249,7 +4249,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_EPCI_TAILLEM3",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personne, au niveau de l'EPCI – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personnes, au niveau de l'EPCI – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -4265,7 +4265,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_EPCI_TAILLEM4",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personne, au niveau de l'EPCI – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personnes, au niveau de l'EPCI – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -4680,7 +4680,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_EPCI_TAILLEM2",
-        "libelle": "Données Filosofi revenu disponible, ménage de 2 personne, au niveau de l'EPCI – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 2 personnes, au niveau de l'EPCI – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -4696,7 +4696,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_EPCI_TAILLEM3",
-        "libelle": "Données Filosofi revenu disponible, ménage de 3 personne, au niveau de l'EPCI – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 3 personnes, au niveau de l'EPCI – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -4712,7 +4712,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_EPCI_TAILLEM4",
-        "libelle": "Données Filosofi revenu disponible, ménage de 4 personne, au niveau de l'EPCI – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 4 personnes, au niveau de l'EPCI – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -6371,7 +6371,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_ARR_TAILLEM2",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personne, au niveau de l'arrondissement – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personnes, au niveau de l'arrondissement – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -6387,7 +6387,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_ARR_TAILLEM3",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personne, au niveau de l'arrondissement – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personnes, au niveau de l'arrondissement – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -6403,7 +6403,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_ARR_TAILLEM4",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personne, au niveau de l'arrondissement – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personnes, au niveau de l'arrondissement – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -6818,7 +6818,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_ARR_TAILLEM2",
-        "libelle": "Données Filosofi revenu disponible, ménage de 2 personne, au niveau de l'arrondissement – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 2 personnes, au niveau de l'arrondissement – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -6834,7 +6834,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_ARR_TAILLEM3",
-        "libelle": "Données Filosofi revenu disponible, ménage de 3 personne, au niveau de l'arrondissement – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 3 personnes, au niveau de l'arrondissement – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -6850,7 +6850,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_ARR_TAILLEM4",
-        "libelle": "Données Filosofi revenu disponible, ménage de 4 personne, au niveau de l'arrondissement – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 4 personnes, au niveau de l'arrondissement – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -8509,7 +8509,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_DEP_TAILLEM2",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personne, au niveau du département – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personnes, au niveau du département – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -8525,7 +8525,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_DEP_TAILLEM3",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personne, au niveau du département – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personnes, au niveau du département – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -8541,7 +8541,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_DEP_TAILLEM4",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personne, au niveau du département – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personnes, au niveau du département – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -8956,7 +8956,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_DEP_TAILLEM2",
-        "libelle": "Données Filosofi revenu disponible, ménage de 2 personne, au niveau du département – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 2 personnes, au niveau du département – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -8972,7 +8972,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_DEP_TAILLEM3",
-        "libelle": "Données Filosofi revenu disponible, ménage de 3 personne, au niveau du département – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 3 personnes, au niveau du département – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -8988,7 +8988,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_DEP_TAILLEM4",
-        "libelle": "Données Filosofi revenu disponible, ménage de 4 personne, au niveau du département – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 4 personnes, au niveau du département – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -10647,7 +10647,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_REG_TAILLEM2",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personne, au niveau de la région – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personnes, au niveau de la région – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -10663,7 +10663,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_REG_TAILLEM3",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personne, au niveau de la région – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personnes, au niveau de la région – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -10679,7 +10679,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_REG_TAILLEM4",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personne, au niveau de la région – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personnes, au niveau de la région – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -11094,7 +11094,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_REG_TAILLEM2",
-        "libelle": "Données Filosofi revenu disponible, ménage de 2 personne, au niveau de la région – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 2 personnes, au niveau de la région – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -11110,7 +11110,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_REG_TAILLEM3",
-        "libelle": "Données Filosofi revenu disponible, ménage de 3 personne, au niveau de la région – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 3 personnes, au niveau de la région – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -11126,7 +11126,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_REG_TAILLEM4",
-        "libelle": "Données Filosofi revenu disponible, ménage de 4 personne, au niveau de la région – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 4 personnes, au niveau de la région – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -12785,7 +12785,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_METRO_TAILLEM2",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personne, France métropolitaine – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personnes, France métropolitaine – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -12801,7 +12801,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_METRO_TAILLEM3",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personne, France métropolitaine – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personnes, France métropolitaine – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -12817,7 +12817,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_METRO_TAILLEM4",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personne, France métropolitaine – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personnes, France métropolitaine – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -13232,7 +13232,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_METRO_TAILLEM2",
-        "libelle": "Données Filosofi revenu disponible, ménage de 2 personne, France métropolitaine – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 2 personnes, France métropolitaine – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -13248,7 +13248,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_METRO_TAILLEM3",
-        "libelle": "Données Filosofi revenu disponible, ménage de 3 personne, France métropolitaine – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 3 personnes, France métropolitaine – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -13264,7 +13264,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_METRO_TAILLEM4",
-        "libelle": "Données Filosofi revenu disponible, ménage de 4 personne, France métropolitaine – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 4 personnes, France métropolitaine – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-SUPRA.zip",
@@ -14923,7 +14923,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_AU2010_TAILLEM2",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personne, au niveau des aires urbaines – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personnes, au niveau des aires urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -14939,7 +14939,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_AU2010_TAILLEM3",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personne, au niveau des aires urbaines – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personnes, au niveau des aires urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -14955,7 +14955,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_AU2010_TAILLEM4",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personne, au niveau des aires urbaines – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personnes, au niveau des aires urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -15370,7 +15370,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_AU2010_TAILLEM2",
-        "libelle": "Données Filosofi revenu disponible, ménage de 2 personne, au niveau des aires urbaines – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 2 personnes, au niveau des aires urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -15386,7 +15386,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_AU2010_TAILLEM3",
-        "libelle": "Données Filosofi revenu disponible, ménage de 3 personne, au niveau des aires urbaines – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 3 personnes, au niveau des aires urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -15402,7 +15402,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_AU2010_TAILLEM4",
-        "libelle": "Données Filosofi revenu disponible, ménage de 4 personne, au niveau des aires urbaines – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 4 personnes, au niveau des aires urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -17061,7 +17061,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_UU2010_TAILLEM2",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personne, au niveau des unités urbaines – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personnes, au niveau des unités urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -17077,7 +17077,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_UU2010_TAILLEM3",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personne, au niveau des unités urbaines – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personnes, au niveau des unités urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -17093,7 +17093,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_UU2010_TAILLEM4",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personne, au niveau des unités urbaines – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personnes, au niveau des unités urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -17508,7 +17508,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_UU2010_TAILLEM2",
-        "libelle": "Données Filosofi revenu disponible, ménage de 2 personne, au niveau des unités urbaines – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 2 personnes, au niveau des unités urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -17524,7 +17524,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_UU2010_TAILLEM3",
-        "libelle": "Données Filosofi revenu disponible, ménage de 3 personne, au niveau des unités urbaines – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 3 personnes, au niveau des unités urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -17540,7 +17540,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_UU2010_TAILLEM4",
-        "libelle": "Données Filosofi revenu disponible, ménage de 4 personne, au niveau des unités urbaines – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 4 personnes, au niveau des unités urbaines – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -19199,7 +19199,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_ZE2010_TAILLEM2",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personne, au niveau des zones d'emploi – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 2 personnes, au niveau des zones d'emploi – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -19215,7 +19215,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_ZE2010_TAILLEM3",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personne, au niveau des zones d'emploi – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 3 personnes, au niveau des zones d'emploi – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -19231,7 +19231,7 @@
     },
     {
         "nom": "FILOSOFI_DEC_ZE2010_TAILLEM4",
-        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personne, au niveau des zones d'emploi – 2017",
+        "libelle": "Données Filosofi revenu déclaré, ménage de 4 personnes, au niveau des zones d'emploi – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -19646,7 +19646,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_ZE2010_TAILLEM2",
-        "libelle": "Données Filosofi revenu disponible, ménage de 2 personne, au niveau des zones d'emploi – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 2 personnes, au niveau des zones d'emploi – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -19662,7 +19662,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_ZE2010_TAILLEM3",
-        "libelle": "Données Filosofi revenu disponible, ménage de 3 personne, au niveau des zones d'emploi – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 3 personnes, au niveau des zones d'emploi – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
@@ -19678,7 +19678,7 @@
     },
     {
         "nom": "FILOSOFI_DISP_ZE2010_TAILLEM4",
-        "libelle": "Données Filosofi revenu disponible, ménage de 4 personne, au niveau des zones d'emploi – 2017",
+        "libelle": "Données Filosofi revenu disponible, ménage de 4 personnes, au niveau des zones d'emploi – 2017",
         "date_ref": "2017-01-01",
         "collection": "FILOSOFI",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/4291712/indic-struct-distrib-revenu-2017-ETUDES.zip",
