@@ -15,12 +15,21 @@
 
 ### De quoi s'agit-il ?
 
-`doremifasol` (Données en `R` Mises à disposition par l'Insee et Facilement Sollicitables) est un _package_ dont la vocation est d'agréger les données disponibles de l'Insee et d'en promouvoir l'utilité, en plaçant ces données sur le devant de la scène pour l'utilisateur, et de lui permettre d'en extraire facilement de l'information. Analyser, cartographier, dénombrer, sans payer le coût d'entrée pour trouver le bon lien ou importer les données en R. Idéal pour pratiquer son solfège en `R` sur données françaises.
+Le _package_ `doremifasol` (_Données en R Mises à disposition par l’Insee et Facilement Sollicitables_) permet d'importer facilement dans `R` des données mises à disposition sur le site de l'Insee.
 
-Pour installer le package,
+Il offre deux fonctionnalités principales :
+
+* télécharger et importer dans `R` des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi...) ;
+* requêter l'[API](https://api.insee.fr/catalogue) Sirene et recupérer les résultats dans `R`.
+
+L'objectif du _package_ est de rendre transparentes les différentes tâches à réaliser avant de pouvoir traiter les données : recherche sur le site, téléchargement, décompression, import dans `R`...
+
+Idéal pour pratiquer son solfège en `R` sur des données françaises !
+
+Pour installer le package :
 
 ```r
-devtools::install_github('inseeFrLab/doremifasol')
+remotes::install_github('inseeFrLab/doremifasol')
 ```
 
 ### Quelles données sont disponibles ?
