@@ -29,7 +29,8 @@ Idéal pour pratiquer son solfège en `R` sur des données françaises !
 Pour installer le package :
 
 ```r
-remotes::install_github('inseeFrLab/doremifasol')
+# install.packages("remotes")
+remotes::install_github("InseeFrLab/doremifasol", build_vignettes = TRUE)
 ```
 
 ### Quelles données sont disponibles ?
@@ -97,7 +98,8 @@ Agent du Service Statistique Public, ou utilisateur des données mises à dispos
 To install the package:
 
 ```r
-devtools::install_github('inseeFrLab/doremifasol')
+# install.packages("remotes")
+remotes::install_github("InseeFrLab/doremifasol", build_vignettes = TRUE)
 ```
 
 ### Which data is available?
