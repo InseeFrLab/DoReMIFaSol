@@ -83,10 +83,17 @@
 <div id="de-quoi-sagit-il-" class="section level3">
 <h3 class="hasAnchor">
 <a href="#de-quoi-sagit-il-" class="anchor"></a>De quoi s’agit-il ?</h3>
-<p><code>doremifasol</code> (Données en <code>R</code> Mises à disposition par l’Insee et Facilement Sollicitables) est un <em>package</em> dont la vocation est d’agréger les données disponibles de l’Insee et d’en promouvoir l’utilité, en plaçant ces données sur le devant de la scène pour l’utilisateur, et de lui permettre d’en extraire facilement de l’information. Analyser, cartographier, dénombrer, sans payer le coût d’entrée pour trouver le bon lien ou importer les données en R. Idéal pour pratiquer son solfège en <code>R</code> sur données françaises.</p>
-<p>Pour installer le package,</p>
+<p>Le <em>package</em> <code>doremifasol</code> (<em>Données en R Mises à disposition par l’Insee et Facilement Sollicitables</em>) permet d’importer facilement dans <code>R</code> des données mises à disposition sur le site de l’Insee.</p>
+<p>Il offre deux fonctionnalités principales :</p>
+<ul>
+<li>télécharger et importer dans <code>R</code> des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi…) ;</li>
+<li>requêter l’<a href="https://api.insee.fr/catalogue">API</a> Sirene et recupérer les résultats dans <code>R</code>.</li>
+</ul>
+<p>L’objectif du <em>package</em> est de rendre transparentes les différentes tâches à réaliser avant de pouvoir traiter les données : recherche sur le site, téléchargement, décompression, import dans <code>R</code>…</p>
+<p>Idéal pour pratiquer son solfège en <code>R</code> sur des données françaises !</p>
+<p>Pour installer le package :</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'inseeFrLab/doremifasol'</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">'inseeFrLab/doremifasol'</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="quelles-données-sont-disponibles-" class="section level3">
 <h3 class="hasAnchor">
