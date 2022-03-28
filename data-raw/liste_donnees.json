@@ -543,7 +543,7 @@
         "separateur": ",",
         "api_rest": false,
         "md5": "b3b8ca2a7793f3d43766c8e807706182",
-        "size": 2671538,
+        "size": 1791342,
         "type_col": {
             "TYPECOM": "character",
             "COM": "character",
@@ -571,7 +571,7 @@
         "separateur": ",",
         "api_rest": false,
         "md5": "b3b8ca2a7793f3d43766c8e807706182",
-        "size": 4648
+        "size": 1791342
     },
     {
         "nom": "COG_REGION",
@@ -586,7 +586,7 @@
         "separateur": ",",
         "api_rest": false,
         "md5": "b3b8ca2a7793f3d43766c8e807706182",
-        "size": 1017
+        "size": 1791342
     },
     {
         "nom": "COG_COMMUNE",
