@@ -104,39 +104,6 @@ ld[[which(with(liste_donnees, nom == "COG_COMMUNE" & date_ref == as.Date("2019-0
                                                                                                             libelle = "character",
                                                                                                             can = "character",
                                                                                                             comparent = "character")
-ld[[which(with(liste_donnees, nom == "COG_COMMUNE" & date_ref == as.Date("2020-01-01")))]]$type_col <- list(typecom = "character",
-                                                                                                            com = "character",
-                                                                                                            reg = "character",
-                                                                                                            dep = "character",
-                                                                                                            arr = "character",
-                                                                                                            tncc = "integer",
-                                                                                                            ncc = "character",
-                                                                                                            nccenr = "character",
-                                                                                                            libelle = "character",
-                                                                                                            can = "character",
-                                                                                                            comparent = "character")
-ld[[which(with(liste_donnees, nom == "COG_COMMUNE" & date_ref == as.Date("2021-01-01")))]]$type_col <- list(TYPECOM = "character",
-                                                                                                            COM = "character",
-                                                                                                            REG = "character",
-                                                                                                            DEP = "character",
-                                                                                                            ARR = "character",
-                                                                                                            TNCC = "integer",
-                                                                                                            NCC = "character",
-                                                                                                            NCCENR = "character",
-                                                                                                            LIBELLE = "character",
-                                                                                                            CAN = "character",
-                                                                                                            COMPARENT = "character")
-ld[[which(with(liste_donnees, nom == "COG_COMMUNE" & date_ref == as.Date("2022-01-01")))]]$type_col <- list(TYPECOM = "character",
-                                                                                                            COM = "character",
-                                                                                                            REG = "character",
-                                                                                                            DEP = "character",
-                                                                                                            ARR = "character",
-                                                                                                            TNCC = "integer",
-                                                                                                            NCC = "character",
-                                                                                                            NCCENR = "character",
-                                                                                                            LIBELLE = "character",
-                                                                                                            CAN = "character",
-                                                                                                            COMPARENT = "character")
 ## ajout labels des variables de Filosofi
 
 ## ajout du type de variables dans le RP
