@@ -105,10 +105,15 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
   # ajout attribut source (pour data.frames hors API)
   if (is.data.frame(res)) {
     class(res) <- c("insee_data_frame", class(res))
+    attr_url <- sub("fichier/([0-9]+)/.+$", "\\1", telechargementFichier$lien)
+    if (telechargementFichier$collection == "GEOGRAPHIE") {
+      # url différente pour COG et aires urbaines
+      attr_url <- sub("/statistiques/", "/information/", attr_url)
+    }
     attr(res, "source") <-
       list(
         producteur = "Institut National de la Statistique et des \u00c9tudes \u00c9conomiques (Insee)",
-        url = sub("fichier/([0-9]+)/.+$", "\\1", telechargementFichier$lien),
+        url = attr_url,
         infos_diffusion = "https://www.insee.fr/fr/information/1300614"
       )
   }
