@@ -50,6 +50,7 @@ donnees_dispo <- function(recherche_init = NULL,
   params$rownames <- FALSE
   params$colnames <- c("Collection", "Description", "Nom court",
                        "Date de r\u00e9f\u00e9rence", "Taille (Mo)")
+  params$extensions <- c("Buttons")
 
   # 2.2 - paramètres modifiables,
   #       mais avec valeurs défaut différentes de celles de DT::data.table
@@ -63,6 +64,8 @@ donnees_dispo <- function(recherche_init = NULL,
   params$options <- c(
     params$options,
     list(
+      dom = 'Blfrtip',
+      buttons = c('csv','excel', 'pdf'),
       searching  = TRUE,
       search     = list(search = recherche_init),
       language   = list(
