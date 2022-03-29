@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">doremifasol</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.1</span>
       </span>
     </div>
 
@@ -52,7 +54,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/InseeFrLab/DoReMIFaSol/">
+  <a href="https://github.com/InseeFrLab/DoReMIFaSol/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
     Contribuer
@@ -70,137 +72,131 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="récupérer-et-utiliser-les-données-de-linsee-avec-r-get-and-use-insees-data-with-r" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#r%C3%A9cup%C3%A9rer-et-utiliser-les-donn%C3%A9es-de-linsee-avec-r-get-and-use-insees-data-with-r" class="anchor"></a>Récupérer et utiliser les données de l’Insee avec <code>R</code>/ Get and use Insee’s data with <code>R</code>
+<div class="section level1">
+<div class="page-header"><h1 id="récupérer-et-utiliser-les-données-de-linsee-avec-r-get-and-use-insees-data-with-r">Récupérer et utiliser les données de l’Insee avec <code>R</code>/ Get and use Insee’s data with <code>R</code>
+<a class="anchor" aria-label="anchor" href="#r%C3%A9cup%C3%A9rer-et-utiliser-les-donn%C3%A9es-de-linsee-avec-r-get-and-use-insees-data-with-r"></a>
 </h1></div>
 <p><img src="https://github.com/inseeFrLab/doremifasol/raw/master/inst/sticker/hex_logo_v2.png" width="150" height="150" align="right"></p>
 <!-- badges: start -->
-<p><a href="https://www.repostatus.org/#wip"><img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a> <a href="https://github.com/InseeFrLab/DoReMIFaSol/actions/workflows/build-artifacts.yml"><img src="https://github.com/InseeFrLab/DoReMIFaSol/actions/workflows/build-artifacts.yml/badge.svg" alt="build-artifacts"></a> <a href="https://github.com/InseeFrLab/DoReMIFaSol/actions"><img src="https://github.com/InseeFrLab/DoReMIFaSol/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License:MIT"></a> <a href="https://codecov.io/gh/InseeFrLab/DoReMIFaSol"><img src="https://codecov.io/gh/InseeFrLab/DoReMIFaSol/branch/master/graph/badge.svg?token=FM7HW4DSW5" alt="Coverage status"></a> <a href="https://cran.r-project.org/package=doremifasol"><img src="https://www.r-pkg.org/badges/version/doremifasol" alt="CRAN status"></a> <!-- badges: end --></p>
-<div id="français" class="section level2">
-<h2 class="hasAnchor">
-<a href="#fran%C3%A7ais" class="anchor"></a>Français</h2>
-<div id="de-quoi-sagit-il-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#de-quoi-sagit-il-" class="anchor"></a>De quoi s’agit-il ?</h3>
+
+<div class="section level2">
+<h2 id="français">Français<a class="anchor" aria-label="anchor" href="#fran%C3%A7ais"></a>
+</h2>
+<div class="section level3">
+<h3 id="de-quoi-sagit-il-">De quoi s’agit-il ?<a class="anchor" aria-label="anchor" href="#de-quoi-sagit-il-"></a>
+</h3>
 <p>Le <em>package</em> <code>doremifasol</code> (<em>Données en R Mises à disposition par l’Insee et Facilement Sollicitables</em>) permet d’importer facilement dans <code>R</code> des données mises à disposition sur le site de l’Insee.</p>
 <p>Il offre deux fonctionnalités principales :</p>
 <ul>
 <li>télécharger et importer dans <code>R</code> des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi…) ;</li>
-<li>requêter l’<a href="https://api.insee.fr/catalogue">API</a> Sirene et recupérer les résultats dans <code>R</code>.</li>
+<li>requêter l’<a href="https://api.insee.fr/catalogue" class="external-link">API</a> Sirene et recupérer les résultats dans <code>R</code>.</li>
 </ul>
 <p>L’objectif du <em>package</em> est de rendre transparentes les différentes tâches à réaliser avant de pouvoir traiter les données : recherche sur le site, téléchargement, décompression, import dans <code>R</code>…</p>
 <p>Idéal pour pratiquer son solfège en <code>R</code> sur des données françaises !</p>
 <p>Pour installer le package :</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"InseeFrLab/doremifasol"</span>, build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"InseeFrLab/doremifasol"</span>, build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="quelles-données-sont-disponibles-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#quelles-donn%C3%A9es-sont-disponibles-" class="anchor"></a>Quelles données sont disponibles ?</h3>
-<p>Pour trouver quelles données le package peut aller récupérer sur le site de l’Insee, on peut commencer par explorer interactivement les <a href="https://inseefrlab.github.io/DoReMIFaSol/articles/donnees_dispo.html">données disponibles</a>.</p>
+<div class="section level3">
+<h3 id="quelles-données-sont-disponibles-">Quelles données sont disponibles ?<a class="anchor" aria-label="anchor" href="#quelles-donn%C3%A9es-sont-disponibles-"></a>
+</h3>
+<p>Pour trouver quelles données le package peut aller récupérer sur le site de l’Insee, on peut commencer par explorer interactivement les <a href="https://inseefrlab.github.io/DoReMIFaSol/articles/donnees_dispo.html" class="external-link">données disponibles</a>.</p>
 <p>Cela permet notamment de connaître les identifiants (noms courts) et millésimes qui seront à spécifier aux fonctions de téléchargement.</p>
 <p><em>Le package a vocation à intégrer de nouveaux jeux de données dès qu’ils sont mis en ligne. Ce processus n’est toutefois pas automatisé. Voir la section <strong><a href="#contribuer">Contribuer</a></strong> pour suggérer l’ajout de nouvelles données.</em></p>
 </div>
-<div id="exemples-dusages" class="section level3">
-<h3 class="hasAnchor">
-<a href="#exemples-dusages" class="anchor"></a>Exemples d’usages</h3>
-<div id="les-données-du-recensement-de-population" class="section level4">
-<h4 class="hasAnchor">
-<a href="#les-donn%C3%A9es-du-recensement-de-population" class="anchor"></a>Les données du recensement de population</h4>
+<div class="section level3">
+<h3 id="exemples-dusages">Exemples d’usages<a class="anchor" aria-label="anchor" href="#exemples-dusages"></a>
+</h3>
+<div class="section level4">
+<h4 id="les-données-du-recensement-de-population">Les données du recensement de population<a class="anchor" aria-label="anchor" href="#les-donn%C3%A9es-du-recensement-de-population"></a>
+</h4>
 <p>Le premier exemple concerne les données du recensement librement accessibles sur le site de l’Insee. Ce sont des données très volumineuses, et sauf à disposer de capacités de calcul conséquentes, il n’est en général pas possible de charger l’ensemble des données en mémoire. Pour cela, le <em>package</em> <code>doremifasol</code> permet de sélectionner les colonnes que l’on souhaite charger en mémoire, une fois le fichier téléchargé. Ainsi, un utilisateur qui voudrait connaître par commune le nombre de résidences principales en 2016 aura besoin des variables <code>COMMUNE</code> - le code commune - et <code>CATL</code> - la catégorie d’occupation du logement - de la table <code>logement</code> :</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">donnees_rp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"RP_LOGEMENT"</span>, date <span class="op">=</span> <span class="fl">2016</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"COMMUNE"</span>, <span class="st">"IPONDL"</span>, <span class="st">"CATL"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">donnees_rp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"RP_LOGEMENT"</span>, date <span class="op">=</span> <span class="fl">2016</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"COMMUNE"</span>, <span class="st">"IPONDL"</span>, <span class="st">"CATL"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="filosofi" class="section level4">
-<h4 class="hasAnchor">
-<a href="#filosofi" class="anchor"></a>Filosofi</h4>
+<div class="section level4">
+<h4 id="filosofi">Filosofi<a class="anchor" aria-label="anchor" href="#filosofi"></a>
+</h4>
 <p>L’Insee met également à disposition un certain nombre d’indicateurs relatifs à la distribution des revenus et à la pauvreté au niveau communal, voire infra-communal. Ces données sont mises à jour chaque année à partir des sources fiscales ; il s’agit de la source “Filosofi”. Ainsi, il est possible de télécharger ces indicateurs au niveau de la commune, pour l’ensemble des ménages par exemple, grâce à la syntaxe suivante :</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">donnees_filosofi</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"FILOSOFI_DISP_COM_ENS"</span>, date <span class="op">=</span> <span class="fl">2017</span><span class="op">)</span></code></pre></div>
 <p>Ces données sont déclinées pour différentes catégories de ménages, et de la même manière peuvent être téléchargées grâce au <em>package</em> <code>doremifasol</code>.</p>
 </div>
-<div id="estimations-localisées-demploi-en-france" class="section level4">
-<h4 class="hasAnchor">
-<a href="#estimations-localis%C3%A9es-demploi-en-france" class="anchor"></a>Estimations localisées d’emploi en France</h4>
+<div class="section level4">
+<h4 id="estimations-localisées-demploi-en-france">Estimations localisées d’emploi en France<a class="anchor" aria-label="anchor" href="#estimations-localis%C3%A9es-demploi-en-france"></a>
+</h4>
 <p>De la même manière que les données fiscales permettent de fournir des statistiques à un niveau géographique fin, d’autres sources administratives permettent de construire des estimations du nombre d’emplois présents dans les différentes communes du territoire français. Il s’agit des Estimations d’Emploi Localisées, qu’il est possible de récupérer en <code>R</code> grâce à la syntaxe suivante :</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">donnees_estel</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"ESTEL_T201"</span>, date <span class="op">=</span> <span class="fl">2018</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="requêter-une-api-rest--le-répertoire-dentreprises-sirene" class="section level4">
-<h4 class="hasAnchor">
-<a href="#requ%C3%AAter-une-api-rest--le-r%C3%A9pertoire-dentreprises-sirene" class="anchor"></a>Requêter une API REST : le répertoire d’entreprises Sirene</h4>
-<p>Supposons que l’on cherche maintenant à récupérer l’ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l’API REST Sirene de l’Insee. Pour cela, il faut au préalable avoir configuré un accès à l’API REST de l’Insee et passer en variables d’environnement les données d’identification. La procédure est expliquée par exemple <a href="https://github.com/InseeFrLab/apinsee#exemple">ici</a>. Une fois cela réalisé, la requête peut se faire facilement au travers de <code>doremifasol</code> de la manière suivante :</p>
+<div class="section level4">
+<h4 id="requêter-une-api-rest--le-répertoire-dentreprises-sirene">Requêter une API REST : le répertoire d’entreprises Sirene<a class="anchor" aria-label="anchor" href="#requ%C3%AAter-une-api-rest--le-r%C3%A9pertoire-dentreprises-sirene"></a>
+</h4>
+<p>Supposons que l’on cherche maintenant à récupérer l’ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l’API REST Sirene de l’Insee. Pour cela, il faut au préalable avoir configuré un accès à l’API REST de l’Insee et passer en variables d’environnement les données d’identification. La procédure est expliquée par exemple <a href="https://github.com/InseeFrLab/apinsee#exemple" class="external-link">ici</a>. Une fois cela réalisé, la requête peut se faire facilement au travers de <code>doremifasol</code> de la manière suivante :</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">etablissements</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"SIRENE_SIRET"</span>, 
-                                     argsApi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>q <span class="op">=</span> <span class="st">"dateCreationUniteLegale:2020-01-01"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p>On fait alors face à une liste contenant plusieurs <code>data.frame</code> (6 au total) :</p>
-<ul>
-<li>une table contenant l’ensemble des informations sur les établissements en question ;</li>
-<li>deux tables contenant l’ensemble des informations sur les unités légales de ces établissements, en distinguant les unités dites purgées des autres ;</li>
-<li>deux tables contenant les informations sur l’adresse de ces établissements ;</li>
-<li>une table détaillant les informations historisées de ces établissements - c’est-à-dire les différentes modifications qu’ont connues les établissements entre leur création et la date de référence - ici par défaut la date de téléchargement.</li>
-</ul>
+                                     argsApi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>q <span class="op">=</span> <span class="st">"dateCreationUniteLegale:2020-01-01"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>On fait alors face à une liste contenant plusieurs <code>data.frame</code> (6 au total) : * une table contenant l’ensemble des informations sur les établissements en question ; * deux tables contenant l’ensemble des informations sur les unités légales de ces établissements, en distinguant les unités dites purgées des autres ; * deux tables contenant les informations sur l’adresse de ces établissements ; * une table détaillant les informations historisées de ces établissements - c’est-à-dire les différentes modifications qu’ont connues les établissements entre leur création et la date de référence - ici par défaut la date de téléchargement.</p>
 </div>
 </div>
-<div id="contribuer" class="section level3">
-<h3 class="hasAnchor">
-<a href="#contribuer" class="anchor"></a>Contribuer</h3>
-<p>Agent du Service Statistique Public, ou utilisateur des données mises à disposition sur le site de l’Insee, vous constatez qu’il manque dans la <a href="https://github.com/InseeFrLab/DoReMIFaSol/blob/master/data-raw/liste_donnees.csv">liste des données</a> référencées dans <code>doremifasol</code> une source de données que vous utilisez ? Vous pouvez contribuer à <code>doremifasol</code>, sans nécessairement coder en <code>R</code>. Pour plus de détais, vous pouvez consulter la <a href="https://github.com/InseeFrLab/DoReMIFaSol/blob/master/CONTRIBUTING.md">documentation à ce sujet</a>.</p>
+<div class="section level3">
+<h3 id="contribuer">Contribuer<a class="anchor" aria-label="anchor" href="#contribuer"></a>
+</h3>
+<p>Agent du Service Statistique Public, ou utilisateur des données mises à disposition sur le site de l’Insee, vous constatez qu’il manque dans la <a href="https://github.com/InseeFrLab/DoReMIFaSol/blob/master/data-raw/liste_donnees.csv" class="external-link">liste des données</a> référencées dans <code>doremifasol</code> une source de données que vous utilisez ? Vous pouvez contribuer à <code>doremifasol</code>, sans nécessairement coder en <code>R</code>. Pour plus de détais, vous pouvez consulter la <a href="https://github.com/InseeFrLab/DoReMIFaSol/blob/master/CONTRIBUTING.md" class="external-link">documentation à ce sujet</a>.</p>
 </div>
 </div>
-<div id="english" class="section level2">
-<h2 class="hasAnchor">
-<a href="#english" class="anchor"></a>English</h2>
-<div id="what-is-it-about" class="section level3">
-<h3 class="hasAnchor">
-<a href="#what-is-it-about" class="anchor"></a>What is it about?</h3>
+<div class="section level2">
+<h2 id="english">English<a class="anchor" aria-label="anchor" href="#english"></a>
+</h2>
+<div class="section level3">
+<h3 id="what-is-it-about">What is it about?<a class="anchor" aria-label="anchor" href="#what-is-it-about"></a>
+</h3>
 <p><code>doremifasol</code> (data with <code>R</code> made available by Insee and easily retrievable in French) is a R package mainly aiming at showing off data available on Insee’s website (Insee, for the French Institute for Statistics and Economic Studies), helping the user to put them on stage and extract the information they carry. So it is about analysing data, creating maps, quantifying phenomenons and in general using the data without the painful effort to retrieve them on the website, as well as import them into R’s memory. The name of the <em>package</em> stands for the five first notes of music, and pushing the metaphore, underlines its aim at helping the users to easily pratice their <em>solfège</em> in <code>R</code>.</p>
 <p>To install the package:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"InseeFrLab/doremifasol"</span>, build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"InseeFrLab/doremifasol"</span>, build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="which-data-is-available" class="section level3">
-<h3 class="hasAnchor">
-<a href="#which-data-is-available" class="anchor"></a>Which data is available?</h3>
-<p>You may begin by exploring interactively <a href="https://inseefrlab.github.io/DoReMIFaSol/articles/donnees_dispo.html">which data</a> the package can fetch on Insee website with.</p>
+<div class="section level3">
+<h3 id="which-data-is-available">Which data is available?<a class="anchor" aria-label="anchor" href="#which-data-is-available"></a>
+</h3>
+<p>You may begin by exploring interactively <a href="https://inseefrlab.github.io/DoReMIFaSol/articles/donnees_dispo.html" class="external-link">which data</a> the package can fetch on Insee website with.</p>
 <p>This is also a way to find out the identifiers (short names) and years to be passed as parameters to the downloading functions.</p>
 <p><em>New data sources can be added to the package as soon as they are available online. However, this process is not automated. See the <strong><a href="#contributing">Contributing</a></strong> section for suggesting package administrators to add new sources.</em></p>
 </div>
-<div id="a-few-examples" class="section level3">
-<h3 class="hasAnchor">
-<a href="#a-few-examples" class="anchor"></a>A few examples</h3>
-<div id="census-data" class="section level4">
-<h4 class="hasAnchor">
-<a href="#census-data" class="anchor"></a>Census data</h4>
+<div class="section level3">
+<h3 id="a-few-examples">A few examples<a class="anchor" aria-label="anchor" href="#a-few-examples"></a>
+</h3>
+<div class="section level4">
+<h4 id="census-data">Census data<a class="anchor" aria-label="anchor" href="#census-data"></a>
+</h4>
 <p>A first example of use of the package is related to the rolling Census implemented in France on a yearly basis. It concerns voluminous data that prove to be hard to load into R’s memory on most of the machines. To adress the data size issue, the package <code>doremifasol</code> makes it possible to resize the data and only imports columns that are of interest for the user. Assume that one is interested in knowing the number of main residences for each municipality on the French territory in 2016, that one will only need three variables from the table <code>logement</code> (dwelling in French), <code>COMMUNE</code> the zip code, <code>IPONDL</code> the weight of the dwelling and <code>CATL</code> indicating the status of occupation:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">donnees_rp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"RP_LOGEMENT"</span>, date <span class="op">=</span> <span class="fl">2016</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"COMMUNE"</span>, <span class="st">"IPONDL"</span>, <span class="st">"CATL"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">donnees_rp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"RP_LOGEMENT"</span>, date <span class="op">=</span> <span class="fl">2016</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"COMMUNE"</span>, <span class="st">"IPONDL"</span>, <span class="st">"CATL"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="data-on-income-distribution-and-poverty" class="section level4">
-<h4 class="hasAnchor">
-<a href="#data-on-income-distribution-and-poverty" class="anchor"></a>Data on income distribution and poverty</h4>
+<div class="section level4">
+<h4 id="data-on-income-distribution-and-poverty">Data on income distribution and poverty<a class="anchor" aria-label="anchor" href="#data-on-income-distribution-and-poverty"></a>
+</h4>
 <p>Should you now be interested in data on income distribution, you may download information on income percentiles and poverty rate at the municipality level based on tax data, also knwow as ‘Filosofi’. Those data are update every year. You may fetch these data for year 2017 for instance thanks to the following command:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">donnees_filosofi</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"FILOSOFI_DISP_COM_ENS"</span>, date <span class="op">=</span> <span class="fl">2017</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="data-on-employment" class="section level4">
-<h4 class="hasAnchor">
-<a href="#data-on-employment" class="anchor"></a>Data on employment</h4>
+<div class="section level4">
+<h4 id="data-on-employment">Data on employment<a class="anchor" aria-label="anchor" href="#data-on-employment"></a>
+</h4>
 <p>Tax data are very convenient to carry out information on income distribution at municipality level, so are data coming from registers on employment.</p>
 </div>
-<div id="requesting-an-api-rest-on-the-firms-register-sirene" class="section level4">
-<h4 class="hasAnchor">
-<a href="#requesting-an-api-rest-on-the-firms-register-sirene" class="anchor"></a>Requesting an API REST on the firms’ register <em>Sirene</em>
+<div class="section level4">
+<h4 id="requesting-an-api-rest-on-the-firms-register-sirene">Requesting an API REST on the firms’ register <em>Sirene</em>
+<a class="anchor" aria-label="anchor" href="#requesting-an-api-rest-on-the-firms-register-sirene"></a>
 </h4>
 </div>
 </div>
-<div id="contributing" class="section level3">
-<h3 class="hasAnchor">
-<a href="#contributing" class="anchor"></a>Contributing</h3>
-<p>As non French-speaking user of Insee’s website, you are using data that turn out not to be listed <a href="https://github.com/InseeFrLab/DoReMIFaSol/blob/master/data-raw/liste_donnees.csv">there</a> in the package <code>doremifasol</code>. You may notify the maintainer of this project and even more, could you code in <code>R</code> or not. Please report to the <a href="https://github.com/InseeFrLab/DoReMIFaSol/blob/master/CONTRIBUTING.md">dedicated documentation</a>.</p>
+<div class="section level3">
+<h3 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
+</h3>
+<p>As non French-speaking user of Insee’s website, you are using data that turn out not to be listed <a href="https://github.com/InseeFrLab/DoReMIFaSol/blob/master/data-raw/liste_donnees.csv" class="external-link">there</a> in the package <code>doremifasol</code>. You may notify the maintainer of this project and even more, could you code in <code>R</code> or not. Please report to the <a href="https://github.com/InseeFrLab/DoReMIFaSol/blob/master/CONTRIBUTING.md" class="external-link">dedicated documentation</a>.</p>
 </div>
 </div>
 </div>
@@ -208,34 +204,54 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/InseeFrLab/DoReMIFaSol/">https://​github.com/​InseeFrLab/​DoReMIFaSol/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/InseeFrLab/DoReMIFaSol/issues">https://​github.com/​InseeFrLab/​DoReMIFaSol/​issues</a>
-</li>
+<li><a href="https://github.com/InseeFrLab/DoReMIFaSol/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/InseeFrLab/DoReMIFaSol/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
 </li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 </ul>
 </div>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing doremifasol</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Pierre Lamarche <br><small class="roles"> Author, maintainer </small>  </li>
 <li>Pierre-Yves Berrard <br><small class="roles"> Author </small>  </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="authors.html">More about authors...</a></li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://www.repostatus.org/#wip" class="external-link"><img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a></li>
+<li><a href="https://github.com/InseeFrLab/DoReMIFaSol/actions/workflows/build-artifacts.yml" class="external-link"><img src="https://github.com/InseeFrLab/DoReMIFaSol/actions/workflows/build-artifacts.yml/badge.svg" alt="build-artifacts"></a></li>
+<li><a href="https://github.com/InseeFrLab/DoReMIFaSol/actions" class="external-link"><img src="https://github.com/InseeFrLab/DoReMIFaSol/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://opensource.org/licenses/MIT" class="external-link"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License:MIT"></a></li>
+<li><a href="https://codecov.io/gh/InseeFrLab/DoReMIFaSol" class="external-link"><img src="https://codecov.io/gh/InseeFrLab/DoReMIFaSol/branch/master/graph/badge.svg?token=FM7HW4DSW5" alt="Coverage status"></a></li>
+<li><a href="https://cran.r-project.org/package=doremifasol" class="external-link"><img src="https://www.r-pkg.org/badges/version/doremifasol" alt="CRAN status"></a></li>
 </ul>
 </div>
 
@@ -244,11 +260,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Pierre Lamarche, Pierre-Yves Berrard.</p>
+  <p></p>
+<p>Developed by Pierre Lamarche, Pierre-Yves Berrard.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
@@ -256,6 +274,8 @@
 
   
 
+
+  
 
   </body>
 </html>
