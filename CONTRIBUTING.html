@@ -57,11 +57,54 @@
 
 <div class="section level2">
 <h2 id="ajout-dune-source-de-données">Ajout d’une source de données<a class="anchor" aria-label="anchor" href="#ajout-dune-source-de-donn%C3%A9es"></a></h2>
-<p>Le référentiel des sources disponibles ne se met pas à jour automatiquement. Pour ajouter une nouvelle source, il faut :</p>
-<ul><li>modifier le fichier <code>data-raw/liste_donnees.json</code> ;</li>
-<li>exécuter le programme <code>data-raw/liste_donnees.R</code> pour générer les objets R associés.</li>
-</ul><p>Pour qu’un administrateur du package intègre lui-même la source ou en cas de doute sur la pertinence de l’ajout, il est aussi possible de la proposer via l’ouverture d’une <a href="https://github.com/InseeFrLab/DoReMIFaSol/issues/new/choose" class="external-link"><em>issue</em></a>.</p>
-</div>
+<p>Le référentiel des sources disponibles ne se met pas à jour automatiquement.</p>
+<p><strong>Pour qu’un administrateur du package intègre lui-même la source ou en cas de doute sur la pertinence de l’ajout, il est possible de la proposer via l’ouverture d’une <a href="https://github.com/InseeFrLab/DoReMIFaSol/issues/new/choose" class="external-link"><em>issue</em></a>.</strong></p>
+<p>On peut aussi <strong>ajouter soi-même une nouvelle source</strong>, il faut pour cela :</p>
+<ol style="list-style-type: decimal"><li>
+<p>modifier le fichier <code>data-raw/liste_donnees.json</code>. Une source doit comporter les champs suivants :</p>
+<table class="table"><colgroup><col width="30%"><col width="69%"></colgroup><thead><tr class="header"><th align="left">Champ</th>
+<th align="left">Description</th>
+</tr></thead><tbody><tr class="odd"><td align="left"><code>nom</code></td>
+<td align="left">identifiant des données</td>
+</tr><tr class="even"><td align="left"><code>libelle</code></td>
+<td align="left">descriptif des données</td>
+</tr><tr class="odd"><td align="left"><code>date_ref</code></td>
+<td align="left">éventuellement, date de référence des données</td>
+</tr><tr class="even"><td align="left"><code>collection</code></td>
+<td align="left">thématique ou la source</td>
+</tr><tr class="odd"><td align="left"><code>lien</code></td>
+<td align="left">URL pour le téléchargement des données</td>
+</tr><tr class="even"><td align="left"><code>type</code></td>
+<td align="left">format des données</td>
+</tr><tr class="odd"><td align="left"><code>zip</code></td>
+<td align="left">les données sont-elles zippées ou non ? (booléen)</td>
+</tr><tr class="even"><td align="left"><code>big_zip</code></td>
+<td align="left">pour repérer les fichiers zippés dont la taille dépasse 4 Go et qui doivent alors faire l’objet d’une procédure particulière au moment de la décompression (booléen)</td>
+</tr><tr class="odd"><td align="left"><code>fichier_donnees</code></td>
+<td align="left">nom du fichier de données, dans le zip éventuel</td>
+</tr><tr class="even"><td align="left"><code>fichier_meta</code></td>
+<td align="left">nom du fichier descriptif des données, dans le zip éventuel</td>
+</tr><tr class="odd"><td align="left"><code>onglet</code></td>
+<td align="left">nom de l’onglet, si fichier tableur</td>
+</tr><tr class="even"><td align="left"><code>premiere_ligne</code></td>
+<td align="left">première ligne à lire pour charger dans R, si fichier tableur</td>
+</tr><tr class="odd"><td align="left"><code>derniere_ligne</code></td>
+<td align="left">dernière ligne à lire pour charger dans R, si fichier tableur</td>
+</tr><tr class="even"><td align="left"><code>separateur</code></td>
+<td align="left">séparateur de colonnes, si fichier texte</td>
+</tr><tr class="odd"><td align="left"><code>encoding</code></td>
+<td align="left">encodage du fichier</td>
+</tr><tr class="even"><td align="left"><code>valeurs_manquantes</code></td>
+<td align="left">valeurs à remplacer par <code>NA</code> lors de l’import dans R</td>
+</tr><tr class="odd"><td align="left"><code>api_rest</code></td>
+<td align="left">nécessité de passer par une API REST (booléen)</td>
+</tr><tr class="even"><td align="left"><code>md5</code></td>
+<td align="left">somme de contrôle du fichier à télécharger (32 caractères hexadécimaux). Sert à vérifier si un téléchargement doit être effectué dans le cas où un fichier au nom identique est présent dans le dossier.</td>
+</tr><tr class="odd"><td align="left"><code>size</code></td>
+<td align="left">taille du fichier à télécharger (en octets)</td>
+</tr></tbody></table></li>
+<li><p>exécuter le programme <code>data-raw/liste_donnees.R</code> pour générer les objets R associés.</p></li>
+</ol></div>
 </div>
 
   </div>
