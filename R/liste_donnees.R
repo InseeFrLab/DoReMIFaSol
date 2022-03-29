@@ -1,8 +1,8 @@
-#' Table des données disponible au téléchargement
+#' Table des données disponibles au téléchargement
 #' 
 #' Cette table est centrale au package ; elle recense l'ensemble des données disponibles et les liens associés permettant le téléchargement, ainsi que des éléments descriptifs de celles-ci.
 #' 
-#' @format Une table de 1322 lignes et 19 variables
+#' @format Un data.frame de 19 variables
 #' \describe{
 #' \item{nom}{l'identifiant des données}
 #' \item{libelle}{le descriptif des données}
@@ -24,5 +24,5 @@
 #' \item{md5}{somme de contrôle du fichier à télécharger (32 caractères hexadécimaux). Sert à vérifier si un téléchargement doit être effectué dans le cas où un fichier au nom identique est présent dans le dossier.}
 #' \item{size}{taille du fichier à télécharger (en octets)}
 #' }
-#' 
+
 "liste_donnees"
