@@ -66,9 +66,9 @@ donnees_dispo <- function(recherche_init = NULL,
     list(
       dom = 'Blfrtip',
       buttons = list( 
-        list(extend = 'csv',   filename = "liste_donnees"),
-        list(extend = 'excel', filename = "liste_donnees"),
-        list(extend = 'pdf',   filename = "liste_donnees")
+        list(extend = 'csv',   filename = "donnees_dispo"),
+        list(extend = 'excel', filename = "donnees_dispo"),
+        list(extend = 'pdf',   filename = "donnees_dispo")
       ),
       searching  = TRUE,
       search     = list(search = recherche_init),
