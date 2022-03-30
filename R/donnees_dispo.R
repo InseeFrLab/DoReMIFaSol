@@ -65,7 +65,11 @@ donnees_dispo <- function(recherche_init = NULL,
     params$options,
     list(
       dom = 'Blfrtip',
-      buttons = c('csv','excel', 'pdf'),
+      buttons = list( 
+        list(extend = 'csv',   filename = "liste_donnees"),
+        list(extend = 'excel', filename = "liste_donnees"),
+        list(extend = 'pdf',   filename = "liste_donnees")
+      ),
       searching  = TRUE,
       search     = list(search = recherche_init),
       language   = list(
