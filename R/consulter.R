@@ -17,6 +17,9 @@ consulter <- function(donnees, date = NULL) {
 
   # construit l'url web à partir de l'url du fichier
   url <- sub("fichier/([0-9]+)/.+$", "\\1", caract$lien)
+  if (caract$collection == "GEOGRAPHIE") {
+    url <- sub("/statistiques/", "/information/", url)
+  }
   
   # ouvre dans navigateur
   utils::browseURL(url)
