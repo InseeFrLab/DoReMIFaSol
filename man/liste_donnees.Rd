@@ -3,9 +3,9 @@
 \docType{data}
 \name{liste_donnees}
 \alias{liste_donnees}
-\title{Table des données disponible au téléchargement}
+\title{Table des données disponibles au téléchargement}
 \format{
-Une table de 1322 lignes et 19 variables
+Un data.frame de 19 variables
 \describe{
 \item{nom}{l'identifiant des données}
 \item{libelle}{le descriptif des données}

@@ -86,7 +86,7 @@ On fait alors face à une liste contenant plusieurs `data.frame` (6 au total) :
 
 ### Contribuer
 
-Agent du Service Statistique Public, ou utilisateur des données mises à disposition sur le site de l'Insee, vous constatez qu'il manque dans la [liste des données](https://github.com/InseeFrLab/DoReMIFaSol/blob/master/data-raw/liste_donnees.csv) référencées dans `doremifasol` une source de données que vous utilisez ? Vous pouvez contribuer à `doremifasol`, sans nécessairement coder en `R`. Pour plus de détais, vous pouvez consulter la [documentation à ce sujet](https://github.com/InseeFrLab/DoReMIFaSol/blob/master/CONTRIBUTING.md).
+Agent du Service Statistique Public, ou utilisateur des données mises à disposition sur le site de l'Insee, vous constatez qu'il manque dans la [liste des données](https://inseefrlab.github.io/DoReMIFaSol/articles/donnees_dispo.html) référencées dans `doremifasol` une source de données que vous utilisez ? Vous pouvez contribuer à `doremifasol`, sans nécessairement coder en `R`. Pour plus de détais, vous pouvez consulter la [documentation à ce sujet](https://github.com/InseeFrLab/DoReMIFaSol/blob/master/CONTRIBUTING.md).
 
 
 ## English
