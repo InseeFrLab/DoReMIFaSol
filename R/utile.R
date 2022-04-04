@@ -12,12 +12,13 @@
 #' l'année doit être spécifiée.
 #'
 #' @inheritParams telechargerFichier
+#' @param consultation Booléen qui indique si on veut consulter directement consulter la page sur son navigateur (TRUE) ou seulement récupérer l'URL de la page (FALSE).
 #'
 #' @return Une unique ligne de `liste_donnees` (sous forme de list).
 #' 
 #' @keywords internal
 
-infosDonnees <- function(donnees, date = NULL) {
+infosDonnees <- function(donnees, date = NULL, consultation = TRUE) {
   
   donnees <- toupper(donnees) # pour rendre insensible à la casse
   liste_nom <- vapply(ld, `[[`, "nom", FUN.VALUE = character(1))
@@ -45,10 +46,12 @@ infosDonnees <- function(donnees, date = NULL) {
 
   if (!is.null(date) && tolower(date) == "dernier") {
     date <- sort(possible, decreasing = TRUE)[1]
-    message(
-      "S\u00e9lection automatique des donn\u00e9es les plus r\u00e9centes ",
-      "(date = ", date, ")."
-    )
+    if (isTRUE(consultation)) {
+      message(
+        "S\u00e9lection automatique des donn\u00e9es les plus r\u00e9centes ",
+        "(date = ", date, ")."
+      )
+    }
   }
 
   select <- 1

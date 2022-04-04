@@ -37,6 +37,15 @@ donnees_dispo <- function(recherche_init = NULL,
   # 1 - construit table à afficher
   affich <- listToDf(liste = ld, vars = c("collection", "libelle", "nom", "date_ref", "size"))
   affich$size <- round(as.numeric(affich$size) / 1048576, 1) # conversion Mo
+  # Ajout url page
+  affich$page <- sapply(affich$nom,
+                        consulter,
+                        date=ifelse(
+                          is.na(substr(liste_donnees$date_ref,1,4)),
+                          "dernier",
+                          substr(liste_donnees$date_ref,1,4)),
+                        consultation = FALSE)
+  affich$page <- paste0("<a target='_blank' rel='noopener noreferrer' href='",affich$page,"'>","Consulter la page associée","</a>")
   affich <- affich[order(affich$collection, -rank(affich$date_ref), affich$nom), ]
 
   # 2 - paramètres additionnels pour DT::datatable
@@ -49,8 +58,9 @@ donnees_dispo <- function(recherche_init = NULL,
   params$data     <- affich
   params$rownames <- FALSE
   params$colnames <- c("Collection", "Description", "Nom court",
-                       "Date de r\u00e9f\u00e9rence", "Taille (Mo)")
+                       "Date de r\u00e9f\u00e9rence", "Taille (Mo)" , "Lien sur Insee.fr")
   params$extensions <- c("Buttons")
+  params$escape <- FALSE
 
   # 2.2 - paramètres modifiables,
   #       mais avec valeurs défaut différentes de celles de DT::data.table
