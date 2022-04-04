@@ -165,7 +165,8 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       fileArchive = fileArchive,
       type        = caract$type,
       argsImport  = argsImport,
-      collection  = caract$collection
+      collection  = caract$collection,
+      nom         = caract$nom
     )
   )
   
