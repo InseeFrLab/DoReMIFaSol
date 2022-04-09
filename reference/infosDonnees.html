@@ -62,7 +62,7 @@ liste_donnees correspondante."><!-- mathjax --><script src="https://cdnjs.cloudf
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">infosDonnees</span><span class="op">(</span><span class="va">donnees</span>, date <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">infosDonnees</span><span class="op">(</span><span class="va">donnees</span>, date <span class="op">=</span> <span class="cn">NULL</span>, silencieux <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -71,6 +71,8 @@ liste_donnees correspondante."><!-- mathjax --><script src="https://cdnjs.cloudf
 <dd><p>le nom court des données que l'on souhaite télécharger sur le site de l'Insee. La description complète des données associés à ce nom figure dans la table <code><a href="liste_donnees.html">liste_donnees</a></code>. Insensible à la casse.</p></dd>
 <dt>date</dt>
 <dd><p>optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence. Spécifier <code>"dernier"</code> sélectionne automatiquement le millésime le plus récent.</p></dd>
+<dt>silencieux</dt>
+<dd><p>mettre à <code>TRUE</code> pour ne pas afficher les messages.</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
