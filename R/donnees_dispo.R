@@ -35,9 +35,28 @@ donnees_dispo <- function(recherche_init = NULL,
   if (is.null(recherche_init)) recherche_init <- ""
 
   # 1 - construit table à afficher
-  affich <- listToDf(liste = ld, vars = c("collection", "libelle", "nom", "date_ref", "size"))
+  affich <-
+    listToDf(
+      liste = ld,
+      vars = c("collection", "libelle", "nom", "date_ref", "size")
+    )
   affich$size <- round(as.numeric(affich$size) / 1048576, 1) # conversion Mo
-  affich <- affich[order(affich$collection, -rank(affich$date_ref), affich$nom), ]
+  # 1.1 - ajout url page
+  annee_ref <- substr(affich$date_ref, 1, 4)
+  affich$page <-
+    mapply(
+      function(nom, annee) consulter(nom, annee, url_only = TRUE),
+      affich$nom,
+      ifelse(is.na(annee_ref), "dernier", annee_ref)
+    )
+  affich$page <-
+    sprintf(
+      "<a target='_blank' rel='noopener noreferrer' href='%s'>Documentation</a>",
+      affich$page
+  )
+  affich$page[affich$collection == "SIRENE"] <- NA
+  # 1.2 - tri
+  affich <- affich[with(affich, order(collection, -rank(date_ref), nom)), ]
 
   # 2 - paramètres additionnels pour DT::datatable
   params <- list(...)
@@ -46,11 +65,14 @@ donnees_dispo <- function(recherche_init = NULL,
   if (any(names(params) == "data"))     warning("`data` pas modifiable")
   if (any(names(params) == "rownames")) warning("`rownames` pas modifiable")
   if (any(names(params) == "colnames")) warning("`colnames` pas modifiable")
+  if (any(names(params) == "escape"))   warning("`escape` pas modifiable")
   params$data     <- affich
   params$rownames <- FALSE
   params$colnames <- c("Collection", "Description", "Nom court",
-                       "Date de r\u00e9f\u00e9rence", "Taille (Mo)")
+                       "Date de r\u00e9f\u00e9rence", "Taille (Mo)",
+                       "Documentation sur insee.fr")
   params$extensions <- c("Buttons")
+  params$escape <- FALSE
 
   # 2.2 - paramètres modifiables,
   #       mais avec valeurs défaut différentes de celles de DT::data.table
