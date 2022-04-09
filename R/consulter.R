@@ -19,7 +19,7 @@ consulter <- function(donnees, date = NULL) {
   url <- sub("fichier/([0-9]+)/.+$", "\\1", caract$lien)
   
   # des exceptions sur les url web pour la collection GEOGRAPHIE et le fichier des personnes décédées
-  if (caract$collection == "GEOGRAPHIE" | substr(caract$nom,1,8) == "DECES_20") {
+  if (caract$collection == "GEOGRAPHIE" || substr(caract$nom, 1, 8) == "DECES_20") {
     url <- sub("/statistiques/", "/information/", url)
   }
   
