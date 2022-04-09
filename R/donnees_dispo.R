@@ -65,13 +65,14 @@ donnees_dispo <- function(recherche_init = NULL,
   if (any(names(params) == "data"))     warning("`data` pas modifiable")
   if (any(names(params) == "rownames")) warning("`rownames` pas modifiable")
   if (any(names(params) == "colnames")) warning("`colnames` pas modifiable")
+  if (any(names(params) == "extensions")) warning("`extensions` pas modifiable")
   if (any(names(params) == "escape"))   warning("`escape` pas modifiable")
   params$data     <- affich
   params$rownames <- FALSE
   params$colnames <- c("Collection", "Description", "Nom court",
                        "Date de r\u00e9f\u00e9rence", "Taille (Mo)",
                        "Documentation sur insee.fr")
-  params$extensions <- c("Buttons")
+  params$extensions <- "Buttons"
   params$escape <- FALSE
 
   # 2.2 - paramètres modifiables,
