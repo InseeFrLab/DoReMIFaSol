@@ -106,8 +106,8 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
   if (is.data.frame(res)) {
     class(res) <- c("insee_data_frame", class(res))
     attr_url <- sub("fichier/([0-9]+)/.+$", "\\1", telechargementFichier$lien)
-    if (telechargementFichier$collection == "GEOGRAPHIE") {
-      # url différente pour COG et aires urbaines
+    if (telechargementFichier$collection == "GEOGRAPHIE" || substr(telechargementFichier$nom, 1, 8) == "DECES_20") {
+      # url différente pour COG, aires urbaines et décès
       attr_url <- sub("/statistiques/", "/information/", attr_url)
     }
     attr(res, "source") <-
