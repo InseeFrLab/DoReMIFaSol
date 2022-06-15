@@ -41,6 +41,12 @@ Télécharger des données sur le site de l'Insee
 \details{
 La fonction permet de télécharger les données disponibles sur le site de l'Insee sous format csv, xls ou encore xlsx. Les données mises à disposition sont en général des tables de taille raisonnable, qui peuvent être chargées sans problème en mémoire sur un large spectre de machines. Néanmoins, pour certaines données (telles celles du Recensement de Population ou encore SIRENE), les données sont très volumineuses et exigent donc des machines très performantes. L'utilisateur a donc la possibilité de choisir les variables qui l'intéressent et de ne charger que ces dernières en mémoire, de manière à être parcimonieux.
 }
+\section{Fichiers zip de grosse taille}{
+
+Pour tous les gros fichiers zip (repérés par la variable \code{big_zip = TRUE} dans les métadonnées), la fonction fait automatiquement appel à la fonction \code{\link{unzip}} avec le paramètre \code{unzip = "unzip"}.
+La commande unzip doit par conséquent être installée sur le poste de l'utilisateur (sur Windows, renseigner le chemin vers unzip dans la variable d'environnement \%PATH\%).
+}
+
 \examples{
 \dontrun{
 

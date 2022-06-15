@@ -9,6 +9,10 @@
 #' @details 
 #' La fonction permet de télécharger les données disponibles sur le site de l'Insee sous format csv, xls ou encore xlsx. Les données mises à disposition sont en général des tables de taille raisonnable, qui peuvent être chargées sans problème en mémoire sur un large spectre de machines. Néanmoins, pour certaines données (telles celles du Recensement de Population ou encore SIRENE), les données sont très volumineuses et exigent donc des machines très performantes. L'utilisateur a donc la possibilité de choisir les variables qui l'intéressent et de ne charger que ces dernières en mémoire, de manière à être parcimonieux.
 #'
+#' @section Fichiers zip de grosse taille:
+#' Pour tous les gros fichiers zip (repérés par la variable `big_zip = TRUE` dans les métadonnées), la fonction fait automatiquement appel à la fonction [`unzip`] avec le paramètre `unzip = "unzip"`.
+#' La commande unzip doit par conséquent être installée sur le poste de l'utilisateur (sur Windows, renseigner le chemin vers unzip dans la variable d'environnement %PATH%).
+#'
 #' @return
 #' - un data.frame contenant les données téléchargées sur le site de l'Insee
 #' - une liste de data.frames si recherche de Siren ou Siret via l'API
