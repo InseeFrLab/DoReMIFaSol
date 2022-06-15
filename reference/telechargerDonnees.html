@@ -75,22 +75,37 @@
     <h2>Arguments</h2>
     <dl><dt>donnees</dt>
 <dd><p>le nom des données que l'on souhaite télécharger sur le site de l'Insee, que l'on peut retrouver dans la table <code><a href="liste_donnees.html">liste_donnees</a></code>.</p></dd>
+
+
 <dt>date</dt>
 <dd><p>optionnel : le millésime des données si nécessaire. Peut prendre le format YYYY ou encore DD/MM/YYYY ; dans le dernier cas, on prendra le premier jour de la période de référence. Spécifier <code>"dernier"</code> sélectionne automatiquement le millésime le plus récent.</p></dd>
+
+
 <dt>telDir</dt>
 <dd><p>optionnel : le dossier dans lequel sont téléchargées les données brutes. Par défaut, la valeur définie par <code>options(doremifasol.telDir = ...)</code>. Si l'utilisateur n'a pas défini cette valeur au préalable, un dossier temporaire de cache.</p></dd>
+
+
 <dt>argsApi</dt>
 <dd><p>optionnel : dans le cas où c'est une API REST qui est utilisée, il est possible de spécifier des paramètres spécifiques à cette API de manière à collecter l'information désirée.</p></dd>
+
+
 <dt>vars</dt>
 <dd><p>optionnel : un vecteur pour spécifier les variables à importer. Utile pour les données massives difficiles à charger en mémoire, voir section <em>Details</em>.</p></dd>
+
+
 <dt>force</dt>
 <dd><p>forcer le téléchargement, même si le fichier a déjà été téléchargé (et est identique).</p></dd>
+
+
 <dt>...</dt>
 <dd><p>paramètres additionnels relatifs à l'importation des données</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <ul><li><p>un data.frame contenant les données téléchargées sur le site de l'Insee</p></li>
+    
+
+<ul><li><p>un data.frame contenant les données téléchargées sur le site de l'Insee</p></li>
 <li><p>une liste de data.frames si recherche de Siren ou Siret via l'API</p></li>
 </ul></div>
     <div id="details">
@@ -132,7 +147,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
       </footer></div>
