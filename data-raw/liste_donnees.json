@@ -96,8 +96,8 @@
         "fichier_meta": "varmod_bpe21_ensemble_xy.csv",
         "separateur": ";",
         "api_rest": false,
-        "md5": "05fce2ed3d3be9c0f0b2863a486a72d7",
-        "size": 44372074,
+        "md5": "80d5a64454f63f1a6473a7a03058621e",
+        "size": 44372052,
         "type_col": {
             "AAV2020": "character",
             "AN": "integer",
