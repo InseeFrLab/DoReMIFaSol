@@ -20924,32 +20924,32 @@
     {
         "nom": "PRENOM_NAT",
         "libelle": "Fichier des prénoms, France hors Mayotte",
-        "date_ref": "2020-01-01",
+        "date_ref": "2021-01-01",
         "collection": "ETAT_CIVIL",
-        "lien": "https://www.insee.fr/fr/statistiques/fichier/2540004/nat2020_csv.zip",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/2540004/nat2021_csv.zip",
         "type": "csv",
         "zip": true,
         "big_zip": false,
-        "fichier_donnees": "nat2020.csv",
+        "fichier_donnees": "nat2021.csv",
         "separateur": ";",
         "api_rest": false,
-        "md5": "9af0eb19bc09e99a5197ea569e915b37",
-        "size": 2443960
+        "md5": "51c4e54ebe037bc938a417122764c169",
+        "size": 2513224
     },
     {
         "nom": "PRENOM_DEP",
         "libelle": "Fichier des prénoms par département",
-        "date_ref": "2020-01-01",
+        "date_ref": "2021-01-01",
         "collection": "ETAT_CIVIL",
-        "lien": "https://www.insee.fr/fr/statistiques/fichier/2540004/dpt2020_csv.zip",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/2540004/dpt2021_csv.zip",
         "type": "csv",
         "zip": true,
         "big_zip": false,
-        "fichier_donnees": "dpt2020.csv",
+        "fichier_donnees": "dpt2021.csv",
         "separateur": ";",
         "api_rest": false,
-        "md5": "918842176bbeb6577964c285c502e2a8",
-        "size": 13402600
+        "md5": "b316f01d1119116a3471b56faef4fb90",
+        "size": 13603845
     },
     {
         "nom": "RP_LOGEMENT",
