@@ -97,7 +97,7 @@ donnees_dispo <- function(recherche_init = NULL,
       search     = list(search = recherche_init),
       language   = list(
         search       = "Recherche :",
-        zeroRecords  = "Aucun r\u00e9esultat.",
+        zeroRecords  = "Aucun r\u00e9sultat.",
         lengthMenu   = "Afficher _MENU_ lignes",
         info         = "Lignes _START_-_END_ sur _TOTAL_",
         infoEmpty    = "Aucun r\u00e9esultat",
