@@ -30468,7 +30468,7 @@
         "size": 1727453,
         "encoding": "utf-8",
         "nom": "COG_COMMUNE",
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2023",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2023",
         "fichier_donnees": "v_commune_2023.csv",
         "type_col": {
             "TYPECOM": "character",
@@ -30498,7 +30498,7 @@
         "size": 1727453,
         "encoding": "utf-8",
         "nom": "COG_CANTON",
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2023",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2023",
         "fichier_donnees": "v_canton_2023.csv",
         "type_col": {
             "CAN": "character",
@@ -30526,7 +30526,7 @@
         "size": 1727453,
         "encoding": "utf-8",
         "nom": "COG_ARRONDISSEMENT",
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2023",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2023",
         "fichier_donnees": "v_arrondissement_2023.csv",
         "type_col": {
             "ARR": "character",
@@ -30552,7 +30552,7 @@
         "size": 1727453,
         "encoding": "utf-8",
         "nom": "COG_DEPARTEMENT",
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2023",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2023",
         "fichier_donnees": "v_departement_2023.csv",
         "type_col": {
             "DEP": "character",
@@ -30577,7 +30577,7 @@
         "size": 1727453,
         "encoding": "utf-8",
         "nom": "COG_REGION",
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2023",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2023",
         "fichier_donnees": "v_region_2023.csv",
         "type_col": {
             "REG": "character",
@@ -30601,7 +30601,7 @@
         "size": 1727453,
         "encoding": "utf-8",
         "nom": "COG_CTCD",
-        "libelle": "Code Officiel G\u00e9ographique, niveau CTCD - 2023",
+        "libelle": "Code Officiel Géographique, niveau CTCD - 2023",
         "fichier_donnees": "v_ctcd_2023.csv",
         "type_col": {
             "CTCD": "character",
@@ -30625,7 +30625,7 @@
         "size": 1727453,
         "encoding": "utf-8",
         "nom": "COG_PAYS",
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2023",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2023",
         "fichier_donnees": "v_pays_2023.csv",
         "type_col": {
             "COG": "character",
@@ -30654,7 +30654,7 @@
         "size": 1727453,
         "encoding": "utf-8",
         "nom": "COG_EVENEMENT_COMMUNE",
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2023",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2023",
         "fichier_donnees": "v_mvtcommune_2023.csv",
         "type_col": {
             "MOD": "character",
@@ -30686,7 +30686,7 @@
         "size": 1727453,
         "encoding": "utf-8",
         "nom": "COG_COMMUNE_DEPUIS_1943",
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2023",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2023",
         "fichier_donnees": "v_commune_depuis_1943.csv",
         "type_col": {
             "COM": "character",
@@ -30711,7 +30711,7 @@
         "size": 1727453,
         "encoding": "utf-8",
         "nom": "COG_COMER",
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMER - 2023",
+        "libelle": "Code Officiel Géographique, niveau COMER - 2023",
         "fichier_donnees": "v_comer_2023.csv",
         "type_col": {
             "COMER": "character",
@@ -30734,7 +30734,7 @@
         "size": 1727453,
         "encoding": "utf-8",
         "nom": "COG_COMMUNE_COMER",
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_COMER - 2023",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_COMER - 2023",
         "fichier_donnees": "v_commune_comer_2023.csv",
         "type_col": {
             "COM_COMER": "character",
@@ -30760,7 +30760,7 @@
         "size": 1727927,
         "encoding": "utf-8",
         "nom": "COG_COMMUNE",
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2022",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2022",
         "fichier_donnees": "commune_2022.csv",
         "type_col": {
             "TYPECOM": "character",
@@ -30790,7 +30790,7 @@
         "size": 1727927,
         "encoding": "utf-8",
         "nom": "COG_CANTON",
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2022",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2022",
         "fichier_donnees": "canton_2022.csv",
         "type_col": {
             "id_canton": "character",
@@ -30818,7 +30818,7 @@
         "size": 1727927,
         "encoding": "utf-8",
         "nom": "COG_ARRONDISSEMENT",
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2022",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2022",
         "fichier_donnees": "arrondissement_2022.csv",
         "type_col": {
             "ARR": "character",
@@ -30844,7 +30844,7 @@
         "size": 1727927,
         "encoding": "utf-8",
         "nom": "COG_DEPARTEMENT",
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2022",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2022",
         "fichier_donnees": "departement_2022.csv",
         "type_col": {
             "DEP": "character",
@@ -30869,7 +30869,7 @@
         "size": 1727927,
         "encoding": "utf-8",
         "nom": "COG_REGION",
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2022",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2022",
         "fichier_donnees": "region_2022.csv",
         "type_col": {
             "REG": "character",
@@ -30893,7 +30893,7 @@
         "size": 1727927,
         "encoding": "utf-8",
         "nom": "COG_CTCD",
-        "libelle": "Code Officiel G\u00e9ographique, niveau CTCD - 2022",
+        "libelle": "Code Officiel Géographique, niveau CTCD - 2022",
         "fichier_donnees": "CTCD_2022.csv",
         "type_col": {
             "CTCD": "character",
@@ -30917,7 +30917,7 @@
         "size": 1727927,
         "encoding": "utf-8",
         "nom": "COG_PAYS",
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2022",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2022",
         "fichier_donnees": "pays_2022.csv",
         "type_col": {
             "COG": "character",
@@ -30946,7 +30946,7 @@
         "size": 1727927,
         "encoding": "utf-8",
         "nom": "COG_EVENEMENT_COMMUNE",
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2022",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2022",
         "fichier_donnees": "mvtcommune_2022.csv",
         "type_col": {
             "MOD": "character",
@@ -30978,7 +30978,7 @@
         "size": 1727927,
         "encoding": "utf-8",
         "nom": "COG_COMMUNE_DEPUIS_1943",
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2022",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2022",
         "fichier_donnees": "communes1943_2022.csv",
         "type_col": {
             "COM": "character",
@@ -31003,7 +31003,7 @@
         "size": 1727927,
         "encoding": "utf-8",
         "nom": "COG_COMER",
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMER - 2022",
+        "libelle": "Code Officiel Géographique, niveau COMER - 2022",
         "fichier_donnees": "comer_2022.csv",
         "type_col": {
             "ID_COMER": "character",
@@ -31026,7 +31026,7 @@
         "size": 1727927,
         "encoding": "utf-8",
         "nom": "COG_COMMUNE_COMER",
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_COMER - 2022",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_COMER - 2022",
         "fichier_donnees": "com_comer_2022.csv",
         "type_col": {
             "COM_COMER": "character",
@@ -31040,7 +31040,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2018",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2018",
         "date_ref": "2018-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/3363419/France2018-txt.zip",
@@ -31076,7 +31076,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2018",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2018",
         "date_ref": "2018-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/3363419/comsimp2018-txt.zip",
@@ -31106,7 +31106,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2018",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2018",
         "date_ref": "2018-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/3363419/historiq2018-txt.zip",
@@ -31147,7 +31147,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2018",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2018",
         "date_ref": "2018-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/3363419/canton2018-txt.zip",
@@ -31175,7 +31175,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2018",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2018",
         "date_ref": "2018-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/3363419/arrond2018-txt.zip",
@@ -31202,7 +31202,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2018",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2018",
         "date_ref": "2018-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/3363419/depts2018-txt.zip",
@@ -31226,7 +31226,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2018",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2018",
         "date_ref": "2018-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/3363419/reg2018-txt.zip",
@@ -31249,7 +31249,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2018",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2018",
         "date_ref": "2018-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/3363419/pays2018-txt.zip",
@@ -31278,7 +31278,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2017",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2017",
         "date_ref": "2017-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2666684/france2017-txt.zip",
@@ -31314,7 +31314,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2017",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2017",
         "date_ref": "2017-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2666684/comsimp2017-txt.zip",
@@ -31344,7 +31344,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2017",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2017",
         "date_ref": "2017-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2666684/historiq2017-txt.zip",
@@ -31385,7 +31385,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2017",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2017",
         "date_ref": "2017-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2666684/canton2017-txt.zip",
@@ -31413,7 +31413,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2017",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2017",
         "date_ref": "2017-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2666684/arrond2017-txt.zip",
@@ -31440,7 +31440,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2017",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2017",
         "date_ref": "2017-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2666684/depts2017-txt.zip",
@@ -31464,7 +31464,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2017",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2017",
         "date_ref": "2017-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2666684/reg2017-txt.zip",
@@ -31487,7 +31487,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2017",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2017",
         "date_ref": "2017-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2666684/pays2017-txt.zip",
@@ -31516,7 +31516,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2016",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2016",
         "date_ref": "2016-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2114819/france2016-txt.zip",
@@ -31552,7 +31552,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2016",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2016",
         "date_ref": "2016-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2114819/comsimp2016-txt.zip",
@@ -31582,7 +31582,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2016",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2016",
         "date_ref": "2016-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2114819/historiq2016-txt.zip",
@@ -31623,7 +31623,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2016",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2016",
         "date_ref": "2016-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2114819/majcom2016-txt.zip",
@@ -31661,7 +31661,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2016",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2016",
         "date_ref": "2016-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2114819/canton2016-txt.zip",
@@ -31689,7 +31689,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2016",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2016",
         "date_ref": "2016-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2114819/arrond2016-txt.zip",
@@ -31716,7 +31716,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2016",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2016",
         "date_ref": "2016-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2114819/depts2016-txt.zip",
@@ -31740,7 +31740,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2016",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2016",
         "date_ref": "2016-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2114819/reg2016-txt.zip",
@@ -31763,7 +31763,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2016",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2016",
         "date_ref": "2016-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2114819/pays2016-txt.zip",
@@ -31792,7 +31792,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2015",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2015",
         "date_ref": "2015-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560698/france2015-txt.zip",
@@ -31828,7 +31828,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2015",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2015",
         "date_ref": "2015-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560698/comsimp2015-txt.zip",
@@ -31858,7 +31858,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2015",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2015",
         "date_ref": "2015-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560698/historiq2015-txt.zip",
@@ -31899,7 +31899,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2015",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2015",
         "date_ref": "2015-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560698/majcom2015-txt.zip",
@@ -31937,7 +31937,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2015",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2015",
         "date_ref": "2015-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560698/canton2015-txt.zip",
@@ -31965,7 +31965,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2015",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2015",
         "date_ref": "2015-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560698/arrond2015-txt.zip",
@@ -31992,7 +31992,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2015",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2015",
         "date_ref": "2015-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560698/depts2015-txt.zip",
@@ -32016,7 +32016,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2015",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2015",
         "date_ref": "2015-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560698/reg2015-txt.zip",
@@ -32039,7 +32039,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2015",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2015",
         "date_ref": "2015-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560698/pays2015-txt.zip",
@@ -32068,7 +32068,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2014",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2014",
         "date_ref": "2014-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560563/france2014-txt.zip",
@@ -32104,7 +32104,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2014",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2014",
         "date_ref": "2014-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560563/comsimp2014-txt.zip",
@@ -32134,7 +32134,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2014",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2014",
         "date_ref": "2014-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560563/historiq2014-txt.zip",
@@ -32175,7 +32175,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2014",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2014",
         "date_ref": "2014-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560563/majcom2014-txt.zip",
@@ -32213,7 +32213,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2014",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2014",
         "date_ref": "2014-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560563/canton2014-txt.zip",
@@ -32242,7 +32242,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2014",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2014",
         "date_ref": "2014-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560563/arrond2014-txt.zip",
@@ -32269,7 +32269,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2014",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2014",
         "date_ref": "2014-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560563/depts2014-txt.zip",
@@ -32293,7 +32293,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2014",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2014",
         "date_ref": "2014-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560563/reg2014-txt.zip",
@@ -32316,7 +32316,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2014",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2014",
         "date_ref": "2014-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560563/pays2014-txt.zip",
@@ -32342,7 +32342,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2013",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2013",
         "date_ref": "2013-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560615/france2013-txt.zip",
@@ -32378,7 +32378,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2013",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2013",
         "date_ref": "2013-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560615/comsimp2013-txt.zip",
@@ -32408,7 +32408,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2013",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2013",
         "date_ref": "2013-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560615/historiq2013-txt.zip",
@@ -32449,7 +32449,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2013",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2013",
         "date_ref": "2013-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560615/majcom2013-txt.zip",
@@ -32487,7 +32487,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2013",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2013",
         "date_ref": "2013-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560615/canton2013-txt.zip",
@@ -32516,7 +32516,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2013",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2013",
         "date_ref": "2013-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560615/arrond2013-txt.zip",
@@ -32543,7 +32543,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2013",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2013",
         "date_ref": "2013-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560615/depts2013-txt.zip",
@@ -32567,7 +32567,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2013",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2013",
         "date_ref": "2013-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560615/reg2013-txt.zip",
@@ -32590,7 +32590,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2013",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2013",
         "date_ref": "2013-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560615/pays2013-txt.zip",
@@ -32616,7 +32616,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2012",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2012",
         "date_ref": "2012-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560620/france2012-txt.zip",
@@ -32652,7 +32652,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2012",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2012",
         "date_ref": "2012-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560620/comsimp2012-txt.zip",
@@ -32682,7 +32682,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2012",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2012",
         "date_ref": "2012-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560620/historiq2012-txt.zip",
@@ -32723,7 +32723,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2012",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2012",
         "date_ref": "2012-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560620/majcom2012-txt.zip",
@@ -32761,7 +32761,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2012",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2012",
         "date_ref": "2012-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560620/canton2012-txt.zip",
@@ -32790,7 +32790,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2012",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2012",
         "date_ref": "2012-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560620/arrond2012-txt.zip",
@@ -32817,7 +32817,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2012",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2012",
         "date_ref": "2012-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560620/depts2012-txt.zip",
@@ -32841,7 +32841,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2012",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2012",
         "date_ref": "2012-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560620/reg2012-txt.zip",
@@ -32864,7 +32864,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2012",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2012",
         "date_ref": "2012-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560620/pays2012-txt.zip",
@@ -32890,7 +32890,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2011",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2011",
         "date_ref": "2011-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560625/france2011-txt.zip",
@@ -32926,7 +32926,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2011",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2011",
         "date_ref": "2011-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560625/comsimp2011-txt.zip",
@@ -32956,7 +32956,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2011",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2011",
         "date_ref": "2011-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560625/historiq2011-txt.zip",
@@ -32997,7 +32997,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2011",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2011",
         "date_ref": "2011-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560625/majcom2011-txt.zip",
@@ -33035,7 +33035,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2011",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2011",
         "date_ref": "2011-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560625/canton2011-txt.zip",
@@ -33064,7 +33064,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2011",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2011",
         "date_ref": "2011-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560625/arrond2011-txt.zip",
@@ -33091,7 +33091,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2011",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2011",
         "date_ref": "2011-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560625/depts2011-txt.zip",
@@ -33115,7 +33115,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2011",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2011",
         "date_ref": "2011-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560625/reg2011-txt.zip",
@@ -33138,7 +33138,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2011",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2011",
         "date_ref": "2011-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560625/pays2011-txt.zip",
@@ -33164,7 +33164,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2010",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2010",
         "date_ref": "2010-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560630/france2010-txt.zip",
@@ -33200,7 +33200,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2010",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2010",
         "date_ref": "2010-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560630/comsimp2010-txt.zip",
@@ -33230,7 +33230,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2010",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2010",
         "date_ref": "2010-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560630/historiq2010-txt.zip",
@@ -33271,7 +33271,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2010",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2010",
         "date_ref": "2010-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560630/majcom2010-txt.zip",
@@ -33309,7 +33309,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2010",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2010",
         "date_ref": "2010-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560630/canton2010-txt.zip",
@@ -33338,7 +33338,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2010",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2010",
         "date_ref": "2010-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560630/arrond2010-txt.zip",
@@ -33365,7 +33365,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2010",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2010",
         "date_ref": "2010-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560630/depts2010-txt.zip",
@@ -33389,7 +33389,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2010",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2010",
         "date_ref": "2010-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560630/reg2010-txt.zip",
@@ -33412,7 +33412,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2010",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2010",
         "date_ref": "2010-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560630/pays2010-txt.zip",
@@ -33438,7 +33438,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2009",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2009",
         "date_ref": "2009-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560635/france2009-txt.zip",
@@ -33474,7 +33474,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2009",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2009",
         "date_ref": "2009-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560635/comsimp2009-txt.zip",
@@ -33504,7 +33504,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2009",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2009",
         "date_ref": "2009-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560635/historiq2009-txt.zip",
@@ -33545,7 +33545,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2009",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2009",
         "date_ref": "2009-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560635/majcom2009-txt.zip",
@@ -33583,7 +33583,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2009",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2009",
         "date_ref": "2009-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560635/canton2009-txt.zip",
@@ -33612,7 +33612,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2009",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2009",
         "date_ref": "2009-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560635/arrond2009-txt.zip",
@@ -33639,7 +33639,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2009",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2009",
         "date_ref": "2009-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560635/depts2009-txt.zip",
@@ -33663,7 +33663,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2009",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2009",
         "date_ref": "2009-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560635/reg2009-txt.zip",
@@ -33686,7 +33686,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2009",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2009",
         "date_ref": "2009-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560635/pays2009-txt.zip",
@@ -33712,7 +33712,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2008",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2008",
         "date_ref": "2008-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560640/france2008-txt.zip",
@@ -33748,7 +33748,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2008",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2008",
         "date_ref": "2008-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560640/comsimp2008-txt.zip",
@@ -33778,7 +33778,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2008",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2008",
         "date_ref": "2008-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560640/historiq2008-txt.zip",
@@ -33819,7 +33819,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2008",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2008",
         "date_ref": "2008-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560640/majcom2008-txt.zip",
@@ -33857,7 +33857,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2008",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2008",
         "date_ref": "2008-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560640/canton2008-txt.zip",
@@ -33886,7 +33886,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2008",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2008",
         "date_ref": "2008-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560640/arrond2008-txt.zip",
@@ -33913,7 +33913,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2008",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2008",
         "date_ref": "2008-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560640/depts2008-txt.zip",
@@ -33937,7 +33937,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2008",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2008",
         "date_ref": "2008-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560640/reg2008-txt.zip",
@@ -33960,7 +33960,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2008",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2008",
         "date_ref": "2008-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560640/pays2008-txt.zip",
@@ -33986,7 +33986,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2007",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2007",
         "date_ref": "2007-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560646/france2007-txt.zip",
@@ -34022,7 +34022,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2007",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2007",
         "date_ref": "2007-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560646/comsimp2007-txt.zip",
@@ -34052,7 +34052,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2007",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2007",
         "date_ref": "2007-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560646/historiq2007-txt.zip",
@@ -34093,7 +34093,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2007",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2007",
         "date_ref": "2007-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560646/majcom2007-txt.zip",
@@ -34131,7 +34131,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2007",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2007",
         "date_ref": "2007-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560646/canton2007-txt.zip",
@@ -34160,7 +34160,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2007",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2007",
         "date_ref": "2007-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560646/arrond2007-txt.zip",
@@ -34187,7 +34187,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2007",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2007",
         "date_ref": "2007-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560646/depts2007-txt.zip",
@@ -34211,7 +34211,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2007",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2007",
         "date_ref": "2007-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560646/reg2007-txt.zip",
@@ -34234,7 +34234,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2007",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2007",
         "date_ref": "2007-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560646/pays2007-txt.zip",
@@ -34260,7 +34260,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2006",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2006",
         "date_ref": "2006-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560651/france2006-txt.zip",
@@ -34296,7 +34296,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2006",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2006",
         "date_ref": "2006-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560651/comsimp2006-txt.zip",
@@ -34326,7 +34326,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2006",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2006",
         "date_ref": "2006-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560651/historiq2006-txt.zip",
@@ -34367,7 +34367,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2006",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2006",
         "date_ref": "2006-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560651/majcom2006-txt.zip",
@@ -34405,7 +34405,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2006",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2006",
         "date_ref": "2006-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560651/canton2006-txt.zip",
@@ -34434,7 +34434,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2006",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2006",
         "date_ref": "2006-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560651/arrond2006-txt.zip",
@@ -34461,7 +34461,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2006",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2006",
         "date_ref": "2006-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560651/depts2006-txt.zip",
@@ -34485,7 +34485,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2006",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2006",
         "date_ref": "2006-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560651/reg2006-txt.zip",
@@ -34508,7 +34508,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2006",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2006",
         "date_ref": "2006-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560651/pays2006-txt.zip",
@@ -34534,7 +34534,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2005",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2005",
         "date_ref": "2005-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560656/france2005-txt.zip",
@@ -34570,7 +34570,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2005",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2005",
         "date_ref": "2005-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560656/comsimp2005-txt.zip",
@@ -34600,7 +34600,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2005",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2005",
         "date_ref": "2005-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560656/historiq2005-txt.zip",
@@ -34641,7 +34641,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2005",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2005",
         "date_ref": "2005-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560656/majcom2005-txt.zip",
@@ -34679,7 +34679,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2005",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2005",
         "date_ref": "2005-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560656/canton2005-txt.zip",
@@ -34708,7 +34708,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2005",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2005",
         "date_ref": "2005-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560656/arrond2005-txt.zip",
@@ -34735,7 +34735,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2005",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2005",
         "date_ref": "2005-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560656/depts2005-txt.zip",
@@ -34759,7 +34759,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2005",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2005",
         "date_ref": "2005-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560656/reg2005-txt.zip",
@@ -34782,7 +34782,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2005",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2005",
         "date_ref": "2005-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560656/pays2005-txt.zip",
@@ -34808,7 +34808,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2004",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2004",
         "date_ref": "2004-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560661/france2004-txt.zip",
@@ -34844,7 +34844,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2004",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2004",
         "date_ref": "2004-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560661/comsimp2004-txt.zip",
@@ -34874,7 +34874,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2004",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2004",
         "date_ref": "2004-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560661/historiq2004-txt.zip",
@@ -34915,7 +34915,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2004",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2004",
         "date_ref": "2004-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560661/majcom2004-txt.zip",
@@ -34953,7 +34953,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2004",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2004",
         "date_ref": "2004-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560661/canton2004-txt.zip",
@@ -34982,7 +34982,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2004",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2004",
         "date_ref": "2004-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560661/arrond2004-txt.zip",
@@ -35009,7 +35009,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2004",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2004",
         "date_ref": "2004-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560661/depts2004-txt.zip",
@@ -35033,7 +35033,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2004",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2004",
         "date_ref": "2004-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560661/reg2004-txt.zip",
@@ -35056,7 +35056,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2004",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2004",
         "date_ref": "2004-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560661/pays2004-txt.zip",
@@ -35082,7 +35082,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2003",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2003",
         "date_ref": "2003-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560666/france2003-txt.zip",
@@ -35118,7 +35118,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2003",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2003",
         "date_ref": "2003-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560666/comsimp2003-txt.zip",
@@ -35148,7 +35148,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2003",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2003",
         "date_ref": "2003-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560666/historiq2003-txt.zip",
@@ -35189,7 +35189,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2003",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2003",
         "date_ref": "2003-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560666/majcom2003-txt.zip",
@@ -35227,7 +35227,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2003",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2003",
         "date_ref": "2003-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560666/canton2003-txt.zip",
@@ -35256,7 +35256,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2003",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2003",
         "date_ref": "2003-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560666/arrond2003-txt.zip",
@@ -35283,7 +35283,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2003",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2003",
         "date_ref": "2003-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560666/depts2003-txt.zip",
@@ -35307,7 +35307,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2003",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2003",
         "date_ref": "2003-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560666/reg2003-txt.zip",
@@ -35330,7 +35330,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2003",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2003",
         "date_ref": "2003-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560666/pays2003-txt.zip",
@@ -35356,7 +35356,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2002",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2002",
         "date_ref": "2002-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560671/france2002-txt.zip",
@@ -35392,7 +35392,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2002",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2002",
         "date_ref": "2002-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560671/comsimp2002-txt.zip",
@@ -35422,7 +35422,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2002",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2002",
         "date_ref": "2002-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560671/historiq2002-txt.zip",
@@ -35463,7 +35463,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2002",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2002",
         "date_ref": "2002-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560671/majcom2002-txt.zip",
@@ -35501,7 +35501,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2002",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2002",
         "date_ref": "2002-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560671/canton2002-txt.zip",
@@ -35530,7 +35530,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2002",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2002",
         "date_ref": "2002-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560671/arrond2002-txt.zip",
@@ -35557,7 +35557,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2002",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2002",
         "date_ref": "2002-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560671/depts2002-txt.zip",
@@ -35581,7 +35581,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2002",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2002",
         "date_ref": "2002-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560671/reg2002-txt.zip",
@@ -35604,7 +35604,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2002",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2002",
         "date_ref": "2002-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560671/pays2002-txt.zip",
@@ -35630,7 +35630,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2001",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2001",
         "date_ref": "2001-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560676/france2001-txt.zip",
@@ -35666,7 +35666,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2001",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2001",
         "date_ref": "2001-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560676/comsimp2001-txt.zip",
@@ -35696,7 +35696,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2001",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2001",
         "date_ref": "2001-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560676/historiq2001-txt.zip",
@@ -35737,7 +35737,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau MAJ_COMMUNE - 2001",
+        "libelle": "Code Officiel Géographique, niveau MAJ_COMMUNE - 2001",
         "date_ref": "2001-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560676/majcom2001-txt.zip",
@@ -35775,7 +35775,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2001",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2001",
         "date_ref": "2001-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560676/canton2001-txt.zip",
@@ -35804,7 +35804,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2001",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2001",
         "date_ref": "2001-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560676/arrond2001-txt.zip",
@@ -35831,7 +35831,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2001",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2001",
         "date_ref": "2001-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560676/depts2001-txt.zip",
@@ -35855,7 +35855,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2001",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2001",
         "date_ref": "2001-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560676/reg2001-txt.zip",
@@ -35878,7 +35878,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2001",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2001",
         "date_ref": "2001-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560676/pays2001-txt.zip",
@@ -35904,7 +35904,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 2000",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 2000",
         "date_ref": "2000-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560681/france2000-txt.zip",
@@ -35940,7 +35940,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 2000",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 2000",
         "date_ref": "2000-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560681/comsimp2000-txt.zip",
@@ -35970,7 +35970,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 2000",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 2000",
         "date_ref": "2000-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560681/historiq2000-txt.zip",
@@ -36011,7 +36011,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 2000",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 2000",
         "date_ref": "2000-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560681/canton2000-txt.zip",
@@ -36040,7 +36040,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 2000",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 2000",
         "date_ref": "2000-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560681/arrond2000-txt.zip",
@@ -36067,7 +36067,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 2000",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 2000",
         "date_ref": "2000-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560681/depts2000-txt.zip",
@@ -36091,7 +36091,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 2000",
+        "libelle": "Code Officiel Géographique, niveau REGION - 2000",
         "date_ref": "2000-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560681/reg2000-txt.zip",
@@ -36114,7 +36114,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 2000",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 2000",
         "date_ref": "2000-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560681/pays2000-txt.zip",
@@ -36140,7 +36140,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE_DEPUIS_1943 - 1999",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE_DEPUIS_1943 - 1999",
         "date_ref": "1999-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560686/france1999-txt.zip",
@@ -36176,7 +36176,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau COMMUNE - 1999",
+        "libelle": "Code Officiel Géographique, niveau COMMUNE - 1999",
         "date_ref": "1999-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560686/comsimp1999-txt.zip",
@@ -36206,7 +36206,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau EVENEMENT_COMMUNE - 1999",
+        "libelle": "Code Officiel Géographique, niveau EVENEMENT_COMMUNE - 1999",
         "date_ref": "1999-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560686/historiq1999-txt.zip",
@@ -36247,7 +36247,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau CANTON - 1999",
+        "libelle": "Code Officiel Géographique, niveau CANTON - 1999",
         "date_ref": "1999-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560686/canton1999-txt.zip",
@@ -36276,7 +36276,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau ARRONDISSEMENT - 1999",
+        "libelle": "Code Officiel Géographique, niveau ARRONDISSEMENT - 1999",
         "date_ref": "1999-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560686/arrond1999-txt.zip",
@@ -36303,7 +36303,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau DEPARTEMENT - 1999",
+        "libelle": "Code Officiel Géographique, niveau DEPARTEMENT - 1999",
         "date_ref": "1999-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560686/depts1999-txt.zip",
@@ -36327,7 +36327,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau REGION - 1999",
+        "libelle": "Code Officiel Géographique, niveau REGION - 1999",
         "date_ref": "1999-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560686/reg1999-txt.zip",
@@ -36350,7 +36350,7 @@
         }
     },
     {
-        "libelle": "Code Officiel G\u00e9ographique, niveau PAYS - 1999",
+        "libelle": "Code Officiel Géographique, niveau PAYS - 1999",
         "date_ref": "1999-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/2560686/pays1999-txt.zip",
