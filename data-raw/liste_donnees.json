@@ -30628,5 +30628,21 @@
         "zip": false,
         "big_zip": false,
         "api_rest": true
+    },
+    {
+        "nom": "RP_POP_LEGALE_COM_2022",
+        "libelle": "Populations légales des communes en vigueur au 1er janvier 2022, en habitant",
+        "date_ref": "2019-01-01",
+        "collection": "RP",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/6011070/ensemble.zip",
+        "type": "csv",
+        "zip": true,
+        "big_zip": false,
+        "fichier_donnees": "donnees_communes.csv",
+        "fichier_meta": "metadonnees_communes.csv",
+        "separateur": ";",
+        "api_rest": false,
+        "md5": "baa18a8a40fafecfcf28bd3e01e8bcaf",
+        "size": 1963888
     }
 ]
