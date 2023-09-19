@@ -30630,9 +30630,9 @@
         "api_rest": true
     },
     {
-        "nom": "RP_POP_LEGALE_COM_2022",
+        "nom": "RP_POP_LEGALE_COM",
         "libelle": "Populations légales des communes en vigueur au 1er janvier 2022, en habitant",
-        "date_ref": "2019-01-01",
+        "date_ref": "2022-01-01",
         "collection": "RP",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/6011070/ensemble.zip",
         "type": "csv",
