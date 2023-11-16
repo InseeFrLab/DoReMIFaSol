@@ -72,7 +72,7 @@ sucesseurs_quiet <- function(sirets, ...) {
   # appel API via doremifasol (si 404 -> data.frame vide)
   dl <- telechargerFichier(
     "SIRENE_SIRET_LIENS",
-    argsApi = list(q = query),
+    argsApi = list(q = query, tri = "successeur"),
     ...
   )
   tab <- tryCatch(
