@@ -30877,6 +30877,7 @@
         "zip": true,
         "big_zip": true,
         "fichier_donnees": "FD_LOGEMT_2020.csv",
+        "fichier_meta": "Varmod_LOGEMT_2020.csv",
         "separateur": ";",
         "api_rest": false,
         "md5": "a2bd07bc2617f69b53ba57ff40a0752b",
