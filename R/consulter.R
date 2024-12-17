@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' consulter(donnees = "BPE_ENS_XY")
+#' consulter(donnees = "BPE_ENS")
 #' consulter("RP_LOGEMENT", date = "2016")
 #' # Pour seulement obtenir l'URL de la page
 #' consulter("RP_LOGEMENT", date = "2016", url_only = TRUE)

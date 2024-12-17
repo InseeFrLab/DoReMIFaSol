@@ -52,6 +52,38 @@
         }
     },
     {
+        "nom": "BPE_ENS",
+        "libelle": "Base Permanente des Équipements – Ensemble",
+        "date_ref": "2023-01-01",
+        "collection": "BPE",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/8217527/DS_BPE_CSV_FR.zip",
+        "type": "csv",
+        "zip": true,
+        "big_zip": false,
+        "fichier_donnees": "DS_BPE_data.csv",
+        "fichier_meta": "DS_BPE_metadata.csv",
+        "separateur": ";",
+        "api_rest": false,
+        "md5": "a92e159ee1e45a45798502b78fbb0a10",
+        "size": 8402012,
+        "type_col": {
+            "AAV2020": "character",
+            "AN": "integer",
+            "BV2012": "character",
+            "DEP": "character",
+            "DEPCOM" : "character",
+            "DOM": "character",
+            "EPCI": "character",
+            "DCIRIS": "character",
+            "QUALI_IRIS": "character",
+            "REG": "character",
+            "SDOM": "character",
+            "TYPEQU": "character",
+            "UU2020": "character",
+            "NB_EQUIP": "integer"
+        }
+    },
+    {
         "nom": "BPE_ENS_XY",
         "libelle": "Base Permanente des Équipements – Géolocalisé",
         "date_ref": "2023-01-01",
