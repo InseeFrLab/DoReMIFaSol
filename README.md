@@ -1,4 +1,6 @@
-# Récupérer et utiliser les données de l'Insee avec `R`/ Get and use Insee's data with `R`
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+# Récupérer et utiliser les données de l'Insee avec <i class="fa-brands fa-r-project"></i>/ Get and use Insee's data with <i class="fa-brands fa-r-project"></i>
 
 <img src="https://github.com/inseeFrLab/doremifasol/raw/master/inst/sticker/hex_logo_v2.png" width="150" height="150" align="right"/>
 
@@ -15,16 +17,16 @@
 
 ### De quoi s'agit-il ?
 
-Le _package_ `doremifasol` (_Données en R Mises à disposition par l’Insee et Facilement Sollicitables_) permet d'importer facilement dans `R` des données mises à disposition sur le site de l'Insee.
+Le _package_ `doremifasol` (_Données en R Mises à disposition par l’Insee et Facilement Sollicitables_) permet d'importer facilement dans <i class="fa-brands fa-r-project"></i> des données mises à disposition sur le site de l'Insee.
 
 Il offre deux fonctionnalités principales :
 
-* télécharger et importer dans `R` des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi...) ;
-* requêter l'[API](https://api.insee.fr/catalogue) Sirene et recupérer les résultats dans `R`.
+* télécharger et importer dans <i class="fa-brands fa-r-project"></i> des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi...) ;
+* requêter l'[API](https://api.insee.fr/catalogue) Sirene et recupérer les résultats dans <i class="fa-brands fa-r-project"></i>.
 
-L'objectif du _package_ est de rendre transparentes les différentes tâches à réaliser avant de pouvoir traiter les données : recherche sur le site, téléchargement, décompression, import dans `R`...
+L'objectif du _package_ est de rendre transparentes les différentes tâches à réaliser avant de pouvoir traiter les données : recherche sur le site, téléchargement, décompression, import dans <i class="fa-brands fa-r-project"></i>...
 
-Idéal pour pratiquer son solfège en `R` sur des données françaises !
+Idéal pour pratiquer son solfège en <i class="fa-brands fa-r-project"></i> sur des données françaises !
 
 Pour installer le package :
 
@@ -93,7 +95,7 @@ Agent du Service Statistique Public, ou utilisateur des données mises à dispos
 
 ### What is it about?
 
-`doremifasol` (data with `R` made available by Insee and easily retrievable in French) is a R package mainly aiming at showing off data available on Insee's website (Insee, for the French Institute for Statistics and Economic Studies), helping the user to put them on stage and extract the information they carry. So it is about analysing data, creating maps, quantifying phenomenons and in general using the data without the painful effort to retrieve them on the website, as well as import them into R's memory. The name of the _package_ stands for the five first notes of music, and pushing the metaphore, underlines its aim at helping the users to easily pratice their _solfège_ in `R`.
+`doremifasol` (data with <i class="fa-brands fa-r-project"></i> made available by Insee and easily retrievable in French) is a R package mainly aiming at showing off data available on Insee's website (Insee, for the French Institute for Statistics and Economic Studies), helping the user to put them on stage and extract the information they carry. So it is about analysing data, creating maps, quantifying phenomenons and in general using the data without the painful effort to retrieve them on the website, as well as import them into R's memory. The name of the _package_ stands for the five first notes of music, and pushing the metaphore, underlines its aim at helping the users to easily pratice their _solfège_ in <i class="fa-brands fa-r-project"></i>.
 
 To install the package:
 
