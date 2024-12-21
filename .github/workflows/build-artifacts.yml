@@ -55,7 +55,7 @@ jobs:
         shell: Rscript {0}
       - name: Get package version
         run: |
-          echo "PACKAGE_VERSION=$(Rscript -e 'cat(as.character(desc::desc_get_version()))')" >> $GITHUB_ENV
+          export PACKAGE_VERSION=$(Rscript -e 'cat(as.character(desc::desc_get_version()))')
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
