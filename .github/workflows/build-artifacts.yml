@@ -15,6 +15,7 @@ jobs:
     env:
       INSEE_APP_KEY: ${{ secrets.INSEE_APP_KEY }}
       INSEE_APP_SECRET: ${{ secrets.INSEE_APP_SECRET }}
+      GITHUB_PAT: ${{ secrets.PAT_TOKEN }}
       CURLOPT_TIMEOUT: 0
 
     steps:
