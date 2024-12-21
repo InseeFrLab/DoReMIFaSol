@@ -10,7 +10,7 @@ jobs:
         config:
           - {os: windows-latest, r-version: '4.0'}
           - {os: windows-latest, r-version: '4.4'}
-          - {os: ubuntu-24.04, r-version: '4.4'}
+          - {os: ubuntu-24.04, r-version: '4.4', rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest"}
     runs-on: ${{ matrix.config.os }}
     env:
       INSEE_APP_KEY: ${{ secrets.INSEE_APP_KEY }}
