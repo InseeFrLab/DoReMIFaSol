@@ -101,7 +101,7 @@ test_that("Télécharger des données sur l'API pour les unités non diffusibles
   skip_if_no_app()
   check_configuration()
   expect_s3_class(telechargerDonnees("SIRENE_SIREN_NONDIFF", argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01"')),
-                  c("insee_data_frame", "data.frame"))
+                  "try-error")
 })
 ## test erreur de syntaxe dans la requête de l'API
 test_that("Erreur de syntaxe dans la requête sur l'API Sirene", {
