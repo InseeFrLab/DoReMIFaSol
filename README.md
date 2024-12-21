@@ -5,7 +5,7 @@
 <!-- badges: start -->
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![build-artifacts](https://github.com/InseeFrLab/DoReMIFaSol/actions/workflows/build-artifacts.yml/badge.svg)](https://github.com/InseeFrLab/DoReMIFaSol/actions/workflows/build-artifacts.yml)
-[![R-CMD-check](https://github.com/InseeFrLab/DoReMIFaSol/workflows/R-CMD-check/badge.svg)](https://github.com/InseeFrLab/DoReMIFaSol/actions)
+[![R-CMD-check](https://github.com/InseeFrLab/DoReMIFaSol/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/InseeFrLab/DoReMIFaSol/actions/workflows/R-CMD-check.yaml)
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Coverage status](https://codecov.io/gh/InseeFrLab/DoReMIFaSol/branch/master/graph/badge.svg?token=FM7HW4DSW5)](https://codecov.io/gh/InseeFrLab/DoReMIFaSol)
 [![CRAN status](https://www.r-pkg.org/badges/version/doremifasol)](https://cran.r-project.org/package=doremifasol)
