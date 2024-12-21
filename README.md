@@ -1,4 +1,4 @@
-# Récupérer et utiliser les données de l'Insee avec <img width="40" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/r-project.svg"> / Get and use Insee's data with <img width="40" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/r-project.svg">
+# Récupérer et utiliser les données de l'Insee avec R / Get and use Insee's data with R
 
 <!-- badges: start -->
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
@@ -13,16 +13,16 @@
 
 ### De quoi s'agit-il ?
 
-Le _package_ `doremifasol` (_Données en R Mises à disposition par l’Insee et Facilement Sollicitables_) permet d'importer facilement dans <img width="20" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/r-project.svg"> des données mises à disposition sur le site de l'Insee.
+Le _package_ `doremifasol` (_Données en R Mises à disposition par l’Insee et Facilement Sollicitables_) permet d'importer facilement dans R des données mises à disposition sur le site de l'Insee.
 
 Il offre deux fonctionnalités principales :
 
-* télécharger et importer dans <img width="20" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/r-project.svg"> des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi...) ;
-* requêter l'[API](https://api.insee.fr/catalogue) Sirene et recupérer les résultats dans <img width="20" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/r-project.svg">.
+* télécharger et importer dans R des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi...) ;
+* requêter l'[API](https://api.insee.fr/catalogue) Sirene et recupérer les résultats dans R.
 
-L'objectif du _package_ est de rendre transparentes les différentes tâches à réaliser avant de pouvoir traiter les données : recherche sur le site, téléchargement, décompression, import dans <img width="20" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/r-project.svg">...
+L'objectif du _package_ est de rendre transparentes les différentes tâches à réaliser avant de pouvoir traiter les données : recherche sur le site, téléchargement, décompression, import dans R...
 
-Idéal pour pratiquer son solfège en <img width="20" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/r-project.svg"> sur des données françaises !
+Idéal pour pratiquer son solfège en R sur des données françaises !
 
 Pour installer le package :
 
@@ -91,7 +91,7 @@ Agent du Service Statistique Public, ou utilisateur des données mises à dispos
 
 ### What is it about?
 
-`doremifasol` (data with <img width="20" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/r-project.svg"> made available by Insee and easily retrievable in French) is a R package mainly aiming at showing off data available on Insee's website (Insee, for the French Institute for Statistics and Economic Studies), helping the user to put them on stage and extract the information they carry. So it is about analysing data, creating maps, quantifying phenomenons and in general using the data without the painful effort to retrieve them on the website, as well as import them into R's memory. The name of the _package_ stands for the five first notes of music, and pushing the metaphore, underlines its aim at helping the users to easily pratice their _solfège_ in <img width="20" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/r-project.svg">.
+`doremifasol` (data with R made available by Insee and easily retrievable in French) is a R package mainly aiming at showing off data available on Insee's website (Insee, for the French Institute for Statistics and Economic Studies), helping the user to put them on stage and extract the information they carry. So it is about analysing data, creating maps, quantifying phenomenons and in general using the data without the painful effort to retrieve them on the website, as well as import them into R's memory. The name of the _package_ stands for the five first notes of music, and pushing the metaphore, underlines its aim at helping the users to easily pratice their _solfège_ in R.
 
 To install the package:
 
