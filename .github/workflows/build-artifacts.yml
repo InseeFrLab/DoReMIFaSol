@@ -11,7 +11,7 @@ jobs:
           - {os: windows-latest, r-version: '4.0'}
           - {os: windows-latest, r-version: '4.4'}
           - {os: ubuntu-24.04, r-version: '4.4'}
-    runs-on:  ${{ matrix.config.os }}
+    runs-on: ${{ matrix.config.os }}
     env:
       INSEE_APP_KEY: ${{ secrets.INSEE_APP_KEY }}
       INSEE_APP_SECRET: ${{ secrets.INSEE_APP_SECRET }}
@@ -52,22 +52,11 @@ jobs:
         run: devtools::build(binary = TRUE, path = "dist")
         shell: Rscript {0}
       - name: Get package version
-        if: runner.os == 'Linux'
         run: |
-          Rscript -e 'devtools::install()'
-          PKGVERSION=$(Rscript -e 'as.character(packageVersion("doremifasol"))')
-          regex='\"(.*)\"'
-          [[ $PKGVERSION =~ $regex ]]
-          export PKGVERSION=${BASH_REMATCH[1]}
-      - name: Upload artifacts - Binaire Windows
-        if: runner.os == 'Windows'
-        uses: actions/upload-artifact@v4
+          echo "PACKAGE_VERSION=$(Rscript -e 'cat(desc::desc_get_version())')" >> $GITHUB_ENV
+        shell: Rscript {0}
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
         with:
-          name: doremifasol_${PKGVERSION}_r${{ matrix.config.r-version }}.zip
-          path: dist/
-      - name: Upload artifacts - source
-        if: runner.os == 'Linux'
-        uses: actions/upload-artifact@v4
-        with:
-          name: doremifasol_${PKGVERSION}_r${{ matrix.config.r-version }}.tar.gz
-          path: dist/
+          name: ${{ runner.os }}-r${{ matrix.config.r-version }}-artifacts
+          path: dist
