@@ -6,7 +6,7 @@ test_that("url web correctes", {
   
   expect_equal(
     consulter(donnees = "BPE_ENS"),
-    "https://www.insee.fr/fr/statistiques/3568629"
+    "https://www.insee.fr/fr/statistiques/8217527"
   )
   
   expect_equal(
