@@ -1,5 +1,7 @@
 # Récupérer et utiliser les données de l'Insee avec R / Get and use Insee's data with R
 
+<img src="https://github.com/inseeFrLab/doremifasol/raw/master/inst/sticker/hex_logo_v2.png" width="150" height="150" align="right"/>
+
 <!-- badges: start -->
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![build-artifacts](https://github.com/InseeFrLab/DoReMIFaSol/actions/workflows/build-artifacts.yml/badge.svg)](https://github.com/InseeFrLab/DoReMIFaSol/actions/workflows/build-artifacts.yml)
