@@ -71,7 +71,7 @@ test_that("Importation type XLSX - output data.frame", {
 })
 ## test sélection des variables
 test_that("Sélection de variables dans la BPE", {
-  expect_true(length(names(telechargerDonnees(donnees = "BPE_ENS", vars = c("REG", "DEP", "DEPCOM", "NB_EQUIP")))) == 4)
+  expect_true(length(names(telechargerDonnees(donnees = "BPE_ENS", vars = c("GEO", "GEO_OBJECT", "FACILITY_TYPE", "OBS_VALUE")))) == 4)
 })
 ## test dézip gros fichiers
 test_that("Utilisation de unzip système", {

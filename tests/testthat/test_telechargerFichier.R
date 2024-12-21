@@ -27,7 +27,7 @@ test_that("Échec du téléchargement pour nom non existant", {
 ## spécification du dossier de stockage
 test_that("Spécification du dossier de stockage", {
   dl <- telechargerFichier("BPE_ENS", telDir = "test_dl")
-  expect_true(file.exists("test_dl/bpe19_ensemble_csv.zip"))
+  expect_true(file.exists("test_dl/DS_BPE_CSV_FR.zip"))
   unlink("test_dl", recursive = TRUE)
 })
 ## test utilisation du cache
