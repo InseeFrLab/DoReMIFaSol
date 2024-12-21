@@ -56,9 +56,9 @@ jobs:
         shell: Rscript {0}
       - name: Get package version
         run: |
-          PACKAGE_VERSION=$(Rscript -e 'cat(as.character(desc::desc_get_version()))')
+          echo "PACKAGE_VERSION=$(Rscript -e 'cat(as.character(desc::desc_get_version()))')" >> $GITHUB_ENV
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: doremifasol${PACKAGE_VERSION}_${{ runner.os }}-r${{ matrix.config.r-version }}
+          name: doremifasol_${{ env.PACKAGE_VERSION }}_${{ runner.os }}-r${{ matrix.config.r-version }}
           path: dist
