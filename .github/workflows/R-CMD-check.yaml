@@ -25,7 +25,7 @@ jobs:
           - {os: windows-latest, r: 'release', rspm: "https://cran.rstudio.com"}
           - {os: macOS-latest, r: 'release', rspm: "https://cran.rstudio.com"}
           - {os: ubuntu-24.04, r: 'release', rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest"}
-          - {os: debian-12,   r: 'devel', rspm: "https://packagemanager.posit.co/cran/__linux__/bookworm/latest", http-user-agent: "R/4.1.0 (ubuntu-latest) R (4.1.0 x86_64-pc-linux-gnu x86_64 linux-gnu) on GitHub Actions" }
+          - {os: ubuntu-24.04, r: 'devel', rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest", http-user-agent: "R/4.1.0 (ubuntu-latest) R (4.1.0 x86_64-pc-linux-gnu x86_64 linux-gnu) on GitHub Actions" }
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
