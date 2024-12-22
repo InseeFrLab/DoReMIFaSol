@@ -3,12 +3,10 @@
 on:
   push:
     branches:
-      - main
-      - master
+      - '**'
   pull_request:
     branches:
-      - main
-      - master
+      - '**'
 
 name: R-CMD-check
 
@@ -81,7 +79,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Upload check results
-        if: failure()
+        if: failure() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         uses: actions/upload-artifact@main
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
