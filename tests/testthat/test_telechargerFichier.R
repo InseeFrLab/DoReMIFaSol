@@ -56,6 +56,10 @@ test_that("Télécharger type XLS - output correct", {
 test_that("Télécharger type XLSX - output correct", {
   expect_true(telechargerFichier("AIRE_URBAINE")$result == 0)
 })
+## test dl de données parquet
+test_that("Télécharger type parquet - output correct", {
+  expect_true(telechargerFichier("RP_MOBSCO", 2021)$result == 0)
+})
 ## test spécification de l'encodage
 test_that("Télécharger des données avec un encodage spécifique", {
   expect_true(!is.null(telechargerFichier("COG_COMMUNE", date = "2018")$argsImport$locale))
