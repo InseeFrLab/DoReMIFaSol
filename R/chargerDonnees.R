@@ -51,6 +51,7 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
     switch(
       telechargementFichier$type,
       "csv"  = telechargementFichier$argsImport$file,
+      "parquet" = telechargementFichier$argsImport$file,
       "json" = telechargementFichier$argsImport$fichier,
       telechargementFichier$argsImport$path # (autres extensions)
     )
@@ -100,6 +101,10 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
     if (!is.null(vars))
       warning("Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
     res <- do.call(chargerDonneesJson, telechargementFichier$argsImport)
+  } else if (telechargementFichier$type == "parquet") {
+    if (!is.null(vars))
+      telechargementFichier$argsImport$col_select <- vars
+    res <- do.call(arrow::read_parquet, telechargementFichier$argsImport)
   } else stop("Type de fichier inconnu")
 
   # ajout attribut source (pour data.frames hors API)
