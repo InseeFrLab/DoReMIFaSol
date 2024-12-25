@@ -31095,7 +31095,7 @@
         "date_ref": "2021-01-01",
         "collection": "RP",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/8205892/RP2021_mobsco.parquet",
-        "type": "PARQUET",
+        "type": "parquet",
         "zip": false,
         "api_rest": false,
         "md5": "7c6f8f786c0484ce2ee58726b5efbab5",
