@@ -22,7 +22,7 @@ test_that("pas de valeurs incongrues", {
   )
 
   # lien (motif, pas existence)
-  url_pattern <- "^https://www.insee.fr/fr/statistiques/fichier/\\d{5,}/.+\\.(zip|xls|xlsx)$"
+  url_pattern <- "^https://www.insee.fr/fr/statistiques/fichier/\\d{5,}/.+\\.(zip|xls|xlsx|parquet)$"
   api_url_pattern <- "^https://api.insee.fr/entreprises/sirene(/V3.11)?/sire[nt](/(liensSuccession|nonDiffusibles))?$"
   expect_true(
     all(grepl(paste0(url_pattern, "|", api_url_pattern), df_ld$lien))
@@ -33,7 +33,7 @@ test_that("pas de valeurs incongrues", {
     all(df_ld$type[df_ld$api_rest] == "json")
   )
   expect_true(
-    all(df_ld$type[!df_ld$api_rest] %in% c("csv", "xls", "xlsx"))
+    all(df_ld$type[!df_ld$api_rest] %in% c("csv", "xls", "xlsx", "parquet"))
   )
 
   # zip

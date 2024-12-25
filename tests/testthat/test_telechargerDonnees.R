@@ -69,6 +69,20 @@ test_that("Importation type XLSX - output data.frame", {
     "list"
   )
 })
+## test import de données parquet
+test_that("Importation type parquet - output data.frame", {
+  expect_s3_class(
+    telechargerDonnees("RP_MOBSCO", date = 2021),
+    c("insee_data_frame", "data.frame"),
+    exact = TRUE
+  )
+})
+## test import de qq variables parquet
+test_that("Importation type parquet - sélection de variables", {
+  expect_true(
+    length(names(telechargerDonnees("RP_MOBSCO", date = 2021, vars = c("COMMUNE", "ARM")))) == 2
+  )
+})
 ## test sélection des variables
 test_that("Sélection de variables dans la BPE", {
   expect_true(length(names(telechargerDonnees(donnees = "BPE_ENS", vars = c("GEO", "GEO_OBJECT", "FACILITY_TYPE", "OBS_VALUE")))) == 4)

@@ -82,6 +82,8 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
         argsImport[["na"]] <- unlist(strsplit(caract$valeurs_manquantes, "/"))
     } else if (caract$type == "xlsx") {
       argsImport <- list(path = fichierAImporter, sheet = caract$onglet, skip = caract$premiere_ligne - 1)
+    } else if (caract$type == "parquet") {
+      argsImport <- list(file = fichierAImporter)
     }
     
     if (!is.null(caract$type_col)) {
