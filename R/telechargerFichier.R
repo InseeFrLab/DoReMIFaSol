@@ -23,6 +23,9 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   
   ## vérifie donnees et date. si ok les infos nécessaires sont extraites dans caract
   caract <- infosDonnees(donnees, date)
+
+  ## test de la connexion
+  if (!curl::has_internet()) stop("aucune connexion Internet")
   
   #dossier de téléchargement # si NULL aller dans le cache
   cache <- FALSE
@@ -40,7 +43,6 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     dl <- NULL
     
     if (!file.exists(nomFichier) || force) {
-      if (!curl::has_internet()) stop("aucune connexion Internet")
       res <- try(httr::GET(caract$lien, httr::write_disk(nomFichier, overwrite = TRUE), httr::progress()))
       if (res$status_code == 200) dl <- 0
       if (tools::md5sum(nomFichier) != caract$md5) {
@@ -103,8 +105,6 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     if (!nzchar(Sys.getenv("INSEE_APP_KEY")) || !nzchar(Sys.getenv("INSEE_APP_SECRET"))) {
       stop("d\u00e9finir les variables d'environnement INSEE_APP_KEY et INSEE_APP_SECRET")
     }
-    
-    if (!curl::has_internet()) stop("aucune connexion Internet")
     
     timestamp <- gsub("[^0-9]", "", as.character(Sys.time()))
     dossier_json <- paste0(telDir, "/json_API_", caract$nom, "_", timestamp, "_", genererSuffixe(4))
