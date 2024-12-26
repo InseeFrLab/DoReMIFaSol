@@ -31212,6 +31212,38 @@
         "api_rest": true
     },
     {
+        "nom": "TEST_BPE_NEXIST",
+        "libelle": "Base Permanente des Équipements – Ensemble",
+        "date_ref": "2021-01-01",
+        "collection": "BPE",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/3568629/bpe21_ensemble_csv.zip",
+        "type": "csv",
+        "zip": true,
+        "big_zip": false,
+        "fichier_donnees": "bpe21_ensemble.csv",
+        "fichier_meta": "varmod_bpe21_ensemble.csv",
+        "separateur": ";",
+        "api_rest": false,
+        "md5": "707b7668c2a18745f5fa1bd0a41a633d",
+        "size": 6166313,
+        "type_col": {
+            "AAV2020": "character",
+            "AN": "integer",
+            "BV2012": "character",
+            "DEP": "character",
+            "DEPCOM" : "character",
+            "DOM": "character",
+            "EPCI": "character",
+            "DCIRIS": "character",
+            "QUALI_IRIS": "character",
+            "REG": "character",
+            "SDOM": "character",
+            "TYPEQU": "character",
+            "UU2020": "character",
+            "NB_EQUIP": "integer"
+        }
+    },
+    {
         "nom": "RP_POP_LEGALE_COM",
         "libelle": "Populations légales des communes en vigueur au 1er janvier 2022, en habitant",
         "date_ref": "2022-01-01",

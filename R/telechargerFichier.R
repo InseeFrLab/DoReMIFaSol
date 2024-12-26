@@ -44,7 +44,17 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     
     if (!file.exists(nomFichier) || force) {
       res <- try(httr::GET(caract$lien, httr::write_disk(nomFichier, overwrite = TRUE), httr::progress()))
-      if (res$status_code == 200) dl <- 0
+      if (res$status_code == 200) {
+        dl <- 0
+      } else {
+        file.remove(nomFichier)
+        return(
+          list(
+            resultat = dl,
+            message = res$status_code
+          )
+        )
+      }
       if (tools::md5sum(nomFichier) != caract$md5) {
         warning("Fichier sur insee.fr modifi\u00e9 ou corruption lors du t\u00e9l\u00e9chargement.")
       }

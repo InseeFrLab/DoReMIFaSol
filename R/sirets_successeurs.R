@@ -78,7 +78,7 @@ sucesseurs_quiet <- function(sirets, ...) {
   tab <- tryCatch(
     chargerDonnees(dl),
     error = function(e) {
-      if (grepl("Erreur 404", e$message))
+      if (grepl("erreur 404", e$message))
         return(data.frame())
       else {
         return(NULL)

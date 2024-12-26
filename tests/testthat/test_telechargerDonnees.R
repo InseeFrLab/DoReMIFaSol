@@ -103,6 +103,13 @@ test_that("Importation dernier millésime - output data.frame", {
     exact = TRUE
   )
 })
+## test dl sur un lien mort
+test_that("Importation d'un lien mort - retourne une erreur 404", {
+  skip_if_no_app()
+  check_configuration()
+  expect_s3_class(telechargerDonnees("TEST_BPE_NEXIST"),
+                  "try-error")
+})
 ## test dl sur l'API Sirene avec une requête invalide
 test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
   skip_if_no_app()
@@ -122,6 +129,6 @@ test_that("Erreur de syntaxe dans la requête sur l'API Sirene", {
   skip_if_no_app()
   check_configuration()
   expect_s3_class(telechargerDonnees("SIRENE_SIREN_NONDIFF", 
-                                  argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01" TO "2018-11-15"')),
+                                     argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01" TO "2018-11-15"')),
                "try-error")
 })

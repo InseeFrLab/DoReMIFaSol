@@ -1,6 +1,6 @@
 Package: doremifasol
 Title: Data on Insee Website
-Version: 0.5.4.9001
+Version: 0.5.5.9001
 Authors@R: c(
   person("Pierre", "Lamarche", email = "pierre.lamarche@insee.fr", role = c("aut", "cre")),
   person("Pierre-Yves", "Berrard", role = "aut", email = "pierre-yves.berrard@insee.fr"),
