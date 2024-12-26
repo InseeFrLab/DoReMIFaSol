@@ -199,32 +199,6 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET"))
     
     res
     
-  } else if (grepl("SIRENE_SIRE(N|T)_NONDIFF", nom)) {
-
-    colDate <- which(startsWith(names(donnees[[1]]), "dateDernierTraitement"))
-
-    # date : NULL -> NA
-    donnees <-
-      lapply(
-        donnees,
-        function(x) {
-          x[[colDate]] <- ifelse(is.null(x[[colDate]]), NA, x[[colDate]])
-          x
-        }
-      )
-
-    # agrège
-    res <-
-      do.call(
-        rbind,
-        lapply(donnees, as.data.frame, stringsAsFactors = FALSE)
-      )
-
-    # convertit date-time
-    res[[colDate]] <- as.POSIXct(res[[colDate]], format = "%Y-%m-%dT%H:%M:%S")
-
-    res
-
   }
 
 }
