@@ -13,6 +13,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       INSEE_APP_KEY: ${{ secrets.INSEE_APP_KEY }}
       INSEE_APP_SECRET: ${{ secrets.INSEE_APP_SECRET }}
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       CURLOPT_TIMEOUT: 0
     steps:
       - uses: actions/checkout@v2
@@ -42,10 +43,6 @@ jobs:
         shell: Rscript {0}
 
       - name: Test coverage
-        run: covr::codecov()
+        run: covr::codecov(token = Sys.getenv("CODECOV_TOKEN"))
         shell: Rscript {0}
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
