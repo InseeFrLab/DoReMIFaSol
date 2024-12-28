@@ -18,7 +18,7 @@ listerDonnees <- function(){
     url <- "https://api.insee.fr/melodie/catalog/all"
     appel_melodi <- tryCatch(httr::GET(url),
                                  error = function(e) message(e$message))
-    if (class(appel_melodi) == "response" & appel_melodi$status_code == 200){
+    if (length(appel_melodi) != 0 & appel_melodi$status_code == 200){
       catalogue <- jsonlite::fromJSON(httr::content(appel_melodi, as = "text", encoding = "UTF-8"),
                                       simplifyDataFrame = FALSE)
       res <- c(res,
