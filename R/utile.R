@@ -1,5 +1,68 @@
 # FONCTIONS AUXILIAIRES NON EXPORTÉES
 
+# ListerDonnees -------------------------------------------------------------
+
+#' Fournit la liste de données disponibles (données internes au package + requête dans le catalogue Melodi)
+#'
+#' 
+#' La fonction retourne une liste, `ld` seulement si pas d'accès Internet, et `ld` fusionné avec le catalogue Melodi sinon.
+#'
+#' @return Une liste issue d'une fusion éventuelle (sous condition d'accès à Melodi) de la liste `ld` et de l'équivalent sous la catalogue Mélodi.
+#' 
+#' @keywords internal
+
+listerDonnees <- function(){
+  res <- ld
+  if (curl::has_internet()){
+    ## requeter melodi
+    url <- "https://api.insee.fr/melodi/catalog/all"
+    appel_melodi <- tryCatch(httr::GET(url),
+                                 error = function(e) message(e$message))
+    if (appel_melodi$status_code == 200){
+      catalogue <- jsonlite::fromJSON(httr::content(appel_melodi, as = "text", encoding = "UTF-8"),
+                                      simplifyDataFrame = FALSE)
+      res <- c(res,
+               lapply(catalogue, function(x) list(nom = x$identifier,
+                                                  libelle = retourneLibelleMelodi(x$title, 'fr'),
+                                                  collection = "MELODI",
+                                                  lien = paste0("https://api.insee.fr/melodi/data/", x$identifier),
+                                                  type = "json",
+                                                  zip = FALSE,
+                                                  api_rest = TRUE)))
+    }
+  }
+  res
+}
+
+
+# retourneLangueMelodi  -------------------------------------------------------------
+
+#' Fournit pour une liste de libelles, la langue pour chacun des éléments de la liste (adhérent à la structure du catalogue de Melodi)
+#'
+#' 
+#' La fonction retourne un vecteur de codes langues
+#'
+#' @return Un vecteur du type `c('fr', 'en')`
+#' 
+#' @keywords internal
+retourneLangueMelodi <- function(listeLibelles){
+  unlist(lapply(listeLibelles, function(x) x$lang))
+}
+
+# retourneLibelleMelodi -------------------------------------------------------------
+
+#' Fournit le libellé correspondant à la langue désirée (adhérent à la structure du catalogue de Melodi)
+#'
+#' 
+#' La fonction retourne une chaîne de caractères dans la langue désirée, sélectionnée dans une liste de libellés
+#'
+#' @return Une chaîne de caractères
+#' 
+#' @keywords internal
+retourneLibelleMelodi <- function(listeLibelles, langue){
+  listeLibelles[[which(retourneLangueMelodi(listeLibelles) == langue)]]$content
+}
+
 # infoDonnees -------------------------------------------------------------
 
 #' Recherche ligne d'informations dans liste_donnees
