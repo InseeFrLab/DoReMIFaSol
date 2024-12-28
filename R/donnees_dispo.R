@@ -37,7 +37,7 @@ donnees_dispo <- function(recherche_init = NULL,
   # 1 - construit table à afficher
   affich <-
     listToDf(
-      liste = listerDonnees(),
+      liste = ld,
       vars = c("collection", "libelle", "nom", "date_ref", "size")
     )
   affich$size <- round(as.numeric(affich$size) / 1048576, 1) # conversion Mo

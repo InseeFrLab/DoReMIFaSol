@@ -84,9 +84,8 @@ retourneLibelleMelodi <- function(listeLibelles, langue){
 infosDonnees <- function(donnees, date = NULL, silencieux = FALSE) {
   
   donnees <- toupper(donnees) # pour rendre insensible à la casse
-  liste_complete <- listerDonnees()
-  liste_nom <- vapply(liste_complete, `[[`, "nom", FUN.VALUE = character(1))
-  res <- liste_complete[liste_nom == donnees]
+  liste_nom <- vapply(ld, `[[`, "nom", FUN.VALUE = character(1))
+  res <- ld[liste_nom == donnees]
 
   # 1 - identifiant introuvable
 
