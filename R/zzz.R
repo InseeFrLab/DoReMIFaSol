@@ -1,4 +1,4 @@
 .onLoad <- function(libname, pkgname) {
   #data(liste_donnees)
-  ld <- listerDonnees()
+  assign("ld", listerDonnees(), envir = asNamespace("doremifasol"))
 }
