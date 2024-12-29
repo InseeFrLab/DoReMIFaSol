@@ -15,7 +15,7 @@ listerDonnees <- function(){
   res <- ld
   if (curl::has_internet()){
     ## requeter melodi
-    url <- "https://api.insee.fr/melodie/catalog/all"
+    url <- "https://api.insee.fr/melodi/catalog/all"
     appel_melodi <- tryCatch(httr::GET(url),
                                  error = function(e) message(e$message))
     if (length(appel_melodi) != 0 & appel_melodi$status_code == 200){
