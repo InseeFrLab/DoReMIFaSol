@@ -48,6 +48,9 @@ jobs:
           install.packages(c("rcmdcheck", "httpuv", "devtools"))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
+      - name: Create dist directory
+        run: mkdir dist
+        shell: bash
       - name: Build source (Linux)
         if: runner.os == 'Linux'
         run: devtools::build(binary = FALSE, path = "dist")
@@ -65,4 +68,3 @@ jobs:
         with:
           name: doremifasol_${{ env.PACKAGE_VERSION }}_${{ runner.os }}-r${{ matrix.config.r-version }}
           path: dist/**
-          retention-days: 0
