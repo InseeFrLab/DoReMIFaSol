@@ -64,4 +64,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: doremifasol_${{ env.PACKAGE_VERSION }}_${{ runner.os }}-r${{ matrix.config.r-version }}
-          path: dist
+          path: dist/**
+          retention-days: 0
