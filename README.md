@@ -13,13 +13,17 @@
 
 ## Français
 
+## 🚀 Nouvelle fonctionnalité
+
+Le catalogue de données intègre désormais les données mises à disposition dans [l'API Melodi](https://portail-api.insee.fr/catalog/all). Outre la [liste de données] disponible dans le _package_, les données listées dans le catalogue de Melodi sont intégrées _via_ [ce fichier](https://minio.lab.sspcloud.fr/) qui est mis quotidiennement à jour.
+
 ### De quoi s'agit-il ?
 
 Le _package_ `doremifasol` (_Données en R Mises à disposition par l’Insee et Facilement Sollicitables_) permet d'importer facilement dans R des données mises à disposition sur le site de l'Insee.
 
 Il offre deux fonctionnalités principales :
 
-* télécharger et importer dans R des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi...) ;
+* télécharger et importer dans R des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi...), **y compris les données mises à disposition _via_ Melodi** ;
 * requêter l'[API](https://api.insee.fr/catalogue) Sirene et recupérer les résultats dans R.
 
 L'objectif du _package_ est de rendre transparentes les différentes tâches à réaliser avant de pouvoir traiter les données : recherche sur le site, téléchargement, décompression, import dans R...
@@ -90,6 +94,10 @@ Agent du Service Statistique Public, ou utilisateur des données mises à dispos
 
 
 ## English
+
+## 🚀 New Feature
+
+The data catalog now includes data made available in the [Melodi API](https://portail-api.insee.fr/catalog/all). In addition to the [list of data] available in the package, the data listed in the Melodi catalog is integrated via [this file](https://minio.lab.sspcloud.fr/) which is updated on a daily basis.
 
 ### What is it about?
 

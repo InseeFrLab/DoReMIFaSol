@@ -23,7 +23,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   
   ## vérifie donnees et date. si ok les infos nécessaires sont extraites dans caract
   caract <- infosDonnees(donnees, date)
-
+  
   ## test de la connexion
   if (!curl::has_internet()) stop("aucune connexion Internet")
   
@@ -39,7 +39,19 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   ## télécharge les fichiers csv, xls, xlsx...
   if (!caract$api_rest) {
     
-    nomFichier <- file.path(telDir, basename(caract$lien))
+    if (caract$zip){
+      if (grepl(".*\\.zip", basename(caract$lien))){
+        nomFichier <- file.path(telDir, basename(caract$lien))
+      } else {
+        nomFichier <- file.path(telDir, paste0(caract$nom, ".zip"))
+      }
+    } else {
+      if (grepl(paste0(".*\\.", caract$type), basename(caract$lien))){
+        nomFichier <- file.path(telDir, basename(caract$lien))
+      } else {
+        nomFichier <- file.path(telDir, paste0(caract$nom, ".", caract$type))
+      }
+    }
     dl <- NULL
     
     if (!file.exists(nomFichier) || force) {
