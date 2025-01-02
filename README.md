@@ -13,9 +13,9 @@
 
 ## Français
 
-## 🚀 Nouvelle fonctionnalité
+### 🚀 Nouvelle fonctionnalité
 
-Le catalogue de données intègre désormais les données mises à disposition dans [l'API Melodi](https://portail-api.insee.fr/catalog/all). Outre la [liste de données] disponible dans le _package_, les données listées dans le catalogue de Melodi sont intégrées _via_ [ce fichier](https://minio.lab.sspcloud.fr/) qui est mis quotidiennement à jour.
+Le catalogue de données intègre désormais les données mises à disposition dans [l'API Melodi](https://portail-api.insee.fr/catalog/all). Outre la [liste de données](https://raw.githubusercontent.com/InseeFrLab/DoReMIFaSol/refs/heads/master/data-raw/liste_donnees.json) disponible dans le _package_, les données listées dans le catalogue de Melodi sont intégrées _via_ [ce fichier](https://minio.lab.sspcloud.fr/pierrelamarche/melodi/liste_donnees.json) qui est mis quotidiennement à jour.
 
 ### De quoi s'agit-il ?
 
@@ -95,9 +95,9 @@ Agent du Service Statistique Public, ou utilisateur des données mises à dispos
 
 ## English
 
-## 🚀 New Feature
+### 🚀 New Feature
 
-The data catalog now includes data made available in the [Melodi API](https://portail-api.insee.fr/catalog/all). In addition to the [list of data] available in the package, the data listed in the Melodi catalog is integrated via [this file](https://minio.lab.sspcloud.fr/) which is updated on a daily basis.
+The data catalog now includes data made available in the [Melodi API](https://portail-api.insee.fr/catalog/all). In addition to the [list of data](https://raw.githubusercontent.com/InseeFrLab/DoReMIFaSol/refs/heads/master/data-raw/liste_donnees.json) available in the package, the data listed in the Melodi catalog is integrated via [this file](https://minio.lab.sspcloud.fr/pierrelamarche/melodi/liste_donnees.json) which is updated on a daily basis.
 
 ### What is it about?
 
