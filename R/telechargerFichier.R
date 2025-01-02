@@ -39,7 +39,15 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   ## télécharge les fichiers csv, xls, xlsx...
   if (!caract$api_rest) {
     
-    nomFichier <- file.path(telDir, basename(caract$lien))
+    if (grepl(paste0(".*\\.", caract$type), basename(caract$lien))){
+      nomFichier <- file.path(telDir, basename(caract$lien))
+    } else {
+      if (caract$zip){
+        nomFichier <- file.path(telDir, paste0(caract$nom, ".zip"))
+      } else {
+        nomFichier <- file.path(telDir, paste0(caract$nom, ".", caract$type))
+      }
+    }
     dl <- NULL
     
     if (!file.exists(nomFichier) || force) {
