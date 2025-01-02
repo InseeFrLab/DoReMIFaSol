@@ -85,7 +85,7 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       res <- as.data.frame(do.call(rbind, res_int))
     }
   } else if (telechargementFichier$type == "xlsx") {
-    if (!is.null(telechargementFichier$argsImport$sheet) & telechargementFichier$argsImport$sheet != "__MELODI__") {
+    if (!is.null(telechargementFichier$argsImport$sheet) && telechargementFichier$argsImport$sheet != "__MELODI__") {
       res <- as.data.frame(do.call(readxl::read_xlsx, telechargementFichier$argsImport))
       } else {
       onglets <- readxl::excel_sheets(telechargementFichier$argsImport$path)
