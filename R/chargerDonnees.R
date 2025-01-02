@@ -89,8 +89,8 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       res <- as.data.frame(do.call(readxl::read_xlsx, telechargementFichier$argsImport))
       } else {
       onglets <- readxl::excel_sheets(telechargementFichier$argsImport$path)
-      if (telechargementFichier$argsImport$sheet == "__MELODI__"){
-        onglets <- onglets[!onglets %in% c("Métadonnées", "Documentation")]
+      if (!is.null(telechargementFichier$argsImport$sheet) && telechargementFichier$argsImport$sheet == "__MELODI__"){
+        onglets <- onglets[!onglets %in% c("M\u00e9tadonn\u00e9es", "Documentation")]
       } else {
         onglet <- intersect(onglets, toupper(onglets))
       }

@@ -143,7 +143,7 @@ test_that("Télécharger un produit csv zippé sur melodi", {
                   c("insee_data_frame", "data.frame"))
 })
 ## test dl de données sur mélodi - XLSX
-test_that("Télécharger un produit csv zippé sur melodi", {
+test_that("Télécharger un produit xlsx zippé sur melodi", {
   expect_type(telechargerDonnees("ANTIPOL_GLOBAL_T0_FR"),
                   "list")
 })
