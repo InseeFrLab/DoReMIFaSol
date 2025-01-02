@@ -85,11 +85,16 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       res <- as.data.frame(do.call(rbind, res_int))
     }
   } else if (telechargementFichier$type == "xlsx") {
-    if (!is.null(telechargementFichier$argsImport$sheet)) {
-      res <- as.data.frame(do.call(readxl::read_xlsx, telechargementFichier$argsImport)) 
-    } else {
+    if (!is.null(telechargementFichier$argsImport$sheet) & telechargementFichier$argsImport$sheet != "__MELODI__") {
+      res <- as.data.frame(do.call(readxl::read_xlsx, telechargementFichier$argsImport))
+      } else {
       onglets <- readxl::excel_sheets(telechargementFichier$argsImport$path)
-      res_int <- lapply(intersect(onglets, toupper(onglets)), function(x) {
+      if (telechargementFichier$argsImport$sheet == "__MELODI__"){
+        onglets <- onglets[!onglets %in% c("Métadonnées", "Documentation")]
+      } else {
+        onglet <- intersect(onglets, toupper(onglets))
+      }
+      res_int <- lapply(onglets, function(x) {
         telechargementFichier$argsImport[["sheet"]] <- x
         table <- do.call(readxl::read_xlsx, c(telechargementFichier$argsImport, ...))
         table$onglet <- x
@@ -97,9 +102,9 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       })
       #res <- as.data.frame(do.call(rbind, res_int))
       res <- res_int
-      names(res) <- intersect(onglets, toupper(onglets))
+      names(res) <- onglets
     }
-  } else if (telechargementFichier$type == "json") {
+    } else if (telechargementFichier$type == "json") {
     if (!is.null(vars))
       warning("Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
     res <- do.call(chargerDonneesJson, telechargementFichier$argsImport)
