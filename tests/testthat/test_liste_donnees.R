@@ -23,9 +23,10 @@ test_that("pas de valeurs incongrues", {
 
   # lien (motif, pas existence)
   url_pattern <- "^https://www.insee.fr/fr/statistiques/fichier/\\d{5,}/.+\\.(zip|xls|xlsx|parquet)$"
-  api_url_pattern <- "^https://api.insee.fr/entreprises/sirene(/V3.11)?/sire[nt](/(liensSuccession|nonDiffusibles))?$"
+  api_sirene_url_pattern <- "^https://api.insee.fr/entreprises/sirene(/V3.11)?/sire[nt](/(liensSuccession|nonDiffusibles))?$"
+  api_melodi_url_pattern <- "^https://api.insee.fr/melodi/.*$"
   expect_true(
-    all(grepl(paste0(url_pattern, "|", api_url_pattern), df_ld$lien))
+    all(grepl(paste0(url_pattern, "|", api_sirene_url_pattern, "|", api_melodi_url_pattern), df_ld$lien))
   )
 
   # type
@@ -43,7 +44,7 @@ test_that("pas de valeurs incongrues", {
 
   # big_zip
   expect_true(
-    all(df_ld$big_zip[df_ld$zip] %in% c(TRUE, FALSE))
+    with(df_ld, all(big_zip[zip] %in% c(TRUE, FALSE)))
   )
 
   # premiere_ligne / derniere_ligne
@@ -64,3 +65,4 @@ test_that("pas de valeurs incongrues", {
   )
 
 })
+

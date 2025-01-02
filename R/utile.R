@@ -21,7 +21,7 @@
 infosDonnees <- function(donnees, date = NULL, silencieux = FALSE) {
   
   donnees <- toupper(donnees) # pour rendre insensible à la casse
-  liste_nom <- vapply(ld, `[[`, "nom", FUN.VALUE = character(1))
+  liste_nom <- toupper(vapply(ld, `[[`, "nom", FUN.VALUE = character(1)))
   res <- ld[liste_nom == donnees]
 
   # 1 - identifiant introuvable

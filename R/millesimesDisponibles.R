@@ -10,7 +10,7 @@
 millesimesDisponibles <- function(donnees) {
   ## check the parameter donnees takes a valid value
   donnees <- toupper(donnees)
-  liste_nom <- unlist(lapply(ld, function(x) return(x$nom)))
+  liste_nom <- toupper(unlist(lapply(ld, function(x) return(x$nom))))
   if (!donnees %in% liste_nom)
     stop("Le param\u00e8tre donnees est mal sp\u00e9cifi\u00e9, la valeur n'est pas r\u00e9f\u00e9renc\u00e9e")
   liste_possible <- ld[which(liste_nom == donnees)]
