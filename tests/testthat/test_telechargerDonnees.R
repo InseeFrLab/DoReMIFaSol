@@ -115,7 +115,7 @@ test_that("Télécharger des données sur l'API pour les entreprises créées un
   skip_if_no_app()
   check_configuration()
   expect_s3_class(telechargerDonnees("SIRENE_SIRET_LIENS", argsApi = list(q = "siretEtablissementPredecesseur:32957439600019")), 
-                 "try-error")
+                  "try-error")
 })
 ## test dl sur l'API Sirene avec une requête sur les unités non diffusibles
 test_that("Télécharger des données sur l'API pour les unités non diffusibles", {
@@ -130,5 +130,20 @@ test_that("Erreur de syntaxe dans la requête sur l'API Sirene", {
   check_configuration()
   expect_s3_class(telechargerDonnees("SIRENE_SIREN_NONDIFF", 
                                      argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01" TO "2018-11-15"')),
-               "try-error")
+                  "try-error")
+})
+## test dl de données sur mélodi - csv brut
+test_that("Télécharger le csv sur l'API melodi", {
+  expect_s3_class(telechargerDonnees("DS_BPE"),
+                  c("insee_data_frame", "data.frame"))
+})
+## test dl de données sur mélodi - csv zippé
+test_that("Télécharger un produit csv zippé sur melodi", {
+  expect_s3_class(telechargerDonnees("DS_ANTIPOL_CSV_FR"),
+                  c("insee_data_frame", "data.frame"))
+})
+## test dl de données sur mélodi - XLSX
+test_that("Télécharger un produit csv zippé sur melodi", {
+  expect_type(telechargerDonnees("ANTIPOL_GLOBAL_T0_FR"),
+                  "list")
 })
