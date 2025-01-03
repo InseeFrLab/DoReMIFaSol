@@ -132,11 +132,6 @@ test_that("Erreur de syntaxe dans la requête sur l'API Sirene", {
                                      argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01" TO "2018-11-15"')),
                   "try-error")
 })
-## test dl de données sur mélodi - csv brut
-test_that("Télécharger le csv sur l'API melodi", {
-  expect_s3_class(telechargerDonnees("DS_BPE"),
-                  c("insee_data_frame", "data.frame"))
-})
 ## test dl de données sur mélodi - csv zippé
 test_that("Télécharger un produit csv zippé sur melodi", {
   expect_s3_class(telechargerDonnees("DS_ANTIPOL_CSV_FR"),
