@@ -65,3 +65,9 @@ test_that("listToDf sur un exemple réduit", {
   )
 
 })
+
+## test chargement catalogue Melodi
+test_that("Chargement du catalogue Melodi", {
+  melodi <- recupererMelodi("https://minio.lab.sspcloud.fr/pierrelamarche/melodi/liste_donnees.json")
+  expect_type(melodi, "list")
+})

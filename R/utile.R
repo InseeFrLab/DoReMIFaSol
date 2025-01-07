@@ -125,3 +125,29 @@ listToDf <- function(liste, vars = NULL) {
   )
 
 }
+
+
+#' recupererMelodi ----------------------------------------------------
+#'
+#' Objectif : récupérer sous forme de liste le catalogue de Mélodi traité sur le SSP Cloud
+#'
+#' @param url le lien vers le json généré sur le SSP Cloud
+#'
+#' @returns un objet list correspondant à la structure du json
+#'
+#' @keywords internal
+recupererMelodi <- function(url) {
+  requete_melodi <- httr::GET(url)
+  ld_melodi <- jsonlite::fromJSON(httr::content(requete_melodi, as = "text", encoding = "utf-8"), 
+                                  simplifyDataFrame = FALSE)
+  ld_melodi <- lapply(ld_melodi, function(x) {
+    within(x, {
+      if (!is.null(x$date_ref))
+        date_ref <- as.Date(date_ref, format = "%Y-%m-%d")
+      if(!is.null(x$separateur))
+        separateur <- paste0("quote(\"", separateur, "\")")
+    })
+  }
+  )
+  ld_melodi
+}
