@@ -38,7 +38,7 @@ donnees_dispo <- function(recherche_init = NULL,
   affich <-
     listToDf(
       liste = ld[which(sapply(ld, function(x) x$disponible))],
-      vars = c("collection", "libelle", "nom", "date_ref", "size")
+      vars = c("collection", "libelle", "nom", "date_ref", "size", "melodi")
     )
   affich$size <- round(as.numeric(affich$size) / 1048576, 1) # conversion Mo
   # 1.1 - ajout url page
@@ -71,7 +71,7 @@ donnees_dispo <- function(recherche_init = NULL,
   params$rownames <- FALSE
   params$colnames <- c("Collection", "Description", "Nom court",
                        "Date de r\u00e9f\u00e9rence", "Taille (Mo)",
-                       "Documentation sur insee.fr")
+                       "Melodi", "Documentation sur insee.fr")
   params$extensions <- "Buttons"
   params$escape <- FALSE
 
