@@ -32636,6 +32636,57 @@
         "md5": "baa18a8a40fafecfcf28bd3e01e8bcaf",
         "size": 1963888,
         "disponible": true
+    },
+    {
+        "nom": "TAG_COM",
+        "libelle": "Table d'appartenance géographique - Liste des communes"
+        "date_ref": "2025-01-01",
+        "collection": "GEOGRAPHIE",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/7671844/table-appartenance-geo-communes-2025.zip",
+        "type": "xlsx",
+        "zip": true,
+        "big_zip": false,
+        "fichier_donnees": "table-appartenance-geo-communes-2025.xlsx",
+        "onglet": "COM",
+        "premiere_ligne": 6,
+        "api_rest": false,
+        "md5": "a63b99f5e5d99b4a85dd474536aa1631",
+        "size": 2046702,
+        "disponible": true
+    },
+    {
+        "nom": "TAG_COM",
+        "libelle": "Table d'appartenance géographique - Liste des arrondissements municipaux"
+        "date_ref": "2025-01-01",
+        "collection": "GEOGRAPHIE",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/7671844/table-appartenance-geo-communes-2025.zip",
+        "type": "xlsx",
+        "zip": true,
+        "big_zip": false,
+        "fichier_donnees": "table-appartenance-geo-communes-2025.xlsx",
+        "onglet": "ARM",
+        "premiere_ligne": 6,
+        "api_rest": false,
+        "md5": "a63b99f5e5d99b4a85dd474536aa1631",
+        "size": 2046702,
+        "disponible": true
+    },
+    {
+        "nom": "TAG_COM",
+        "libelle": "Table d'appartenance géographique - Liste des zonages supra-communaux"
+        "date_ref": "2025-01-01",
+        "collection": "GEOGRAPHIE",
+        "lien": "https://www.insee.fr/fr/statistiques/fichier/7671844/table-appartenance-geo-communes-2025.zip",
+        "type": "xlsx",
+        "zip": true,
+        "big_zip": false,
+        "fichier_donnees": "table-appartenance-geo-communes-2025.xlsx",
+        "onglet": "Zones_supra_communales",
+        "premiere_ligne": 6,
+        "api_rest": false,
+        "md5": "a63b99f5e5d99b4a85dd474536aa1631",
+        "size": 2046702,
+        "disponible": true
     }
 ]
 
