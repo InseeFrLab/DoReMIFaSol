@@ -32639,7 +32639,7 @@
     },
     {
         "nom": "TAG_COM",
-        "libelle": "Table d'appartenance géographique - Liste des communes"
+        "libelle": "Table d'appartenance géographique - Liste des communes",
         "date_ref": "2025-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/7671844/table-appartenance-geo-communes-2025.zip",
@@ -32656,7 +32656,7 @@
     },
     {
         "nom": "TAG_COM",
-        "libelle": "Table d'appartenance géographique - Liste des arrondissements municipaux"
+        "libelle": "Table d'appartenance géographique - Liste des arrondissements municipaux",
         "date_ref": "2025-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/7671844/table-appartenance-geo-communes-2025.zip",
@@ -32673,7 +32673,7 @@
     },
     {
         "nom": "TAG_COM",
-        "libelle": "Table d'appartenance géographique - Liste des zonages supra-communaux"
+        "libelle": "Table d'appartenance géographique - Liste des zonages supra-communaux",
         "date_ref": "2025-01-01",
         "collection": "GEOGRAPHIE",
         "lien": "https://www.insee.fr/fr/statistiques/fichier/7671844/table-appartenance-geo-communes-2025.zip",
