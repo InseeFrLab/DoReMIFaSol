@@ -1,6 +1,6 @@
 # Moulinette d'ajout d'un fichier zip pour en extraire les info essentielles
 # pour renseigner liste_donnees.json
-url <- "https://www.insee.fr/fr/statistiques/fichier/7671844/table-appartenance-geo-communes-2025.zip"
+url <- "https://www.insee.fr/fr/statistiques/fichier/7671844/table-appartenance-geo-communes-23.zip"
 
 # Téléchargement du fichier -----------------------------------------------
 extdir <- tempdir()
@@ -36,3 +36,6 @@ for(fichier in liste_fichiers){
   utils::browseURL(file.path(extdir, fichier))
 }
 
+# Compléter ensuite liste_donnees.json
+# lancer liste_donnees.R
+# Lancer pkgdown::build_site() permet de vérifier que tout est OK via l'onglet Données dispo
