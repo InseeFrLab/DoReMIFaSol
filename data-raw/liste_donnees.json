@@ -32655,7 +32655,7 @@
         "disponible": true
     },
     {
-        "nom": "TAG_COM",
+        "nom": "TAG_ARM",
         "libelle": "Table d'appartenance géographique - Liste des arrondissements municipaux",
         "date_ref": "2025-01-01",
         "collection": "GEOGRAPHIE",
@@ -32672,7 +32672,7 @@
         "disponible": true
     },
     {
-        "nom": "TAG_COM",
+        "nom": "TAG_SUPRA_COM",
         "libelle": "Table d'appartenance géographique - Liste des zonages supra-communaux",
         "date_ref": "2025-01-01",
         "collection": "GEOGRAPHIE",
