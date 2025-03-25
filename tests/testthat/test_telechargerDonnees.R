@@ -58,7 +58,7 @@ test_that("Importation type XLS - import de tous les onglets", {
 ## test import de données XLSX
 test_that("Importation type XLSX - output data.frame", {
   expect_s3_class(
-    telechargerDonnees("AIRE_URBAINE"),
+    telechargerDonnees("TAG_COM", date = 2025),
     c("insee_data_frame", "data.frame"),
     exact = TRUE
   )

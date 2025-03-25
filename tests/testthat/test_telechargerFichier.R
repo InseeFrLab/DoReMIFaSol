@@ -54,7 +54,7 @@ test_that("Télécharger type XLS - output correct", {
 })
 ## test dl de données XLSX
 test_that("Télécharger type XLSX - output correct", {
-  expect_true(telechargerFichier("AIRE_URBAINE")$result == 0)
+  expect_true(telechargerFichier("TAG_COM", date = "2025")$result == 0)
 })
 ## test dl de données parquet
 test_that("Télécharger type parquet - output correct", {
