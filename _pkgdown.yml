@@ -1,3 +1,7 @@
+template:
+  bootstrap: 5
+url: https://InseeFrLab.github.io/DoReMIFaSol/
+
 navbar:
   structure:
     left:
@@ -10,16 +14,20 @@ navbar:
     home:
       icon: fas fa-home fa-lg
       href: index.html
+      aria-label: Accueil
     articles:
       text: Données disponibles
       href: articles/donnees_dispo.html
+      aria-label: Données disponibles
     reference:
       text: Fonctions
       href: reference/index.html
+      aria-label: Fonctions
     github:
       text: Contribuer
       icon: fab fa-github fa-lg
       href: https://github.com/InseeFrLab/DoReMIFaSol/
+      aria-label: Contribuer
 
 home:
   title: Télecharger des données sur insee.fr avec R
