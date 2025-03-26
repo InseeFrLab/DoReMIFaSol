@@ -8,6 +8,7 @@ Authors@R: c(
   person("Olivier", "Meslin", role = "ctb", email = "olivier.meslin@insee.fr"),
   person("Gilles", "Fidani", role = "ctb", email = "gilles.fidani@insee.fr"),
   person("Damien", "Dotta", role = "ctb", email = "damien.dotta@insee.fr"),
+  person("Cédric", "Bobinec", role = "ctb", email = "cedric.bobinec@insee.fr"),
   person(family = "Institut National de la Statistique et des Études Économiques", role = "cph")
   )
 Description: A package primarily intended for Insee staff members willing to use R in order to exploit and analyse data produced by the institute. This package makes it possible to either download on-the-fly the date from the website, or load pre-processed data. It also provides a (so far non comprehensive) list of datasets available on the website.
