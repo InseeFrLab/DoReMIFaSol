@@ -123,9 +123,9 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     
     ## télécharge les données sur l'API
     
-    if (!nzchar(Sys.getenv("INSEE_APP_KEY")) || !nzchar(Sys.getenv("INSEE_APP_SECRET"))) {
-      stop("d\u00e9finir les variables d'environnement INSEE_APP_KEY et INSEE_APP_SECRET")
-    }
+    if (!nzchar(Sys.getenv("INSEE_API_TOKEN")))
+      stop("d\u00e9finir la variable d'environnement INSEE_API_TOKEN")
+    token <- Sys.getenv("INSEE_API_TOKEN")
     
     timestamp <- gsub("[^0-9]", "", as.character(Sys.time()))
     dossier_json <- paste0(telDir, "/json_API_", caract$nom, "_", timestamp, "_", genererSuffixe(4))
@@ -135,14 +135,16 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       file.path(dossier_json, "requete.txt")
     )
     
-    token <- apinsee::insee_auth()
     if (!is.null(date))
       argsApi <- c(date = as.character(date), argsApi)
     if (is.null(argsApi$nombre)) {
       argsApi[["nombre"]] <- 0
       url <- httr::modify_url(caract$lien, query = argsApi)
-      res <- tryCatch(httr::GET(url, httr::config(token = token), 
-                                httr::write_memory()),
+      res <- tryCatch(httr::GET(url, 
+                                httr::add_headers(`accept` = "application/json;charset=utf-8;qs=1"),
+                                httr::add_headers(`X-INSEE-Api-Key-Integration` = token), 
+                                httr::write_memory()
+                              ),
                       error = function(e) message(e$message))
       total <- tryCatch(httr::content(res)[[1]]$total,
                         error = function(e) return(NULL))
@@ -152,8 +154,6 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       total <- argsApi[["nombre"]]
     }
     argsApi[["nombre"]] <- min(total, 1000)
-    if (is.null(argsApi[["tri"]]))
-      argsApi[["tri"]] <- "siren"
     if (total > 1000)
       argsApi[["curseur"]] <- "*"
     nombrePages <- ceiling(total/1000)
@@ -203,7 +203,8 @@ genererSuffixe <- function(longueur) {
 requeteApiSirene <- function(url, fichier, token, nbTentatives) {
   count <- 1
   res <- tryCatch(httr::GET(url, 
-                            httr::config(token = token), 
+                            httr::add_headers(`accept` = "application/json;charset=utf-8;qs=1"),
+                            httr::add_headers(`X-INSEE-Api-Key-Integration` = token), 
                             httr::write_disk(tail(fichier, 1)), 
                             httr::progress()),
                   error = function(e) {
@@ -214,7 +215,8 @@ requeteApiSirene <- function(url, fichier, token, nbTentatives) {
     Sys.sleep(10)
     message("Nouvelle tentative...")
     res <- tryCatch(httr::GET(url, 
-                              httr::config(token = token), 
+                              httr::add_headers(`accept` = "application/json;charset=utf-8;qs=1"),
+                              httr::add_headers(`X-INSEE-Api-Key-Integration` = token), 
                               httr::write_disk(tail(fichier, 1), overwrite = TRUE), 
                               httr::progress()),
                     error = function(e) {
