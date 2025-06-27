@@ -13,7 +13,7 @@ Authors@R: c(
 Description: A package primarily intended for Insee staff members willing to use R in order to exploit and analyse data produced by the institute. This package makes it possible to either download on-the-fly the date from the website, or load pre-processed data. It also provides a (so far non comprehensive) list of datasets available on the website.
 Language: fr
 Depends: R (>= 3.5.0)
-Imports: readr, readxl, httr, apinsee, jsonlite, curl, DT, arrow
+Imports: readr, readxl, httr, jsonlite, curl, DT, arrow
 Suggests: 
     tidyverse,
     data.table,
@@ -23,7 +23,6 @@ Suggests:
     knitr,
     rmarkdown,
     markdown
-Remotes: inseeFrLab/apinsee
 License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 7.3.2
