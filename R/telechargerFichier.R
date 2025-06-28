@@ -124,7 +124,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     ## télécharge les données sur l'API
     
     if (!nzchar(Sys.getenv("INSEE_API_TOKEN")))
-      stop("d\u00e9finir la variable d'environnement INSEE_API_TOKEN")
+      stop("d\u00e9finir la variable d'environnement INSEE_API_TOKEN : voir https://github.com/InseeFrLab/DoReMIFaSol/tree/new-api#requ%C3%AAter-une-api-rest--le-r%C3%A9pertoire-dentreprises-sirene")
     token <- Sys.getenv("INSEE_API_TOKEN")
     
     timestamp <- gsub("[^0-9]", "", as.character(Sys.time()))
