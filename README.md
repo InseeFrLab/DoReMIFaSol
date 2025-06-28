@@ -27,7 +27,7 @@ Le _package_ `doremifasol` (_Données en R Mises à disposition par l’Insee et
 Il offre deux fonctionnalités principales :
 
 * télécharger et importer dans R des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi...), **y compris les données mises à disposition _via_ Melodi** ;
-* requêter l'[API](https://api.insee.fr/catalogue) Sirene et recupérer les résultats dans R.
+* requêter l'[API](https://portail-api.insee.fr/catalog/all) Sirene et recupérer les résultats dans R.
 
 L'objectif du _package_ est de rendre transparentes les différentes tâches à réaliser avant de pouvoir traiter les données : recherche sur le site, téléchargement, décompression, import dans R...
 
