@@ -11,8 +11,7 @@ jobs:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      INSEE_APP_KEY: ${{ secrets.INSEE_APP_KEY }}
-      INSEE_APP_SECRET: ${{ secrets.INSEE_APP_SECRET }}
+      INSEE_API_TOKEN: ${{ secrets.INSEE_API_TOKEN }}
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       CURLOPT_TIMEOUT: 0
     steps:

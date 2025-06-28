@@ -23,10 +23,11 @@ test_that("pas de valeurs incongrues", {
 
   # lien (motif, pas existence)
   url_pattern <- "^https://www.insee.fr/fr/statistiques/fichier/\\d{5,}/.+\\.(zip|xls|xlsx|parquet)$"
-  api_sirene_url_pattern <- "^https://api.insee.fr/entreprises/sirene(/V3.11)?/sire[nt](/(liensSuccession|nonDiffusibles))?$"
+  api_sirene_url_old_pattern <- "^https://api.insee.fr/entreprises/sirene(/V3.11)?/sire[nt](/(liensSuccession|nonDiffusibles))?$"
+  api_sirene_url_pattern <- "^https://api.insee.fr/api-sirene/3.11/sire[nt](/liensSuccession)?$"
   api_melodi_url_pattern <- "^https://api.insee.fr/melodi/.*$"
   expect_true(
-    all(grepl(paste0(url_pattern, "|", api_sirene_url_pattern, "|", api_melodi_url_pattern), df_ld$lien))
+    all(grepl(paste0(url_pattern, "|", api_sirene_url_pattern, "|", api_melodi_url_pattern, "|", api_sirene_url_old_pattern), df_ld$lien))
   )
 
   # type
