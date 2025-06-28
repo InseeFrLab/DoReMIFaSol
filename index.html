@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">doremifasol</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.6.0003</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.0.0001</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,9 +54,14 @@
 <h2 id="français">Français<a class="anchor" aria-label="anchor" href="#fran%C3%A7ais"></a>
 </h2>
 <div class="section level3">
-<h3 id="id_-nouvelle-fonctionnalité">🚀 Nouvelle fonctionnalité<a class="anchor" aria-label="anchor" href="#id_-nouvelle-fonctionnalit%C3%A9"></a>
+<h3 id="id_️️️-prise-en-compte-de-la-nouvelle-api-sirene">⚠️⚠️⚠️ Prise en compte de la nouvelle API Sirene<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F%EF%B8%8F%EF%B8%8F-prise-en-compte-de-la-nouvelle-api-sirene"></a>
 </h3>
+<p>Depuis juillet 2025, le <em>package</em> utilise le nouvel endpoint de l’API Sirene ; la syntaxe de requête demeure identique. Seule la méthode d’identification change : en lieu et place des variables d’environnement <code>INSEE_APP_KEY</code> et <code>INSEE_APP_SECRET</code>, il faut définir une variable <code>INSEE_API_TOKEN</code> dans le fichier <code>.Renviron</code>. La valeur de cette variable est obtenue en suivant la procédure décrite <a href="https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b#usage-de-la-cl%C3%A9-dapi-pour-requ%C3%AAter-lapi-sirene" class="external-link">ici</a> et en insérant la valeur de la clé d’API obtenue dans la variable d’environnement en question.</p>
+<div class="section level4">
+<h4 id="id_-à-noter-également-">📝 À noter également !<a class="anchor" aria-label="anchor" href="#id_-%C3%A0-noter-%C3%A9galement-"></a>
+</h4>
 <p>Le catalogue de données intègre désormais les données mises à disposition dans <a href="https://portail-api.insee.fr/catalog/all" class="external-link">l’API Melodi</a>. Outre la <a href="https://raw.githubusercontent.com/InseeFrLab/DoReMIFaSol/refs/heads/master/data-raw/liste_donnees.json" class="external-link">liste de données</a> disponible dans le <em>package</em>, les données listées dans le catalogue de Melodi sont intégrées <em>via</em> <a href="https://minio.lab.sspcloud.fr/pierrelamarche/melodi/liste_donnees.json" class="external-link">ce fichier</a> qui est mis quotidiennement à jour.</p>
+</div>
 </div>
 <div class="section level3">
 <h3 id="de-quoi-sagit-il-">De quoi s’agit-il ?<a class="anchor" aria-label="anchor" href="#de-quoi-sagit-il-"></a>
@@ -65,7 +70,7 @@
 <p>Il offre deux fonctionnalités principales :</p>
 <ul>
 <li>télécharger et importer dans R des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi…), <strong>y compris les données mises à disposition <em>via</em> Melodi</strong> ;</li>
-<li>requêter l’<a href="https://api.insee.fr/catalogue" class="external-link">API</a> Sirene et recupérer les résultats dans R.</li>
+<li>requêter l’<a href="https://portail-api.insee.fr/catalog/all" class="external-link">API</a> Sirene et recupérer les résultats dans R.</li>
 </ul>
 <p>L’objectif du <em>package</em> est de rendre transparentes les différentes tâches à réaliser avant de pouvoir traiter les données : recherche sur le site, téléchargement, décompression, import dans R…</p>
 <p>Idéal pour pratiquer son solfège en R sur des données françaises !</p>
@@ -109,7 +114,7 @@
 <div class="section level4">
 <h4 id="requêter-une-api-rest--le-répertoire-dentreprises-sirene">Requêter une API REST : le répertoire d’entreprises Sirene<a class="anchor" aria-label="anchor" href="#requ%C3%AAter-une-api-rest--le-r%C3%A9pertoire-dentreprises-sirene"></a>
 </h4>
-<p>Supposons que l’on cherche maintenant à récupérer l’ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l’API REST Sirene de l’Insee. Pour cela, il faut au préalable avoir configuré un accès à l’API REST de l’Insee et passer en variables d’environnement les données d’identification. La procédure est expliquée par exemple <a href="https://github.com/InseeFrLab/apinsee#exemple" class="external-link">ici</a>. Une fois cela réalisé, la requête peut se faire facilement au travers de <code>doremifasol</code> de la manière suivante :</p>
+<p>Supposons que l’on cherche maintenant à récupérer l’ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l’API REST Sirene de l’Insee. Pour cela, il faut au préalable avoir configuré un accès à l’API REST de l’Insee et passer en variable d’environnement la clé d’API. La procédure pour obtenir une clé d’API est expliquée <a href="https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b#usage-de-la-cl%C3%A9-dapi-pour-requ%C3%AAter-lapi-sirene" class="external-link">ici</a>. La variable d’environnement consommée par <code>doremifasol</code> est <code>INSEE_API_TOKEN</code> Une fois cela réalisé, la requête peut se faire facilement au travers de <code>doremifasol</code> de la manière suivante :</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">etablissements</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"SIRENE_SIRET"</span>, </span>
 <span>                                     argsApi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>q <span class="op">=</span> <span class="st">"dateCreationUniteLegale:2020-01-01"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -126,9 +131,14 @@
 <h2 id="english">English<a class="anchor" aria-label="anchor" href="#english"></a>
 </h2>
 <div class="section level3">
-<h3 id="id_-new-feature">🚀 New Feature<a class="anchor" aria-label="anchor" href="#id_-new-feature"></a>
+<h3 id="id_️️️-new-api-endpoint">⚠️⚠️⚠️ New API endpoint<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F%EF%B8%8F%EF%B8%8F-new-api-endpoint"></a>
 </h3>
+<p>From July 2025 onwards, <code>doremifasol</code> queries the new endpoint for Sirene’s API, the French firms’ register. The process for authentification is described <a href="https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b#usage-de-la-cl%C3%A9-dapi-pour-requ%C3%AAter-lapi-sirene" class="external-link">here</a>. Once provided with an API key, the user must create (through the <code>.Renviron</code> file for instance) an environment variable called <code>INSEE_API_TOKEN</code>.</p>
+<div class="section level4">
+<h4 id="id_-worth-noting">📝 Worth noting!<a class="anchor" aria-label="anchor" href="#id_-worth-noting"></a>
+</h4>
 <p>The data catalog now includes data made available in the <a href="https://portail-api.insee.fr/catalog/all" class="external-link">Melodi API</a>. In addition to the <a href="https://raw.githubusercontent.com/InseeFrLab/DoReMIFaSol/refs/heads/master/data-raw/liste_donnees.json" class="external-link">list of data</a> available in the package, the data listed in the Melodi catalog is integrated via <a href="https://minio.lab.sspcloud.fr/pierrelamarche/melodi/liste_donnees.json" class="external-link">this file</a> which is updated on a daily basis.</p>
+</div>
 </div>
 <div class="section level3">
 <h3 id="what-is-it-about">What is it about?<a class="anchor" aria-label="anchor" href="#what-is-it-about"></a>
@@ -172,6 +182,10 @@
 <h4 id="requesting-an-api-rest-on-the-firms-register-sirene">Requesting an API REST on the firms’ register <em>Sirene</em>
 <a class="anchor" aria-label="anchor" href="#requesting-an-api-rest-on-the-firms-register-sirene"></a>
 </h4>
+<p>Assume you would like to fetch all firms created on 1<sup>st</sup> January 2020. To this end you may query the Sirene API, for which you’ll need to get an API key. The procedure to get one is described <a href="https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b#usage-de-la-cl%C3%A9-dapi-pour-requ%C3%AAter-lapi-sirene" class="external-link">here</a>. You’ll have to insert the value of this key in an environment variable called <code>INSEE_API_TOKEN</code>. Once done, you may proceed with the script below:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">etablissements</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"SIRENE_SIRET"</span>, </span>
+<span>                                     argsApi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>q <span class="op">=</span> <span class="st">"dateCreationUniteLegale:2020-01-01"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level3">
