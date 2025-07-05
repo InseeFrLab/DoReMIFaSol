@@ -13,11 +13,8 @@
 
 ## Français
 
-### ⚠️⚠️⚠️ Prise en compte de la nouvelle API Sirene
+### 🚀 Nouvelle fonctionnalité
 
-Depuis juillet 2025, le _package_ utilise le nouvel endpoint de l'API Sirene ; la syntaxe de requête demeure identique. Seule la méthode d'identification change : en lieu et place des variables d'environnement `INSEE_APP_KEY` et `INSEE_APP_SECRET`, il faut définir une variable `INSEE_API_TOKEN` dans le fichier `.Renviron`. La valeur de cette variable est obtenue en suivant la procédure décrite [ici](https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b#usage-de-la-cl%C3%A9-dapi-pour-requ%C3%AAter-lapi-sirene) et en insérant la valeur de la clé d'API obtenue dans la variable d'environnement en question.
-
-#### 📝 À noter également !
 Le catalogue de données intègre désormais les données mises à disposition dans [l'API Melodi](https://portail-api.insee.fr/catalog/all). Outre la [liste de données](https://raw.githubusercontent.com/InseeFrLab/DoReMIFaSol/refs/heads/master/data-raw/liste_donnees.json) disponible dans le _package_, les données listées dans le catalogue de Melodi sont intégrées _via_ [ce fichier](https://minio.lab.sspcloud.fr/pierrelamarche/melodi/liste_donnees.json) qui est mis quotidiennement à jour.
 
 ### De quoi s'agit-il ?
@@ -27,7 +24,7 @@ Le _package_ `doremifasol` (_Données en R Mises à disposition par l’Insee et
 Il offre deux fonctionnalités principales :
 
 * télécharger et importer dans R des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi...), **y compris les données mises à disposition _via_ Melodi** ;
-* requêter l'[API](https://portail-api.insee.fr/catalog/all) Sirene et recupérer les résultats dans R.
+* requêter l'[API](https://api.insee.fr/catalogue) Sirene et recupérer les résultats dans R.
 
 L'objectif du _package_ est de rendre transparentes les différentes tâches à réaliser avant de pouvoir traiter les données : recherche sur le site, téléchargement, décompression, import dans R...
 
@@ -49,6 +46,29 @@ Cela permet notamment de connaître les identifiants (noms courts) et millésime
 _Le package a vocation à intégrer de nouveaux jeux de données dès qu'ils sont mis en ligne. Ce processus n'est toutefois pas automatisé. Voir la section **<a href=#contribuer>Contribuer</a>** pour suggérer l'ajout de nouvelles données._
 
 ### Exemples d'usages
+
+#### Utiliser Melodi pour récupérer le fichier des prénoms
+
+Un des best-sellers de l'Insee, le fichier des prénoms permet de visualiser l'évolution du nombre de naissances au cours du temps pour un prénom donné. Supposons que l'on veuille représenter visuellement l'évolution de deux prénoms donnés. Pour cela, le _package_ `doremifasol` associé à l'API Melodi permet de faire les choses simplement :
+
+```r
+library(doremifasol)
+library(tidyverse)
+library(ggplot2)
+
+prenoms <- telechargerDonnees("DS_PRENOMS") |> 
+  filter(PRENOM %in% c("SOPHIE", "CLAIRE") & SEX == 2 & YOB != "XXXX" & GEO == "F") |> 
+  mutate(annais = as.numeric(YOB))
+
+ggplot(prenoms, aes(x = annais, y = OBS_VALUE, color = PRENOM)) +
+  geom_line(size = 1) +
+  labs(title = "Évolution du prénom Marie en France",
+       x = "Année",
+       y = "Nombre de naissances",
+       color = "Prénom") +
+  theme_minimal()
+
+```
 
 #### Les données du recensement de population
 
@@ -78,7 +98,7 @@ donnees_estel <- telechargerDonnees("ESTEL_T201", date = 2018)
 
 #### Requêter une API REST : le répertoire d'entreprises Sirene
 
-Supposons que l'on cherche maintenant à récupérer l'ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l'API REST Sirene de l'Insee. Pour cela, il faut au préalable avoir configuré un accès à l'API REST de l'Insee et passer en variable d'environnement la clé d'API. La procédure pour obtenir une clé d'API est expliquée [ici](https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b#usage-de-la-cl%C3%A9-dapi-pour-requ%C3%AAter-lapi-sirene). La variable d'environnement consommée par `doremifasol` est `INSEE_API_TOKEN` Une fois cela réalisé, la requête peut se faire facilement au travers de `doremifasol` de la manière suivante :
+Supposons que l'on cherche maintenant à récupérer l'ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l'API REST Sirene de l'Insee. Pour cela, il faut au préalable avoir configuré un accès à l'API REST de l'Insee et passer en variables d'environnement les données d'identification. La procédure est expliquée par exemple [ici](https://github.com/InseeFrLab/apinsee#exemple). Une fois cela réalisé, la requête peut se faire facilement au travers de `doremifasol` de la manière suivante :
 
 ```r
 etablissements <- telechargerDonnees("SIRENE_SIRET", 
@@ -98,11 +118,7 @@ Agent du Service Statistique Public, ou utilisateur des données mises à dispos
 
 ## English
 
-### ⚠️⚠️⚠️ New API endpoint
-
-From July 2025 onwards, `doremifasol` queries the new endpoint for Sirene's API, the French firms' register. The process for authentification is described [here](https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b#usage-de-la-cl%C3%A9-dapi-pour-requ%C3%AAter-lapi-sirene). Once provided with an API key, the user must create (through the `.Renviron` file for instance) an environment variable called `INSEE_API_TOKEN`.
-
-#### 📝 Worth noting!
+### 🚀 New Feature
 
 The data catalog now includes data made available in the [Melodi API](https://portail-api.insee.fr/catalog/all). In addition to the [list of data](https://raw.githubusercontent.com/InseeFrLab/DoReMIFaSol/refs/heads/master/data-raw/liste_donnees.json) available in the package, the data listed in the Melodi catalog is integrated via [this file](https://minio.lab.sspcloud.fr/pierrelamarche/melodi/liste_donnees.json) which is updated on a daily basis.
 
@@ -148,13 +164,6 @@ donnees_filosofi <- telechargerDonnees("FILOSOFI_DISP_COM_ENS", date = 2017)
 Tax data are very convenient to carry out information on income distribution at municipality level, so are data coming from registers on employment.
 
 #### Requesting an API REST on the firms' register _Sirene_
-
-Assume you would like to fetch all firms created on 1<sup>st</sup> January 2020. To this end you may query the Sirene API, for which you'll need to get an API key. The procedure to get one is described [here](https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b#usage-de-la-cl%C3%A9-dapi-pour-requ%C3%AAter-lapi-sirene). You'll have to insert the value of this key in an environment variable called `INSEE_API_TOKEN`. Once done, you may proceed with the script below:
-
-```r
-etablissements <- telechargerDonnees("SIRENE_SIRET", 
-                                     argsApi = list(q = "dateCreationUniteLegale:2020-01-01"))
-```
 
 
 ### Contributing
