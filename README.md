@@ -61,7 +61,7 @@ prenoms <- telechargerDonnees("DS_PRENOMS") |>
   mutate(annais = as.numeric(YOB))
 
 ggplot(prenoms, aes(x = annais, y = OBS_VALUE, color = PRENOM)) +
-  geom_line(size = 1) +
+  geom_line(linewidth = 1) +
   labs(title = "Évolution des prénoms Claire et Sophie en France",
        x = "Année",
        y = "Nombre de naissances",
