@@ -54,14 +54,9 @@
 <h2 id="français">Français<a class="anchor" aria-label="anchor" href="#fran%C3%A7ais"></a>
 </h2>
 <div class="section level3">
-<h3 id="id_️️️-prise-en-compte-de-la-nouvelle-api-sirene">⚠️⚠️⚠️ Prise en compte de la nouvelle API Sirene<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F%EF%B8%8F%EF%B8%8F-prise-en-compte-de-la-nouvelle-api-sirene"></a>
+<h3 id="id_-nouvelle-fonctionnalité">🚀 Nouvelle fonctionnalité<a class="anchor" aria-label="anchor" href="#id_-nouvelle-fonctionnalit%C3%A9"></a>
 </h3>
-<p>Depuis juillet 2025, le <em>package</em> utilise le nouvel endpoint de l’API Sirene ; la syntaxe de requête demeure identique. Seule la méthode d’identification change : en lieu et place des variables d’environnement <code>INSEE_APP_KEY</code> et <code>INSEE_APP_SECRET</code>, il faut définir une variable <code>INSEE_API_TOKEN</code> dans le fichier <code>.Renviron</code>. La valeur de cette variable est obtenue en suivant la procédure décrite <a href="https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b#usage-de-la-cl%C3%A9-dapi-pour-requ%C3%AAter-lapi-sirene" class="external-link">ici</a> et en insérant la valeur de la clé d’API obtenue dans la variable d’environnement en question.</p>
-<div class="section level4">
-<h4 id="id_-à-noter-également-">📝 À noter également !<a class="anchor" aria-label="anchor" href="#id_-%C3%A0-noter-%C3%A9galement-"></a>
-</h4>
 <p>Le catalogue de données intègre désormais les données mises à disposition dans <a href="https://portail-api.insee.fr/catalog/all" class="external-link">l’API Melodi</a>. Outre la <a href="https://raw.githubusercontent.com/InseeFrLab/DoReMIFaSol/refs/heads/master/data-raw/liste_donnees.json" class="external-link">liste de données</a> disponible dans le <em>package</em>, les données listées dans le catalogue de Melodi sont intégrées <em>via</em> <a href="https://minio.lab.sspcloud.fr/pierrelamarche/melodi/liste_donnees.json" class="external-link">ce fichier</a> qui est mis quotidiennement à jour.</p>
-</div>
 </div>
 <div class="section level3">
 <h3 id="de-quoi-sagit-il-">De quoi s’agit-il ?<a class="anchor" aria-label="anchor" href="#de-quoi-sagit-il-"></a>
@@ -70,7 +65,7 @@
 <p>Il offre deux fonctionnalités principales :</p>
 <ul>
 <li>télécharger et importer dans R des fichiers disponibles sur insee.fr (Base Permanente des Équipements, Recensement de Population, Filosofi…), <strong>y compris les données mises à disposition <em>via</em> Melodi</strong> ;</li>
-<li>requêter l’<a href="https://portail-api.insee.fr/catalog/all" class="external-link">API</a> Sirene et recupérer les résultats dans R.</li>
+<li>requêter l’<a href="https://api.insee.fr/catalogue" class="external-link">API</a> Sirene et recupérer les résultats dans R.</li>
 </ul>
 <p>L’objectif du <em>package</em> est de rendre transparentes les différentes tâches à réaliser avant de pouvoir traiter les données : recherche sur le site, téléchargement, décompression, import dans R…</p>
 <p>Idéal pour pratiquer son solfège en R sur des données françaises !</p>
@@ -90,17 +85,38 @@
 <h3 id="exemples-dusages">Exemples d’usages<a class="anchor" aria-label="anchor" href="#exemples-dusages"></a>
 </h3>
 <div class="section level4">
+<h4 id="utiliser-melodi-pour-récupérer-le-fichier-des-prénoms">Utiliser Melodi pour récupérer le fichier des prénoms<a class="anchor" aria-label="anchor" href="#utiliser-melodi-pour-r%C3%A9cup%C3%A9rer-le-fichier-des-pr%C3%A9noms"></a>
+</h4>
+<p>Un des best-sellers de l’Insee, le fichier des prénoms permet de visualiser l’évolution du nombre de naissances au cours du temps pour un prénom donné. Supposons que l’on veuille représenter visuellement l’évolution de deux prénoms donnés. Pour cela, le <em>package</em> <code>doremifasol</code> associé à l’API Melodi permet de faire les choses simplement :</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://InseeFrLab.github.io/DoReMIFaSol">doremifasol</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">prenoms</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"DS_PRENOMS"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">PRENOM</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"SOPHIE"</span>, <span class="st">"CLAIRE"</span><span class="op">)</span> <span class="op">&amp;</span> <span class="va">SEX</span> <span class="op">==</span> <span class="fl">2</span> <span class="op">&amp;</span> <span class="va">YOB</span> <span class="op">!=</span> <span class="st">"XXXX"</span> <span class="op">&amp;</span> <span class="va">GEO</span> <span class="op">==</span> <span class="st">"F"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>annais <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">YOB</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">prenoms</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">annais</span>, y <span class="op">=</span> <span class="va">OBS_VALUE</span>, color <span class="op">=</span> <span class="va">PRENOM</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>linewidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Évolution des prénoms Claire et Sophie en France"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">"Année"</span>,</span>
+<span>       y <span class="op">=</span> <span class="st">"Nombre de naissances"</span>,</span>
+<span>       color <span class="op">=</span> <span class="st">"Prénom"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level4">
 <h4 id="les-données-du-recensement-de-population">Les données du recensement de population<a class="anchor" aria-label="anchor" href="#les-donn%C3%A9es-du-recensement-de-population"></a>
 </h4>
 <p>Le premier exemple concerne les données du recensement librement accessibles sur le site de l’Insee. Ce sont des données très volumineuses, et sauf à disposer de capacités de calcul conséquentes, il n’est en général pas possible de charger l’ensemble des données en mémoire. Pour cela, le <em>package</em> <code>doremifasol</code> permet de sélectionner les colonnes que l’on souhaite charger en mémoire, une fois le fichier téléchargé. Ainsi, un utilisateur qui voudrait connaître par commune le nombre de résidences principales en 2016 aura besoin des variables <code>COMMUNE</code> - le code commune - et <code>CATL</code> - la catégorie d’occupation du logement - de la table <code>logement</code> :</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">donnees_rp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"RP_LOGEMENT"</span>, date <span class="op">=</span> <span class="fl">2016</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"COMMUNE"</span>, <span class="st">"IPONDL"</span>, <span class="st">"CATL"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="filosofi">Filosofi<a class="anchor" aria-label="anchor" href="#filosofi"></a>
 </h4>
 <p>L’Insee met également à disposition un certain nombre d’indicateurs relatifs à la distribution des revenus et à la pauvreté au niveau communal, voire infra-communal. Ces données sont mises à jour chaque année à partir des sources fiscales ; il s’agit de la source “Filosofi”. Ainsi, il est possible de télécharger ces indicateurs au niveau de la commune, pour l’ensemble des ménages par exemple, grâce à la syntaxe suivante :</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">donnees_filosofi</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"FILOSOFI_DISP_COM_ENS"</span>, date <span class="op">=</span> <span class="fl">2017</span><span class="op">)</span></span></code></pre></div>
 <p>Ces données sont déclinées pour différentes catégories de ménages, et de la même manière peuvent être téléchargées grâce au <em>package</em> <code>doremifasol</code>.</p>
 </div>
@@ -108,14 +124,14 @@
 <h4 id="estimations-localisées-demploi-en-france">Estimations localisées d’emploi en France<a class="anchor" aria-label="anchor" href="#estimations-localis%C3%A9es-demploi-en-france"></a>
 </h4>
 <p>De la même manière que les données fiscales permettent de fournir des statistiques à un niveau géographique fin, d’autres sources administratives permettent de construire des estimations du nombre d’emplois présents dans les différentes communes du territoire français. Il s’agit des Estimations d’Emploi Localisées, qu’il est possible de récupérer en <code>R</code> grâce à la syntaxe suivante :</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">donnees_estel</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"ESTEL_T201"</span>, date <span class="op">=</span> <span class="fl">2018</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="requêter-une-api-rest--le-répertoire-dentreprises-sirene">Requêter une API REST : le répertoire d’entreprises Sirene<a class="anchor" aria-label="anchor" href="#requ%C3%AAter-une-api-rest--le-r%C3%A9pertoire-dentreprises-sirene"></a>
 </h4>
-<p>Supposons que l’on cherche maintenant à récupérer l’ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l’API REST Sirene de l’Insee. Pour cela, il faut au préalable avoir configuré un accès à l’API REST de l’Insee et passer en variable d’environnement la clé d’API. La procédure pour obtenir une clé d’API est expliquée <a href="https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b#usage-de-la-cl%C3%A9-dapi-pour-requ%C3%AAter-lapi-sirene" class="external-link">ici</a>. La variable d’environnement consommée par <code>doremifasol</code> est <code>INSEE_API_TOKEN</code> Une fois cela réalisé, la requête peut se faire facilement au travers de <code>doremifasol</code> de la manière suivante :</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<p>Supposons que l’on cherche maintenant à récupérer l’ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l’API REST Sirene de l’Insee. Pour cela, il faut au préalable avoir configuré un accès à l’API REST de l’Insee et passer en variables d’environnement les données d’identification. La procédure est expliquée par exemple <a href="https://github.com/InseeFrLab/apinsee#exemple" class="external-link">ici</a>. Une fois cela réalisé, la requête peut se faire facilement au travers de <code>doremifasol</code> de la manière suivante :</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">etablissements</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"SIRENE_SIRET"</span>, </span>
 <span>                                     argsApi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>q <span class="op">=</span> <span class="st">"dateCreationUniteLegale:2020-01-01"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>On fait alors face à une liste contenant plusieurs <code>data.frame</code> (6 au total) : * une table contenant l’ensemble des informations sur les établissements en question ; * deux tables contenant l’ensemble des informations sur les unités légales de ces établissements, en distinguant les unités dites purgées des autres ; * deux tables contenant les informations sur l’adresse de ces établissements ; * une table détaillant les informations historisées de ces établissements - c’est-à-dire les différentes modifications qu’ont connues les établissements entre leur création et la date de référence - ici par défaut la date de téléchargement.</p>
@@ -131,21 +147,16 @@
 <h2 id="english">English<a class="anchor" aria-label="anchor" href="#english"></a>
 </h2>
 <div class="section level3">
-<h3 id="id_️️️-new-api-endpoint">⚠️⚠️⚠️ New API endpoint<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F%EF%B8%8F%EF%B8%8F-new-api-endpoint"></a>
+<h3 id="id_-new-feature">🚀 New Feature<a class="anchor" aria-label="anchor" href="#id_-new-feature"></a>
 </h3>
-<p>From July 2025 onwards, <code>doremifasol</code> queries the new endpoint for Sirene’s API, the French firms’ register. The process for authentification is described <a href="https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b#usage-de-la-cl%C3%A9-dapi-pour-requ%C3%AAter-lapi-sirene" class="external-link">here</a>. Once provided with an API key, the user must create (through the <code>.Renviron</code> file for instance) an environment variable called <code>INSEE_API_TOKEN</code>.</p>
-<div class="section level4">
-<h4 id="id_-worth-noting">📝 Worth noting!<a class="anchor" aria-label="anchor" href="#id_-worth-noting"></a>
-</h4>
 <p>The data catalog now includes data made available in the <a href="https://portail-api.insee.fr/catalog/all" class="external-link">Melodi API</a>. In addition to the <a href="https://raw.githubusercontent.com/InseeFrLab/DoReMIFaSol/refs/heads/master/data-raw/liste_donnees.json" class="external-link">list of data</a> available in the package, the data listed in the Melodi catalog is integrated via <a href="https://minio.lab.sspcloud.fr/pierrelamarche/melodi/liste_donnees.json" class="external-link">this file</a> which is updated on a daily basis.</p>
-</div>
 </div>
 <div class="section level3">
 <h3 id="what-is-it-about">What is it about?<a class="anchor" aria-label="anchor" href="#what-is-it-about"></a>
 </h3>
 <p><code>doremifasol</code> (data with R made available by Insee and easily retrievable in French) is a R package mainly aiming at showing off data available on Insee’s website (Insee, for the French Institute for Statistics and Economic Studies), helping the user to put them on stage and extract the information they carry. So it is about analysing data, creating maps, quantifying phenomenons and in general using the data without the painful effort to retrieve them on the website, as well as import them into R’s memory. The name of the <em>package</em> stands for the five first notes of music, and pushing the metaphore, underlines its aim at helping the users to easily pratice their <em>solfège</em> in R.</p>
 <p>To install the package:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"InseeFrLab/doremifasol"</span>, build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -163,14 +174,14 @@
 <h4 id="census-data">Census data<a class="anchor" aria-label="anchor" href="#census-data"></a>
 </h4>
 <p>A first example of use of the package is related to the rolling Census implemented in France on a yearly basis. It concerns voluminous data that prove to be hard to load into R’s memory on most of the machines. To adress the data size issue, the package <code>doremifasol</code> makes it possible to resize the data and only imports columns that are of interest for the user. Assume that one is interested in knowing the number of main residences for each municipality on the French territory in 2016, that one will only need three variables from the table <code>logement</code> (dwelling in French), <code>COMMUNE</code> the zip code, <code>IPONDL</code> the weight of the dwelling and <code>CATL</code> indicating the status of occupation:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">donnees_rp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"RP_LOGEMENT"</span>, date <span class="op">=</span> <span class="fl">2016</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"COMMUNE"</span>, <span class="st">"IPONDL"</span>, <span class="st">"CATL"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="data-on-income-distribution-and-poverty">Data on income distribution and poverty<a class="anchor" aria-label="anchor" href="#data-on-income-distribution-and-poverty"></a>
 </h4>
 <p>Should you now be interested in data on income distribution, you may download information on income percentiles and poverty rate at the municipality level based on tax data, also knwow as ‘Filosofi’. Those data are update every year. You may fetch these data for year 2017 for instance thanks to the following command:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">donnees_filosofi</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"FILOSOFI_DISP_COM_ENS"</span>, date <span class="op">=</span> <span class="fl">2017</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">
@@ -182,10 +193,6 @@
 <h4 id="requesting-an-api-rest-on-the-firms-register-sirene">Requesting an API REST on the firms’ register <em>Sirene</em>
 <a class="anchor" aria-label="anchor" href="#requesting-an-api-rest-on-the-firms-register-sirene"></a>
 </h4>
-<p>Assume you would like to fetch all firms created on 1<sup>st</sup> January 2020. To this end you may query the Sirene API, for which you’ll need to get an API key. The procedure to get one is described <a href="https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b#usage-de-la-cl%C3%A9-dapi-pour-requ%C3%AAter-lapi-sirene" class="external-link">here</a>. You’ll have to insert the value of this key in an environment variable called <code>INSEE_API_TOKEN</code>. Once done, you may proceed with the script below:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">etablissements</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"SIRENE_SIRET"</span>, </span>
-<span>                                     argsApi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>q <span class="op">=</span> <span class="st">"dateCreationUniteLegale:2020-01-01"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level3">
