@@ -3,7 +3,7 @@ pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   donnees_dispo: donnees_dispo.html
-last_built: 2025-08-15T04:16Z
+last_built: 2025-08-16T04:10Z
 urls:
   reference: https://InseeFrLab.github.io/DoReMIFaSol/reference
   article: https://InseeFrLab.github.io/DoReMIFaSol/articles
