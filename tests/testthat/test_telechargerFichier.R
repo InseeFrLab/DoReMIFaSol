@@ -1,7 +1,7 @@
 library(doremifasol)
-## téléchargement de la BPE
+## téléchargement du COG
 test_that("Téléchargement de données sur le site de l'Insee", {
-  expect_true(telechargerFichier("BPE_ENS")$result == 0)
+  expect_true(telechargerFichier("COG_COMMUNE", date = 2022)$result == 0)
 })
 ## erreur - oubli de la date
 test_that("Téléchargement de données sur le site de l'Insee", {
@@ -24,10 +24,14 @@ test_that("Téléchargement de données sur le site de l'Insee - données non zi
 test_that("Échec du téléchargement pour nom non existant", {
   expect_error(telechargerFichier("TEST"), "Le paramètre donnees est mal spécifié, la valeur n'est pas référencée")
 })
+## fichier non existant, marqué non disponible
+test_that("Échec du téléchargement car fichier marqué non disponible", {
+  expect_error(telechargerFichier("TEST_BPE_NEXIST", "Fichier non disponible au téléchargement."))
+})
 ## spécification du dossier de stockage
 test_that("Spécification du dossier de stockage", {
-  dl <- telechargerFichier("BPE_ENS", telDir = "test_dl")
-  expect_true(file.exists("test_dl/DS_BPE_CSV_FR.zip"))
+  dl <- telechargerFichier("COG_COMMUNE", date = 2022, telDir = "test_dl")
+  expect_true(file.exists("test_dl/cog_ensemble_2022_csv.zip"))
   unlink("test_dl", recursive = TRUE)
 })
 ## test utilisation du cache

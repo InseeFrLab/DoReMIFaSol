@@ -1,7 +1,7 @@
 library(doremifasol)
 ## téléchargement de la BPE
 test_that("Téléchargement de données sur le site de l'Insee", {
-  expect_output(str(telechargerDonnees("BPE_ENS")), "data.frame")
+  expect_output(str(telechargerDonnees("COG_COMMUNE", date = 2022)), "data.frame")
 })
 ## erreur - oubli de la date
 test_that("Téléchargement de données sur le site de l'Insee", {
@@ -85,7 +85,7 @@ test_that("Importation type parquet - sélection de variables", {
 })
 ## test sélection des variables
 test_that("Sélection de variables dans la BPE", {
-  expect_true(length(names(telechargerDonnees(donnees = "BPE_ENS", vars = c("GEO", "GEO_OBJECT", "FACILITY_TYPE", "OBS_VALUE")))) == 4)
+  expect_true(length(names(telechargerDonnees("COG_COMMUNE", date = 2022, vars = c("TYPECOM", "COM", "REG", "DEP")))) == 4)
 })
 ## test dézip gros fichiers
 test_that("Utilisation de unzip système", {
@@ -134,11 +134,11 @@ test_that("Erreur de syntaxe dans la requête sur l'API Sirene", {
 })
 ## test dl de données sur mélodi - csv zippé
 test_that("Télécharger un produit csv zippé sur melodi", {
-  expect_s3_class(telechargerDonnees("DS_ANTIPOL_CSV_FR"),
+  expect_s3_class(telechargerDonnees("DS_ANTIPOL_2022_CSV_FR"),
                   c("insee_data_frame", "data.frame"))
 })
 ## test dl de données sur mélodi - XLSX
 test_that("Télécharger un produit xlsx zippé sur melodi", {
-  expect_type(telechargerDonnees("ANTIPOL_GLOBAL_T0_FR"),
+  expect_type(telechargerDonnees("ANTIPOL_2022_GLOBAL_T0_FR"),
                   "list")
 })
