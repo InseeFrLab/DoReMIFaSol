@@ -24,7 +24,7 @@
             "TIME_PERIOD": "integer",
             "OBS_VALUE": "integer"
         },
-        "disponible": true
+        "disponible": false
     },
     {
         "nom": "BPE_ENS_XY",
@@ -116,7 +116,7 @@
             "DENS3": "character",
             "DENS7": "character"
         },
-        "disponible": true
+        "disponible": false
     },
     {
         "nom": "COG_COMMUNE",
@@ -130,8 +130,8 @@
         "fichier_donnees": "commune_2022.csv",
         "separateur": ",",
         "api_rest": false,
-        "md5": "b3b8ca2a7793f3d43766c8e807706182",
-        "size": 1791342,
+        "md5": "61120e7202f7506c13565c6c1bc1a3db",
+        "size": 1727848,
         "type_col": {
             "TYPECOM": "character",
             "COM": "character",
