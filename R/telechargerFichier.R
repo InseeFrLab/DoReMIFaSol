@@ -38,6 +38,8 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
   
   ## télécharge les fichiers csv, xls, xlsx...
   if (!caract$api_rest) {
+    if (!caract$disponible)
+      stop("Fichier non disponible au t\u00e9l\u00e9chargement.")
     
     if (caract$zip){
       if (grepl(".*\\.zip", basename(caract$lien))){
