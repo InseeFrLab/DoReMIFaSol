@@ -11,10 +11,10 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: windows-latest, r-version: '4.3', rspm: "https://cran.rstudio.com"}
           - {os: windows-latest, r-version: '4.4', rspm: "https://cran.rstudio.com"}
-          - {os: ubuntu-24.04, r-version: '4.4', rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest"}
-          - {os: ubuntu-24.04, r-version: '4.3', rspm: 'https://packagemanager.posit.co/cran/__linux__/noble/latest'}
+          - {os: windows-latest, r-version: '4.5', rspm: "https://cran.rstudio.com"}
+          - {os: ubuntu-24.04, r-version: '4.5', rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest"}
+          - {os: ubuntu-24.04, r-version: '4.4', rspm: 'https://packagemanager.posit.co/cran/__linux__/noble/latest'}
     runs-on: ${{ matrix.config.os }}
     env:
       INSEE_APP_KEY: ${{ secrets.INSEE_APP_KEY }}
