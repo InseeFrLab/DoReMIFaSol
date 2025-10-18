@@ -15,9 +15,9 @@
 #' pouvoir générer un jeton d'accès. Ces informations sont à passer sous forme
 #' de variables d'environnement.
 #' 
-#' Renseigner pour cela `INSEE_APP_KEY` et `INSEE_APP_SECRET` dans un fichier
+#' Renseigner pour cela `INSEE_API_TOKEN` dans un fichier
 #' de configuration `.Renviron`.
-#' Consulter [cette page](https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/help.jag)
+#' Consulter [cette page](https://github.com/InseeFrLab/DoReMIFaSol/tree/new-api#requ%C3%AAter-une-api-rest--le-r%C3%A9pertoire-dentreprises-sirene)
 #' pour de l'aide sur comment obtenir de tels identifiants.
 #'
 #' @param sirets établissements pour lesquels rechercher les successeurs (un

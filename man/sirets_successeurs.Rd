@@ -34,9 +34,9 @@ cette fonction nécessite une clé d'application et un secret associé pour
 pouvoir générer un jeton d'accès. Ces informations sont à passer sous forme
 de variables d'environnement.
 
-Renseigner pour cela \code{INSEE_APP_KEY} et \code{INSEE_APP_SECRET} dans un fichier
+Renseigner pour cela \code{INSEE_API_TOKEN} dans un fichier
 de configuration \code{.Renviron}.
-Consulter \href{https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/help.jag}{cette page}
+Consulter \href{https://github.com/InseeFrLab/DoReMIFaSol/tree/new-api#requ\%C3\%AAter-une-api-rest--le-r\%C3\%A9pertoire-dentreprises-sirene}{cette page}
 pour de l'aide sur comment obtenir de tels identifiants.
 }
 
