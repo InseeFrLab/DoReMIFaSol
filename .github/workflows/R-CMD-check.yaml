@@ -22,7 +22,6 @@ jobs:
       matrix:
         config:
           - {os: windows-latest, r: 'release', rspm: "https://cran.rstudio.com"}
-          - {os: macOS-latest, r: 'release', rspm: "https://cran.rstudio.com"}
           - {os: ubuntu-24.04, r: 'release', rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest"}
           - {os: ubuntu-24.04, r: 'devel', rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest", http-user-agent: "R/4.1.0 (ubuntu-latest) R (4.1.0 x86_64-pc-linux-gnu x86_64 linux-gnu) on GitHub Actions" }
 
