@@ -130,8 +130,10 @@
 <div class="section level4">
 <h4 id="requêter-une-api-rest--le-répertoire-dentreprises-sirene">Requêter une API REST : le répertoire d’entreprises Sirene<a class="anchor" aria-label="anchor" href="#requ%C3%AAter-une-api-rest--le-r%C3%A9pertoire-dentreprises-sirene"></a>
 </h4>
-<p>Supposons que l’on cherche maintenant à récupérer l’ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l’API REST Sirene de l’Insee. Pour cela, il faut au préalable avoir configuré un accès à l’API REST de l’Insee et passer en variables d’environnement les données d’identification. La procédure est expliquée par exemple <a href="https://github.com/InseeFrLab/apinsee#exemple" class="external-link">ici</a>. Une fois cela réalisé, la requête peut se faire facilement au travers de <code>doremifasol</code> de la manière suivante :</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<p>Supposons que l’on cherche maintenant à récupérer l’ensemble des établissements rattachés à une unité légale créée le 1er janvier 2020 ; pour cela, on peut par exemple envoyer une requête sur l’API REST Sirene de l’Insee. Pour cela, il faut au préalable avoir configuré un accès à l’API REST de l’Insee et passer en variable d’environnement le jeton d’authentification. Pour obtenir ce jeton, la procédure est expliquée par exemple <a href="https://static.insee.fr/api-sirene/Insee_API_publique_modalites_connexion.pdf" class="external-link">ici</a> ou encore <a href="https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b" class="external-link">là</a>. Une fois cela réalisé, on insère dans la variable d’environnement <code>INSEE_API_TOKEN</code> le jeton obtenue, par exemple en insérant la ligne suivante dans le fichier <code>.Renviron</code> (en remplaçant <code>xxxxxxxx</code> par la valeur du jeton) :</p>
+<pre><code><span><span class="va">INSEE_API_TOKEN</span><span class="op">=</span><span class="st">'xxxxxxxx'</span></span></code></pre>
+<p>La requête peut ensuite se faire facilement (après avoir réinitialisé la session R) au travers de <code>doremifasol</code> de la manière suivante :</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">etablissements</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"SIRENE_SIRET"</span>, </span>
 <span>                                     argsApi <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>q <span class="op">=</span> <span class="st">"dateCreationUniteLegale:2020-01-01"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>On fait alors face à une liste contenant plusieurs <code>data.frame</code> (6 au total) : * une table contenant l’ensemble des informations sur les établissements en question ; * deux tables contenant l’ensemble des informations sur les unités légales de ces établissements, en distinguant les unités dites purgées des autres ; * deux tables contenant les informations sur l’adresse de ces établissements ; * une table détaillant les informations historisées de ces établissements - c’est-à-dire les différentes modifications qu’ont connues les établissements entre leur création et la date de référence - ici par défaut la date de téléchargement.</p>
@@ -156,7 +158,7 @@
 </h3>
 <p><code>doremifasol</code> (data with R made available by Insee and easily retrievable in French) is a R package mainly aiming at showing off data available on Insee’s website (Insee, for the French Institute for Statistics and Economic Studies), helping the user to put them on stage and extract the information they carry. So it is about analysing data, creating maps, quantifying phenomenons and in general using the data without the painful effort to retrieve them on the website, as well as import them into R’s memory. The name of the <em>package</em> stands for the five first notes of music, and pushing the metaphore, underlines its aim at helping the users to easily pratice their <em>solfège</em> in R.</p>
 <p>To install the package:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"InseeFrLab/doremifasol"</span>, build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -174,14 +176,14 @@
 <h4 id="census-data">Census data<a class="anchor" aria-label="anchor" href="#census-data"></a>
 </h4>
 <p>A first example of use of the package is related to the rolling Census implemented in France on a yearly basis. It concerns voluminous data that prove to be hard to load into R’s memory on most of the machines. To adress the data size issue, the package <code>doremifasol</code> makes it possible to resize the data and only imports columns that are of interest for the user. Assume that one is interested in knowing the number of main residences for each municipality on the French territory in 2016, that one will only need three variables from the table <code>logement</code> (dwelling in French), <code>COMMUNE</code> the zip code, <code>IPONDL</code> the weight of the dwelling and <code>CATL</code> indicating the status of occupation:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">donnees_rp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"RP_LOGEMENT"</span>, date <span class="op">=</span> <span class="fl">2016</span>, vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"COMMUNE"</span>, <span class="st">"IPONDL"</span>, <span class="st">"CATL"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="data-on-income-distribution-and-poverty">Data on income distribution and poverty<a class="anchor" aria-label="anchor" href="#data-on-income-distribution-and-poverty"></a>
 </h4>
 <p>Should you now be interested in data on income distribution, you may download information on income percentiles and poverty rate at the municipality level based on tax data, also knwow as ‘Filosofi’. Those data are update every year. You may fetch these data for year 2017 for instance thanks to the following command:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">donnees_filosofi</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/telechargerDonnees.html">telechargerDonnees</a></span><span class="op">(</span><span class="st">"FILOSOFI_DISP_COM_ENS"</span>, date <span class="op">=</span> <span class="fl">2017</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">

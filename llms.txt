@@ -141,11 +141,21 @@ Supposons que l’on cherche maintenant à récupérer l’ensemble des
 établissements rattachés à une unité légale créée le 1er janvier 2020 ;
 pour cela, on peut par exemple envoyer une requête sur l’API REST Sirene
 de l’Insee. Pour cela, il faut au préalable avoir configuré un accès à
-l’API REST de l’Insee et passer en variables d’environnement les données
-d’identification. La procédure est expliquée par exemple
-[ici](https://github.com/InseeFrLab/apinsee#exemple). Une fois cela
-réalisé, la requête peut se faire facilement au travers de `doremifasol`
-de la manière suivante :
+l’API REST de l’Insee et passer en variable d’environnement le jeton
+d’authentification. Pour obtenir ce jeton, la procédure est expliquée
+par exemple
+[ici](https://static.insee.fr/api-sirene/Insee_API_publique_modalites_connexion.pdf)
+ou encore
+[là](https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc?page=85c5657d-b1a1-4466-8565-7db1a194667b).
+Une fois cela réalisé, on insère dans la variable d’environnement
+`INSEE_API_TOKEN` le jeton obtenue, par exemple en insérant la ligne
+suivante dans le fichier `.Renviron` (en remplaçant `xxxxxxxx` par la
+valeur du jeton) :
+
+    INSEE_API_TOKEN='xxxxxxxx'
+
+La requête peut ensuite se faire facilement (après avoir réinitialisé la
+session R) au travers de `doremifasol` de la manière suivante :
 
 ``` r
 etablissements <- telechargerDonnees("SIRENE_SIRET", 
