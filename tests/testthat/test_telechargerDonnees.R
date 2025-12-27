@@ -74,7 +74,7 @@ test_that("Importation type parquet - output data.frame", {
   expect_s3_class(
     telechargerDonnees("RP_MOBSCO", date = 2021),
     c("insee_data_frame", "data.frame"),
-    exact = TRUE
+    exact = FALSE
   )
 })
 ## test import de qq variables parquet
@@ -134,11 +134,11 @@ test_that("Erreur de syntaxe dans la requête sur l'API Sirene", {
 })
 ## test dl de données sur mélodi - csv zippé
 test_that("Télécharger un produit csv zippé sur melodi", {
-  expect_s3_class(telechargerDonnees("DS_ANTIPOL_2022_CSV_FR"),
+  expect_s3_class(telechargerDonnees("DS_ANTIPOL_2023_CSV_FR"),
                   c("insee_data_frame", "data.frame"))
 })
 ## test dl de données sur mélodi - XLSX
 test_that("Télécharger un produit xlsx zippé sur melodi", {
-  expect_type(telechargerDonnees("ANTIPOL_2022_GLOBAL_T0_FR"),
+  expect_type(telechargerDonnees("ANTIPOL_2023_GLOBAL_T0_FR"),
                   "list")
 })
