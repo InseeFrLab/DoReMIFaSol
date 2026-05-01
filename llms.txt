@@ -40,6 +40,7 @@ Idéal pour pratiquer son solfège en R sur des données françaises !
 Pour installer le package :
 
 ``` r
+
 # install.packages("remotes")
 remotes::install_github("InseeFrLab/doremifasol", build_vignettes = TRUE)
 ```
@@ -70,6 +71,7 @@ l’évolution de deux prénoms donnés. Pour cela, le *package*
 simplement :
 
 ``` r
+
 library(doremifasol)
 library(tidyverse)
 library(ggplot2)
@@ -101,6 +103,7 @@ nombre de résidences principales en 2016 aura besoin des variables
 logement - de la table `logement` :
 
 ``` r
+
 donnees_rp <- telechargerDonnees("RP_LOGEMENT", date = 2016, vars = c("COMMUNE", "IPONDL", "CATL"))
 ```
 
@@ -115,6 +118,7 @@ commune, pour l’ensemble des ménages par exemple, grâce à la syntaxe
 suivante :
 
 ``` r
+
 donnees_filosofi <- telechargerDonnees("FILOSOFI_DISP_COM_ENS", date = 2017)
 ```
 
@@ -132,6 +136,7 @@ Il s’agit des Estimations d’Emploi Localisées, qu’il est possible de
 récupérer en `R` grâce à la syntaxe suivante :
 
 ``` r
+
 donnees_estel <- telechargerDonnees("ESTEL_T201", date = 2018)
 ```
 
@@ -158,6 +163,7 @@ La requête peut ensuite se faire facilement (après avoir réinitialisé la
 session R) au travers de `doremifasol` de la manière suivante :
 
 ``` r
+
 etablissements <- telechargerDonnees("SIRENE_SIRET", 
                                      argsApi = list(q = "dateCreationUniteLegale:2020-01-01"))
 ```
@@ -213,6 +219,7 @@ at helping the users to easily pratice their *solfège* in R.
 To install the package:
 
 ``` r
+
 # install.packages("remotes")
 remotes::install_github("InseeFrLab/doremifasol", build_vignettes = TRUE)
 ```
@@ -247,6 +254,7 @@ in 2016, that one will only need three variables from the table
 weight of the dwelling and `CATL` indicating the status of occupation:
 
 ``` r
+
 donnees_rp <- telechargerDonnees("RP_LOGEMENT", date = 2016, vars = c("COMMUNE", "IPONDL", "CATL"))
 ```
 
@@ -259,6 +267,7 @@ data are update every year. You may fetch these data for year 2017 for
 instance thanks to the following command:
 
 ``` r
+
 donnees_filosofi <- telechargerDonnees("FILOSOFI_DISP_COM_ENS", date = 2017)
 ```
 
