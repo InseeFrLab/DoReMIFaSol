@@ -1,5 +1,33 @@
 # FONCTIONS AUXILIAIRES NON EXPORTÉES
 
+# ld_complet -------------------------------------------------------------
+
+#' Charge le catalogue complet (statique + Melodi) de manière lazy
+#'
+#' À la première utilisation, récupère le catalogue Melodi depuis le SSP Cloud
+#' et le fusionne avec le catalogue statique empaqueté dans le package.
+#' Le résultat est mis en cache pour les appels suivants.
+#'
+#' @return un objet list (le catalogue complet)
+#'
+#' @keywords internal
+ld_complet <- function() {
+  if (is.null(environment()$ld_cache)) {
+    ld_cache <<- ld
+    if (curl::has_internet()) {
+      ld_melodi <- tryCatch(
+        recupererMelodi("https://minio.lab.sspcloud.fr/pierrelamarche/melodi/liste_donnees.json"),
+        error = function(e) {
+          packageStartupMessage("Le catalogue Melodi n'a pas pu être téléchargé.\n", e$message)
+          list()
+        }
+      )
+      ld_cache <<- c(ld_cache, ld_melodi)
+    }
+  }
+  ld_cache
+}
+
 # infoDonnees -------------------------------------------------------------
 
 #' Recherche ligne d'informations dans liste_donnees
@@ -21,8 +49,9 @@
 infosDonnees <- function(donnees, date = NULL, silencieux = FALSE) {
   
   donnees <- toupper(donnees) # pour rendre insensible à la casse
-  liste_nom <- toupper(vapply(ld, `[[`, "nom", FUN.VALUE = character(1)))
-  res <- ld[liste_nom == donnees]
+  ld_c <- ld_complet()
+  liste_nom <- toupper(vapply(ld_c, `[[`, "nom", FUN.VALUE = character(1)))
+  res <- ld_c[liste_nom == donnees]
 
   # 1 - identifiant introuvable
 
