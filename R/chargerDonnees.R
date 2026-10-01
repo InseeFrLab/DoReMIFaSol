@@ -19,7 +19,7 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
   if (is.null(telechargementFichier$result)) {
     if (!is.null(telechargementFichier$message)) {
       stop("Le t\u00e9l\u00e9chargement a rencontr\u00e9 un probl\u00e8me : erreur ", telechargementFichier$message)
-    } else if (telechargementFichier$type == "json" & file.exists(telechargementFichier$argsImport$fichier)) {
+    } else if (telechargementFichier$type == "json" && file.exists(telechargementFichier$argsImport$fichier)) {
       message <- jsonlite::read_json(telechargementFichier$argsImport$fichier)
       stop("Le t\u00e9l\u00e9chargement a rencontr\u00e9 un probl\u00e8me : erreur ",  message$header$statut, " - ", message$header$message)
     } else {
@@ -38,8 +38,9 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
         unzipped <- unzip(nomFichier, exdir = dossier_unz)
       } else {
         unzipped <- file.path(dossier_unz, unzip(nomFichier, list = TRUE)$Name)
-        err_unz <- tryCatch(unzip(nomFichier, exdir = dossier_unz, unzip = "unzip"))
-        if (!is.null(err_unz)) stop(err_unz$message)
+        err_unz <- try(unzip(nomFichier, exdir = dossier_unz, unzip = "unzip"), silent = TRUE)
+        if (inherits(err_unz, "try-error"))
+          stop("Échec de la décompression du fichier zip.\n", attr(err_unz, "condition")$message)
       }
     }
     # supprime fichiers décompressés (même en cas de plantage)
