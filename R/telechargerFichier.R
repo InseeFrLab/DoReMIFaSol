@@ -57,7 +57,10 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     dl <- NULL
     
     if (!file.exists(nomFichier) || force) {
-      res <- try(httr::GET(caract$lien, httr::write_disk(nomFichier, overwrite = TRUE), httr::progress()))
+      res <- tryCatch(
+        httr::GET(caract$lien, httr::write_disk(nomFichier, overwrite = TRUE), httr::progress()),
+        error = function(e) stop("Échec du téléchargement : ", e$message)
+      )
       if (res$status_code == 200) {
         dl <- 0
       } else {
@@ -129,7 +132,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       stop("d\u00e9finir la variable d'environnement INSEE_API_TOKEN : voir https://github.com/InseeFrLab/DoReMIFaSol/tree/new-api#requ%C3%AAter-une-api-rest--le-r%C3%A9pertoire-dentreprises-sirene")
     token <- Sys.getenv("INSEE_API_TOKEN")
     
-    timestamp <- gsub("[^0-9]", "", as.character(Sys.time()))
+    timestamp <- format(Sys.time(), "%Y%m%d%H%M%S")
     dossier_json <- paste0(telDir, "/json_API_", caract$nom, "_", timestamp, "_", genererSuffixe(4))
     dir.create(dossier_json)
     writeLines(

@@ -36,12 +36,8 @@
 #'                    argsApi = list(q = "dateDernierTraitementUniteLegale:2019-04-15"))
 #' telechargerDonnees("SIRENE_SIRET_NONDIFF", argsApi = list(q = "siren:480419449"))
 #' }
-#' @export
-
-telechargerDonnees <- function(donnees, date=NULL, telDir=getOption("doremifasol.telDir"), argsApi=NULL, vars=NULL, force=FALSE, ...) {
-  try(chargerDonnees(
-    telechargerFichier(donnees, date, telDir, argsApi, force),
-    vars,
-    ...
-  ))
+telechargerDonnees <- function(donnees, date = NULL, telDir = getOption("doremifasol.telDir"),
+                               argsApi = NULL, vars = NULL, force = FALSE, ...) {
+  dl <- telechargerFichier(donnees, date, telDir, argsApi, force)
+  chargerDonnees(dl, vars, ...)
 }
