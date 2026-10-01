@@ -7,7 +7,7 @@
 #' @details 
 #' Les données mises à disposition sont en général des tables de taille raisonnable, qui peuvent être chargées sans problème en mémoire sur un large spectre de machines. Néanmoins, pour certaines données (telles celles du Recensement de Population ou encore SIRENE), les données sont très volumineuses et exigent donc des machines très performantes. L'utilisateur a donc la possibilité de choisir les variables qui l'intéressent et de ne charger que ces dernières en mémoire, de manière à être parcimonieux.
 #'
-#' @return un objet data.frame contenant les données téléchargées (sauf dans le cas des données téléchargées depuis les API, pour lesquelles ce sont généralement des listes contenant les différents objets data.fame).
+#' @return un objet data.frame contenant les données téléchargées (sauf dans le cas des données téléchargées depuis les API, pour lesquelles ce sont généralement des listes contenant les différents objets data.frames).
 #' @export
 #'
 #' @examples \dontrun{
