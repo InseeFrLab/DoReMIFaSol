@@ -24,6 +24,8 @@ donnees_dispo <- function(recherche_init = NULL,
                           ...) {
 
   # 0 - vérifications
+  if (!requireNamespace("DT", quietly = TRUE))
+    stop("Le package 'DT' est nécessaire pour cette fonction.")
   stopifnot(is.numeric(entrees))
   pos_filtre <-
     switch(
