@@ -30,7 +30,7 @@ chargerDonnees(telechargementFichier, vars = NULL, ...)
 
 un objet data.frame contenant les données téléchargées (sauf dans le cas
 des données téléchargées depuis les API, pour lesquelles ce sont
-généralement des listes contenant les différents objets data.fame).
+généralement des listes contenant les différents objets data.frames).
 
 ## Details
 
