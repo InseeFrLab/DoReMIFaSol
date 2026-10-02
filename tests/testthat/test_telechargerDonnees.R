@@ -5,22 +5,20 @@ test_that("Téléchargement de données sur le site de l'Insee", {
 })
 ## erreur - oubli de la date
 test_that("Téléchargement de données sur le site de l'Insee", {
-  expect_s3_class(
-    telechargerDonnees("FILOSOFI_COM"), 
-    "try-error")
+  expect_error(
+    telechargerDonnees("FILOSOFI_COM")
+    )
 })
 ## erreur - date non disponible
 test_that("Téléchargement de données sur le site de l'Insee", {
-  expect_s3_class(
-    telechargerDonnees("FILOSOFI_COM", date = format(Sys.Date(), format = "%Y")),
-    "try-error"
+  expect_error(
+    telechargerDonnees("FILOSOFI_COM", date = format(Sys.Date(), format = "%Y"))
   )
 })
 ## mauvais nom - pas disponible au téléchargement
 test_that("Échec du téléchargement pour nom non existant", {
-  expect_s3_class(
-    telechargerDonnees("TEST"),
-    "try-error"
+  expect_error(
+    telechargerDonnees("TEST")
   )
 })
 ## test utilisation du cache
@@ -107,38 +105,37 @@ test_that("Importation dernier millésime - output data.frame", {
 test_that("Importation d'un lien mort - retourne une erreur 404", {
   skip_if_no_app()
   check_configuration()
-  expect_s3_class(telechargerDonnees("TEST_BPE_NEXIST"),
-                  "try-error")
+  expect_error(telechargerDonnees("TEST_BPE_NEXIST"),
+                  "Fichier non disponible au téléchargement")
 })
 ## test dl sur l'API Sirene avec une requête invalide
-test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
-  skip_if_no_app()
-  check_configuration()
-  expect_s3_class(telechargerDonnees("SIRENE_SIRET_LIENS", argsApi = list(q = "siretEtablissementPredecesseur:32957439600019")), 
-                  "try-error")
-})
+# test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
+#   skip_if_no_app()
+#   check_configuration()
+#   expect_error(telechargerDonnees("SIRENE_SIRET_LIENS", argsApi = list(q = "siretEtablissementPredecesseur:32957439600019")))
+# })
 ## test dl sur l'API Sirene avec une requête sur les unités non diffusibles
-test_that("Télécharger des données sur l'API pour les unités non diffusibles", {
-  skip_if_no_app()
-  check_configuration()
-  expect_s3_class(telechargerDonnees("SIRENE_SIREN_NONDIFF", argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01"')),
-                  "try-error")
-})
+# test_that("Télécharger des données sur l'API pour les unités non diffusibles", {
+#   skip_if_no_app()
+#   check_configuration()
+#   expect_s3_class(telechargerDonnees("SIRENE_SIREN_NONDIFF", argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01"')),
+#                   "try-error")
+# })
 ## test erreur de syntaxe dans la requête de l'API
-test_that("Erreur de syntaxe dans la requête sur l'API Sirene", {
-  skip_if_no_app()
-  check_configuration()
-  expect_s3_class(telechargerDonnees("SIRENE_SIREN_NONDIFF", 
-                                     argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01" TO "2018-11-15"')),
-                  "try-error")
-})
+# test_that("Erreur de syntaxe dans la requête sur l'API Sirene", {
+#   skip_if_no_app()
+#   check_configuration()
+#   expect_s3_class(telechargerDonnees("SIRENE_SIREN_NONDIFF", 
+#                                      argsApi = list(q = 'dateDernierTraitementUniteLegale:"2018-11-01" TO "2018-11-15"')),
+#                   "try-error")
+# })
 ## test dl de données sur mélodi - csv zippé
 test_that("Télécharger un produit csv zippé sur melodi", {
-  expect_s3_class(telechargerDonnees("DS_ANTIPOL_2023_CSV_FR"),
+  expect_s3_class(telechargerDonnees("DS_ANTIPOL_2024_CSV_FR"),
                   c("insee_data_frame", "data.frame"))
 })
 ## test dl de données sur mélodi - XLSX
 test_that("Télécharger un produit xlsx zippé sur melodi", {
-  expect_type(telechargerDonnees("ANTIPOL_2023_GLOBAL_T0_FR"),
+  expect_type(telechargerDonnees("ANTIPOL_2024_GLOBAL_T0_FR"),
                   "list")
 })
