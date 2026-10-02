@@ -15,7 +15,10 @@ millesimesDisponibles <- function(donnees) {
   if (!donnees %in% liste_nom)
     stop("Le paramètre donnees est mal spécifié, la valeur n'est pas référencée")
   liste_possible <- ld_c[which(liste_nom == donnees)]
-  dates <- vapply(liste_possible, `[[`, "date_ref", FUN.VALUE = as.Date(0))
+  # c() préserve la classe Date et gère les entrées sans date_ref (NULL)
+  dates <- do.call(c, lapply(liste_possible, `[[`, "date_ref"))
+  if (length(dates) == 0)
+    return(character(0))
   annees <- format(dates, "%Y")
   if (!any(duplicated(annees)))
     annees
