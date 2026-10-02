@@ -13,7 +13,7 @@ millesimesDisponibles <- function(donnees) {
   ld_c <- ld_complet()
   liste_nom <- toupper(vapply(ld_c, `[[`, "nom", FUN.VALUE = character(1)))
   if (!donnees %in% liste_nom)
-    stop("Le paramètre donnees est mal spécifié, la valeur n'est pas référencée")
+    stop("Le param\u00e8tre donnees est mal sp\u00e9cifi\u00e9, la valeur n'est pas r\u00e9f\u00e9renc\u00e9e")
   liste_possible <- ld_c[which(liste_nom == donnees)]
   # c() préserve la classe Date et gère les entrées sans date_ref (NULL)
   dates <- do.call(c, lapply(liste_possible, `[[`, "date_ref"))

@@ -40,7 +40,7 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
         unzipped <- file.path(dossier_unz, unzip(nomFichier, list = TRUE)$Name)
         err_unz <- try(unzip(nomFichier, exdir = dossier_unz, unzip = "unzip"), silent = TRUE)
         if (inherits(err_unz, "try-error"))
-          stop("Échec de la décompression du fichier zip.\n", attr(err_unz, "condition")$message)
+          stop("\u00c9chec de la d\u00e9compression du fichier zip.\n", attr(err_unz, "condition")$message)
       }
     }
     # supprime fichiers décompressés (même en cas de plantage)
@@ -111,7 +111,7 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
     res <- do.call(chargerDonneesJson, telechargementFichier$argsImport)
   } else if (telechargementFichier$type == "parquet") {
     if (!requireNamespace("arrow", quietly = TRUE))
-      stop("Le package 'arrow' est nécessaire pour charger les fichiers parquet.")
+      stop("Le package 'arrow' est n\u00e9cessaire pour charger les fichiers parquet.")
     if (!is.null(vars))
       telechargementFichier$argsImport$col_select <- vars
     res <- do.call(arrow::read_parquet, telechargementFichier$argsImport)
