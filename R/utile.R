@@ -1,5 +1,8 @@
 # FONCTIONS AUXILIAIRES NON EXPORTÉES
 
+# Environnement de cache (créé au build, donc modifiable à runtime)
+ld_cache_env <- new.env()
+
 # ld_complet -------------------------------------------------------------
 
 #' Charge le catalogue complet (statique + Melodi) de manière lazy
@@ -12,8 +15,8 @@
 #'
 #' @keywords internal
 ld_complet <- function() {
-  if (is.null(environment()$ld_cache)) {
-    ld_cache <<- ld
+  if (is.null(ld_cache_env$ld)) {
+    ld_cache_env$ld <- get("ld", envir = asNamespace("doremifasol"))
     if (curl::has_internet()) {
       ld_melodi <- tryCatch(
         recupererMelodi("https://minio.lab.sspcloud.fr/pierrelamarche/melodi/liste_donnees.json"),
@@ -22,10 +25,10 @@ ld_complet <- function() {
           list()
         }
       )
-      ld_cache <<- c(ld_cache, ld_melodi)
+      ld_cache_env$ld <- c(ld_cache_env$ld, ld_melodi)
     }
   }
-  ld_cache
+  ld_cache_env$ld
 }
 
 # infoDonnees -------------------------------------------------------------
