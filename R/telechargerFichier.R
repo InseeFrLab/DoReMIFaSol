@@ -59,7 +59,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     if (!file.exists(nomFichier) || force) {
       res <- tryCatch(
         httr::GET(caract$lien, httr::write_disk(nomFichier, overwrite = TRUE), httr::progress()),
-        error = function(e) stop("Échec du téléchargement : ", e$message)
+        error = function(e) stop("\u00c9chec du t\u00e9l\u00e9chargement : ", e$message)
       )
       if (res$status_code == 200) {
         dl <- 0

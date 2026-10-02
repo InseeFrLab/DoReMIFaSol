@@ -21,7 +21,7 @@ ld_complet <- function() {
       ld_melodi <- tryCatch(
         recupererMelodi("https://minio.lab.sspcloud.fr/pierrelamarche/melodi/liste_donnees.json"),
         error = function(e) {
-          packageStartupMessage("Le catalogue Melodi n'a pas pu être téléchargé.\n", e$message)
+          packageStartupMessage("Le catalogue Melodi n'a pas pu \u00eatre t\u00e9l\u00e9charg\u00e9.\n", e$message)
           list()
         }
       )
