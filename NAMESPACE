@@ -8,6 +8,7 @@ export(millesimesDisponibles)
 export(sirets_successeurs)
 export(telechargerDonnees)
 export(telechargerFichier)
-importFrom(utils,read.csv)
-importFrom(utils,tail)
-importFrom(utils,unzip)
+importFrom(utils,
+  tail,
+  unzip
+)
