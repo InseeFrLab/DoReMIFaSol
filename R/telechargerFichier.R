@@ -58,17 +58,22 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     
     if (!file.exists(nomFichier) || force) {
       res <- tryCatch(
-        httr::GET(caract$lien, httr::write_disk(nomFichier, overwrite = TRUE), httr::progress()),
+        httr2::req_perform(
+          httr2::request(caract$lien) |>
+            httr2::req_progress() |>
+            httr2::req_error(is_error = \(resp) FALSE),
+          path = nomFichier
+        ),
         error = function(e) stop("\u00c9chec du t\u00e9l\u00e9chargement : ", e$message)
       )
-      if (res$status_code == 200) {
+      if (httr2::resp_status(res) == 200) {
         dl <- 0
       } else {
         file.remove(nomFichier)
         return(
           list(
             resultat = dl,
-            message = res$status_code
+            message = httr2::resp_status(res)
           )
         )
       }
@@ -81,8 +86,15 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       if (cache) {
         message("Aucun r\u00e9pertoire d'importation n'est d\u00e9fini. Les donn\u00e9es utilis\u00e9es sont stock\u00e9es dans le dossier: ", telDir)}
       message("Les donn\u00e9es doivent \u00eatre mises \u00e0 jour.")
-      res <- tryCatch(httr::GET(caract$lien, httr::write_disk(nomFichier, overwrite = TRUE), httr::progress()))
-      if (res$status_code == 200) dl <- 0
+      res <- tryCatch(
+        httr2::req_perform(
+          httr2::request(caract$lien) |>
+            httr2::req_progress() |>
+            httr2::req_error(is_error = \(resp) FALSE),
+          path = nomFichier
+        )
+      )
+      if (httr2::resp_status(res) == 200) dl <- 0
     } else {
       dl <- 0
       message("Donn\u00e9es d\u00e9j\u00e0 pr\u00e9sentes dans ", shQuote(telDir), ", pas de nouveau t\u00e9l\u00e9chargement.")
@@ -136,7 +148,7 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     dossier_json <- paste0(telDir, "/json_API_", caract$nom, "_", timestamp, "_", genererSuffixe(4))
     dir.create(dossier_json)
     writeLines(
-      utils::URLdecode(httr::modify_url(caract$lien, query = argsApi)),
+      utils::URLdecode(httr2::url_modify(caract$lien, query = argsApi)),
       file.path(dossier_json, "requete.txt")
     )
     
@@ -144,14 +156,19 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
       argsApi <- c(date = as.character(date), argsApi)
     if (is.null(argsApi$nombre)) {
       argsApi[["nombre"]] <- 0
-      url <- httr::modify_url(caract$lien, query = argsApi)
-      res <- tryCatch(httr::GET(url, 
-                                httr::add_headers(`accept` = "application/json;charset=utf-8;qs=1"),
-                                httr::add_headers(`X-INSEE-Api-Key-Integration` = token), 
-                                httr::write_memory()
-                              ),
-                      error = function(e) message(e$message))
-      total <- tryCatch(httr::content(res)[[1]]$total,
+      url <- httr2::url_modify(caract$lien, query = argsApi)
+      res <- tryCatch(
+        httr2::req_perform(
+          httr2::request(url) |>
+            httr2::req_headers(
+              accept = "application/json;charset=utf-8;qs=1",
+              `X-INSEE-Api-Key-Integration` = token
+            ) |>
+            httr2::req_error(is_error = \(resp) FALSE)
+        ),
+        error = function(e) message(e$message)
+      )
+      total <- tryCatch(httr2::resp_body_json(res)[[1]]$total,
                         error = function(e) return(NULL))
       if (is.null(total))
         total <- 0
@@ -162,18 +179,18 @@ telechargerFichier <- function(donnees, date=NULL, telDir=getOption("doremifasol
     if (total > 1000)
       argsApi[["curseur"]] <- "*"
     nombrePages <- ceiling(total/1000)
-    url <- httr::modify_url(caract$lien, query = argsApi)
+    url <- httr2::url_modify(caract$lien, query = argsApi)
     fichierAImporter <- sprintf("%s/results_%06i.json", dossier_json, 1)
-    res <- requeteApiSirene(url = url, fichier = fichierAImporter, token = token, 
+    res <- requeteApiSirene(url = url, fichier = fichierAImporter, token = token,
                             nbTentatives = 400)
-    resultat <- res$status_code
+    resultat <- if (is.null(res)) 429 else httr2::resp_status(res)
     if (nombrePages > 1) {
       for (k in 2:nombrePages) {
-        argsApi[["curseur"]] <-httr::content(res)$header$curseurSuivant
-        url <- httr::modify_url(caract$lien, query = argsApi)
+        argsApi[["curseur"]] <- httr2::resp_body_json(res)$header$curseurSuivant
+        url <- httr2::url_modify(caract$lien, query = argsApi)
         fichierAImporter <- c(fichierAImporter, sprintf("%s/results_%06i.json", dossier_json, k))
         res <- requeteApiSirene(url, fichierAImporter, token, 400)
-        resultat <- c(resultat, res$status_code)
+        resultat <- c(resultat, if (is.null(res)) 429 else httr2::resp_status(res))
       }
     }
     dl <- NULL
@@ -206,28 +223,31 @@ genererSuffixe <- function(longueur) {
 }
 
 requeteApiSirene <- function(url, fichier, token, nbTentatives) {
-  count <- 1
-  res <- tryCatch(httr::GET(url, 
-                            httr::add_headers(`accept` = "application/json;charset=utf-8;qs=1"),
-                            httr::add_headers(`X-INSEE-Api-Key-Integration` = token), 
-                            httr::write_disk(tail(fichier, 1)), 
-                            httr::progress()),
-                  error = function(e) {
-                    message(e$message)
-                    return(list(status_code = 429))})
-  while(res$status_code == 429 & count <= nbTentatives) {
+  # la requête est construite une seule fois (progress + pas d'erreur sur 4xx/5xx)
+  req <- httr2::request(url) |>
+    httr2::req_headers(
+      accept = "application/json;charset=utf-8;qs=1",
+      `X-INSEE-Api-Key-Integration` = token
+    ) |>
+    httr2::req_progress() |>
+    httr2::req_error(is_error = \(resp) FALSE)
+
+  # retente sur 429 (trop de requêtes) ou sur erreur réseau (res NULL)
+  count <- 0
+  repeat {
+    res <- tryCatch(
+      httr2::req_perform(req, path = tail(fichier, 1)),
+      error = function(e) {
+        message(e$message)
+        NULL
+      }
+    )
+    if (is.null(res) || httr2::resp_status(res) != 429) break
+    if (count >= nbTentatives) break
     message("Trop de requ\u00eates, patienter 10 secondes...")
     Sys.sleep(10)
     message("Nouvelle tentative...")
-    res <- tryCatch(httr::GET(url, 
-                              httr::add_headers(`accept` = "application/json;charset=utf-8;qs=1"),
-                              httr::add_headers(`X-INSEE-Api-Key-Integration` = token), 
-                              httr::write_disk(tail(fichier, 1), overwrite = TRUE), 
-                              httr::progress()),
-                    error = function(e) {
-                      message(e$message)
-                      return(list(status_code = 429))})
     count <- count + 1
   }
-  return(res)
+  res
 }

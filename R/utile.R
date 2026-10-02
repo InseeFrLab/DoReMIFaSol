@@ -169,8 +169,8 @@ listToDf <- function(liste, vars = NULL) {
 #'
 #' @keywords internal
 recupererMelodi <- function(url) {
-  requete_melodi <- httr::GET(url)
-  ld_melodi <- jsonlite::fromJSON(httr::content(requete_melodi, as = "text", encoding = "utf-8"), 
+  requete_melodi <- httr2::req_perform(httr2::request(url))
+  ld_melodi <- jsonlite::fromJSON(httr2::resp_body_string(requete_melodi),
                                   simplifyDataFrame = FALSE)
   ld_melodi <- lapply(ld_melodi, function(x) {
     within(x, {
