@@ -110,6 +110,8 @@ chargerDonnees <- function(telechargementFichier, vars = NULL, ...) {
       warning("Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
     res <- do.call(chargerDonneesJson, telechargementFichier$argsImport)
   } else if (telechargementFichier$type == "parquet") {
+    if (!requireNamespace("arrow", quietly = TRUE))
+      stop("Le package 'arrow' est nécessaire pour charger les fichiers parquet.")
     if (!is.null(vars))
       telechargementFichier$argsImport$col_select <- vars
     res <- do.call(arrow::read_parquet, telechargementFichier$argsImport)
