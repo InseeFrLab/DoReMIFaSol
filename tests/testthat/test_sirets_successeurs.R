@@ -3,7 +3,6 @@ test_that("Téléchargement des successeurs", {
   skip_if_no_app()
   check_configuration()
   successeurs <- sirets_successeurs(c("30070230500040", "30137492200120", "30082187300019"))
-  print(successeurs)
   expect_s3_class(successeurs, 
   c("insee_data_frame", "data.frame"))
 })
