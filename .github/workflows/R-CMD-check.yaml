@@ -13,12 +13,9 @@ on:
     - cron: '0 4 * * 4'
 
 jobs:
+  # Release checks: run on every push / PR / schedule
   R-CMD-check:
-    # Devel row is only worth running on the weekly schedule; skip it (no
-    # runner, no dependency install) on push / pull_request.
-    if: >-
-      !contains(github.event.head_commit.message, '[skip-ci]') &&
-      (matrix.r == 'release' || github.event_name == 'schedule')
+    if: "!contains(github.event.head_commit.message, '[skip-ci]')"
     runs-on: ${{ matrix.os }}
 
     name: ${{ matrix.os }} (${{ matrix.r }})
@@ -29,8 +26,6 @@ jobs:
         include:
           - {os: windows-latest, r: 'release', rspm: "https://cran.rstudio.com"}
           - {os: ubuntu-latest,  r: 'release', rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest"}
-          # Devel row only runs on scheduled events (weekly), enforced by the job-level `if` above
-          - {os: ubuntu-latest,  r: 'devel',   rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest"}
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -89,4 +84,73 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ runner.os }}-r${{ matrix.r }}-results
+          path: check
+
+  # Devel check: only on the weekly schedule (CRAN-readiness signal).
+  # Its own job so `github.event_name` can gate it at the job level
+  # (`matrix.*` is not available in a job-level `if`).
+  R-CMD-check-devel:
+    if: >-
+      !contains(github.event.head_commit.message, '[skip-ci]') &&
+      github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+
+    name: ubuntu-latest (devel)
+
+    env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+      RSPM: "https://packagemanager.posit.co/cran/__linux__/noble/latest"
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      INSEE_API_TOKEN: ${{ secrets.INSEE_API_TOKEN }}
+      CURLOPT_TIMEOUT: 0
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'devel'
+
+      - uses: r-lib/actions/setup-pandoc@v2
+
+      - name: Query dependencies
+        run: |
+          install.packages('remotes')
+          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
+          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
+        shell: Rscript {0}
+
+      - name: Restore R package cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+
+      - name: Install system dependencies
+        run: |
+          while read -r cmd
+          do
+            eval sudo $cmd
+          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "24.04"))')
+
+      - name: Install dependencies
+        run: |
+          remotes::install_deps(dependencies = TRUE)
+          remotes::install_cran("rcmdcheck")
+        shell: Rscript {0}
+
+      - name: Check
+        env:
+          _R_CHECK_CRAN_INCOMING_REMOTE_: false
+        run: |
+          options(crayon.enabled = TRUE)
+          rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
+        shell: Rscript {0}
+
+      - name: Upload check results
+        if: failure() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+        uses: actions/upload-artifact@v4
+        with:
+          name: devel-results
           path: check
