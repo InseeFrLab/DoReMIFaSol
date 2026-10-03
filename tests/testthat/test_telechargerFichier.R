@@ -88,16 +88,18 @@ test_that("Télécharger des données avec des valeurs manquantes spécifiques",
   skip_unless_integration()
   expect_true(!is.null(telechargerFichier("ESTEL_T201", date = "2015")$argsImport$na))
 })
-## test dl sur l'API Sirene avec une date spécifiée (VCR cassette — offline)
+## test dl sur l'API Sirene avec une date spécifiée
 test_that("Télécharger des données sur l'API à la date du jour", {
-  skip_if_not_installed("vcr")
-  vcr::local_cassette("sirene_siret_date")
+  skip_unless_integration()
+  skip_if_no_app()
+  check_configuration()
   expect_true(telechargerFichier("SIRENE_SIRET", date = "2024-01-15", argsApi = list(nombre = 50))$result == 0)
 })
-## test dl sur l'API Sirene avec une condition (VCR cassette — offline)
+## test dl sur l'API Sirene avec une condition
 test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
-  skip_if_not_installed("vcr")
-  vcr::local_cassette("sirene_siret_condition")
+  skip_unless_integration()
+  skip_if_no_app()
+  check_configuration()
   expect_true(telechargerFichier("SIRENE_SIRET", argsApi = list(q = "dateCreationUniteLegale:1983-03-04"))$result == 0)
 })
 ## test dl sur l'API Sirene d'un gros volume respectant la contrainte du nombre de requêtes par minute
