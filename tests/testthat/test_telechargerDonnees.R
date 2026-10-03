@@ -32,7 +32,6 @@ test_that("Utilisation du cache", {
 })
 ## test import de données CSV
 test_that("Importation type CSV - output data.frame", {
-  skip_unless_integration()
   expect_s3_class(
     telechargerDonnees("COG_COMMUNE", date = "2019"),
     c("insee_data_frame", "data.frame"),
@@ -41,7 +40,6 @@ test_that("Importation type CSV - output data.frame", {
 })
 ## test import de données XLS
 test_that("Importation type XLS - output data.frame", {
-  skip_unless_integration()
   expect_s3_class(
     telechargerDonnees("FILOSOFI_COM", date = "2014"),
     c("insee_data_frame", "data.frame"),
@@ -49,7 +47,6 @@ test_that("Importation type XLS - output data.frame", {
   )
 })
 test_that("Importation type XLS - import de tous les onglets", {
-  skip_unless_integration()
   expect_s3_class(
     telechargerDonnees("ESTEL_T201", date = "31/12/2016"),
     c("insee_data_frame", "data.frame"),
@@ -58,7 +55,6 @@ test_that("Importation type XLS - import de tous les onglets", {
 })
 ## test import de données XLSX
 test_that("Importation type XLSX - output data.frame", {
-  skip_unless_integration()
   expect_s3_class(
     telechargerDonnees("TAG_COM", date = 2025),
     c("insee_data_frame", "data.frame"),
@@ -66,7 +62,6 @@ test_that("Importation type XLSX - output data.frame", {
   )
 })
 test_that("Importation type XLSX - output data.frame", {
-  skip_unless_integration()
   expect_type(
     telechargerDonnees("FILOSOFI_DISP_COM", date = 2017),
     "list"
@@ -90,7 +85,6 @@ test_that("Importation type parquet - sélection de variables", {
 })
 ## test sélection des variables
 test_that("Sélection de variables dans la BPE", {
-  skip_unless_integration()
   expect_true(length(names(telechargerDonnees("COG_COMMUNE", date = 2022, vars = c("TYPECOM", "COM", "REG", "DEP")))) == 4)
 })
 ## test dézip gros fichiers
@@ -120,7 +114,6 @@ test_that("Importation d'un lien mort - retourne une erreur 404", {
 })
 ## test dl de données sur mélodi - csv zippé
 test_that("Télécharger un produit csv zippé sur melodi", {
-  skip_unless_integration()
   expect_s3_class(telechargerDonnees("DS_ANTIPOL_2024_CSV_FR"),
                   c("insee_data_frame", "data.frame"))
 })
