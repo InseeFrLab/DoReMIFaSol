@@ -8,7 +8,6 @@
 [![R-CMD-check](https://github.com/InseeFrLab/DoReMIFaSol/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/InseeFrLab/DoReMIFaSol/actions/workflows/R-CMD-check.yaml)
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Coverage status](https://codecov.io/gh/InseeFrLab/DoReMIFaSol/branch/master/graph/badge.svg?token=FM7HW4DSW5)](https://codecov.io/gh/InseeFrLab/DoReMIFaSol)
-[![CRAN status](https://www.r-pkg.org/badges/version/doremifasol)](https://cran.r-project.org/package=doremifasol)
 <!-- badges: end -->
 
 ## Français
