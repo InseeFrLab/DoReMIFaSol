@@ -1,7 +1,6 @@
 library(doremifasol)
 ## téléchargement de la BPE
 test_that("Téléchargement de données sur le site de l'Insee", {
-  skip_unless_integration()
   expect_output(str(telechargerDonnees("COG_COMMUNE", date = 2022)), "data.frame")
 })
 ## erreur - oubli de la date
@@ -24,7 +23,6 @@ test_that("Échec du téléchargement pour nom non existant", {
 })
 ## test utilisation du cache
 test_that("Utilisation du cache", {
-  skip_unless_integration()
   # note : ESTEL_T201 et ESTEL_T202 sont dans le même fichier
   temp <- telechargerDonnees("ESTEL_T201", date = "2016")
   expect_message(
