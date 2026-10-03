@@ -107,7 +107,6 @@ test_that("Importation dernier millésime - output data.frame", {
 })
 ## test dl sur un lien mort
 test_that("Importation d'un lien mort - retourne une erreur 404", {
-  skip_unless_integration()
   check_configuration()
   expect_error(telechargerDonnees("TEST_BPE_NEXIST"),
                   "Fichier non disponible au téléchargement")
@@ -119,7 +118,6 @@ test_that("Télécharger un produit csv zippé sur melodi", {
 })
 ## test dl de données sur mélodi - XLSX
 test_that("Télécharger un produit xlsx zippé sur melodi", {
-  skip_unless_integration()
   expect_type(telechargerDonnees("ANTIPOL_2024_GLOBAL_T0_FR"),
                   "list")
 })

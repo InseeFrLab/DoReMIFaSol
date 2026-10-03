@@ -18,7 +18,6 @@ test_that("Téléchargement de données sur le site de l'Insee - date spécifié
 })
 ## pas de dézippage
 test_that("Téléchargement de données sur le site de l'Insee - données non zippées", {
-  skip_unless_integration()
   expect_true(telechargerFichier("FILOSOFI_DEC_IRIS")$result == 0)
 })
 ## mauvais nom - pas disponible au téléchargement
