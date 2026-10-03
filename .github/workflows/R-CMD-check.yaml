@@ -14,7 +14,11 @@ on:
 
 jobs:
   R-CMD-check:
-    if: "!contains(github.event.head_commit.message, '[skip-ci]')"
+    # Devel row is only worth running on the weekly schedule; skip it (no
+    # runner, no dependency install) on push / pull_request.
+    if: >-
+      !contains(github.event.head_commit.message, '[skip-ci]') &&
+      (matrix.r == 'release' || github.event_name == 'schedule')
     runs-on: ${{ matrix.os }}
 
     name: ${{ matrix.os }} (${{ matrix.r }})
@@ -25,8 +29,8 @@ jobs:
         include:
           - {os: windows-latest, r: 'release', rspm: "https://cran.rstudio.com"}
           - {os: ubuntu-latest,  r: 'release', rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest"}
-          # Devel check only runs on scheduled events (weekly)
-          - {os: ubuntu-latest,  r: 'devel',   rspm: "https://packagemanager.posit.co/cran/__linux__/resolute/latest"}
+          # Devel row only runs on scheduled events (weekly), enforced by the job-level `if` above
+          - {os: ubuntu-latest,  r: 'devel',   rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest"}
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -72,11 +76,7 @@ jobs:
           remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
 
-      # Run the check only when appropriate:
-      #   release rows: every push / PR / schedule
-      #   devel row:    schedule only (weekly CRAN-readiness signal)
       - name: Check
-        if: matrix.r == 'release' || (matrix.r == 'devel' && github.event_name == 'schedule')
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
         run: |
