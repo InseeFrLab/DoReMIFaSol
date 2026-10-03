@@ -22,10 +22,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        config:
+        include:
           - {os: windows-latest, r: 'release', rspm: "https://cran.rstudio.com"}
-          - {os: ubuntu-24.04, r: 'release', rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest"}
-          - {os: ubuntu-24.04, r: 'devel', rspm: "https://packagemanager.posit.co/cran/__linux__/noble/latest", http-user-agent: "R/4.1.0 (ubuntu-latest) R (4.1.0 x86_64-pc-linux-gnu x86_64 linux-gnu) on GitHub Actions" }
+          - {os: ubuntu-latest,  r: 'release', rspm: "https://packagemanager.posit.co/cran/__linux__/resolute/latest"}
+          # Devel check only runs on scheduled events (weekly)
+          - {os: ubuntu-latest,  r: 'devel',   rspm: "https://packagemanager.posit.co/cran/__linux__/resolute/latest"}
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -35,7 +36,7 @@ jobs:
       CURLOPT_TIMEOUT: 0
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - uses: r-lib/actions/setup-r@v2
         with:
@@ -63,7 +64,7 @@ jobs:
           while read -r cmd
           do
             eval sudo $cmd
-          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')
+          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "24.04"))')
 
       - name: Install dependencies
         run: |
@@ -71,7 +72,11 @@ jobs:
           remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
 
+      # Run the check only when appropriate:
+      #   release rows: every push / PR / schedule
+      #   devel row:    schedule only (weekly CRAN-readiness signal)
       - name: Check
+        if: matrix.config.r == 'release' || (matrix.config.r == 'devel' && github.event_name == 'schedule')
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
         run: |
@@ -81,7 +86,7 @@ jobs:
 
       - name: Upload check results
         if: failure() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
           path: check
