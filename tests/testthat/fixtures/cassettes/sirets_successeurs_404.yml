@@ -1,0 +1,60 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://api.insee.fr/api-sirene/3.11/siret/liensSuccession?q=siretEtablissementPredecesseur%3A32957439600019&tri=successeur&nombre=0
+  response:
+    status: 404
+    headers:
+      x-gravitee-client-identifier: a6c3a66e-1a8f-4ef8-83a6-6e1a8f3ef821
+      x-quota-limit: '2000'
+      x-quota-remaining: '1988'
+      x-quota-reset: '1791013158185'
+      x-rate-limit-limit: '30'
+      x-rate-limit-remaining: '26'
+      x-rate-limit-reset: '1791011280716'
+      cache-control: private
+      vary: Accept-Encoding
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      content-length: '139'
+      date: Sat, 03 Oct 2026 07:07:28 GMT
+      server: unknown
+      x-gravitee-transaction-id: 5cdc8d14-327a-4c83-9c8d-14327abc83e9
+      x-gravitee-request-id: 5cdc8d14-327a-4c83-9c8d-14327abc83e9
+      set-cookie: INSEE=rd4o00000000000000000000ffff0ac3084ao8082; expires=Sat, 03-Oct-2026
+        07:27:28 GMT; path=/; Httponly; Secure
+      strict-transport-security: max-age=100000; includeSubDomains
+    body:
+      string: '{"header":{"statut":404,"message":"Aucun lien de succession n''a été
+        trouvé pour le paramètre q=siretEtablissementPredecesseur:32957439600019"}}'
+  recorded_at: 2026-10-03 07:07:28
+- request:
+    method: GET
+    uri: https://api.insee.fr/api-sirene/3.11/siret/liensSuccession?q=siretEtablissementPredecesseur%3A32957439600019&tri=successeur&nombre=0
+  response:
+    status: 404
+    headers:
+      x-gravitee-client-identifier: a6c3a66e-1a8f-4ef8-83a6-6e1a8f3ef821
+      x-quota-limit: '2000'
+      x-quota-remaining: '1987'
+      x-quota-reset: '1791013158185'
+      x-rate-limit-limit: '30'
+      x-rate-limit-remaining: '25'
+      x-rate-limit-reset: '1791011280716'
+      cache-control: private
+      vary: Accept-Encoding
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      content-length: '139'
+      date: Sat, 03 Oct 2026 07:07:28 GMT
+      server: unknown
+      x-gravitee-transaction-id: c0f24f96-f034-423b-b24f-96f034d23b2b
+      x-gravitee-request-id: c0f24f96-f034-423b-b24f-96f034d23b2b
+      set-cookie: INSEE=rd4o00000000000000000000ffff0ac3084ao8082; expires=Sat, 03-Oct-2026
+        07:27:28 GMT; path=/; Httponly; Secure
+      strict-transport-security: max-age=100000; includeSubDomains
+    body:
+      string: '{"header":{"statut":404,"message":"Aucun lien de succession n''a été
+        trouvé pour le paramètre q=siretEtablissementPredecesseur:32957439600019"}}'
+  recorded_at: 2026-10-03 07:07:28
+recorded_with: VCR-vcr/2.1.0

@@ -1,0 +1,69 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://api.insee.fr/api-sirene/3.11/siret/liensSuccession?q=siretEtablissementPredecesseur%3A30070230500040+OR+siretEtablissementPredecesseur%3A30137492200120+OR+siretEtablissementPredecesseur%3A30082187300019&tri=successeur&nombre=0
+  response:
+    status: 200
+    headers:
+      x-gravitee-client-identifier: a6c3a66e-1a8f-4ef8-83a6-6e1a8f3ef821
+      x-quota-limit: '2000'
+      x-quota-remaining: '1990'
+      x-quota-reset: '1791013158185'
+      x-rate-limit-limit: '30'
+      x-rate-limit-remaining: '28'
+      x-rate-limit-reset: '1791011280716'
+      cache-control: no-cache
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      x-total-count: '2'
+      link: <https://api.insee.fr/api-sirene/3.11/publique/siret/liensSuccession?q=siretEtablissementPredecesseur%253A30070230500040%2520OR%2520siretEtablissementPredecesseur%253A30137492200120%2520OR%2520siretEtablissementPredecesseur%253A30082187300019&tri=successeur&nombre=0&debut=0>;
+        rel="first"
+      vary: Accept-Encoding
+      content-encoding: deflate
+      content-type: application/json;charset=utf-8
+      content-length: '91'
+      date: Sat, 03 Oct 2026 07:07:27 GMT
+      server: unknown
+      x-gravitee-transaction-id: 873f1f4e-b09c-44ed-bf1f-4eb09c64ed08
+      x-gravitee-request-id: 873f1f4e-b09c-44ed-bf1f-4eb09c64ed08
+      set-cookie: INSEE=rd4o00000000000000000000ffff0ac3084ao8082; expires=Sat, 03-Oct-2026
+        07:27:27 GMT; path=/; Httponly; Secure
+      strict-transport-security: max-age=100000; includeSubDomains
+    body:
+      string: '{"header":{"statut":200,"message":"OK","total":2,"debut":0,"nombre":0},"liensSuccession":[]}'
+  recorded_at: 2026-10-03 07:07:28
+- request:
+    method: GET
+    uri: https://api.insee.fr/api-sirene/3.11/siret/liensSuccession?q=siretEtablissementPredecesseur%3A30070230500040+OR+siretEtablissementPredecesseur%3A30137492200120+OR+siretEtablissementPredecesseur%3A30082187300019&tri=successeur&nombre=2
+  response:
+    status: 200
+    headers:
+      cache-control: no-cache
+      content-encoding: deflate
+      content-length: '262'
+      content-type: application/json;charset=utf-8
+      date: Sat, 03 Oct 2026 07:07:28 GMT
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      link:
+      - <https://api.insee.fr/api-sirene/3.11/publique/siret/liensSuccession?q=siretEtablissementPredecesseur%253A30070230500040%2520OR%2520siretEtablissementPredecesseur%253A30137492200120%2520OR%2520siretEtablissementPredecesseur%253A30082187300019&tri=successeur&nombre=2&debut=0>;
+        rel="first"
+      - <https://api.insee.fr/api-sirene/3.11/publique/siret/liensSuccession?q=siretEtablissementPredecesseur%253A30070230500040%2520OR%2520siretEtablissementPredecesseur%253A30137492200120%2520OR%2520siretEtablissementPredecesseur%253A30082187300019&tri=successeur&nombre=2&debut=0>;
+        rel="last"
+      server: unknown
+      set-cookie: INSEE=rd4o00000000000000000000ffff0ac3084ao8082; expires=Sat, 03-Oct-2026
+        07:27:28 GMT; path=/; Httponly; Secure
+      strict-transport-security: max-age=100000; includeSubDomains
+      vary: Accept-Encoding
+      x-gravitee-client-identifier: a6c3a66e-1a8f-4ef8-83a6-6e1a8f3ef821
+      x-gravitee-request-id: 5eea9d91-79b0-4153-aa9d-9179b00153b4
+      x-gravitee-transaction-id: 5eea9d91-79b0-4153-aa9d-9179b00153b4
+      x-quota-limit: '2000'
+      x-quota-remaining: '1989'
+      x-quota-reset: '1791013158185'
+      x-rate-limit-limit: '30'
+      x-rate-limit-remaining: '27'
+      x-rate-limit-reset: '1791011280716'
+      x-total-count: '2'
+    body:
+      string: '{"header":{"statut":200,"message":"OK","total":2,"debut":0,"nombre":2},"liensSuccession":[{"siretEtablissementPredecesseur":"30070230500040","siretEtablissementSuccesseur":"30070230500255","dateLienSuccession":"2006-04-28","transfertSiege":true,"continuiteEconomique":true,"dateDernierTraitementLienSuccession":"2024-03-22T11:12:05.000"},{"siretEtablissementPredecesseur":"30082187300019","siretEtablissementSuccesseur":"38837482900017","dateLienSuccession":"1993-06-23","transfertSiege":false,"continuiteEconomique":false,"dateDernierTraitementLienSuccession":"2024-03-22T11:12:05.000"}]}'
+  recorded_at: 2026-10-03 07:07:28
+recorded_with: VCR-vcr/2.1.0
