@@ -25,12 +25,12 @@ Source:
 [`DESCRIPTION`](https://github.com/InseeFrLab/DoReMIFaSol/blob/master/DESCRIPTION)
 
 Lamarche P, Berrard P (2026). *doremifasol: Data on Insee Website*. R
-package version 0.6.0.0003, <https://InseeFrLab.github.io/DoReMIFaSol>.
+package version 0.7.0.0003, <https://InseeFrLab.github.io/DoReMIFaSol>.
 
     @Manual{,
       title = {doremifasol: Data on Insee Website},
       author = {Pierre Lamarche and Pierre-Yves Berrard},
       year = {2026},
-      note = {R package version 0.6.0.0003},
+      note = {R package version 0.7.0.0003},
       url = {https://InseeFrLab.github.io/DoReMIFaSol},
     }
