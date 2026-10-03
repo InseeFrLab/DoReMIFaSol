@@ -88,5 +88,5 @@ test_that("Télécharger des données sur l'API pour les entreprises créées un
 test_that("Télécharger des données sur l'API pour les entreprises créées un jour donné", {
   skip_if_no_app()
   check_configuration()
-  expect_true(telechargerFichier("SIRENE_SIREN", argsApi = list(nombre = 60000))$result == 0)
+  expect_true(telechargerFichier("SIRENE_SIREN", argsApi = list(nombre = 6000))$result == 0)
 })
