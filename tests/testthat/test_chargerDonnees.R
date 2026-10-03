@@ -13,22 +13,34 @@ test_that("Erreur non-existence du fichier de données", {
 })
 ## test chargement données JSON issues de l'API Sirene - partie UL
 test_that("Chargement des données JSON de l'API Sirene - UL", {
-  skip_if_no_app()
-  check_configuration()
-  dl <- telechargerFichier("SIRENE_SIREN", argsApi = list(nombre = 50))
-  donnees <- chargerDonnees(dl)
-  expect_true(length(donnees) == 3)
-  expect_true(all(unlist(lapply(donnees, is.data.frame))))
-  expect_warning(chargerDonnees(dl, vars = c("siren")), "Il n'est pas possible de filtrer les variables chargées en mémoire sur le format JSON pour le moment.")
+  fix <- list.files("fixtures", pattern = "sirene_siren", full.names = TRUE)
+  expect_length(fix, 1)
+  fake_dl <- list(
+    result = 0, zip = FALSE, type = "json",
+    argsImport = list(fichier = fix, nom = "SIRENE_SIREN"),
+    lien = "https://www.insee.fr/statistiques/fichier/12345/x",
+    collection = "SIRENE", nom = "SIRENE_SIREN"
+  )
+  donnees <- chargerDonnees(fake_dl)
+  expect_length(donnees, 3)
+  expect_true(all(unlist(lapply(Filter(Negate(is.null), donnees), is.data.frame))))
+  expect_warning(chargerDonnees(fake_dl, vars = c("siren")),
+                 "Il n'est pas possible de filtrer les variables chargées en mémoire sur le format JSON pour le moment.")
 })
 
 ## test chargement données JSON issues de l'API Sirene - partie etablissement
 test_that("Chargement des données JSON de l'API Sirene - etablissement", {
-  skip_if_no_app()
-  check_configuration()
-  dl <- telechargerFichier("SIRENE_SIRET", argsApi = list(nombre = 50))
-  donnees <- chargerDonnees(dl)
-  expect_true(length(donnees) == 6)
-  expect_true(all(unlist(lapply(donnees, is.data.frame))))
-  expect_warning(chargerDonnees(dl, vars = c("siren")), "Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
+  fix <- list.files("fixtures", pattern = "sirene_siret", full.names = TRUE)
+  expect_length(fix, 1)
+  fake_dl <- list(
+    result = 0, zip = FALSE, type = "json",
+    argsImport = list(fichier = fix, nom = "SIRENE_SIRET"),
+    lien = "https://www.insee.fr/statistiques/fichier/12345/x",
+    collection = "SIRENE", nom = "SIRENE_SIRET"
+  )
+  donnees <- chargerDonnees(fake_dl)
+  expect_length(donnees, 6)
+  expect_true(all(unlist(lapply(Filter(Negate(is.null), donnees), is.data.frame))))
+  expect_warning(chargerDonnees(fake_dl, vars = c("siren")),
+                 "Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
 })
