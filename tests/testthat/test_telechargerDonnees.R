@@ -1,28 +1,33 @@
 library(doremifasol)
 ## téléchargement de la BPE
 test_that("Téléchargement de données sur le site de l'Insee", {
+  skip_unless_integration()
   expect_output(str(telechargerDonnees("COG_COMMUNE", date = 2022)), "data.frame")
 })
 ## erreur - oubli de la date
 test_that("Téléchargement de données sur le site de l'Insee", {
+  skip_unless_integration()
   expect_error(
     telechargerDonnees("FILOSOFI_COM")
     )
 })
 ## erreur - date non disponible
 test_that("Téléchargement de données sur le site de l'Insee", {
+  skip_unless_integration()
   expect_error(
     telechargerDonnees("FILOSOFI_COM", date = format(Sys.Date(), format = "%Y"))
   )
 })
 ## mauvais nom - pas disponible au téléchargement
 test_that("Échec du téléchargement pour nom non existant", {
+  skip_unless_integration()
   expect_error(
     telechargerDonnees("TEST")
   )
 })
 ## test utilisation du cache
 test_that("Utilisation du cache", {
+  skip_unless_integration()
   # note : ESTEL_T201 et ESTEL_T202 sont dans le même fichier
   temp <- telechargerDonnees("ESTEL_T201", date = "2016")
   expect_message(
@@ -32,6 +37,7 @@ test_that("Utilisation du cache", {
 })
 ## test import de données CSV
 test_that("Importation type CSV - output data.frame", {
+  skip_unless_integration()
   expect_s3_class(
     telechargerDonnees("COG_COMMUNE", date = "2019"),
     c("insee_data_frame", "data.frame"),
@@ -40,6 +46,7 @@ test_that("Importation type CSV - output data.frame", {
 })
 ## test import de données XLS
 test_that("Importation type XLS - output data.frame", {
+  skip_unless_integration()
   expect_s3_class(
     telechargerDonnees("FILOSOFI_COM", date = "2014"),
     c("insee_data_frame", "data.frame"),
@@ -47,6 +54,7 @@ test_that("Importation type XLS - output data.frame", {
   )
 })
 test_that("Importation type XLS - import de tous les onglets", {
+  skip_unless_integration()
   expect_s3_class(
     telechargerDonnees("ESTEL_T201", date = "31/12/2016"),
     c("insee_data_frame", "data.frame"),
@@ -55,6 +63,7 @@ test_that("Importation type XLS - import de tous les onglets", {
 })
 ## test import de données XLSX
 test_that("Importation type XLSX - output data.frame", {
+  skip_unless_integration()
   expect_s3_class(
     telechargerDonnees("TAG_COM", date = 2025),
     c("insee_data_frame", "data.frame"),
@@ -62,6 +71,7 @@ test_that("Importation type XLSX - output data.frame", {
   )
 })
 test_that("Importation type XLSX - output data.frame", {
+  skip_unless_integration()
   expect_type(
     telechargerDonnees("FILOSOFI_DISP_COM", date = 2017),
     "list"
@@ -85,6 +95,7 @@ test_that("Importation type parquet - sélection de variables", {
 })
 ## test sélection des variables
 test_that("Sélection de variables dans la BPE", {
+  skip_unless_integration()
   expect_true(length(names(telechargerDonnees("COG_COMMUNE", date = 2022, vars = c("TYPECOM", "COM", "REG", "DEP")))) == 4)
 })
 ## test dézip gros fichiers
@@ -107,17 +118,20 @@ test_that("Importation dernier millésime - output data.frame", {
 })
 ## test dl sur un lien mort
 test_that("Importation d'un lien mort - retourne une erreur 404", {
+  skip_unless_integration()
   check_configuration()
   expect_error(telechargerDonnees("TEST_BPE_NEXIST"),
                   "Fichier non disponible au téléchargement")
 })
 ## test dl de données sur mélodi - csv zippé
 test_that("Télécharger un produit csv zippé sur melodi", {
+  skip_unless_integration()
   expect_s3_class(telechargerDonnees("DS_ANTIPOL_2024_CSV_FR"),
                   c("insee_data_frame", "data.frame"))
 })
 ## test dl de données sur mélodi - XLSX
 test_that("Télécharger un produit xlsx zippé sur melodi", {
+  skip_unless_integration()
   expect_type(telechargerDonnees("ANTIPOL_2024_GLOBAL_T0_FR"),
                   "list")
 })
