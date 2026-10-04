@@ -163,8 +163,6 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET"))
     unitesLegales <- transformeListe(donnees, c("siret", "siren"), "uniteLegale", 2)
     unitesLegales <- list(
       unitesExistantes = lapply(unitesLegales, function(x) if (is.null(x$unitePurgeeUniteLegale))
-        return(x)),
-      unitesPurgees = lapply(unitesLegales, function(x) if (!is.null(x$unitePurgeeUniteLegale))
         return(x))
     )
     unitesLegales <- lapply(unitesLegales, function(x) do.call(rbind, x))
@@ -181,7 +179,6 @@ chargerDonneesJson <- function(fichier, nom = c("SIRENE_SIREN", "SIRENE_SIRET"))
     list(
       etablissement         = etablissements,
       unitesExistantes      = unitesLegales$unitesExistantes,
-      unitesPurgees         = unitesLegales$unitesPurgees,
       adresseEtablissement  = adresseEtablissement,
       adresse2Etablissement = adresse2Etablissement, 
       periodesEtablissement = periodesEtablissement

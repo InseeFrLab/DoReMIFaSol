@@ -30,7 +30,7 @@ test_that("Chargement des données JSON de l'API Sirene - etablissement", {
   check_configuration()
   dl <- telechargerFichier("SIRENE_SIRET", argsApi = list(nombre = 50))
   donnees <- chargerDonnees(dl)
-  expect_true(length(donnees) == 6)
+  expect_true(length(donnees) == 5)
   expect_true(all(unlist(lapply(donnees, is.data.frame))))
   expect_warning(chargerDonnees(dl, vars = c("siren")), "Il n'est pas possible de filtrer les variables charg\u00e9es en m\u00e9moire sur le format JSON pour le moment.")
 })
