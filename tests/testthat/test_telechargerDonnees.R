@@ -126,12 +126,12 @@ test_that("Importation d'un lien mort - retourne une erreur 404", {
 ## test dl de données sur mélodi - csv zippé
 test_that("Télécharger un produit csv zippé sur melodi", {
   skip_unless_integration()
-  expect_s3_class(telechargerDonnees("DS_ANTIPOL_2024_CSV_FR"),
+  expect_s3_class(telechargerDonnees("DD_EEC_SERIES"),
                   c("insee_data_frame", "data.frame"))
 })
 ## test dl de données sur mélodi - XLSX
 test_that("Télécharger un produit xlsx zippé sur melodi", {
   skip_unless_integration()
-  expect_type(telechargerDonnees("ANTIPOL_2024_GLOBAL_T0_FR"),
+  expect_type(telechargerDonnees("DD_CNA_CONSO_MENAGES_PRODUITS"),
                   "list")
 })
